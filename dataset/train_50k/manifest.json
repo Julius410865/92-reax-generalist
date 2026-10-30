@@ -1,0 +1,43 @@
+{
+ "total": 50000,
+ "from_n_records": 31715,
+ "from_openai_anthropic": 18285,
+ "openai_anthropic_by_category": {
+  "support_ops_logistics": 5387,
+  "rules_policy_law": 2823,
+  "finance_commerce_insurance": 2557,
+  "tools_agent_routing": 2463,
+  "knowledge_reasoning": 1230,
+  "math_quant": 1152,
+  "coding_data_it": 985,
+  "forecasting_risk_science": 770,
+  "language_taste": 543,
+  "safety_security_harm": 375
+ },
+ "rule": "all N-record rows + openai_anthropic rows per category in proportion, ranked by sha256 of the id",
+ "sha256": "ad96e86c018d87046fc65513db6f2eb964f7bb405842dece6f327ce24ec089a4",
+ "validation": {
+  "rows": 2466,
+  "questions": 2466,
+  "by_source": {
+   "hf": 385,
+   "n_records": 1696,
+   "openai_anthropic": 385
+  },
+  "sha256": "1a5530582c65c95db169db79cb91f671b1fbcff5c487ace9b447e026e1da457f",
+  "from": "prepared/eval_all/select.items.jsonl.gz"
+ },
+ "test": {
+  "rows": 3417,
+  "questions": 3549,
+  "by_source": {
+   "hf": 718,
+   "dev": 300,
+   "n_records": 1695,
+   "openai_anthropic": 704
+  },
+  "sha256": "693a51726145884be98b1c1c608faa8b773f115ef74e9674a94d6742429de48e",
+  "from": "prepared/eval_all/test.items.jsonl.gz"
+ },
+ "note_eval": "validation = checkpoint selection, test = final result; never trained on. Sources: hf = held-out HF rows of other authors, dev = the 300 public dev items (the only never-trained eval-v5.1 items), n_records / openai_anthropic = held-out rows of those datasets (at most 20 per template group, at most 26 options)"
+}

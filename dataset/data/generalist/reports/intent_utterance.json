@@ -1,0 +1,77 @@
+{
+ "task": "intent_utterance",
+ "counts": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 3000,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {},
+   "yes_share": null,
+   "top_gold_text_share": 0.01,
+   "distinct_gold_texts": 226
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.038,
+   "cue_accuracy": {
+    "longest": 0.036,
+    "shortest": 0.038,
+    "overlap": 0.461
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.083,
+    "shortest": 0.021,
+    "overlap": 0.37
+   },
+   "limit": {
+    "longest": 0.188,
+    "shortest": 0.188,
+    "overlap": 0.47
+   },
+   "questions": 6600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 256,
+   "p99": 319,
+   "max": 353
+  },
+  "source": {
+   "pass": true,
+   "licence": "CLINC150: CC BY 3.0; Banking77: CC BY 4.0",
+   "files": 8
+  }
+ },
+ "sha256": {
+  "train": "afcdc8cfd40351ab22325d9d756446c4ac54502c24ec6a2a995bcb065c4f6e1a",
+  "select": "e8823253439593c1873d8f7c8b459e9195d81d4efc1d21a7f37e273f97615091",
+  "test": "a7671d22a0847f5b1e8b47c1e226568c3d466f2c461986bf1a93d5b4a7947a92"
+ },
+ "pass": true
+}

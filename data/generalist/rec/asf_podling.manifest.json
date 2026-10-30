@@ -1,0 +1,108 @@
+{
+ "domain": "asf_podling",
+ "task_type": "asf_podling_outcome",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "Apache-2.0",
+  "url": "https://www.apache.org/licenses/LICENSE-2.0",
+  "note": "ASF project metadata: projects.apache.org JSON (generated from the Incubator's podlings.xml, whose header states the Apache License 2.0)"
+ },
+ "sources": {
+  "podlings-history.json": {
+   "url": "https://projects.apache.org/json/foundation/podlings-history.json",
+   "sha256": "77d773e146397e1ab43f34cd38cf5e27ca66380a1598a129534cbc1601af7d7f"
+  },
+  "podlings.json": {
+   "url": "https://projects.apache.org/json/foundation/podlings.json",
+   "sha256": "af8a9b46c0b11843bde70ed8cd3cbfc9f3be0529783d1998cb783668c2df388b"
+  },
+  "podlings.xml": {
+   "url": "https://svn.apache.org/repos/asf/incubator/public/trunk/content/podlings.xml",
+   "sha256": "98f0b33016c850b6ee9fdb6d623c20c4116fefd5f1619ab35dcf2c152ffcb541"
+  }
+ },
+ "label_field": "podlings-history.json 'status', agreeing with the podlings.xml status attribute",
+ "labels": {
+  "graduated": "Graduated (accepted as an Apache project, or as part of one)",
+  "retired": "Retired without graduating"
+ },
+ "records_read": 352,
+ "not_used": {
+  "incubating": 24,
+  "status_missing_or_not_final": 0,
+  "sources_disagree": 0,
+  "also_listed_as_incubating": 0
+ },
+ "dropped": {
+  "no_description_left_after_scrub": 1
+ },
+ "fresh_date": "the month the podling entered the Incubator",
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 147.0,
+   "cap": 441
+  },
+  "select": {
+   "median": 14.0,
+   "cap": 42
+  },
+  "test": {
+   "median": 14.5,
+   "cap": 43
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 294,
+   "fresh": 0,
+   "class_prior": {
+    "Graduated (accepted as an Apache project, or as part of one)": 220,
+    "Retired without graduating": 74
+   },
+   "gold_position": {
+    "A": 142,
+    "B": 152
+   },
+   "options": {
+    "2": 294
+   }
+  },
+  "select": {
+   "rows": 28,
+   "fresh": 0,
+   "class_prior": {
+    "Graduated (accepted as an Apache project, or as part of one)": 23,
+    "Retired without graduating": 5
+   },
+   "gold_position": {
+    "A": 16,
+    "B": 12
+   },
+   "options": {
+    "2": 28
+   }
+  },
+  "test": {
+   "rows": 29,
+   "fresh": 0,
+   "class_prior": {
+    "Graduated (accepted as an Apache project, or as part of one)": 23,
+    "Retired without graduating": 6
+   },
+   "gold_position": {
+    "A": 12,
+    "B": 17
+   },
+   "options": {
+    "2": 29
+   }
+  }
+ },
+ "files": {
+  "asf_podling.train.jsonl": "ddbe545926b0f2d1d697dedec9890ff9ad10fc3c29f29d4ab4638596eedd5ec9",
+  "asf_podling.select.jsonl": "895a65ffb8acfd691b2ea6cb1c322a43df473fa4c0db40a5c67a90abd3fed87e",
+  "asf_podling.test.jsonl": "c7bfc356738e7277d5553160d6d5bc72a16aa96afd78ee5da068348930656f93"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/stage1.json",
+ "stage": "stage1",
+ "split": "train",
+ "digest": "1335464a87bf47b3",
+ "tokenizer": "6f32ce20dc35f57a",
+ "sources": {
+  "hf_core_a": {
+   "items": 5000,
+   "unconvertible": 0,
+   "files": 11
+  }
+ },
+ "rows": 260,
+ "tokens": 163692,
+ "over_max_len": 0,
+ "render_failed": 0,
+ "truncated_to": 260
+}

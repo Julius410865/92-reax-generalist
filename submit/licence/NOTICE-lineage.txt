@@ -1,0 +1,7 @@
+Lineage: Qwen/Qwen3.5-27B (Apache License 2.0, Qwen team, Alibaba Cloud; see LICENSE-APACHE-2.0)
+-> baselabs/mammoth-1 (MIT License, Base Labs / Baseten; post-trained from Qwen3.5-27B)
+-> this model (MIT License, Copyright (c) 2026 mst jeon; see LICENSE).
+Modifications: rewritten to the REAX joint-readout layout, LoRA fine-tuned and merged into the backbone weights
+(see MODIFICATIONS.md).
+
+This model is not affiliated with, endorsed by, or sponsored by Base Labs / Baseten, the Qwen team or REAX.

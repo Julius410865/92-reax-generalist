@@ -1,0 +1,12 @@
+{
+ "base": "/models/merge-w05",
+ "tokenizer": "a5cd9732badce41d",
+ "rows_digest": "2f1941caa74c39b1",
+ "fraction": 0.25,
+ "rows": 44372,
+ "answered": 11096,
+ "failed": 0,
+ "tokens": 4499683,
+ "seconds": 1286.2,
+ "base_right": 0.7771
+}

@@ -1,0 +1,25 @@
+[32mActivated conda/uv virtual environment at [36m/venv/main[0m
+== disk: 77 GB free, need 50 GB (the export + the 0 GB floor)
+== export runs/t2fix/ckpt-1087 -> submit/t2fix (hotkey 5EXSBXEnKznf4hArQ3DmbZbyaaETBeeJ2MVKWvJqEDuRxbge, base baselabs/mammoth-1@61cec44c281c693992e3d6ebeb44dd3402dfa186)
+model-00001-of-00002.safetensors: 367 merged
+model-00002-of-00002.safetensors: 33 merged
+VALIDATOR RULES: OK (submit/t2fix); nothing uploaded or committed
+3:Copyright (c) 2026 Base Labs, Baseten (mammoth-1)
+4:Copyright (c) 2026 Base Labs, Baseten (baselabs/mammoth-1)
+5:Copyright (c) 2026 isomsom (the modifications in this model)
+6:Copyright (c) 2026 baselabs (mammoth-1)
+7:Copyright (c) 2026 the authors of this model
+8:Copyright 2026 Alibaba Cloud
+9:Copyright (c) 2026 danyloooah (fine-tune and merge)
+10:Copyright (c) 2026 mst jeon
+== final directory: validator rules and merge check
+merged check: 24 LoRA tensors and 4 other tensors sampled, 0 unchanged
+VALIDATOR RULES + MERGE: OK
+== ready: submit/t2fix (49G), 29 GB free, 13 min
+Nothing was uploaded or committed. When you decide to submit, run these yourself:
+  hf upload-large-folder <hf user>/<repo name> submit/t2fix --repo-type model --private
+  python -c "from huggingface_hub import HfApi; print(HfApi().model_info('<hf user>/<repo name>').sha)"
+  reax-commit --wallet-name <wallet> --wallet-hotkey <hotkey name> set "reax-spec/1:generalist:<hf user>/<repo name>@<40-hex sha>" --dry-run
+  reax-commit --wallet-name <wallet> --wallet-hotkey <hotkey name> set "reax-spec/1:generalist:<hf user>/<repo name>@<40-hex sha>"
+  reax-commit --wallet-name <wallet> --wallet-hotkey <hotkey name> show
+The repo may stay private at commit time; it must be public before the publish deadline.

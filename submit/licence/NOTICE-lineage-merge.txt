@@ -1,0 +1,11 @@
+Lineage: Qwen/Qwen3.5-27B (Apache License 2.0, Qwen team, Alibaba Cloud; see LICENSE-APACHE-2.0)
+-> baselabs/mammoth-1 (MIT License, Base Labs / Baseten; post-trained from Qwen3.5-27B)
+-> danyloooah/sn92-generalist-m1-core2@c78c0a4aa874d1fa87d3d2b2efe84cc19bf52c24 (MIT License; a weight merge of
+   mammoth-1 fine-tunes, its notices are retained above)
+-> plus 0.5 x the weight change of MstJeon410/sn92-gen-mam1@b90a6297d8f663eb35d56f063c556a2f1277d38f (our earlier
+   fine-tune of mammoth-1, MIT License)
+-> this model: one further LoRA fine-tune of that merge (MIT License, Copyright (c) 2026 mst jeon; see LICENSE).
+Modifications: LoRA fine-tuned in the REAX joint-readout layout and merged into the backbone weights (see MODIFICATIONS.md).
+
+This model is not affiliated with, endorsed by, or sponsored by Base Labs / Baseten, the Qwen team, REAX or the authors
+of the parent models.

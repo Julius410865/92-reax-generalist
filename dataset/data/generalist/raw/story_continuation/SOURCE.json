@@ -1,0 +1,344 @@
+{
+ "task": "story_continuation",
+ "licence": "Public domain in the USA: Project Gutenberg eBooks of works whose US copyright has expired; the distributor's header, footer and licence text are stripped and the Project Gutenberg trademark is not used in the rows",
+ "licence_url": "https://www.gutenberg.org/policy/license.html",
+ "downloaded": "2026-10-27",
+ "files": {
+  "pg158.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/158/pg158.txt",
+   "sha256": "532b122b4e6a76cc556d6fdcd729b5892f5c4ce4a1b7060b9f832adfad8680dc",
+   "bytes": 933709
+  },
+  "pg161.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/161/pg161.txt",
+   "sha256": "7bcd77c45cb32fb8d9f89402561270cc6a911c0a4e20667176d5be779fc3974a",
+   "bytes": 712852
+  },
+  "pg105.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/105/pg105.txt",
+   "sha256": "7365e47089a3d63c64b011342bd00e2375cc51ee642dcf9af5aaba75cfd771bc",
+   "bytes": 497555
+  },
+  "pg121.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/121/pg121.txt",
+   "sha256": "273d7d35f8cc0286812bdb26ccc17f362b4f2d0d69a2ec96ca403fac8505b709",
+   "bytes": 468036
+  },
+  "pg141.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/141/pg141.txt",
+   "sha256": "b34723544dbe8185e786d0fdd47e42e7e1ac4265b84141e31ca260c1e36b68d8",
+   "bytes": 929142
+  },
+  "pg768.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/768/pg768.txt",
+   "sha256": "e533fe750589f0421d5d744576315f5c2b9b0d69e981179ea0551bbf134c5e02",
+   "bytes": 693819
+  },
+  "pg1260.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",
+   "sha256": "13414dee2951c3ee731d76d2ffd822016b2479c892162760c5d0eb2aa5fa7631",
+   "bytes": 1084803
+  },
+  "pg969.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/969/pg969.txt",
+   "sha256": "a3aab47ab84eac0ce05210be83907b6bce654abc3e1c882d4975bc516ec67f0b",
+   "bytes": 995080
+  },
+  "pg767.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/767/pg767.txt",
+   "sha256": "c4069c6f61522720405a538168a599c0b314c9cfe685f1cd25c4f9809b77ee81",
+   "bytes": 408069
+  },
+  "pg98.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/98/pg98.txt",
+   "sha256": "d54c2b80d40a40b982cd88852c6180bb944d95acdb028af3d0e01a1750681784",
+   "bytes": 807197
+  },
+  "pg1400.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt",
+   "sha256": "9a637118af8e953e9764ec603d9b0a032883384d465acac2e27966a80cf1c6f8",
+   "bytes": 1058204
+  },
+  "pg730.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/730/pg730.txt",
+   "sha256": "6c37f41a8a253e95eba0f990f61cf60ac2e6d625c306c13027672d67885a6b6a",
+   "bytes": 955858
+  },
+  "pg766.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/766/pg766.txt",
+   "sha256": "51650d348820a64ca4d4233da035f804819d2231801b59373db4e1279a1985e0",
+   "bytes": 2033321
+  },
+  "pg1023.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1023/pg1023.txt",
+   "sha256": "27e002dee487817b00ba884f3d5ffd8dbb821f82353e914cdc22bf33c413ba16",
+   "bytes": 2044802
+  },
+  "pg786.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/786/pg786.txt",
+   "sha256": "dd239b4a0c9c1b72be40f9f7e1aabce511c022b238a8feb2a9e63f169a7436d9",
+   "bytes": 626278
+  },
+  "pg580.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/580/pg580.txt",
+   "sha256": "b44980181ef76e3879d5864a5f6cc4073c12eb940bc6db7a32632e9bb2f4bbd9",
+   "bytes": 1855171
+  },
+  "pg145.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/145/pg145.txt",
+   "sha256": "dc2e0107e6ae07e8e33da934b2ec4e8e600826a2e0cd48df265119cd02e5fb50",
+   "bytes": 1865684
+  },
+  "pg550.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/550/pg550.txt",
+   "sha256": "b4e54f078d8ff14846ef6196f3ae5134194818841a43c135a5346beded735eb9",
+   "bytes": 429296
+  },
+  "pg6688.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/6688/pg6688.txt",
+   "sha256": "6cd9e230aa05eb249e2c42630d051325cb865d9cf05902819a57177860d7947d",
+   "bytes": 1212404
+  },
+  "pg507.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/507/pg507.txt",
+   "sha256": "be0e4681617825580f2f1bff1f04f477a9af2d49b9835bcb7d9ab9eb9ef3aecb",
+   "bytes": 1228196
+  },
+  "pg110.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/110/pg110.txt",
+   "sha256": "503e08df0ca12fb21f4db9df75cfa97f9ba31b4d136add695b9e3e350b1699b1",
+   "bytes": 895508
+  },
+  "pg107.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/107/pg107.txt",
+   "sha256": "67d4901981ceaef9ae2e5de32d1c59c8005101375a932d49861054f65bb60099",
+   "bytes": 830444
+  },
+  "pg143.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/143/pg143.txt",
+   "sha256": "afc11a8bb54ae3d37551d4d6d3523e5df2371665781da769344597969c116a00",
+   "bytes": 700364
+  },
+  "pg122.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/122/pg122.txt",
+   "sha256": "bdd2c262086b9c8ae4361ef1e7f29fcc9e462bbab108cbe94c3e972276444b14",
+   "bytes": 838950
+  },
+  "pg74.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/74/pg74.txt",
+   "sha256": "74d77384b123a6360db9ab58463cff8b38df8525fbdc6000c81ee388e1f3cf10",
+   "bytes": 434357
+  },
+  "pg76.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/76/pg76.txt",
+   "sha256": "d617a37aa7ae1e1a93dcde2634db2bccb86824e31e29a55230bdbf77d6872d59",
+   "bytes": 622460
+  },
+  "pg1837.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1837/pg1837.txt",
+   "sha256": "fea44db55e86147d3708216d72d4be58f1869fb6a73cc371d51877d49745bfb8",
+   "bytes": 431844
+  },
+  "pg35.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/35/pg35.txt",
+   "sha256": "2892e919000e17c83e1dac51b30f4675db50536b644d7579fe8a89bb399a9bdc",
+   "bytes": 204384
+  },
+  "pg36.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/36/pg36.txt",
+   "sha256": "8417469e3ab664749f7b36ebb85799075818207b0380b54c27d07d592a44117d",
+   "bytes": 366624
+  },
+  "pg5230.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/5230/pg5230.txt",
+   "sha256": "28c70e3809ce945efbe5f8681532916a2c4253fee5cca6e1a191707af22280d3",
+   "bytes": 306387
+  },
+  "pg159.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/159/pg159.txt",
+   "sha256": "6085aef7b293dc0935974736f71e84c86952d5cb4cbad977fde942ffeba98a31",
+   "bytes": 269543
+  },
+  "pg43.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/43/pg43.txt",
+   "sha256": "b43448a88391591f9cf82b25553df00faf47a2752a873185fcdd1156eebdb990",
+   "bytes": 163495
+  },
+  "pg120.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/120/pg120.txt",
+   "sha256": "5bc08275eacea8640b1aa185c645283bb8c564d7b23df6b03437d229b4fc6ebd",
+   "bytes": 399873
+  },
+  "pg421.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/421/pg421.txt",
+   "sha256": "d57ef5be2a98ff2bbe3819abc84deeeea7f5f039a4b90fd358b2babb0f75588a",
+   "bytes": 459911
+  },
+  "pg174.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/174/pg174.txt",
+   "sha256": "38f36b510417177aa87a6a24c968e3ec63a447b7df36a9c1a7c5a3f2d9e51547",
+   "bytes": 465814
+  },
+  "pg219.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/219/pg219.txt",
+   "sha256": "1bcdf0a1ac611dd6b70a20d100a07085754da4e90a949d6031717b86cd6d020a",
+   "bytes": 237074
+  },
+  "pg5658.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/5658/pg5658.txt",
+   "sha256": "e2de6f15eb867e864aa4b5e22410d6dc1c12b7c225a48e2376f6401b71a3b96e",
+   "bytes": 751822
+  },
+  "pg974.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/974/pg974.txt",
+   "sha256": "0a37c8fc9a62db2efcea487f02c1cdd4d48657c66b54af3ad90f2317e42b7588",
+   "bytes": 560110
+  },
+  "pg2701.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/2701/pg2701.txt",
+   "sha256": "b5e88b71a1cda068e9ab1d94344c9d932338ba6da1a66def97a1aecd9cfcc87d",
+   "bytes": 1276315
+  },
+  "pg33.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/33/pg33.txt",
+   "sha256": "ae8d5a2d55a7b5d2b4b37497338892dab5ff6cc535bf523698da4ba6abe15ee7",
+   "bytes": 513732
+  },
+  "pg77.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/77/pg77.txt",
+   "sha256": "0d09eef49bec474dc4253b3035f298425280ec82d3e70b43befa443dd5e9819a",
+   "bytes": 649593
+  },
+  "pg209.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/209/pg209.txt",
+   "sha256": "171afa184a54b6004194e02047f5d01cf216d8bc519ddfb671a1e41d80bbdf65",
+   "bytes": 259197
+  },
+  "pg541.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/541/pg541.txt",
+   "sha256": "aae279f1a60ac64be53f63357e708a2fdaabdb334a1c92f81fc1c3b5c848a092",
+   "bytes": 609882
+  },
+  "pg284.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/284/pg284.txt",
+   "sha256": "52728930e0b308772f8781b1e8b20a981b38cdebf161c20fb84ffc6764c1b6df",
+   "bytes": 777957
+  },
+  "pg4517.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/4517/pg4517.txt",
+   "sha256": "995fb43e2017211808edd68464ac9a5fb975fb81d6973bfbef59796702ae543a",
+   "bytes": 216373
+  },
+  "pg215.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/215/pg215.txt",
+   "sha256": "30f569c5671bba7bbc4a92ab6d8ee01a0d3be00f994819c77da62c28041eb8a2",
+   "bytes": 199757
+  },
+  "pg910.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/910/pg910.txt",
+   "sha256": "3c7226d00fd9b169f0016635d0e461501620f343220ee18db7ca9f083f4ad3f4",
+   "bytes": 428909
+  },
+  "pg1074.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1074/pg1074.txt",
+   "sha256": "8a53d5cd1b8ac63f353f29c1fc4968cda8d32cc7fe3d683f1afbee38a7dd12bf",
+   "bytes": 622270
+  },
+  "pg160.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/160/pg160.txt",
+   "sha256": "31d4577d255806b92c6296419adddd5ca460bdb788743878a09ded1e19f4161a",
+   "bytes": 392860
+  },
+  "pg2814.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/2814/pg2814.txt",
+   "sha256": "6be7d8400ac2549459307d1c1a20a25c86a736984269d3e9d989c817814be60c",
+   "bytes": 405706
+  },
+  "pg2641.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/2641/pg2641.txt",
+   "sha256": "3dce58eb1786b10b79f8688968d293a1990dfed4a1f83a5c04a6a2a10381db36",
+   "bytes": 415820
+  },
+  "pg2891.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/2891/pg2891.txt",
+   "sha256": "5eb70bcf8a299f4a546c84b063b8ac0dad2b177a98d5a8348ee3216bd9c98ffa",
+   "bytes": 665451
+  },
+  "pg64317.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/64317/pg64317.txt",
+   "sha256": "ce760ec377accd352b41bb8f64504a72d7aa18ab3afb42ded2b56cecacf29e35",
+   "bytes": 306553
+  },
+  "pg155.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/155/pg155.txt",
+   "sha256": "e2f9023a41c388fa2b0d2a21d71a363e603b33860d8d964e314b5f4da7e6f837",
+   "bytes": 1135528
+  },
+  "pg583.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/583/pg583.txt",
+   "sha256": "c8cb8872f6c0a2a5b6489873c6c7b8c39f006c3fa44219738186a96f2c1d1254",
+   "bytes": 1419450
+  },
+  "pg599.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/599/pg599.txt",
+   "sha256": "36c7db9809ec4e833125f9ccc81ee66583ea6d698114b2907d2220599126fddd",
+   "bytes": 1765821
+  },
+  "pg82.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/82/pg82.txt",
+   "sha256": "188187a4af0956b01ccb0a9f8fb50587ffa4fca0b2d12d8ff5a82fc6f05f15e0",
+   "bytes": 1167511
+  },
+  "pg203.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/203/pg203.txt",
+   "sha256": "95e4ce1153f8506d9903df84541cfa99c8ac6ad3ad69bcf5ea37d042d01a0a98",
+   "bytes": 1079453
+  },
+  "pg140.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/140/pg140.txt",
+   "sha256": "1a28274fdea8c1438ebad3d7d07946b3d8a0779754427ba4a4da3b64882b7514",
+   "bytes": 854298
+  },
+  "pg4276.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/4276/pg4276.txt",
+   "sha256": "675a034c9711be4483f17316ac09fc9ec58d4503516db9b95ed70dc64fce9c79",
+   "bytes": 1054663
+  },
+  "pg394.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/394/pg394.txt",
+   "sha256": "3bb263075a97afd4058933534549f6176d881f7a9f74bb62eb52be26670e3cb0",
+   "bytes": 421578
+  },
+  "pg863.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/863/pg863.txt",
+   "sha256": "1faa63bb31d418523417dda0227d29f78e71aec474db5a18021e41fab1dc2d57",
+   "bytes": 361540
+  },
+  "pg1695.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1695/pg1695.txt",
+   "sha256": "16fde29acf764ba5742fd5db8833f424b6b89c0f6e282d518f6c626006faf6e1",
+   "bytes": 355410
+  },
+  "pg11.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/11/pg11.txt",
+   "sha256": "01b38ea4c710a84bc18d0bd41271a5a1a92b94e97b2812f4dece97d4a694725e",
+   "bytes": 174311
+  },
+  "pg113.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/113/pg113.txt",
+   "sha256": "6b0bb5fbd0c4e873d2d22028da9d753cf3977d5f70ac58221556b28060badbf5",
+   "bytes": 475315
+  },
+  "pg45.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/45/pg45.txt",
+   "sha256": "89a5e9fb2e0bb44562a969785385366f94e1da736aebee7d9cdf459eb0b5f9f6",
+   "bytes": 606693
+  },
+  "pg514.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/514/pg514.txt",
+   "sha256": "36831477b339dbcd7e7206119d77e9e58b9727ef3c299d1a1dc4446e1db97850",
+   "bytes": 1071398
+  }
+ },
+ "notes": "builder version 1. 67 eBooks (id = title (author)): 158 = Emma (Jane Austen); 161 = Sense and Sensibility (Jane Austen); 105 = Persuasion (Jane Austen); 121 = Northanger Abbey (Jane Austen); 141 = Mansfield Park (Jane Austen); 768 = Wuthering Heights (Emily Bronte); 1260 = Jane Eyre (Charlotte Bronte); 969 = The Tenant of Wildfell Hall (Anne Bronte); 767 = Agnes Grey (Anne Bronte); 98 = A Tale of Two Cities (Charles Dickens); 1400 = Great Expectations (Charles Dickens); 730 = Oliver Twist (Charles Dickens); 766 = David Copperfield (Charles Dickens); 1023 = Bleak House (Charles Dickens); 786 = Hard Times (Charles Dickens); 580 = The Pickwick Papers (Charles Dickens); 145 = Middlemarch (George Eliot); 550 = Silas Marner (George Eliot); 6688 = The Mill on the Floss (George Eliot); 507 = Adam Bede (George Eliot); 110 = Tess of the d (Thomas Hardy); 107 = Far from the Madding Crowd (Thomas Hardy); 143 = The Mayor of Casterbridge (Thomas Hardy); 122 = The Return of the Native (Thomas Hardy); 74 = The Adventures of Tom Sawyer (Mark Twain); 76 = Adventures of Huckleberry Finn (Mark Twain); 1837 = The Prince and the Pauper (Mark Twain); 35 = The Time Machine (H. G. Wells); 36 = The War of the Worlds (H. G. Wells); 5230 = The Invisible Man (H. G. Wells); 159 = The Island of Doctor Moreau (H. G. Wells); 43 = The Strange Case of Dr. Jekyll and Mr. Hyde (Robert Louis Stevenson); 120 = Treasure Island (Robert Louis Stevenson); 421 = Kidnapped (Robert Louis Stevenson); 174 = The Picture of Dorian Gray (Oscar Wilde); 219 = Heart of Darkness (Joseph Conrad); 5658 = Lord Jim (Joseph Conrad); 974 = The Secret Agent (Joseph Conrad); 2701 = Moby (Herman Melville); 33 = The Scarlet Letter (Nathaniel Hawthorne); 77 = The House of the Seven Gables (Nathaniel Hawthorne); 209 = The Turn of the Screw (Henry James); 541 = The Age of Innocence (Edith Wharton); 284 = The House of Mirth (Edith Wharton); 4517 = Ethan Frome (Edith Wharton); 215 = The Call of the Wild (Jack London); 910 = White Fang (Jack London); 1074 = The Sea-Wolf (Jack London); 160 = The Awakening (Kate Chopin); 2814 = Dubliners (James Joyce); 2641 = A Room with a View (E. M. Forster); 2891 = Howards End (E. M. Forster); 64317 = The Great Gatsby (F. Scott Fitzgerald); 155 = The Moonstone (Wilkie Collins); 583 = The Woman in White (Wilkie Collins); 599 = Vanity Fair (William Makepeace Thackeray); 82 = Ivanhoe (Walter Scott); 203 = Uncle Tom (Harriet Beecher Stowe); 140 = The Jungle (Upton Sinclair); 4276 = North and South (Elizabeth Gaskell); 394 = Cranford (Elizabeth Gaskell); 863 = The Mysterious Affair at Styles (Agatha Christie); 1695 = The Man Who Was Thursday (G. K. Chesterton); 11 = Alice (Lewis Carroll); 113 = The Secret Garden (Frances Hodgson Burnett); 45 = Anne of Green Gables (L. M. Montgomery); 514 = Little Women (Louisa May Alcott). Books per split: train: 158, 161, 105, 121, 141, 768, 1260, 969, 767, 1400, 730, 766, 786, 145, 550, 6688, 507, 110, 107, 143, 122, 74, 76, 1837, 35, 36, 5230, 159, 43, 120, 421, 174, 219, 5658, 974, 2701, 33, 77, 209, 284, 4517, 215, 1074, 160, 2814, 2891, 64317, 155, 583, 599, 82, 4276, 394, 1695, 11, 113, 45, 514; select: 1023, 580, 541, 910, 2641; test: 98, 203, 140, 863. Every row's source_id is its eBook id; whole books are held out for select and test. Excluded (dev set books): Pride and Prejudice, A Study in Scarlet, The Adventures of Sherlock Holmes (and all other Sherlock Holmes books), Frankenstein, Dracula."
+}

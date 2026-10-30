@@ -1,0 +1,187 @@
+{
+ "domain": "cpsc_hazard",
+ "task_type": "cpsc_hazard_type",
+ "area": "retrieval",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "US government work (public domain, 17 U.S.C. 105); CPSC: recall notices may be freely copied and distributed, please credit CPSC, no implied endorsement; recall photographs not used",
+  "url": "https://www.cpsc.gov/About-CPSC/Policies-Statements-and-Directives/Privacy-Policy",
+  "api": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information"
+ },
+ "sources": {
+  "recalls.json": {
+   "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json",
+   "sha256": "34d64142b4253cf1d112c02f9f4b0f5f7c6645d6bc0192973db2b302121b6e2b"
+  }
+ },
+ "label_field": "Hazards[].Name when it is exactly a term of CPSC's hazard-type code list (Hazards[].HazardType / HazardTypeID are empty in every record)",
+ "labels": {
+  "Choking": "Choking",
+  "Fire & Fire-Related Burn": "Fire & fire-related burn",
+  "Electrocution/Electric Shock": "Electrocution / electric shock",
+  "Laceration": "Laceration",
+  "Fall": "Fall",
+  "Poisoning": "Poisoning",
+  "Entrapment": "Entrapment",
+  "Strangulation": "Strangulation",
+  "Lead": "Lead (lead poisoning)",
+  "Collapse": "Collapse",
+  "Burn - Not Fire-Related": "Burn, not fire-related",
+  "Explosion/Projectiles": "Explosion / projectiles",
+  "Suffocation": "Suffocation",
+  "Vehicle Accident": "Vehicle accident"
+ },
+ "group_key": "RecallNumber without its letter suffix",
+ "eval_frac": 0.1,
+ "records_read": 10058,
+ "with_code_list_hazard": 1487,
+ "dropped_several_hazards": 40,
+ "dropped_unrenderable_or_scrub": 228,
+ "dropped_duplicate_text": 0,
+ "dropped_conflicting_text": 0,
+ "records_kept": 1219,
+ "classes_dropped_under_min": {
+  "Internal Injury": 6,
+  "Drowning": 8,
+  "Carbon Monoxide (CO)": 9,
+  "Amputation": 2,
+  "Aspiration": 3
+ },
+ "caps": {
+  "train": {
+   "median": 28.0,
+   "cap": 84
+  },
+  "select": {
+   "median": 4.5,
+   "cap": 13
+  },
+  "test": {
+   "median": 6,
+   "cap": 18
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 632,
+   "fresh": 0,
+   "class_prior": {
+    "Fire & fire-related burn": 84,
+    "Choking": 84,
+    "Laceration": 84,
+    "Electrocution / electric shock": 84,
+    "Fall": 68,
+    "Poisoning": 38,
+    "Entrapment": 30,
+    "Burn, not fire-related": 26,
+    "Strangulation": 26,
+    "Lead (lead poisoning)": 25,
+    "Vehicle accident": 24,
+    "Collapse": 21,
+    "Explosion / projectiles": 21,
+    "Suffocation": 17
+   },
+   "gold_position": {
+    "A": 28,
+    "B": 52,
+    "C": 49,
+    "D": 47,
+    "E": 33,
+    "F": 41,
+    "G": 53,
+    "H": 43,
+    "I": 48,
+    "J": 46,
+    "K": 45,
+    "L": 55,
+    "M": 41,
+    "N": 51
+   },
+   "options": {
+    "14": 632
+   }
+  },
+  "select": {
+   "rows": 92,
+   "fresh": 0,
+   "class_prior": {
+    "Fire & fire-related burn": 13,
+    "Laceration": 13,
+    "Choking": 13,
+    "Electrocution / electric shock": 13,
+    "Fall": 11,
+    "Entrapment": 7,
+    "Lead (lead poisoning)": 5,
+    "Poisoning": 4,
+    "Explosion / projectiles": 3,
+    "Vehicle accident": 3,
+    "Suffocation": 3,
+    "Strangulation": 2,
+    "Collapse": 1,
+    "Burn, not fire-related": 1
+   },
+   "gold_position": {
+    "A": 7,
+    "B": 5,
+    "C": 8,
+    "D": 12,
+    "E": 4,
+    "F": 5,
+    "G": 5,
+    "H": 8,
+    "I": 5,
+    "J": 8,
+    "K": 5,
+    "L": 9,
+    "M": 4,
+    "N": 7
+   },
+   "options": {
+    "14": 92
+   }
+  },
+  "test": {
+   "rows": 106,
+   "fresh": 0,
+   "class_prior": {
+    "Choking": 18,
+    "Fire & fire-related burn": 18,
+    "Laceration": 16,
+    "Electrocution / electric shock": 13,
+    "Fall": 9,
+    "Entrapment": 7,
+    "Poisoning": 6,
+    "Explosion / projectiles": 6,
+    "Burn, not fire-related": 5,
+    "Lead (lead poisoning)": 3,
+    "Collapse": 2,
+    "Strangulation": 2,
+    "Vehicle accident": 1
+   },
+   "gold_position": {
+    "A": 7,
+    "B": 8,
+    "C": 11,
+    "D": 12,
+    "E": 4,
+    "F": 6,
+    "G": 7,
+    "H": 5,
+    "I": 10,
+    "J": 5,
+    "K": 6,
+    "L": 17,
+    "M": 5,
+    "N": 3
+   },
+   "options": {
+    "14": 106
+   }
+  }
+ },
+ "files": {
+  "cpsc_hazard.train.jsonl": "7edb2d4f874b7ea8bbb94f51090af2a2d9562813890eb1a76d269c6cfa0ba66e",
+  "cpsc_hazard.select.jsonl": "ffe079722b50c5d10dcbedd41bddc3e7e08b5ad4d8dfdd9394743d2fa9a7b889",
+  "cpsc_hazard.test.jsonl": "58cc8e56491107dcc36f89442ef4a5313a7c0433f69a2e4987bab7f255695b21"
+ }
+}

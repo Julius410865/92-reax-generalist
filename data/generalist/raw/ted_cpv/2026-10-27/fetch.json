@@ -1,0 +1,1251 @@
+{
+ "domain": "ted_cpv",
+ "snapshot": "2026-10-27",
+ "files": {
+  "notices/2026-01.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1311113,
+   "sha256": "37535e9168ea086ed79ce2ecf2596181ffb228603dd09f9bdf9e3ad649d796aa",
+   "fetched_utc": "2026-10-27T21:32:35Z"
+  },
+  "notices/2026-01.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1328893,
+   "sha256": "0b2fdb6d0550056175d23ce2d021ed48ae7d805dc58a40e2092a7606baf9b2dd",
+   "fetched_utc": "2026-10-27T21:32:38Z"
+  },
+  "notices/2026-01.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1346259,
+   "sha256": "c1199701e2edb98c2f9fca3b3e3aeaa67705c64a3a36ec18a647f130c607465b",
+   "fetched_utc": "2026-10-27T21:32:39Z"
+  },
+  "notices/2026-01.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1368055,
+   "sha256": "21de5133f56387a6faa2a41222b5611db67a180756c0e0f466524ac8e6b771c3",
+   "fetched_utc": "2026-10-27T21:32:42Z"
+  },
+  "notices/2026-01.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1378490,
+   "sha256": "48627f2630b89a055fd7f6b0a6ba30b93a38dbcf83671e64206f0562c76dd783",
+   "fetched_utc": "2026-10-27T21:32:44Z"
+  },
+  "notices/2026-01.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1348330,
+   "sha256": "c395cb3728f7fa12d9d1873afec7c624cb56062017efcdb7f46e0b587f63fc0d",
+   "fetched_utc": "2026-10-27T21:32:46Z"
+  },
+  "notices/2026-01.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1397044,
+   "sha256": "acdff2dbdd90524e113e21726b7aab55b8b52975f9ed6a78458b8dbdd5375402",
+   "fetched_utc": "2026-10-27T21:32:47Z"
+  },
+  "notices/2026-01.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1351219,
+   "sha256": "91b5e3f8d6c735837b6f3ead19336c9b3d7894cc25e72da3bda1e622151c41c7",
+   "fetched_utc": "2026-10-27T21:32:49Z"
+  },
+  "notices/2026-01.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1357692,
+   "sha256": "663cc8f5aad32fce1303a158bdb33e039c549ef7687347c889863eee58c4361c",
+   "fetched_utc": "2026-10-27T21:32:51Z"
+  },
+  "notices/2026-01.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1377622,
+   "sha256": "5847a1e651ddb48b8c8ed41eb48f124aa4d4f93d9a19e3eafe841f4d51fc3ce0",
+   "fetched_utc": "2026-10-27T21:32:53Z"
+  },
+  "notices/2026-01.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1116097,
+   "sha256": "9e9be21e435da5f2252b9aad2cd0540b47d564f19f16d05459424406ced07e13",
+   "fetched_utc": "2026-10-27T21:32:55Z"
+  },
+  "notices/2026-02.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1350445,
+   "sha256": "1d27068907622808debcdce2f40d2396536351dcee727ebcbe5ac758945beb74",
+   "fetched_utc": "2026-10-27T21:32:57Z"
+  },
+  "notices/2026-02.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1385049,
+   "sha256": "313bb6f368c3411efb04307b33096fffd862c3ed2aa433d3a270509151afae6c",
+   "fetched_utc": "2026-10-27T21:32:59Z"
+  },
+  "notices/2026-02.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1376400,
+   "sha256": "b536f3c6407f1815bce379dd1d1f4f6954d725f955994feae612ea7f8ebd8a1e",
+   "fetched_utc": "2026-10-27T21:33:01Z"
+  },
+  "notices/2026-02.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1364947,
+   "sha256": "1de1ffdfd25c301ea3ead4c3f018f742bea705c3d0e7d4642599749964fb3a1d",
+   "fetched_utc": "2026-10-27T21:33:02Z"
+  },
+  "notices/2026-02.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1353528,
+   "sha256": "94b67a2b5868b75068dc5eb773847bed24e2293440cac52f950756beb5cdaa93",
+   "fetched_utc": "2026-10-27T21:33:05Z"
+  },
+  "notices/2026-02.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1384496,
+   "sha256": "a7acdea703389aa194dd4de9e5662d897abe7a416afaf4e991ba94aef4d06257",
+   "fetched_utc": "2026-10-27T21:33:07Z"
+  },
+  "notices/2026-02.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1372449,
+   "sha256": "0274b29888bf0156f21e0369e0f6b8fb4c0bf05a3b8976536457b60512130926",
+   "fetched_utc": "2026-10-27T21:33:09Z"
+  },
+  "notices/2026-02.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1366465,
+   "sha256": "28261138d7bfa76d3b6e78ba896fadecc1b092bc2e7c42f98858aa7155a52cef",
+   "fetched_utc": "2026-10-27T21:33:10Z"
+  },
+  "notices/2026-02.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1368992,
+   "sha256": "d3a6876f80ebdd364d5aba562c5c3a9a6747f3e6ea2354a4e3c1ce2592ccf9ab",
+   "fetched_utc": "2026-10-27T21:33:12Z"
+  },
+  "notices/2026-02.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1383344,
+   "sha256": "2fdaa165a5521bdcb86d5df275fe082ea6ba462655437b92c9010177ca62e675",
+   "fetched_utc": "2026-10-27T21:33:14Z"
+  },
+  "notices/2026-02.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1367090,
+   "sha256": "02f9f61819df62c98de88496dbd1893d912c237f2fe95b9532264a3af447c912",
+   "fetched_utc": "2026-10-27T21:33:16Z"
+  },
+  "notices/2026-02.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1353267,
+   "sha256": "e5ca040850dbd00fe41c1493f2013b55530ff2d2f06f08d65b3d9afc6c91a183",
+   "fetched_utc": "2026-10-27T21:33:17Z"
+  },
+  "notices/2026-02.p013.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 873574,
+   "sha256": "2813c6089d5b3e84b3ed916e75e5d0a67451e04b4582a44c23f4d94b8f090809",
+   "fetched_utc": "2026-10-27T21:33:19Z"
+  },
+  "notices/2026-03.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1408941,
+   "sha256": "83654971b28919f66c0aa281037981d7cbf9b27d95f7afdc69a11c2b162cee89",
+   "fetched_utc": "2026-10-27T21:33:22Z"
+  },
+  "notices/2026-03.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1408135,
+   "sha256": "df14431fa6255328d3ce5f94838c9e3c622f1fbca5f26536c3e2067f4e9be259",
+   "fetched_utc": "2026-10-27T21:33:23Z"
+  },
+  "notices/2026-03.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1412738,
+   "sha256": "bd7012797d80cc730853f323f82214e85139e0729bdfda8d400b2de7fbbfc4ac",
+   "fetched_utc": "2026-10-27T21:33:25Z"
+  },
+  "notices/2026-03.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1415139,
+   "sha256": "f823371f1445ce9334fa0b18368b79676927197c57284b024c5d672147bd877f",
+   "fetched_utc": "2026-10-27T21:33:27Z"
+  },
+  "notices/2026-03.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1378297,
+   "sha256": "86675adec9e42a979502a39904d1fab312499bafe945b6bac48c3758bde2d60a",
+   "fetched_utc": "2026-10-27T21:33:29Z"
+  },
+  "notices/2026-03.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1377800,
+   "sha256": "c4553e0dfc0987db43f516784efe0bf418ebbe2d5702ed24874094688211687d",
+   "fetched_utc": "2026-10-27T21:33:30Z"
+  },
+  "notices/2026-03.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1385195,
+   "sha256": "f24d59c751e1fd9646c1f9608fc5e76c83e3cd5d43f27792c79e8d7b9791044c",
+   "fetched_utc": "2026-10-27T21:33:32Z"
+  },
+  "notices/2026-03.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1402366,
+   "sha256": "b0fe7a1b1b94c494347bb015f93e5454b15ef2259f505af7098c4c78604cdda2",
+   "fetched_utc": "2026-10-27T21:33:34Z"
+  },
+  "notices/2026-03.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1401197,
+   "sha256": "d997e81e506249e371092f6c3b23831ccfef7514a97afbd3bc4272387509ce7c",
+   "fetched_utc": "2026-10-27T21:33:37Z"
+  },
+  "notices/2026-03.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1412702,
+   "sha256": "5f3850c065fb01fcae24722b5b2363b243e02c43ab21726117cdb675b581a603",
+   "fetched_utc": "2026-10-27T21:33:39Z"
+  },
+  "notices/2026-03.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1388413,
+   "sha256": "437ef142c337d02bcf928333771dc658cfd7fca302531da2c0fabe1bbc457fce",
+   "fetched_utc": "2026-10-27T21:33:40Z"
+  },
+  "notices/2026-03.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1391232,
+   "sha256": "689e82d3d6bef646faf5eec1a9c046eee45103291a6f1d4af47f2e551670d851",
+   "fetched_utc": "2026-10-27T21:33:42Z"
+  },
+  "notices/2026-03.p013.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1411080,
+   "sha256": "c78d60933fa4d16ddf1c0126554885877aa852739cf143e122518e7f9b016655",
+   "fetched_utc": "2026-10-27T21:33:44Z"
+  },
+  "notices/2026-03.p014.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1391921,
+   "sha256": "2188304a070cd4e29eeb1edb64bd704812289cc2ce51e8c913024a0fbe6daec5",
+   "fetched_utc": "2026-10-27T21:33:45Z"
+  },
+  "notices/2026-03.p015.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 565832,
+   "sha256": "39f1b7bce2f028d60081d99517c12e3e7599e28d79f5edee3f3707eb314cbd05",
+   "fetched_utc": "2026-10-27T21:33:47Z"
+  },
+  "notices/2026-04.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1376652,
+   "sha256": "6836733d5aa4a347bfd084769e27e213ef905801750e851b065dad1f23577732",
+   "fetched_utc": "2026-10-27T21:33:48Z"
+  },
+  "notices/2026-04.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1370902,
+   "sha256": "57dba05bed79544c38ea6e595f6e7963779389099c300f708d007fd7732a3eb7",
+   "fetched_utc": "2026-10-27T21:33:50Z"
+  },
+  "notices/2026-04.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1365903,
+   "sha256": "653cfaf9ffc49134236995444c46752dbc349afa8b8f1d07d0238f4e52540f8e",
+   "fetched_utc": "2026-10-27T21:33:52Z"
+  },
+  "notices/2026-04.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1336927,
+   "sha256": "3343f0fd473b20a8db484ffebf90a561c74c5f74ea4e2826bce5262e4348d513",
+   "fetched_utc": "2026-10-27T21:33:54Z"
+  },
+  "notices/2026-04.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1405095,
+   "sha256": "30b49069bc1f96dcb62d50f97ae49e004f9430b066db4d2ae5c22dfa2dd6995d",
+   "fetched_utc": "2026-10-27T21:33:56Z"
+  },
+  "notices/2026-04.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1449139,
+   "sha256": "d0eeda15f4263ca520e9123ce9c4bbfe54463269d23c50734ac05b9f9a636e3b",
+   "fetched_utc": "2026-10-27T21:33:58Z"
+  },
+  "notices/2026-04.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1385908,
+   "sha256": "be6f2a92a1f044173e6c8cfcae6199721eb30c8d15fdce265780e746cc26ae25",
+   "fetched_utc": "2026-10-27T21:34:00Z"
+  },
+  "notices/2026-04.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1394430,
+   "sha256": "46d0a39b26292dc519a344afafb684ba91c4c36543a023f79daaa4665c859474",
+   "fetched_utc": "2026-10-27T21:34:03Z"
+  },
+  "notices/2026-04.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1380960,
+   "sha256": "e23577281b95999ff90c36c30cb57566f2a6e8f8f869aaa1b3a2df56131e712f",
+   "fetched_utc": "2026-10-27T21:34:04Z"
+  },
+  "notices/2026-04.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1383863,
+   "sha256": "8de5ee18d890917cd00c7208f109b4f6bf5165cf780b5f9c461f0112447414a8",
+   "fetched_utc": "2026-10-27T21:34:07Z"
+  },
+  "notices/2026-04.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1399308,
+   "sha256": "dc8520307c8986b1afbbbceb2a9b5da1d1d7d116fa13bb1c66246fc920df9122",
+   "fetched_utc": "2026-10-27T21:34:08Z"
+  },
+  "notices/2026-04.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1387062,
+   "sha256": "8e0b8e68064510682e662e8110e8fbcf7c206da2942aae1735e2b65ff7093f3b",
+   "fetched_utc": "2026-10-27T21:34:10Z"
+  },
+  "notices/2026-04.p013.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1055603,
+   "sha256": "67e0c7a823e8910616ec0f8eb0ef470e439ac3eca797ef79225648fab98ff0cd",
+   "fetched_utc": "2026-10-27T21:34:13Z"
+  },
+  "notices/2026-05.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1394767,
+   "sha256": "5aaf0c04aec7b9cf28bd3f29d734a423993fb44cb3c0e3d712be88d57d836b8d",
+   "fetched_utc": "2026-10-27T21:34:14Z"
+  },
+  "notices/2026-05.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1406181,
+   "sha256": "7ce80a6b0461ccc6b9578261944fef2cbebd48d53c24693076286e32a01bbb8e",
+   "fetched_utc": "2026-10-27T21:34:16Z"
+  },
+  "notices/2026-05.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1388738,
+   "sha256": "7897b1c6a2b31e453a1f3cb33a42029b3740d451f8197a917cb2dfde3d2ae713",
+   "fetched_utc": "2026-10-27T21:34:18Z"
+  },
+  "notices/2026-05.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1376300,
+   "sha256": "e0f5eb66cee523691023ecbdf8d15eb25346a78500504c9b8bb95bd289e357d6",
+   "fetched_utc": "2026-10-27T21:34:19Z"
+  },
+  "notices/2026-05.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1422713,
+   "sha256": "1dbe4106d3f0311fef001a5a1e156ef35e29a27852366689459242acda23dda2",
+   "fetched_utc": "2026-10-27T21:34:21Z"
+  },
+  "notices/2026-05.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1372875,
+   "sha256": "13c6ad030bc8c8764fcd51639cd98a2d4ca760df5859be3b267f9d07a61b2643",
+   "fetched_utc": "2026-10-27T21:34:23Z"
+  },
+  "notices/2026-05.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1402733,
+   "sha256": "fe39b53daed5a9d512c7a28c0359df0929d62193a276fdd0d93601bc7cb0ac40",
+   "fetched_utc": "2026-10-27T21:34:25Z"
+  },
+  "notices/2026-05.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1403851,
+   "sha256": "d86bdf021c0cd64c85c4b78e7fd96056feb5f0ca4934fb9fda132a7ce6c5fc4a",
+   "fetched_utc": "2026-10-27T21:34:27Z"
+  },
+  "notices/2026-05.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1371205,
+   "sha256": "b63c0c4dc5b3fd74667e623a17beee3f9a6c554c4fb1332b474ae6b2176ccf34",
+   "fetched_utc": "2026-10-27T21:34:29Z"
+  },
+  "notices/2026-05.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1385440,
+   "sha256": "f3d30c4013ea54d1e20d1a00fd80aef604f4a1c188bd70ec43c8467a011fe7c0",
+   "fetched_utc": "2026-10-27T21:34:30Z"
+  },
+  "notices/2026-05.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1347569,
+   "sha256": "190532391d231f30ac5b76af556bdc1354db16d1417887a4d0309dd95a1bee0e",
+   "fetched_utc": "2026-10-27T21:34:32Z"
+  },
+  "notices/2026-05.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1372944,
+   "sha256": "6c7ea6703032c1aab528a8a765043ed58ee451fc3e7bce3ae56a7d4fae00a58f",
+   "fetched_utc": "2026-10-27T21:34:34Z"
+  },
+  "notices/2026-05.p013.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1390425,
+   "sha256": "072c94e41f871f5493e994909085f0508de6fe72fcb15e7956e9012e779732ce",
+   "fetched_utc": "2026-10-27T21:34:35Z"
+  },
+  "notices/2026-05.p014.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 721464,
+   "sha256": "135c6441943c348fa367a2f19433e6eecb9f8a907a933e0ccca5ce1fde2f4179",
+   "fetched_utc": "2026-10-27T21:34:37Z"
+  },
+  "notices/2026-06.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1380801,
+   "sha256": "43e27af06b0dcd2abef740337c23754d3c2d62f9c2dcc30d9414cbf129af5021",
+   "fetched_utc": "2026-10-27T21:34:39Z"
+  },
+  "notices/2026-06.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1361442,
+   "sha256": "8f08a205fcfc4bf888f67f4108c0df2621f782fe20d4f5021c08dc0c619d45a8",
+   "fetched_utc": "2026-10-27T21:34:40Z"
+  },
+  "notices/2026-06.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1385856,
+   "sha256": "7e27e983d9e98020cd365a2a923156ab3e8588fb00cfbda9e1aff83b368e64ac",
+   "fetched_utc": "2026-10-27T21:34:42Z"
+  },
+  "notices/2026-06.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1370480,
+   "sha256": "2f392f58c7e2d0ee91f4027e771ec6c27270020b15f6cb7518f30968f5341ca2",
+   "fetched_utc": "2026-10-27T21:34:44Z"
+  },
+  "notices/2026-06.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1351555,
+   "sha256": "6dfad7804b00a363eb55081123c27ffd24b6fb5c430a909fc86b8dea09415054",
+   "fetched_utc": "2026-10-27T21:34:46Z"
+  },
+  "notices/2026-06.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1384970,
+   "sha256": "30893e8fc3aba6b170346ba27e94fa0d0c71551a03baf4bdc357df16ed0b1fa8",
+   "fetched_utc": "2026-10-27T21:34:48Z"
+  },
+  "notices/2026-06.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1370769,
+   "sha256": "8efbcd2b776c9a7c733b10cf0caaa48f5b8bee56761d463d1fa2012505793f21",
+   "fetched_utc": "2026-10-27T21:34:50Z"
+  },
+  "notices/2026-06.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1385370,
+   "sha256": "382004da2b3c457281cc2bb0724ab9b2434c57d1af3672452a79a16505621fd7",
+   "fetched_utc": "2026-10-27T21:34:51Z"
+  },
+  "notices/2026-06.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1371716,
+   "sha256": "fdb4daa9d5f47501bd5bce7b60aa7eb01b1a84747a377796335fde291a494d36",
+   "fetched_utc": "2026-10-27T21:34:53Z"
+  },
+  "notices/2026-06.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1373056,
+   "sha256": "5e43e8ece11db8de54d122df321a825fa12fed28c186f3f6dbb7c65da003af62",
+   "fetched_utc": "2026-10-27T21:34:55Z"
+  },
+  "notices/2026-06.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1384581,
+   "sha256": "a9ea763517e47e6d2365aaddcbbe0645ef70a732cb0e3f67eea643b75535b724",
+   "fetched_utc": "2026-10-27T21:34:57Z"
+  },
+  "notices/2026-06.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1383123,
+   "sha256": "4ffe8e12fe1937cd909b3a281c667e5f5816d575ea3fe06a773bf0671aa6a1fa",
+   "fetched_utc": "2026-10-27T21:34:58Z"
+  },
+  "notices/2026-06.p013.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1367226,
+   "sha256": "28adb8e57b1dbd06490d0346b9a58da96e6846560f669b635c8f32696fda021f",
+   "fetched_utc": "2026-10-27T21:35:00Z"
+  },
+  "notices/2026-06.p014.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1414200,
+   "sha256": "bc4635e92f7a70cd11d44988e058956c27ddfddebe87cbc735d0517821b8d816",
+   "fetched_utc": "2026-10-27T21:35:02Z"
+  },
+  "notices/2026-06.p015.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1388679,
+   "sha256": "1146b46b504b02481070ac2b05d8b5cd180572cbd5f65161d6a5394aa9061f00",
+   "fetched_utc": "2026-10-27T21:35:04Z"
+  },
+  "notices/2026-07.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1386751,
+   "sha256": "ed91b4cdee12d9c37246a1fffb8c1e84299d63da4993c927d701283dcf221692",
+   "fetched_utc": "2026-10-27T21:35:06Z"
+  },
+  "notices/2026-07.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1410243,
+   "sha256": "8c9c2babdc03b633c81ab6897686c40d226384a000a857d261c9969b24f81696",
+   "fetched_utc": "2026-10-27T21:35:08Z"
+  },
+  "notices/2026-07.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1438807,
+   "sha256": "4e2b596cfb526b65d5d3f1460d25bc17306c8389056afe9dca90594d0e184df8",
+   "fetched_utc": "2026-10-27T21:35:16Z"
+  },
+  "notices/2026-07.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1388753,
+   "sha256": "947188021a4b9789c8b7e38d52effa90acc69a76750f916322694bc9cc2af4ab",
+   "fetched_utc": "2026-10-27T21:35:19Z"
+  },
+  "notices/2026-07.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1384484,
+   "sha256": "824640239ebfe15c8d1c99e0e6a00c21f723d7e6f733790dca1eece31b8502c4",
+   "fetched_utc": "2026-10-27T21:35:21Z"
+  },
+  "notices/2026-07.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1403142,
+   "sha256": "d386e70272e9f089d9792459d8da71ad9cbaffd39ce8cb2e25c5ce866c99d363",
+   "fetched_utc": "2026-10-27T21:35:23Z"
+  },
+  "notices/2026-07.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1371046,
+   "sha256": "d3fc9db46df01e818625ee9e71f8000f959ae3c8ae55a442863624ddb25d59cf",
+   "fetched_utc": "2026-10-27T21:35:25Z"
+  },
+  "notices/2026-07.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1414123,
+   "sha256": "24c0b74a459b51df500a5485bce93989990307d8f92db23c6f714c2f5b3e71ee",
+   "fetched_utc": "2026-10-27T21:35:27Z"
+  },
+  "notices/2026-07.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1380903,
+   "sha256": "29b99ef3eceb86bf944359ea41a86f0d336b5d85e3bd204015dba18b09a73d1a",
+   "fetched_utc": "2026-10-27T21:35:29Z"
+  },
+  "notices/2026-07.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1383865,
+   "sha256": "2d32f689d2c0b893851788904dbd04d4def85de302e9bf350f0f7ba649e26ae8",
+   "fetched_utc": "2026-10-27T21:35:31Z"
+  },
+  "notices/2026-07.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1393937,
+   "sha256": "a136e059842aaf0eb2e8ef9982bed40f2f6950734eef98681fa4b7e9502a3f6c",
+   "fetched_utc": "2026-10-27T21:35:33Z"
+  },
+  "notices/2026-07.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1355095,
+   "sha256": "c2bee4d0e97ad8463b050424fc28ccab166c3d187067388a0073fa3db08c9da5",
+   "fetched_utc": "2026-10-27T21:35:35Z"
+  },
+  "notices/2026-07.p013.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 725902,
+   "sha256": "c4f02c64ca2c974c4099a971c81f1a1445ca9d7f07bcd78d6d4892e91d6260d6",
+   "fetched_utc": "2026-10-27T21:35:37Z"
+  },
+  "notices/2026-08.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1373115,
+   "sha256": "f545efcbc753e3f89f6dddb2e4ce4d07e184b51c1b06408ac41aa9f11ad82b79",
+   "fetched_utc": "2026-10-27T21:35:38Z"
+  },
+  "notices/2026-08.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1367386,
+   "sha256": "52c3f939204103cc7679fff8780b875586cc2512c285beacc1898ffa85b3873c",
+   "fetched_utc": "2026-10-27T21:35:40Z"
+  },
+  "notices/2026-08.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1360799,
+   "sha256": "4c9ea88220673edca5a02c88ea8f0ff040a3902621f2e66b80f071387e90d299",
+   "fetched_utc": "2026-10-27T21:35:42Z"
+  },
+  "notices/2026-08.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1356276,
+   "sha256": "da7f268a2dc6f4a60d38a3e47059ca40ce3b2c7c4fa674a8c6487e6e0e7dea2f",
+   "fetched_utc": "2026-10-27T21:35:43Z"
+  },
+  "notices/2026-08.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1378956,
+   "sha256": "54313d731559ae9e8535bf4e2fe1523477a076af69993dcb6a8f28a248e5c614",
+   "fetched_utc": "2026-10-27T21:35:45Z"
+  },
+  "notices/2026-08.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1395236,
+   "sha256": "4a619da8135cb2cc0b2d6c7da8c7c0f4a800403a91dfc78d6117074e36d07273",
+   "fetched_utc": "2026-10-27T21:35:47Z"
+  },
+  "notices/2026-08.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1384345,
+   "sha256": "6ea331f7c056f964dacc4e6f33493e120fc1a8a5cda3a2b3831125605f4aee98",
+   "fetched_utc": "2026-10-27T21:35:48Z"
+  },
+  "notices/2026-08.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1403292,
+   "sha256": "f0fa85b913a1b1bf3e31c914103bdbedfd42e6494c76beecfe32cfaf41e4abc1",
+   "fetched_utc": "2026-10-27T21:35:51Z"
+  },
+  "notices/2026-08.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1358723,
+   "sha256": "9255c22464b852e51b76961ba8b235f51769c5045f5a01086f8f8faaaea9dae0",
+   "fetched_utc": "2026-10-27T21:35:52Z"
+  },
+  "notices/2026-08.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1411236,
+   "sha256": "8048ad649ae685e71c2d423ab8bea7535c482e03c379b918e4b80bceb1ef7dc5",
+   "fetched_utc": "2026-10-27T21:35:55Z"
+  },
+  "notices/2026-08.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1284659,
+   "sha256": "ed82f34985ff5e0e1f60e1e3e99e0598cbdd69bd09b2b579768d08c29a86e9d6",
+   "fetched_utc": "2026-10-27T21:35:57Z"
+  },
+  "notices/2026-09.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1406980,
+   "sha256": "513a5b85d6c4a4812a1e3d3f54b3a93b221ab6e7a1f55ecb89e329e4ffdd084f",
+   "fetched_utc": "2026-10-27T21:35:58Z"
+  },
+  "notices/2026-09.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1381350,
+   "sha256": "7c766a66e625513afd77ce41c6ad203e5a37498ea0067df6a62dcdc52074c5a6",
+   "fetched_utc": "2026-10-27T21:36:00Z"
+  },
+  "notices/2026-09.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1404655,
+   "sha256": "a8eb156d3ff002b1f40d4ac6e93aa0966c1b5c24425df8ff20d3d10f05209987",
+   "fetched_utc": "2026-10-27T21:36:02Z"
+  },
+  "notices/2026-09.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1393958,
+   "sha256": "3d0069dcaf15d02fa3770a9a0f269b6dce4c6bd207f5f860d129d4863caa59f1",
+   "fetched_utc": "2026-10-27T21:36:04Z"
+  },
+  "notices/2026-09.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1384718,
+   "sha256": "06d5609f249ab415c27ef6d2f5324b91ea4f21b5554ed534fa299ec67846c251",
+   "fetched_utc": "2026-10-27T21:36:06Z"
+  },
+  "notices/2026-09.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1376615,
+   "sha256": "63d8a2978a02b4429ef2cefc31a58201bf45bdf9d8441535c383d88648a903ab",
+   "fetched_utc": "2026-10-27T21:36:08Z"
+  },
+  "notices/2026-09.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1376754,
+   "sha256": "dd563ae66206bdfb71b64b17bbf3f34c4741b128d6edb8080c228da43b74ea42",
+   "fetched_utc": "2026-10-27T21:36:09Z"
+  },
+  "notices/2026-09.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1386284,
+   "sha256": "749ba6a93c0b48ba71f65beb9df3fbeb1abab939e646b9685e1ce6ddb6571618",
+   "fetched_utc": "2026-10-27T21:36:11Z"
+  },
+  "notices/2026-09.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1388672,
+   "sha256": "ee7f1a40c2b9c3c7882c186549849654cd479b0b51e0b17de0b8aadd341c5510",
+   "fetched_utc": "2026-10-27T21:36:13Z"
+  },
+  "notices/2026-09.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1396044,
+   "sha256": "b6bc925ac59aa94759911e0e28a08dcf86eee823ca32bd18de1ea8fab7bab420",
+   "fetched_utc": "2026-10-27T21:36:14Z"
+  },
+  "notices/2026-09.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1408220,
+   "sha256": "d85c5c2980d3360a194ccf16463391271ae265dc16af074dbba307d058fcf1cd",
+   "fetched_utc": "2026-10-27T21:36:16Z"
+  },
+  "notices/2026-09.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1417700,
+   "sha256": "17ebf17a05109b51b2e6d1f13f7a726bc8b0b792b802be8ac773e32d0c37f1e0",
+   "fetched_utc": "2026-10-27T21:36:17Z"
+  },
+  "notices/2026-09.p013.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 847916,
+   "sha256": "9ac717f67d2e1675f8758c633bc3c93b4d19727d74283cb3fe5e65fe251271ed",
+   "fetched_utc": "2026-10-27T21:36:19Z"
+  },
+  "notices/2026-10.p001.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1381065,
+   "sha256": "931e603c8c9fa0cc8b5303be62ff3deb8b3d2b73e3b306dcdf1205b00207635c",
+   "fetched_utc": "2026-10-27T21:36:21Z"
+  },
+  "notices/2026-10.p002.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1398897,
+   "sha256": "af2216b7b11f9e9bdc71f0bc21dc0b9c008c068bc6e5c01e24d88c6bd067e2e0",
+   "fetched_utc": "2026-10-27T21:36:23Z"
+  },
+  "notices/2026-10.p003.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1426151,
+   "sha256": "8c8a466337690aa8481fec463cc2879967f3c7037a79be259208f5a491ea6857",
+   "fetched_utc": "2026-10-27T21:36:25Z"
+  },
+  "notices/2026-10.p004.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1388177,
+   "sha256": "3dba4e51d2ce788e4d717d667aa0a21055d0f17fa2cc845b4cf02e0e45cd9110",
+   "fetched_utc": "2026-10-27T21:36:27Z"
+  },
+  "notices/2026-10.p005.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1427946,
+   "sha256": "088b1a93af78ce2bd0dd6b04322e22f949559ea50992faff172ee107c5bf4b87",
+   "fetched_utc": "2026-10-27T21:36:28Z"
+  },
+  "notices/2026-10.p006.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1412774,
+   "sha256": "a0719fc432701f0fc2157f686ba76071606d55ad0df9f55636ec11d639aa334e",
+   "fetched_utc": "2026-10-27T21:36:31Z"
+  },
+  "notices/2026-10.p007.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1403158,
+   "sha256": "8088e9140c4b079860e1a968934c0c8a02cea078a400e8f982ccabd217bccd51",
+   "fetched_utc": "2026-10-27T21:36:32Z"
+  },
+  "notices/2026-10.p008.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1403901,
+   "sha256": "105cd17669395ccd18dfeb42985df0b34fb3ac6183635d36ac81651fb564ec30",
+   "fetched_utc": "2026-10-27T21:36:34Z"
+  },
+  "notices/2026-10.p009.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1431138,
+   "sha256": "bed73dd448c1f3950f6422ced570cd40f9ea5e21c4bf46ab7315f9324f899534",
+   "fetched_utc": "2026-10-27T21:36:36Z"
+  },
+  "notices/2026-10.p010.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1410326,
+   "sha256": "9531ef53168028b09f50579316cb460b4d77c5ff6a40ed151454aa6d02f60429",
+   "fetched_utc": "2026-10-27T21:36:38Z"
+  },
+  "notices/2026-10.p011.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1359373,
+   "sha256": "e528d697cf62f3e50adcb51786526c9d29b7475b889117a304866c4874494867",
+   "fetched_utc": "2026-10-27T21:36:39Z"
+  },
+  "notices/2026-10.p012.json": {
+   "url": "https://api.ted.europa.eu/v3/notices/search",
+   "method": "POST",
+   "status": 200,
+   "bytes": 368143,
+   "sha256": "f57c29856654e9b2a3e09a9c9902f08e5eeab60d4347805a71c63b2cb24b678a",
+   "fetched_utc": "2026-10-27T21:36:41Z"
+  },
+  "cpv_divisions.sparql.json": {
+   "url": "https://publications.europa.eu/webapi/rdf/sparql?query=PREFIX+skos%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E+SELECT+%3Fc+%3Flabel+WHERE+%7B+VALUES+%3Fc+%7B+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F03000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F09000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F14000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F15000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F16000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F18000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F19000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F22000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F24000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F30000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F31000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F32000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F33000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F34000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F35000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F37000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F38000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F39000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F41000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F42000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F43000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F44000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F45000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F48000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F50000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F51000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F55000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F60000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F63000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F64000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F65000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F66000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F70000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F71000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F72000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F73000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F75000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F76000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F77000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F79000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F80000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F85000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F90000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F92000000%3E+%3Chttp%3A%2F%2Fdata.europa.eu%2Fcpv%2Fcpv%2F98000000%3E+%7D+%3Fc+skos%3AprefLabel+%3Flabel+.+FILTER%28lang%28%3Flabel%29+%3D+%22en%22%29+%7D+ORDER+BY+%3Fc&format=application%2Fsparql-results%2Bjson",
+   "method": "GET",
+   "status": 200,
+   "bytes": 8992,
+   "sha256": "2259d1491864258b237116f24825a2fc227fe7b93e9e348f4d41b2626f87768f",
+   "fetched_utc": "2026-10-27T21:38:30Z"
+  }
+ },
+ "requests": {
+  "notices/2026-01.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-01.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260101 AND publication-date<=20260131 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-02.p013.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 13, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260201 AND publication-date<=20260228 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p013.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 13, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p014.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 14, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-03.p015.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 15, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260301 AND publication-date<=20260331 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-04.p013.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 13, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260401 AND publication-date<=20260430 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p013.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 13, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-05.p014.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 14, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260501 AND publication-date<=20260531 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p013.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 13, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p014.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 14, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-06.p015.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 15, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260601 AND publication-date<=20260630 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-07.p013.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 13, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260701 AND publication-date<=20260731 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-08.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260801 AND publication-date<=20260831 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-09.p013.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 13, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20260901 AND publication-date<=20260930 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p001.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 1, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p002.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 2, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p003.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 3, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p004.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 4, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p005.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 5, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p006.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 6, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p007.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 7, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p008.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 8, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p009.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 9, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p010.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 10, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p011.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 11, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}",
+  "notices/2026-10.p012.json": "{\"checkQuerySyntax\": false, \"fields\": [\"publication-number\", \"publication-date\", \"notice-type\", \"form-type\", \"title-proc\", \"description-proc\", \"classification-cpv\", \"main-classification-proc\", \"procedure-identifier\", \"official-language\", \"buyer-country\"], \"limit\": 250, \"page\": 12, \"paginationMode\": \"PAGE_NUMBER\", \"query\": \"publication-date>=20261001 AND publication-date<=20261026 AND official-language IN (ENG)\", \"scope\": \"ALL\"}"
+ },
+ "licence": {
+  "name": "Commission Decision 2011/833/EU (reuse of Commission documents)",
+  "url": "https://eur-lex.europa.eu/eli/dec/2011/833/oj/eng",
+  "notice": "Source: TED - Tenders Electronic Daily, (c) European Union, https://ted.europa.eu"
+ },
+ "query": {
+  "api": "https://api.ted.europa.eu/v3/notices/search",
+  "fields": [
+   "publication-number",
+   "publication-date",
+   "notice-type",
+   "form-type",
+   "title-proc",
+   "description-proc",
+   "classification-cpv",
+   "main-classification-proc",
+   "procedure-identifier",
+   "official-language",
+   "buyer-country"
+  ],
+  "limit": 250,
+  "windows": [
+   [
+    "2026-01-01",
+    "2026-01-31"
+   ],
+   [
+    "2026-02-01",
+    "2026-02-28"
+   ],
+   [
+    "2026-03-01",
+    "2026-03-31"
+   ],
+   [
+    "2026-04-01",
+    "2026-04-30"
+   ],
+   [
+    "2026-05-01",
+    "2026-05-31"
+   ],
+   [
+    "2026-06-01",
+    "2026-06-30"
+   ],
+   [
+    "2026-07-01",
+    "2026-07-31"
+   ],
+   [
+    "2026-08-01",
+    "2026-08-31"
+   ],
+   [
+    "2026-09-01",
+    "2026-09-30"
+   ],
+   [
+    "2026-10-01",
+    "2026-10-26"
+   ]
+  ],
+  "filter": "official-language IN (ENG)"
+ }
+}

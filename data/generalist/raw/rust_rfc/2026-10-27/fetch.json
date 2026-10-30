@@ -1,0 +1,224 @@
+{
+ "domain": "rust_rfc",
+ "snapshot": "2026-10-27",
+ "files": {
+  "rfcs.head.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/commits/HEAD",
+   "method": "GET",
+   "status": 200,
+   "bytes": 5850,
+   "sha256": "2c1ff30c85a903df9864acf669c460778b07c5c4e4e34f54ef0af04f02ab8792",
+   "fetched_utc": "2026-10-27T21:15:14Z"
+  },
+  "rfcs-1dc48d761daa.tar.gz": {
+   "url": "https://codeload.github.com/rust-lang/rfcs/tar.gz/1dc48d761daaa2a0c80135d91f30d20ebdfb97b2",
+   "method": "GET",
+   "status": 200,
+   "bytes": 2989565,
+   "sha256": "c9222c6417a438540333a6750bf21b4e9baa37830341871eba17a15556e70bf0",
+   "fetched_utc": "2026-10-27T21:15:14Z"
+  },
+  "pulls/page-001.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=1",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1433716,
+   "sha256": "07a815449eb0b461df5741aa2f0eea9c4b25bd689aa49b01aca1996dd8e77f5e",
+   "fetched_utc": "2026-10-27T21:15:19Z"
+  },
+  "pulls/page-002.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=2",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1530482,
+   "sha256": "72120575770b2bbcbc2cf8059d326f39f3767a151fb8b9f239811bc6673c55f7",
+   "fetched_utc": "2026-10-27T21:15:20Z"
+  },
+  "pulls/page-003.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=3",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1658544,
+   "sha256": "3fc0272dfaafed21b8af5e94f2d501f3d995df515a48c8a8dd9f06569974c688",
+   "fetched_utc": "2026-10-27T21:15:22Z"
+  },
+  "pulls/page-004.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=4",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1621422,
+   "sha256": "b6ef94c95ca8128e976bb22bf53f23afb42423ecbaefdf52f2dbe999bd141190",
+   "fetched_utc": "2026-10-27T21:15:24Z"
+  },
+  "pulls/page-005.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=5",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1555072,
+   "sha256": "1625403b70bc23341b780be9daa6c4d26bd62473f66c9a24db86fd9866ef4c78",
+   "fetched_utc": "2026-10-27T21:15:26Z"
+  },
+  "pulls/page-006.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=6",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1635808,
+   "sha256": "7924b45faee253c80ea7f066a3d076126ac3756240afe301d52789f9570dc0b0",
+   "fetched_utc": "2026-10-27T21:15:27Z"
+  },
+  "pulls/page-007.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=7",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1728016,
+   "sha256": "e856fc20c76e6926933c4e30752b8893b48c3f7d28d29fa83884632ca79fe491",
+   "fetched_utc": "2026-10-27T21:15:29Z"
+  },
+  "pulls/page-008.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=8",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1676213,
+   "sha256": "af087a671bbbc876429aa6858d903a51c9008fba36220dcd19c1997db42bfda1",
+   "fetched_utc": "2026-10-27T21:15:31Z"
+  },
+  "pulls/page-009.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=9",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1631622,
+   "sha256": "4ebc43a123994021701bbd4d0cdb871f18dfcc15742b95e26af716b2e35f303f",
+   "fetched_utc": "2026-10-27T21:15:33Z"
+  },
+  "pulls/page-010.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=10",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1662640,
+   "sha256": "ea16e020189c292fdb710d5826fab9ce1706363a6b7d1999a420457f474c3a91",
+   "fetched_utc": "2026-10-27T21:15:35Z"
+  },
+  "pulls/page-011.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=11",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1685064,
+   "sha256": "f1eb1742f6f31973dbec9c5f911b9827eaf80f01ff7cd894ae834c69ce234416",
+   "fetched_utc": "2026-10-27T21:15:38Z"
+  },
+  "pulls/page-012.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=12",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1653070,
+   "sha256": "d118dca04ee4adef6867d09b1ca8703e9f072688bbf4737b29ad3f2806db662d",
+   "fetched_utc": "2026-10-27T21:15:40Z"
+  },
+  "pulls/page-013.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=13",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1664474,
+   "sha256": "54c43d0fa40e5e076b18f9ecca1cd3da2ae09d8191f3353a65487ec17c9f43e8",
+   "fetched_utc": "2026-10-27T21:15:43Z"
+  },
+  "pulls/page-014.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=14",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1646703,
+   "sha256": "7f406c52ac37570572a0ffe474aae49b71b4c006d5bc3e68fae7792dc91be8e2",
+   "fetched_utc": "2026-10-27T21:15:45Z"
+  },
+  "pulls/page-015.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=15",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1545111,
+   "sha256": "4c6078147ab41f87ac900ba15cc2747db2b35b559a55015c8da36e2782b03189",
+   "fetched_utc": "2026-10-27T21:15:48Z"
+  },
+  "pulls/page-016.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=16",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1543939,
+   "sha256": "b4b20040e6cd06e11aacfdacf65358b76034e7ee81cf78ecbf100c513a365c0a",
+   "fetched_utc": "2026-10-27T21:15:50Z"
+  },
+  "pulls/page-017.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=17",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1552849,
+   "sha256": "cd12e246f46dc7d6a9764584f48073bfddeec760a175ba6956a858c80468ef93",
+   "fetched_utc": "2026-10-27T21:15:53Z"
+  },
+  "pulls/page-018.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=18",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1571140,
+   "sha256": "77d60a38089e9a33ccbc3e5aea23c1ec4339d7ef79312149d605889f6414fd36",
+   "fetched_utc": "2026-10-27T21:15:56Z"
+  },
+  "pulls/page-019.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=19",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1595475,
+   "sha256": "fa182e826b77b6677b7f4f436ae5b50be25d802205a93d3712f52dee1b44aba8",
+   "fetched_utc": "2026-10-27T21:15:58Z"
+  },
+  "pulls/page-020.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=20",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1623705,
+   "sha256": "a8c881d88cb2eaa383c5b44b5b8035a8f63f130642338368e6c5fde9808fb656",
+   "fetched_utc": "2026-10-27T21:16:01Z"
+  },
+  "pulls/page-021.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=21",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1680355,
+   "sha256": "e50b3bc7eba535dda9483c2436afca6b841e0fd5ec7b46131d89aa9e3af47427",
+   "fetched_utc": "2026-10-27T21:16:03Z"
+  },
+  "pulls/page-022.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=22",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1660825,
+   "sha256": "3a5ddd0c74ce383559c100a368eebc55177b28785b19dcd656627902490a309b",
+   "fetched_utc": "2026-10-27T21:16:05Z"
+  },
+  "pulls/page-023.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=23",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1708509,
+   "sha256": "8dea2bff681bb19067c397ccf8337d590ae2d3e11fcbb75cb9b2c37fa0090e99",
+   "fetched_utc": "2026-10-27T21:16:08Z"
+  },
+  "pulls/page-024.json": {
+   "url": "https://api.github.com/repos/rust-lang/rfcs/pulls?state=all&sort=created&direction=asc&per_page=100&page=24",
+   "method": "GET",
+   "status": 200,
+   "bytes": 269714,
+   "sha256": "1fe5f010c4aa591cbb7678e26a1b029e111f2c03b824074e360f0fb03befacb3",
+   "fetched_utc": "2026-10-27T21:16:09Z"
+  }
+ },
+ "licence": {
+  "name": "MIT OR Apache-2.0",
+  "url": "https://github.com/rust-lang/rfcs/blob/1dc48d761daaa2a0c80135d91f30d20ebdfb97b2/README.md#license",
+  "files": [
+   "https://github.com/rust-lang/rfcs/blob/1dc48d761daaa2a0c80135d91f30d20ebdfb97b2/LICENSE-MIT",
+   "https://github.com/rust-lang/rfcs/blob/1dc48d761daaa2a0c80135d91f30d20ebdfb97b2/LICENSE-APACHE"
+  ],
+  "note": "README: the repository is 'in the process of being licensed under either of' Apache-2.0 or MIT 'at your option. Some parts of the repository are already licensed according to those terms' (RFC 2044). The pull request titles and bodies used here are GitHub metadata of the repository."
+ },
+ "pull_pages": 24
+}

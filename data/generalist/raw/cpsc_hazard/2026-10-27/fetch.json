@@ -1,0 +1,19 @@
+{
+ "domain": "cpsc_hazard",
+ "snapshot": "2026-10-27",
+ "files": {
+  "recalls.json": {
+   "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json",
+   "method": "GET",
+   "status": 200,
+   "bytes": 27770629,
+   "sha256": "34d64142b4253cf1d112c02f9f4b0f5f7c6645d6bc0192973db2b302121b6e2b",
+   "fetched_utc": "2026-10-27T21:13:39Z"
+  }
+ },
+ "licence": {
+  "name": "US government work (public domain, 17 U.S.C. 105); CPSC: recall notices may be freely copied and distributed, please credit CPSC, no implied endorsement; recall photographs not used",
+  "url": "https://www.cpsc.gov/About-CPSC/Policies-Statements-and-Directives/Privacy-Policy",
+  "api": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information"
+ }
+}

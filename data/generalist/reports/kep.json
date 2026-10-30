@@ -1,0 +1,117 @@
+{
+ "domain": "kep",
+ "kind": "rec",
+ "rows": {
+  "train": 240,
+  "select": 21,
+  "test": 29
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 290,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "nb_accuracy": 0.92,
+   "best_constant": 0.92,
+   "margin_allowed": 0.25,
+   "telling_words": {
+    "Did not go ahead as proposed: withdrawn, rejected, replaced by another KEP, or deferred": [
+     "generate",
+     "advanced",
+     "defining",
+     "http",
+     "tls",
+     "testing",
+     "much",
+     "communicate",
+     "architecture",
+     "requires",
+     "built-in",
+     "framework"
+    ],
+    "Implemented: the enhancement was completed": [
+     "kubelet",
+     "volume",
+     "container",
+     "validation",
+     "allows",
+     "as",
+     "there",
+     "only",
+     "resources",
+     "without",
+     "io",
+     "default"
+    ]
+   },
+   "eval_items": 50
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/kubernetes/enhancements/blob/ea3e81a0d41dd3df7dae584ea584c31de56cd3cb/LICENSE"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.069,
+   "most_word_overlap": 0.4793,
+   "most_frequent_position": 0.5172,
+   "best_constant_answer": 0.931,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.525,
+     0.475
+    ],
+    "max_deviation": 0.025
+   },
+   "select": {
+    "gold_position_shares": [
+     0.476,
+     0.524
+    ],
+    "max_deviation": 0.024
+   },
+   "test": {
+    "gold_position_shares": [
+     0.483,
+     0.517
+    ],
+    "max_deviation": 0.017
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 235,
+   "p99": 354,
+   "max": 367,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

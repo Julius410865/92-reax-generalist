@@ -1,0 +1,12 @@
+{
+ "base": "/models/mammoth-1",
+ "tokenizer": "a5cd9732badce41d",
+ "rows_digest": "2d62781beffa9217",
+ "fraction": 0.25,
+ "rows": 49998,
+ "answered": 12415,
+ "failed": 0,
+ "tokens": 6508474,
+ "seconds": 1863.8,
+ "base_right": 0.6521
+}

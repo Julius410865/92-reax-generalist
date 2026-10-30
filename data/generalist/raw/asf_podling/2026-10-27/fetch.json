@@ -1,0 +1,35 @@
+{
+ "domain": "asf_podling",
+ "snapshot": "2026-10-27",
+ "files": {
+  "podlings-history.json": {
+   "url": "https://projects.apache.org/json/foundation/podlings-history.json",
+   "method": "GET",
+   "status": 200,
+   "bytes": 113721,
+   "sha256": "77d773e146397e1ab43f34cd38cf5e27ca66380a1598a129534cbc1601af7d7f",
+   "fetched_utc": "2026-10-27T21:32:57Z"
+  },
+  "podlings.json": {
+   "url": "https://projects.apache.org/json/foundation/podlings.json",
+   "method": "GET",
+   "status": 200,
+   "bytes": 11384,
+   "sha256": "af8a9b46c0b11843bde70ed8cd3cbfc9f3be0529783d1998cb783668c2df388b",
+   "fetched_utc": "2026-10-27T21:32:59Z"
+  },
+  "podlings.xml": {
+   "url": "https://svn.apache.org/repos/asf/incubator/public/trunk/content/podlings.xml",
+   "method": "GET",
+   "status": 200,
+   "bytes": 253042,
+   "sha256": "98f0b33016c850b6ee9fdb6d623c20c4116fefd5f1619ab35dcf2c152ffcb541",
+   "fetched_utc": "2026-10-27T21:33:01Z"
+  }
+ },
+ "licence": {
+  "name": "Apache-2.0",
+  "url": "https://www.apache.org/licenses/LICENSE-2.0",
+  "note": "ASF project metadata: projects.apache.org JSON (generated from the Incubator's podlings.xml, whose header states the Apache License 2.0)"
+ }
+}

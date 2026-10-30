@@ -1,0 +1,846 @@
+{
+ "design": "data/generalist/T2-MIX-DESIGN.md",
+ "builder": "tools/records/build_t2_mix.py",
+ "budget": {
+  "T_questions": 40000,
+  "N_questions": 26700,
+  "other_share_per_type": 0.3,
+  "hf_core_share": 0.3
+ },
+ "totals": {
+  "train_rows": 60190,
+  "T_questions": 40004,
+  "N_questions": 26705,
+  "N_share_of_questions": 0.4,
+  "other_folder_share": 0.173,
+  "select_rows": 5750,
+  "test_rows": 5750,
+  "check_rows": 5700,
+  "hf_s1_rows": 10550
+ },
+ "T_area_share": {
+  "arts": {
+   "got": 0.1,
+   "weight": 0.1
+  },
+  "knowledge": {
+   "got": 0.259,
+   "weight": 0.259
+  },
+  "language": {
+   "got": 0.259,
+   "weight": 0.259
+  },
+  "retrieval": {
+   "got": 0.2,
+   "weight": 0.2
+  },
+  "tools": {
+   "got": 0.183,
+   "weight": 0.183
+  }
+ },
+ "types": {
+  "arith_word_10": {
+   "target": 1256,
+   "got": 1256,
+   "from_t2": 879,
+   "t2_members": {
+    "arith_word_10": 879
+   },
+   "repeated": 0,
+   "from_other": 377,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "arith_word_4": {
+   "target": 1256,
+   "got": 1256,
+   "from_t2": 879,
+   "t2_members": {
+    "arith_word_4": 879
+   },
+   "repeated": 0,
+   "from_other": 377,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "arxiv_category": {
+   "target": 2669,
+   "got": 2669,
+   "from_t2": 2500,
+   "t2_members": {
+    "arxiv_category": 2500
+   },
+   "repeated": 169,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "best_of_32": {
+   "target": 2669,
+   "got": 2669,
+   "from_t2": 2500,
+   "t2_members": {
+    "best_of_32": 2500
+   },
+   "repeated": 169,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "causal_yesno": {
+   "target": 1256,
+   "got": 1256,
+   "from_t2": 879,
+   "t2_members": {
+    "causal_yesno": 879
+   },
+   "repeated": 0,
+   "from_other": 377,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "chess_best_move": {
+   "target": 628,
+   "got": 628,
+   "from_t2": 440,
+   "t2_members": {
+    "chess_best_move": 440
+   },
+   "repeated": 0,
+   "from_other": 188,
+   "other_folder": "t",
+   "other_share": 0.299,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "chord_from_notes": {
+   "target": 1882,
+   "got": 1882,
+   "from_t2": 1317,
+   "t2_members": {
+    "chord_from_notes": 1317
+   },
+   "repeated": 0,
+   "from_other": 565,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "clinical_trial_status": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "clinical_trial_status": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "code_output": {
+   "target": 1884,
+   "got": 1884,
+   "from_t2": 1319,
+   "t2_members": {
+    "code_output": 1319
+   },
+   "repeated": 0,
+   "from_other": 565,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "cpsc_hazard": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "cpsc_hazard": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "cve_severity": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "cve_severity": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "device_recall_class": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "device_recall_class": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "drug_marketing_status": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "drug_marketing_status": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "expense_policy": {
+   "target": 2670,
+   "got": 2671,
+   "from_t2": 1870,
+   "t2_members": {
+    "expense_policy": 1870
+   },
+   "repeated": 0,
+   "from_other": 801,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "fedreg_agency": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "fedreg_agency": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "food_recall_class": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "food_recall_class": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "income_tax": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1027,
+   "t2_members": {
+    "income_tax": 1027
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "intent_utterance": {
+   "target": 2669,
+   "got": 2669,
+   "from_t2": 1868,
+   "t2_members": {
+    "intent_utterance": 1868
+   },
+   "repeated": 0,
+   "from_other": 801,
+   "other_folder": "t",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "logic_multistep": {
+   "target": 3014,
+   "got": 3015,
+   "from_t2": 2109,
+   "t2_members": {
+    "logic_multistep": 2109
+   },
+   "repeated": 0,
+   "from_other": 906,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "next_api": {
+   "target": 1928,
+   "got": 1928,
+   "from_t2": 1349,
+   "t2_members": {
+    "next_api": 1349
+   },
+   "repeated": 0,
+   "from_other": 579,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "nhtsa_recall_component": {
+   "target": 2670,
+   "got": 2670,
+   "from_t2": 2670,
+   "t2_members": {
+    "nhtsa_recall_component": 2670
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "nli": {
+   "target": 4682,
+   "got": 4682,
+   "from_t2": 3277,
+   "t2_members": {
+    "nli": 3277
+   },
+   "repeated": 0,
+   "from_other": 1405,
+   "other_folder": "t",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "omniscience": {
+   "target": 1047,
+   "got": 1047,
+   "from_t2": 733,
+   "t2_members": {
+    "omniscience": 733
+   },
+   "repeated": 0,
+   "from_other": 314,
+   "other_folder": "t",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "parental_leave": {
+   "target": 1027,
+   "got": 1030,
+   "from_t2": 1030,
+   "t2_members": {
+    "parental_leave": 1030
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "payroll_overtime": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1027,
+   "t2_members": {
+    "payroll_overtime": 1027
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "poem_pair": {
+   "target": 2118,
+   "got": 2118,
+   "from_t2": 1483,
+   "t2_members": {
+    "poem_pair": 1483
+   },
+   "repeated": 0,
+   "from_other": 635,
+   "other_folder": "t",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "python_pep_status": {
+   "target": 2670,
+   "got": 2670,
+   "from_t2": 2396,
+   "t2_members": {
+    "python_pep_status": 276,
+    "proposal_status": 2120
+   },
+   "repeated": 274,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "refund_policy": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1027,
+   "t2_members": {
+    "refund_policy": 1027
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "rfc_status": {
+   "target": 2670,
+   "got": 2670,
+   "from_t2": 2670,
+   "t2_members": {
+    "rfc_status": 2670
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "shipping_rate": {
+   "target": 2670,
+   "got": 2670,
+   "from_t2": 1869,
+   "t2_members": {
+    "shipping_rate": 1869
+   },
+   "repeated": 0,
+   "from_other": 801,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "stance": {
+   "target": 1756,
+   "got": 1756,
+   "from_t2": 1229,
+   "t2_members": {
+    "stance": 1229
+   },
+   "repeated": 0,
+   "from_other": 527,
+   "other_folder": "t",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "storm_event_type": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1000,
+   "t2_members": {
+    "storm_event_type": 1000
+   },
+   "repeated": 27,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "story_continuation": {
+   "target": 2341,
+   "got": 2341,
+   "from_t2": 1639,
+   "t2_members": {
+    "story_continuation": 1639
+   },
+   "repeated": 0,
+   "from_other": 702,
+   "other_folder": "t",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "tool_call_decision": {
+   "target": 2169,
+   "got": 2171,
+   "from_t2": 1519,
+   "t2_members": {
+    "tool_call_decision": 1519
+   },
+   "repeated": 0,
+   "from_other": 652,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "tool_retrieval": {
+   "target": 1607,
+   "got": 1607,
+   "from_t2": 1125,
+   "t2_members": {
+    "tool_retrieval": 1125
+   },
+   "repeated": 0,
+   "from_other": 482,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "utility_tariff": {
+   "target": 1027,
+   "got": 1027,
+   "from_t2": 1027,
+   "t2_members": {
+    "utility_tariff": 1027
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "N"
+  },
+  "when2call": {
+   "target": 1607,
+   "got": 1607,
+   "from_t2": 1125,
+   "t2_members": {
+    "when2call": 1125
+   },
+   "repeated": 0,
+   "from_other": 482,
+   "other_folder": "gen",
+   "other_share": 0.3,
+   "shortfall": 0,
+   "part": "T"
+  },
+  "wildguard": {
+   "target": 1561,
+   "got": 1563,
+   "from_t2": 1563,
+   "t2_members": {
+    "wildguard": 1563
+   },
+   "repeated": 0,
+   "from_other": 0,
+   "other_folder": null,
+   "other_share": 0.0,
+   "shortfall": 0,
+   "part": "T"
+  }
+ },
+ "hf": {
+  "core_rows": 31746,
+  "kept": 10550,
+  "share": 0.332,
+  "by_category": {
+   "math_quant": 1874,
+   "knowledge_reasoning": 1625,
+   "tools_agent_routing": 1420,
+   "language_taste": 996,
+   "support_ops_logistics": 930,
+   "safety_security_harm": 850,
+   "rules_policy_law": 841,
+   "coding_data_it": 791,
+   "finance_commerce_insurance": 725,
+   "forecasting_risk_science": 498
+  },
+  "by_author_family": {
+   "openai": 3706,
+   "anthropic": 2222,
+   "qwen": 1622,
+   "code": 648,
+   "unknown": 579,
+   "mixed": 458,
+   "deepseek-ai": 456,
+   "zai-org": 365,
+   "programmatic": 206,
+   "deepseek": 107,
+   "moonshot": 91,
+   "moonshotai": 56,
+   "google": 34
+  }
+ },
+ "sources": {
+  "arith_word_10": "none (own generator)",
+  "arith_word_4": "none (own generator)",
+  "arxiv_category": "OpenAlex metadata CC0; abstracts CC BY 4.0 (per work, as recorded by OpenAlex) or CC0",
+  "best_of_32": "Abstracts: CC BY 4.0 (primary-location licence cc-by; attribution: each row's source_id is the OpenAlex work id, the DOI, authors' venue and landing page are in the saved API pages) or CC0 (licence cc0). OpenAlex metadata (titles, topics, ids): CC0",
+  "causal_yesno": "none (own generator)",
+  "chess_best_move": "CC0 1.0 (Lichess puzzle database)",
+  "chord_from_notes": "none (own generator)",
+  "clinical_trial_status": "ClinicalTrials.gov data (U.S. National Library of Medicine, NIH): public, no restrictions on use; the ClinicalTrials.gov Terms and Conditions ask users to cite ClinicalTrials.gov as the source and the date the data were retrieved (2026-10-29); record content is supplied by the study sponsors.",
+  "code_output": "none (own generator)",
+  "cpsc_hazard": "U.S. government work (CPSC), public domain",
+  "cve_severity": "U.S. government work (NIST NVD), public domain in the U.S.; CVE description text (c) The MITRE Corporation, used under the CVE Terms of Use (perpetual, worldwide, royalty-free licence to reproduce, prepare derivative works of and distribute CVE records). This product uses data from the NVD API but is not endorsed or certified by the NVD.",
+  "device_recall_class": "U.S. government work (FDA / openFDA), public domain (CC0)",
+  "drug_marketing_status": "U.S. government work (FDA Drugs@FDA via openFDA), public domain; openFDA data are released under CC0 1.0 (open.fda.gov/license)",
+  "expense_policy": "none (own generator; items are original, CC0 1.0)",
+  "fedreg_agency": "U.S. government work (Office of the Federal Register / GPO), public domain",
+  "food_recall_class": "U.S. government works, public domain: USDA FSIS recall and public health alert notices; FDA enforcement reports via openFDA (openFDA data released under CC0 1.0, open.fda.gov/license)",
+  "income_tax": "none (own generator; items are original, CC0 1.0)",
+  "intent_utterance": "CLINC150: CC BY 3.0; Banking77: CC BY 4.0",
+  "logic_multistep": "none (own generator)",
+  "next_api": "none (own generator; items are original, CC0 1.0)",
+  "nhtsa_recall_component": "U.S. federal government work; public domain under 17 U.S.C. 105 (NHTSA recall data)",
+  "nli": "OANC licence (permissive: free to use, modify and share) for the MultiNLI government, slate, telephone and travel genres, per the MultiNLI data statement (Williams, Nangia and Bowman 2018); the fiction genre is excluded because one of its works is CC BY-SA 3.0 and rows do not identify it",
+  "omniscience": "CC0 1.0 (Wikidata structured data)",
+  "parental_leave": "none (own generator; items are original, CC0 1.0)",
+  "payroll_overtime": "none (own generator; items are original, CC0 1.0)",
+  "poem_pair": "Public domain in the USA (Project Gutenberg texts, header/licence stripped)",
+  "proposal_status": "per register (see each file's 'licence'): CC0-1.0 (EIPs, ERCs, ACPs), Apache-2.0 (KEPs, Swift Evolution, KEEP, HIPs, TEPs), MIT (ZIPs), BSD-3-Clause (NumPy NEPs), public domain (EEPs), per-BIP licence headers, no licence file (SIMDs, AIPs, Ember RFCs: title and a short summary excerpt only)",
+  "python_pep_status": "Public domain / CC0-1.0 (every PEP is placed in the public domain or under CC0-1.0, PEP 1)",
+  "refund_policy": "none (own generator; items are original, CC0 1.0)",
+  "rfc_status": "IETF Trust Legal Provisions (TLP) 5.x: RFC text and RFC Editor index metadata may be reproduced with attribution (RFC abstracts and titles, (c) IETF Trust and the persons identified as the document authors)",
+  "shipping_rate": "none (own generator; items are original, CC0 1.0)",
+  "stance": "CC BY 4.0. args.me corpus (version 1.0-cleaned), Yamen Ajjour, Henning Wachsmuth, Johannes Kiesel, Martin Potthast, Matthias Hagen, Benno Stein (2020), Zenodo, doi:10.5281/zenodo.4139439, https://doi.org/10.5281/zenodo.4139439; described in Wachsmuth et al. (2017), 'Building an Argument Search Engine for the Web', Proceedings of the 4th Workshop on Argument Mining, pp. 49-59. Mirror used: https://huggingface.co/datasets/webis/args_me. Arguments originate from idebate.org and debatewise.org.",
+  "storm_event_type": "U.S. government work (NOAA NCEI), public domain",
+  "story_continuation": "Public domain in the USA: Project Gutenberg eBooks of works whose US copyright has expired; the distributor's header, footer and licence text are stripped and the Project Gutenberg trademark is not used in the rows",
+  "tool_call_decision": "none (own generator; items are original, CC0 1.0)",
+  "tool_retrieval": "none (own generator; items are original, CC0 1.0)",
+  "utility_tariff": "none (own generator; items are original, CC0 1.0)",
+  "when2call": "none (own generator; items are original, CC0 1.0)",
+  "wildguard": "ODC-BY 1.0 (Open Data Commons Attribution License). WildGuardMix (allenai/wildguardmix, revision d29c47f41c8b51348b5c8e8c81c039b3132b66d1): Seungju Han, Kavel Rao, Allyson Ettinger, Liwei Jiang, Bill Yuchen Lin, Nathan Lambert, Yejin Choi, Nouha Dziri (2024), 'WildGuard: Open One-Stop Moderation Tools for Safety Risks, Jailbreaks, and Refusals of LLMs', arXiv:2406.18495, https://arxiv.org/abs/2406.18495. Gated dataset; access granted under the AI2 Responsible Use Guidelines (https://allenai.org/responsible-use.pdf)."
+ },
+ "inputs_sha256": {
+  "gen/arith_word_10.select.jsonl": "89c1a737ca10d9d586c693357d96bb848cd7b74cb0301477ab58d42e48b2288f",
+  "gen/arith_word_10.test.jsonl": "4c7e241aebe8114ecd98a13df878866cdca728050af5dc39ef8642e07b105fd1",
+  "gen/arith_word_10.train.jsonl": "93acfa0236f9fe83cded499773ee327fccfa8fb85a2ba06c25efab72abc2e597",
+  "gen/arith_word_4.select.jsonl": "befc192c583a9cd2fb4aa7bcd3612dbdc2aee87e6ad98f1821fb48ffc2727ab8",
+  "gen/arith_word_4.test.jsonl": "7bc1705ad15e520602aeef5d32204ddb3fe9c4067d91f06d82ba57e880f0f9ea",
+  "gen/arith_word_4.train.jsonl": "062f85a65529b254cc8b3d542ef73f6ef107f0f00aa60479ec2f26ae181c7806",
+  "gen/causal_yesno.select.jsonl": "cb551b1ba224f10c7ed90e51b6d17f522446f7ee2c27bf52432bb5e77677f769",
+  "gen/causal_yesno.test.jsonl": "5fe08fefc39c4b6b507d0aa90ea71fddae6840756dcbf1729680ecc412d1d2e9",
+  "gen/causal_yesno.train.jsonl": "36400db528deff8c388d205e8b5af30138d5726261b12a530cee44b0a7b5ff03",
+  "gen/chord_from_notes.select.jsonl": "12ac76aa5f4a2f74182cfc8c8f07097aae68e2729dc9d5d16abbb1c7ffab7ebf",
+  "gen/chord_from_notes.test.jsonl": "7ae2faa046e3643c322f7117c3d99a53d5573a7269923815745e9cccdf03d40c",
+  "gen/chord_from_notes.train.jsonl": "1af58c66b2a978c319ff4df77132d40bc0297ba7543adaa0c3d95cddcf24ac9e",
+  "gen/code_output.select.jsonl": "5c96ebaf4429f6fe2b2fd886edc9769811957a97f471965f102e7574c77dabd2",
+  "gen/code_output.test.jsonl": "f5a77a0d9509b79b8ca1f4f1d997224f8ae3b7f69a1b8ad80253551f68da5882",
+  "gen/code_output.train.jsonl": "4f7c07057b64d0bbd78d26e12233af6976f0b89c450ce877a7e8a9608aa2cb7c",
+  "gen/expense_policy.select.jsonl": "fd3e4b908dec05cdf6a32ee418036636601aff0c54729982fa4296c9cac33a63",
+  "gen/expense_policy.test.jsonl": "4a1c3899f23cc6f8e109584b4456d5f961e0c5682f48af007d83972d3d3f23ed",
+  "gen/expense_policy.train.jsonl": "7019c11d1eec07871ed772ab6c13740f26a22f422cb62da4fe85feacdbb53f82",
+  "gen/logic_multistep.select.jsonl": "99f3af13deffec16f2894d44970a33ff4c0fcd27de135907baae9d764dc8618f",
+  "gen/logic_multistep.test.jsonl": "e49aea74dcf6cde03d498c88e61de73e68cd6069697e77c2687c764fcc811302",
+  "gen/logic_multistep.train.jsonl": "e17e0fa1942180e2decc92f06e1e636658eee7809981672e35c0e8103491fa83",
+  "gen/next_api.select.jsonl": "8d619ee8081a14251f5da1d3135fdfa21985d2456f1fb8d86b8aa77c83f22244",
+  "gen/next_api.test.jsonl": "a2117fe1a975f73364f2bd336fb7535e51e0ddfa497c318337e5b0f307d009fa",
+  "gen/next_api.train.jsonl": "037d5c5b3f879f1d9ea29caaf96ddb25b617854ce5a71aeafdc51c3f4a00d168",
+  "gen/shipping_rate.select.jsonl": "7a76421a391fb79f39c4d56b0ec2fbf3f13fe0fcbcdacd2c2b9a320f20929b80",
+  "gen/shipping_rate.test.jsonl": "45a2e2fe9cc0c9019a2428969fcf6e10db668c21a314f7e138460c4004bbfe53",
+  "gen/shipping_rate.train.jsonl": "93696e80d189f991d1e413092bff5b8f4862f3ece13e24fed905fda3227e5a52",
+  "gen/tool_call_decision.select.jsonl": "24507c363cba39b4598863946568dba5933a56d295948c2aca9597feab52a3a9",
+  "gen/tool_call_decision.test.jsonl": "7343c5d72d6ec692be12405e6664882bae2da33ab511cd209856698f1c38246b",
+  "gen/tool_call_decision.train.jsonl": "e2cde9a55b21acf29707e62859de4ce39a0d7679abd3090a53c56faf8c89f70d",
+  "gen/tool_retrieval.select.jsonl": "64de07f4964087df0f7b1fe74824cb294a67ad46c5e2b5881a48e974070d4644",
+  "gen/tool_retrieval.test.jsonl": "73d2c41fd2037e80b0cdee77cce44a562196f0add97386f295b1169b17cc7b77",
+  "gen/tool_retrieval.train.jsonl": "b618626dcffbaa5c3287729646a305eb00bcaa37de8066e9709f4186d545d5ac",
+  "gen/when2call.select.jsonl": "77f48e47626c10429317dbb622e96980a12a589d73cb22243d691732a8334665",
+  "gen/when2call.test.jsonl": "fd6d3c08f1a71329becc8668781e8f6c5dacbf6d7dc820f011be9f840efcb6b3",
+  "gen/when2call.train.jsonl": "3e1cd9f5c058daa93779d2df2599db87a7aa0d5c6a1afd1a34301726b5119aad",
+  "hf/sn92-generalist-train-v1/train-00000.jsonl.gz": "6724ab1b7aa1b2e9d5bcd6290a6397b98ee7bfea4416f1fc3fc6d61fc4830ec1",
+  "hf/sn92-generalist-train-v1/train-00001.jsonl.gz": "99996d8e2512e5924058e4280e077fd2a927504f1a6351600b1985e5005d2807",
+  "hf/sn92-generalist-train-v1/train-00002.jsonl.gz": "3ea8343ed60ef878155477a64edd6c071f1db70b3be27621c5ff84e9b1d40e2a",
+  "hf/sn92-generalist-train-v1/train-00003.jsonl.gz": "c97e8cca58a5c69e0f2d0def8c86ede8f3e955539753960462cac5bd45a2216b",
+  "hf/sn92-generalist-train-v1/train-00004.jsonl.gz": "de852e4682ac2bd61ecbbfe5997bda98df3417869e6ecd1aa09b62d683a12e73",
+  "hf/sn92-generalist-train-v1/train-00005.jsonl.gz": "22d2f3216d958c1bb501acb23801e7190136cf7103017ab2cb4b23c74f714faa",
+  "hf/sn92-generalist-train-v1/train-00006.jsonl.gz": "25cfa3faecf3cbc9553941a9a4059d7d4aaa6026bd957c90eaa01804a4592daa",
+  "hf/sn92-generalist-train-v1/train-00007.jsonl.gz": "f99416f99ff9c7c5cf018674f7271b1a664001e8df17acad16236345338ac7b2",
+  "hf/sn92-generalist-train-v1/train-00008.jsonl.gz": "4b301051fc8578a88a6f8ec56fb19f916bf3122b3f4b997d979b7a05c7c03572",
+  "hf/sn92-generalist-train-v1/train-00009.jsonl.gz": "b41a99ff12b53b9e65b0bb4f2cb78026ab6547371ea9eaa52b8f6e7e0068e0ce",
+  "hf/sn92-generalist-train-v1/train-00010.jsonl.gz": "1062087d62fa1cf29d4eaff9ab5c4d4c7b80914877fff8df39ebe29dfbd9bab8",
+  "t/chess_best_move.select.jsonl": "39ebf3b648979742bf9585742fff015f1ca5cd6a3e26f9d091426ad6f90f237b",
+  "t/chess_best_move.test.jsonl": "20f26c6183be848dd56c82c910a5641a35657c62a3acb5b00843f49f5d1a389c",
+  "t/chess_best_move.train.jsonl": "ac4a846212590f13c3bedcbe4587a1c8000ef2669f01a90265ed5f943cea3b0f",
+  "t/intent_utterance.select.jsonl": "e8823253439593c1873d8f7c8b459e9195d81d4efc1d21a7f37e273f97615091",
+  "t/intent_utterance.test.jsonl": "a7671d22a0847f5b1e8b47c1e226568c3d466f2c461986bf1a93d5b4a7947a92",
+  "t/intent_utterance.train.jsonl": "afcdc8cfd40351ab22325d9d756446c4ac54502c24ec6a2a995bcb065c4f6e1a",
+  "t/nli.select.jsonl": "df332572b12c5749e8880d94a2a80fc11a1987fa02f09bc3f4ece155d199edb0",
+  "t/nli.test.jsonl": "ea5c588cade6b4f94e3d9ab68c2f76025755f5b50d26e94ca275721bba2cc6f4",
+  "t/nli.train.jsonl": "7ffde897565efcba8bf5f3633aa2c1191044e1eb9a7932fd93ce251461694ed8",
+  "t/omniscience.select.jsonl": "6c379ddb8ccc2135eda19e096b1856ef21b30e7ce734bf292ac1c9b258f49000",
+  "t/omniscience.test.jsonl": "2acc7b8f1b74f810f847a282ed3a3c8698a1cb74d2498a4ee7eb01f5664332d8",
+  "t/omniscience.train.jsonl": "9603d7e106c7df20427ba344f767b22b881aaf9451dbd7e34f1615044a2c5979",
+  "t/poem_pair.select.jsonl": "e0b33a1aaa8f1d24caaafebcd771922e33d6f48fcf3f3d56fad31e77159cdf3b",
+  "t/poem_pair.test.jsonl": "c3a2e60b3dd2ec081632d569fa6170a3d58027608fe8953e49330574eec818b3",
+  "t/poem_pair.train.jsonl": "bd42c60e2e5811de90fc4ef720dbc7e3d3e1e2a0d13ea0d80e8260ae707b7b6c",
+  "t/stance.select.jsonl": "008f86b7554c8f1ced74c21f4d2ba3559bc6ff5dc0257e9db7b2cc6d1e067171",
+  "t/stance.test.jsonl": "fe6bf4dbc5492ecf3ec982696a468639055c34a71e58a8d2994a0d6e6dc62ad2",
+  "t/stance.train.jsonl": "1a25aac0c54c5a4c099bd039ba3af88db72267226e09c060089c08410d04c983",
+  "t/story_continuation.select.jsonl": "5f5b998abf9a846bc2a66f91f45302571205ba85263c4b99aa7c08111d340667",
+  "t/story_continuation.test.jsonl": "b8172a3f5c395310a203f89b3498eaf616fe05bf1f83c82f9fe75a2b6418a564",
+  "t/story_continuation.train.jsonl": "2b340204aba039db7fd71b96d2d6695d59f60b4d41a73d348fd2df41b2bb9dd7",
+  "t2/arith_word_10.select.jsonl": "bf3232bfd5e891e396a782d984a960b65089ee61e05e1c9aaca85bd5d0aab25b",
+  "t2/arith_word_10.test.jsonl": "c0a1b949ceffdb9b7152999acde6f1e031939662a526e9edccaf5969ca5ac448",
+  "t2/arith_word_10.train.jsonl": "bfd0bd0193441da4436203e6f1db9582e033ecdf45781a05ebeb4e439cd35599",
+  "t2/arith_word_4.select.jsonl": "49a7606b7a8f812a37875bf8f499ac5327ebd5a679549b636bd3691ab9c24690",
+  "t2/arith_word_4.test.jsonl": "b3c470dc846f6a35c0e6e10224697e2c2b3a05d9f46541f39320a4a653f1f205",
+  "t2/arith_word_4.train.jsonl": "5f0fa69c4dc325dfdf26fe2cd62564b32ecba763f846ad6e4d530c6f542627e5",
+  "t2/arxiv_category.select.jsonl": "22ae7cf59f4630530289fd110af31fa1fc371f16a4a1dc9d210ec30eb3203903",
+  "t2/arxiv_category.test.jsonl": "9ec90ff648a62349ab39312765de232d4b3406130bc30b6294e00aeef52abfc0",
+  "t2/arxiv_category.train.jsonl": "ef78fe3a1724d9f2cdb0b1b684110c40a4d97a769848dec42e3f0ddb803dc40c",
+  "t2/best_of_32.select.jsonl": "4ce632ebdce869ec1a4d80b46ae7f052b91437288d49d826990910d1bc8d307a",
+  "t2/best_of_32.test.jsonl": "cb594743176a9df7506fa820d999832bd79a17bf86e136edcaab6e0d2ab736e9",
+  "t2/best_of_32.train.jsonl": "43cb70792fec46ce929e5a3c242cf3fa5997808e880c57fe1f1cd464bfb56232",
+  "t2/causal_yesno.select.jsonl": "9096ecad125d51eb3c69b29a2d32dd6752e2f670614a520a121da8500b59374d",
+  "t2/causal_yesno.test.jsonl": "ab1858083d334ad1092b19e1c7d66fec5c651b77c875e35a904773fb3792a091",
+  "t2/causal_yesno.train.jsonl": "85329d46c80e3f1663ee228cc3b002420d6204e0ff9f44e38f7d6fab889f7390",
+  "t2/chess_best_move.select.jsonl": "c6e3294a6bc31096bfd1e9a5076b672c74d53aa9add98a2ab885aaa9971ef2cb",
+  "t2/chess_best_move.test.jsonl": "107c8b335896d4f132d8e33fc3f6df4141bb7eb6ee175345f5f8c46ec76fd5d1",
+  "t2/chess_best_move.train.jsonl": "c7428370201e5ddbf76d62fcc4e2bea8260ab33356e6b767f9610b6e26d2368a",
+  "t2/chord_from_notes.select.jsonl": "8fbe6db6985051f357998a07d9bf6548fd136ddda1b3112bac742ede3899eac6",
+  "t2/chord_from_notes.test.jsonl": "aa963c0f6877b18d093a084b7355a4e1ef9ddda86888c8f12f72c94457894274",
+  "t2/chord_from_notes.train.jsonl": "bf116a10bcf57cfe3f94357add2f43d080fccacdbb295895b5ae5b14b5091566",
+  "t2/clinical_trial_status.select.jsonl": "b9b39ff1cae3805fd0783e927f3f68bcd5bf1c11a0e6079b96d0e34158627269",
+  "t2/clinical_trial_status.test.jsonl": "4e2bdc7710358999f6e10a0287f3d826f921a49446a4429d7d3ddb93848dca06",
+  "t2/clinical_trial_status.train.jsonl": "7c0447997ad603b4c1e9caf07de7568edd08fb8c00fcab66235e6558af5c0334",
+  "t2/code_output.select.jsonl": "af1ba50c04f5baba38d6a3c338b5649be7b929f47cde62a6e1d94041f5f71c67",
+  "t2/code_output.test.jsonl": "02081cd344f18e8712c4b4791253f7c61b6ba8cd021a6ef567f66f8084361a68",
+  "t2/code_output.train.jsonl": "7b2a9d3d1e2ed1a69b765f94586a3e3ac0ac36ca2324b35e059e9ed51181b03d",
+  "t2/cpsc_hazard.select.jsonl": "3cf692255ab7f0b07630f8e79bada6eba12f38078cef9dd3bb1eff3f9ae7821f",
+  "t2/cpsc_hazard.test.jsonl": "a2938083aea48d4ac8a69108a942d2ba52ae359ce4dd8e006fcd9777e43a964f",
+  "t2/cpsc_hazard.train.jsonl": "ca754e7a48d5214ad9ae8dba50e859211c8e6412d5aa42e932dd92f9c407c52a",
+  "t2/cve_severity.select.jsonl": "878f8279e7502838cc914baa6a4d8f17bda39e006ee2b3bbc6a317bd43571cba",
+  "t2/cve_severity.test.jsonl": "ddbf5007ad5bbe5490ccbaebab44e2599ee49f275270b523d60cc7f9e4c16145",
+  "t2/cve_severity.train.jsonl": "56f89937439c32a4a123fb8780ec964a25f7f20eecc61aa66d42857c82869634",
+  "t2/device_recall_class.select.jsonl": "5cf17594ed22b5f1d0f526caaaf7b2d1c8e300c5df506b1f2592e5ceaac65f6a",
+  "t2/device_recall_class.test.jsonl": "2c4fa8fd12060383116b1d40c5df3e680f65c25e2b4666a5af4aa2469ee8b544",
+  "t2/device_recall_class.train.jsonl": "cd3eec36e122b008a44cd7036735456b1e2b493ec9e77f0c07c5e1a0578fdce1",
+  "t2/drug_marketing_status.select.jsonl": "b9d89577ada59cb00d48811de4a99f327cc59aeaf4ca79b6793e41a766a7bd39",
+  "t2/drug_marketing_status.test.jsonl": "e439417c20b0c252f5560c9bba1219f52bb0a050db001aa98b96a571ab091eb0",
+  "t2/drug_marketing_status.train.jsonl": "735525b9c20976eedb8cec8416e0c205dfdeea6054265b48973b90fb9ec014d1",
+  "t2/expense_policy.select.jsonl": "bd28efd9256936fcd2a7eb355f79eb5ab44be0ee96564f80e13d75c4ad660270",
+  "t2/expense_policy.test.jsonl": "f3d9a08c3d6a0d1222c39775745992f3c650886e55e718e5c0f77541f69d6a17",
+  "t2/expense_policy.train.jsonl": "510aefce370c8756dea22543a52e40b8b6beb0aa759b2456cfb0fa33f70147d7",
+  "t2/fedreg_agency.select.jsonl": "5218d31925b4815f232554fad9a5393898e4d578bd734b26014d687543fc098e",
+  "t2/fedreg_agency.test.jsonl": "fc3ee76c25bc6891896ffec6c7b5b332768712e5c15ef8eebb2f64b82c916c2c",
+  "t2/fedreg_agency.train.jsonl": "df475be9f3825cfa8d5660e984b7994e17d8ec46ebedd455b282a4294cea1d5a",
+  "t2/food_recall_class.select.jsonl": "cdf9568def4a64a5c4182517ec986b34cba7d8894ad6746e43a412c76e9237b4",
+  "t2/food_recall_class.test.jsonl": "3849f043dc8421b2ab1e3edb4fe9d567c3053ca7d7d7f015476b61bb6d58d9a4",
+  "t2/food_recall_class.train.jsonl": "683ed7072e5abc2c0561ce1baa111502f3c2ffdf2ba1e949e3a84187eb9eff71",
+  "t2/income_tax.select.jsonl": "edc8e1997dee0eb2e4c2680622586d6013953b71d811abd84fbdde7bcab2cc06",
+  "t2/income_tax.test.jsonl": "f64eac70547d390c14f4bbe5495791b2d7d5ecbdee20c96f26d5be42aac5b8b6",
+  "t2/income_tax.train.jsonl": "8191fe92d304eef93cbad7b540c53356504c68d0f6459721d95557308d26a2c1",
+  "t2/intent_utterance.select.jsonl": "8393003e6228bf96e655a0a738e007865ade25040030f7091044e9b2a446ac3a",
+  "t2/intent_utterance.test.jsonl": "4cc7e8e814670a5554c91c9adb97b7542aae8d9144f09ef6c19d4507f4537ec5",
+  "t2/intent_utterance.train.jsonl": "cfa9490687d2ab77d18c579f98393878fd77d06c4db45027da2e3ea0b5f9e76f",
+  "t2/logic_multistep.select.jsonl": "fd46e327cf04795e5e137e7c4bb1a3f6282bd261b5019fc1cda6cdbcac798c31",
+  "t2/logic_multistep.test.jsonl": "b5fa119d198c67b9c1aecba4cfa11cab73c9d3d8b6705435b2399d6630852d21",
+  "t2/logic_multistep.train.jsonl": "17d4187ec64b1cfd0b676996f8c526aeacaf2391428be17ca65860f8ed014b22",
+  "t2/next_api.select.jsonl": "07c0a4bbfc862bdf843aefe48e167983dcf6c2fd14815a5bdbe0f53e62d74318",
+  "t2/next_api.test.jsonl": "b6ea8302dca0feff09dd21a3156be9f9eca2a701c4a3d6b19350448b77df6936",
+  "t2/next_api.train.jsonl": "16f255786c09ff369a128c48de53bca8ee70fea2cc732864217e1e7a56f49ea5",
+  "t2/nhtsa_recall_component.select.jsonl": "6ae3ba1278bb0e1b251e910c0dee5b88c35ce85b8b4c39aaf3d4ab8e5c1ce4a7",
+  "t2/nhtsa_recall_component.test.jsonl": "4ab79622b39aaef875e8360dceaad7534aad013f64dcdcc93933b4d176a15f2a",
+  "t2/nhtsa_recall_component.train.jsonl": "d09b18b314b18a96eafa370516fb2b8953a07c18a5185b0c0c44457026578d5d",
+  "t2/nli.select.jsonl": "14e1aaf6a1a0d99d77505d9be1e6e80f74d36ec54de3ffe2f8e62283e4eed30c",
+  "t2/nli.test.jsonl": "1630924eba0d53402b75869df3b65c831038174cc9ef284b75608d18c00dd819",
+  "t2/nli.train.jsonl": "57dda5fb719f496dcd2b715be68b4fa858bf02c67687e291cb58825d51e8cb6d",
+  "t2/omniscience.select.jsonl": "bca473d2e6df06f328978f328c7165cef3b3450982b41ec6ff35de378e5db442",
+  "t2/omniscience.test.jsonl": "e96637769af7c0c67064ce5145dab5888afd871b1615a601ba2764b97fdcc496",
+  "t2/omniscience.train.jsonl": "112f3a2e1f1d9d870f716c20d48b34e1292e8ccc6a79ae11a5ca34134156afd0",
+  "t2/parental_leave.select.jsonl": "290628e90ce79d8ba76c7de593394553c58785133ab6f5ca0e7c06163d1c6774",
+  "t2/parental_leave.test.jsonl": "cc4764ea3ff8b8c643ea234f3a4cc35578b7fa739d7d00f8fa7b76f2bfc862d8",
+  "t2/parental_leave.train.jsonl": "25cd9249ec5fc53ae37cc3bc7f47c543210e9d2bd2ec32f56c6e8384a0a7b222",
+  "t2/payroll_overtime.select.jsonl": "91ae5e29c2f9c5d89476cd8923952e71d45dd4a4aa5b112f310afb7b531c1da2",
+  "t2/payroll_overtime.test.jsonl": "731c2aa152a4dccf94fe79b4842ccad31b6ea769cffe6cfcc02b316b2ffb5042",
+  "t2/payroll_overtime.train.jsonl": "a43daa4b4b6ad8cc263863f6ca5b4cfed60c08de83692df4187a46480f9fa256",
+  "t2/poem_pair.select.jsonl": "21e4510a08db34f70682801da2d9896cb7d7c6a6ecdd076da282f1a15e42bf34",
+  "t2/poem_pair.test.jsonl": "2242f1c6744cb7131d8dc9f675fd82126898b066258e73017f1ecf6a1b183c1f",
+  "t2/poem_pair.train.jsonl": "b0e22bf87643b39fa6fa9a58a27f9b4857b90e1d48ecace48db092307d487cc7",
+  "t2/proposal_status.select.jsonl": "cfb5f3d932846bbf0f897ed6aa9898f9ba6088699448cd01e7274b32807779ea",
+  "t2/proposal_status.test.jsonl": "88af9fb47f4528b34350d1346c8c3c9e62784ec569bb962ce6bbb30948d69c1b",
+  "t2/proposal_status.train.jsonl": "1d7ff337a90a7a5412719cd0dd48281952e3725e616aca7850b8e45b8f5f2cef",
+  "t2/python_pep_status.select.jsonl": "3b784fb3c9090195b9d87cd791554c119f892f46a547ec64c71de7b929406ada",
+  "t2/python_pep_status.test.jsonl": "60491a7f756a387429a0ea753f24bcba1b35e0822b7f92450d92e459c42da7d4",
+  "t2/python_pep_status.train.jsonl": "3410365357cef8e2557e9584e7a96c11bfdcaad5c366b721b975aef9c4846093",
+  "t2/refund_policy.select.jsonl": "1fc508ff99b2ad7f2b4088b1fe663186f3fd910cb5b5ef36b4b2c84a79d6f957",
+  "t2/refund_policy.test.jsonl": "a46f76d15deb9c7132ca450bce3e606c7068297b12fb67aa555cadc2ba7f949b",
+  "t2/refund_policy.train.jsonl": "704e909a01bbf2e3154814e09bc3d8a3ce1ebb846fc0b99dbe97033e2065d43f",
+  "t2/rfc_status.select.jsonl": "7058bd192c00bce2bc1d77cd2e7b8172e9ba90aaf81da4b7d0fea9a2073d97ea",
+  "t2/rfc_status.test.jsonl": "e79fe207ea3a17499b2ded6de8861dfeaf15b0c3e4799fdbb2770da672974114",
+  "t2/rfc_status.train.jsonl": "070f51e8f8402bcac4e548ef4508e3e6b703eb1ec9c28a50fe8e3e2216da18d6",
+  "t2/shipping_rate.select.jsonl": "3029b7fefd5077316bc8da6919e394c3635a6c0fa65212cee4433eae9e782114",
+  "t2/shipping_rate.test.jsonl": "1a1e9ea3b17ac5893b6a04fd49053ccd17a8863ad5df9820291e6acf199cdfc8",
+  "t2/shipping_rate.train.jsonl": "6fb1d8760affd5c7f7dd94d36e15e6686f8d966e57d9b866cfb509f7c7c5c9e0",
+  "t2/stance.select.jsonl": "8a63415548aad62c1deb76cbd624958c773ae78902d3be84829936f9da86a8ec",
+  "t2/stance.test.jsonl": "0a625d81d50de0e621e4de32cc1b33576324c8d1da5211cac07bf6305865ff15",
+  "t2/stance.train.jsonl": "bc43c8768c92a1eca06b1926cfd76f793ae306331a59b803fdb76d8de21724ff",
+  "t2/storm_event_type.select.jsonl": "cc5f4f5cd4f459c52d3f4d98cea0db095fee5cdd1c94ed47c2a7f89662f57217",
+  "t2/storm_event_type.test.jsonl": "765406bd8832ace57fefb6401c5efbbd55092319d9633c674a5a1141ea3dce9c",
+  "t2/storm_event_type.train.jsonl": "2b71a0d7ae33c9156944cb20d2fba7b691c22a9b49657f96ea8e8ce060d4bb47",
+  "t2/story_continuation.select.jsonl": "811c9f7403e240692303ab15c607e39d4378afd2ff23198aee4bbe952c41fef7",
+  "t2/story_continuation.test.jsonl": "282ae22dfe8dc2f2931e75b56a07370a3e2f7073a00a5665c33155682167eca9",
+  "t2/story_continuation.train.jsonl": "2eb64c4e42feffb117017aa6bbb13c9d2b57b7b8e93d71168cfbc64d92476272",
+  "t2/tool_call_decision.select.jsonl": "9f634215cd783ec10f6f1954cdf834e0b03d944473aa99608591ef269844faf0",
+  "t2/tool_call_decision.test.jsonl": "bdd60aefae7d4db8a4ed4ddd0197ae18a66c23b931b0cd2b5f50cfe9a6c20a93",
+  "t2/tool_call_decision.train.jsonl": "e7ffc0887703f960437e21e19c8b462d8a4c8360f0b0a5e4c5ab1393fdab4e99",
+  "t2/tool_retrieval.select.jsonl": "34b1d3d3e7bc021c134abe0c1f2f3b84c5131154b012600162b4c4b8a29cf580",
+  "t2/tool_retrieval.test.jsonl": "aaf626ead773dc44c9605af7978afdc01b7bb32a4466725477aba7ceca90dbfd",
+  "t2/tool_retrieval.train.jsonl": "a8e8e57aef736860d3de65dfa9a26cda7fde0b0d80c8076bc1e64976e932b7a9",
+  "t2/utility_tariff.select.jsonl": "995a0e7f414e33a156078793355d1cc6db1c84063af44771f24cb9d084ac510a",
+  "t2/utility_tariff.test.jsonl": "7266e73a1a6619ac03d441be068a758678e66dced91573822660c91f802500da",
+  "t2/utility_tariff.train.jsonl": "2094a0b1dacd1f242b21f0708e5c4aa1334ce076f4a7a0b11c8f05bc8e65ae29",
+  "t2/when2call.select.jsonl": "efff44d6b30676c7077c6dcf8b9a4b62ea71fbd28a2fb68ec0d343928dbd90eb",
+  "t2/when2call.test.jsonl": "076e5e5f1b3874ef8501c1fc13f8a025e5f1155c93f046ed550b448de0bf5392",
+  "t2/when2call.train.jsonl": "501bbe2f8880b29a961bca26b84522522e2303dda4a428ee312aa53c1b058f36",
+  "t2/wildguard.select.jsonl": "9b62417a5d9111e69eeba299e08faf37fbb6c7e8e3a262c657881d112a7649ad",
+  "t2/wildguard.test.jsonl": "65d060121be879fe5a503171391b7400097e33036f6c8525717789b9d59f68fc",
+  "t2/wildguard.train.jsonl": "e2667010cb31559b5dc495ef79dbd3b1547fb22aedb6d36595354dfa3d5f514c"
+ },
+ "outputs_sha256": {
+  "MIX-train.jsonl": "d7dfaad9b578af5d3701535412ceb770b1073c88d270494825c0ee6dc7abd8f8",
+  "MIX-select.jsonl": "959a6e779875737415e7dd28b9f46d6621a25be68d3d942e785dc0be9fe135d5",
+  "MIX-test.jsonl": "f7ae341025b37eaee88be6b6d96a08528356f1dc18a7c448dbca812ca87889d4",
+  "MIX-check.jsonl": "96ecfa72ba86b73a1b5eeedf6d5a20e134439a00bd01003e0cbb0d106ff17d1c",
+  "MIX-hf_s1.jsonl": "402f42f190ab46138a2cacb9b0865d1f896307d0d34a6a507c7f742fbb6944dc",
+  "MIX-stage.json": "a59ab4632c47ab153a867bcf50169fac7a9b1f668d837513024b4cb991e1d242"
+ }
+}

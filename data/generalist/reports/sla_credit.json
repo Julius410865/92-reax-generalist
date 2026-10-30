@@ -1,0 +1,86 @@
+{
+ "domain": "sla_credit",
+ "kind": "gen",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": []
+  },
+  "second_solver": {
+   "pass": true,
+   "questions": 3300,
+   "disagreements": 0,
+   "examples": []
+  },
+  "boundary_tests": {
+   "pass": true,
+   "summary": "2 passed in 0.24s"
+  },
+  "shortcut": {
+   "longest_option": 0.1588,
+   "most_word_overlap": 0.1915,
+   "most_frequent_position": 0.2115,
+   "best_constant_answer": 0.0006,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.191,
+     0.196,
+     0.198,
+     0.212,
+     0.202
+    ],
+    "max_deviation": 0.012
+   },
+   "select": {
+    "gold_position_shares": [
+     0.16,
+     0.233,
+     0.173,
+     0.233,
+     0.2
+    ],
+    "max_deviation": 0.04
+   },
+   "test": {
+    "gold_position_shares": [
+     0.227,
+     0.153,
+     0.22,
+     0.173,
+     0.227
+    ],
+    "max_deviation": 0.047
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 460,
+   "p99": 513,
+   "max": 521,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

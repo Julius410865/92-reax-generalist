@@ -1,0 +1,143 @@
+{
+ "domain": "ntsb_injury",
+ "task_type": "ntsb_injury_severity",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "Public domain (US government work, 17 U.S.C. 105; NTSB aviation accident database)",
+  "url": "https://www.usa.gov/government-works",
+  "source_page": "https://data.ntsb.gov/avdata"
+ },
+ "sources": {
+  "avdata.index.html": {
+   "url": "https://data.ntsb.gov/avdata",
+   "sha256": "d2e72e09802abedc3d09b39fae7c0995c323ed11172fdec498d39bf98a8ef816"
+  },
+  "avall.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=avall.zip",
+   "sha256": "bc74fefb1b39e1b86700a4be82b8ff6014bb1f6d81008524de73f2ddbd38b052"
+  },
+  "up08OCT.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=up08OCT.zip",
+   "sha256": "1d64465696d13b6500cc313ee2ed637f36dc979a8e69cd906b6ec5ab72c913de"
+  },
+  "up15OCT.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=up15OCT.zip",
+   "sha256": "7503a188a8f0b371319cfbb1f5bf8f5d3a29c3d95e3168eba4bcb519192b9c3f"
+  },
+  "up22OCT.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=up22OCT.zip",
+   "sha256": "6892ff7aa538fbcb71101261f657a62821dc80d87dbbc47d8f0326feda7eb433"
+  },
+  "eadmspub.pdf": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=eadmspub.pdf",
+   "sha256": "5073128dc8be4cc2e483f8138d1d124c2451f3f9b0df7c760bb08ab49d71ba79"
+  },
+  "MDB_Release_Notes.pdf": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=MDB_Release_Notes.pdf",
+   "sha256": "2bdd9ec386afc3ef7d9970d01553649f9a4b36715095480479c89bfc8eff80ca"
+  }
+ },
+ "apply_order": [
+  "avall.zip",
+  "up08OCT.zip",
+  "up15OCT.zip",
+  "up22OCT.zip"
+ ],
+ "label_field": "events.ev_highest_injury (agreeing with events.inj_tot_* and the injury table)",
+ "labels": {
+  "FATL": "Fatal: at least one person died",
+  "SERS": "Serious: the worst injury was serious (such as a fracture or over 48 hours in hospital), nobody died",
+  "MINR": "Minor: the worst injury was minor",
+  "NONE": "None: nobody was injured"
+ },
+ "events_read": 31410,
+ "dropped_by_filter": {
+  "not an NTSB-investigated accident": 6608,
+  "not exactly one aircraft / narrative": 326,
+  "highest injury conflicts with the injury totals / injury table": 91,
+  "no final report (preliminary or factual only)": 1074,
+  "highest injury missing or unknown": 25
+ },
+ "candidates": 23286,
+ "dropped_unrenderable_scrub_or_duplicate": 63,
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 3322.5,
+   "cap": 9967
+  },
+  "select": {
+   "median": 189.0,
+   "cap": 567
+  },
+  "test": {
+   "median": 198.0,
+   "cap": 594
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 4,
+   "class_prior": {
+    "None: nobody was injured": 1579,
+    "Fatal: at least one person died": 532,
+    "Minor: the worst injury was minor": 506,
+    "Serious: the worst injury was serious (such as a fracture or over 48 hours in hospital), nobody died": 383
+   },
+   "gold_position": {
+    "A": 741,
+    "B": 728,
+    "C": 789,
+    "D": 742
+   },
+   "options": {
+    "4": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 0,
+   "class_prior": {
+    "None: nobody was injured": 72,
+    "Fatal: at least one person died": 34,
+    "Serious: the worst injury was serious (such as a fracture or over 48 hours in hospital), nobody died": 24,
+    "Minor: the worst injury was minor": 20
+   },
+   "gold_position": {
+    "A": 39,
+    "B": 44,
+    "C": 33,
+    "D": 34
+   },
+   "options": {
+    "4": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 0,
+   "class_prior": {
+    "None: nobody was injured": 80,
+    "Fatal: at least one person died": 35,
+    "Minor: the worst injury was minor": 21,
+    "Serious: the worst injury was serious (such as a fracture or over 48 hours in hospital), nobody died": 14
+   },
+   "gold_position": {
+    "A": 37,
+    "B": 40,
+    "C": 29,
+    "D": 44
+   },
+   "options": {
+    "4": 150
+   }
+  }
+ },
+ "files": {
+  "ntsb_injury.train.jsonl": "7fed75319a4f83a28f8f372532f66022209096312c3f577e743664f8ac05bf85",
+  "ntsb_injury.select.jsonl": "3333c4085d9398eed27fe01cabd1b9587920b82ed7cebef2affee73636a7dd00",
+  "ntsb_injury.test.jsonl": "d38f0b2c3ae76ee10be9ef0eb1d60293cb7dc15e4ecca207c4bde5bcbf2610db"
+ }
+}

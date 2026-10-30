@@ -1,0 +1,23 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/all.json",
+ "stage": "all",
+ "split": "train",
+ "digest": "6eaaefbed61b975f",
+ "tokenizer": "a5cd9732badce41d",
+ "sources": {
+  "openai_anthropic": {
+   "items": 69273,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "n_records": {
+   "items": 31715,
+   "unconvertible": 0,
+   "files": 1
+  }
+ },
+ "rows": 100981,
+ "tokens": 68236088,
+ "over_max_len": 7,
+ "render_failed": 0
+}

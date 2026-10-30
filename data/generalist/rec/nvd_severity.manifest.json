@@ -1,0 +1,279 @@
+{
+ "domain": "nvd_severity",
+ "task_type": "nvd_cvss_severity",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "NVD public domain; CVE descriptions: CVE Terms of Use (MITRE)",
+  "url": "https://www.cve.org/Legal/TermsOfUse",
+  "notice": "CVE descriptions (c) The MITRE Corporation, reproduced under the CVE Terms of Use"
+ },
+ "sources": {
+  "api": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+  "pages": 75,
+  "sampling": {
+   "days": [
+    "2024-01-01",
+    "2024-01-16",
+    "2024-01-31",
+    "2024-02-15",
+    "2024-03-01",
+    "2024-03-16",
+    "2024-03-31",
+    "2024-04-15",
+    "2024-04-30",
+    "2024-05-15",
+    "2024-05-30",
+    "2024-06-14",
+    "2024-06-29",
+    "2024-07-14",
+    "2024-07-29",
+    "2024-08-13",
+    "2024-08-28",
+    "2024-09-12",
+    "2024-09-27",
+    "2024-10-12",
+    "2024-10-27",
+    "2024-11-11",
+    "2024-11-26",
+    "2024-12-11",
+    "2024-12-26",
+    "2025-01-10",
+    "2025-01-25",
+    "2025-02-09",
+    "2025-02-24",
+    "2025-03-11",
+    "2025-03-26",
+    "2025-04-10",
+    "2025-04-25",
+    "2025-05-10",
+    "2025-05-25",
+    "2025-06-09",
+    "2025-06-24",
+    "2025-07-09",
+    "2025-07-24",
+    "2025-08-08",
+    "2025-08-23",
+    "2025-09-07",
+    "2025-09-22",
+    "2025-10-07",
+    "2025-10-22",
+    "2025-11-06",
+    "2025-11-21",
+    "2025-12-06",
+    "2025-12-21",
+    "2026-01-05",
+    "2026-01-20",
+    "2026-02-04",
+    "2026-02-19",
+    "2026-03-06",
+    "2026-03-21",
+    "2026-04-05",
+    "2026-04-20",
+    "2026-05-05",
+    "2026-05-20",
+    "2026-06-04",
+    "2026-06-19",
+    "2026-07-04",
+    "2026-07-19",
+    "2026-08-03",
+    "2026-08-08",
+    "2026-08-18",
+    "2026-08-23",
+    "2026-09-02",
+    "2026-09-07",
+    "2026-09-17",
+    "2026-09-22",
+    "2026-10-02",
+    "2026-10-07",
+    "2026-10-17",
+    "2026-10-22"
+   ],
+   "stride_days": 15,
+   "page": 2000,
+   "window": "one UTC day per request (pubStartDate T00:00:00.000 to pubEndDate T23:59:59.999)",
+   "noRejected": true
+  },
+  "files_sha256": {
+   "cves/2024-01-01.00000.json": "8a80c1883af84e05acc24d4f3a828e017c3a6d02447cd5dd63a85712431abc68",
+   "cves/2024-01-16.00000.json": "b62e03929591cb72947ce86cc680787642b0662546567d0963e98547b7126aa2",
+   "cves/2024-01-31.00000.json": "506f6d976bfeb29965be84b4a847f89ebdcc48f4c78426c80ba5ee489ba4eedc",
+   "cves/2024-02-15.00000.json": "efae76a1c1c7d489b6717ca1197e9344e3d147979f5055a60b135e86e0f3b607",
+   "cves/2024-03-01.00000.json": "30bfe2a43630fb6ffb14dfc0f6d0316c8e0cae2e89911d9a41744334fd008187",
+   "cves/2024-03-16.00000.json": "3c6bbbf6ea63d0c1d608d49563fcde901f3aa0c1e572316e60ae9d07490f1099",
+   "cves/2024-03-31.00000.json": "c6bc2b1e4e3d2f9ef35c5bf1707fcc0d8c0dd4b1b5dd472581cbb9e62c3b4bf7",
+   "cves/2024-04-15.00000.json": "33f7c7ed127c79a44019a994a7cbfa8384dff0cdeabc88a3034bfbd58332c291",
+   "cves/2024-04-30.00000.json": "99941fe95149e41c831abbbdcef5f2ca3d87e1506fca79910a30f7ef3f7cd9b1",
+   "cves/2024-05-15.00000.json": "b12bcf0dc055c48b8eb01f48fc060a6e55c76486cf1a11cd220cce9d8febd485",
+   "cves/2024-05-30.00000.json": "f0b5c1a5af3833fb98f6f3626e9cc0151f57eeb020bd86b899dd56eb2a477546",
+   "cves/2024-06-14.00000.json": "e1b0c9716f8148e9c333aaf40c6292b9f66fbc708dbff656e2b8cb1c7550e489",
+   "cves/2024-06-29.00000.json": "dcd36c6ef0e07036e7953f1055fdc14078fb84d9bcdaab2e20e706934e08a19f",
+   "cves/2024-07-14.00000.json": "a2c11bf05feecff1f39098066afcc7a1d3fb2642699a4c536c111b9495682549",
+   "cves/2024-07-29.00000.json": "639da32d191ac7c1acce92315110bf0429d55a6941363f7d066663d342bc3148",
+   "cves/2024-08-13.00000.json": "074a6edaafb07b1c508543128bc8349d345d9a7f548cbcd5830a26ea7b79089f",
+   "cves/2024-08-28.00000.json": "3f3df18c8e6376fe2901288bf45bfc3d2a8544ad4f65488a2ad3e8f5b025a3d3",
+   "cves/2024-09-12.00000.json": "fddd37051656daf437c222bd524bf77bb26075d9825d7c5d65071cea355f4552",
+   "cves/2024-09-27.00000.json": "725bd34f9136c9d42e67231fb8991be56838b7b4711d0ca0d933214e940dbb2c",
+   "cves/2024-10-12.00000.json": "84ed9903bc5aad3eccf73523ec27b9be1349c54b8d4faf674da32993272d2f01",
+   "cves/2024-10-27.00000.json": "530c3e5d5a95bc34b844fb669f72e755d0eede3888a85cbc261d0bfd2d8a5a2e",
+   "cves/2024-11-11.00000.json": "106f0027172ea06d38aada20aea03e316c6f0ad0fb99ca09421751599bb10b7d",
+   "cves/2024-11-26.00000.json": "9b6ee1db27c96855e4843e4369210b07923c4a30315afff41c8734d2b5fb813c",
+   "cves/2024-12-11.00000.json": "8a92f9fa200cf9d4888b8d2c4b399c1cfe37662f92e711de09d2cc6ac0408708",
+   "cves/2024-12-26.00000.json": "7993d41a98e3968a839d9bc567694386a938b49eb203d937cec016881396393f",
+   "cves/2025-01-10.00000.json": "e13f00ce954a685d56b4f254b78fc661c178bff596c8ba0b927a3c07e3e637b7",
+   "cves/2025-01-25.00000.json": "10a79979aa3a66b368ad2a3bb6f84a3ec68aba732d2e06a4aa9694181f366279",
+   "cves/2025-02-09.00000.json": "44dd4d5ece14c22b6faa7ff6ab06dd7be90b920c4d9b8da93c8d00e487277ede",
+   "cves/2025-02-24.00000.json": "53ecfc8d710d263091e8afa51ec6fb6dfac64d1161405b2a957cf96e4c6604bd",
+   "cves/2025-03-11.00000.json": "72a1ac2d5525c60ddfe4b5261f31faaac830bcb4ef0af67168f8f5bf2c5d6306",
+   "cves/2025-03-26.00000.json": "91faf46ef67a6592454126e7e46cd8bc9bc28e10882ad7d25580bb4259a1065d",
+   "cves/2025-04-10.00000.json": "da9e38011797a6ae5384beaf680f8ce97d0f17deab399a3edfef64a9acd15f6d",
+   "cves/2025-04-25.00000.json": "e668d5702e54c24e2807d3fd0c3b960d3ca97f8f196e38f47f87f5258c2e5859",
+   "cves/2025-05-10.00000.json": "61c7a899ccf16b8b34e007e39a380f54333e5fe161ef7965db309a0384929db0",
+   "cves/2025-05-25.00000.json": "8972d400847796c88c2c9405d21128eebd2bc9df23fe5c9ae77a1917eaa69a0f",
+   "cves/2025-06-09.00000.json": "8e64e5a20764e00c35a63d371cfbf2888a3c0d1de8f10ec890cd1428762d38e8",
+   "cves/2025-06-24.00000.json": "df438fbe2c3309aee9837dd163f7012b839241fd055df57992c7b109ae21cc5c",
+   "cves/2025-07-09.00000.json": "c298eeb6f30691a1723013fda43cf9ed71ccf156cfe2aa8b4158e97517482628",
+   "cves/2025-07-24.00000.json": "d66efdc7dfc4cb206f934d055404060642230561ad9c5cbd66ad08fe99ceedca",
+   "cves/2025-08-08.00000.json": "338111d6a50f814ff8bad2c13a0f76a524a2e9d45f6eab1a5075d56a217e02d8",
+   "cves/2025-08-23.00000.json": "c8b3252a822528b47d3f0033736ede034d4eaf19c056995208b1144bcde7ed45",
+   "cves/2025-09-07.00000.json": "4f3d552ee1880e4f46aeb1875b138f634e27159924bf26d703474f955b095d47",
+   "cves/2025-09-22.00000.json": "1f59d83fdd83fad4abce586d2966b49c6649f7f1d6406664caffbe4b6533d463",
+   "cves/2025-10-07.00000.json": "efdb6deb0666086660d5b6909252c89f7ea97aa098dc5366291ab82d400b61ca",
+   "cves/2025-10-22.00000.json": "2fca5f084fae72f933a4bede32a31e580d3d3d9fece7b456108daa4e31489761",
+   "cves/2025-11-06.00000.json": "15a144d38e4440ebf79f65b71314c16f6e157fb8b4876c99a3f1f680a741311f",
+   "cves/2025-11-21.00000.json": "92ea34681a55e710743ebae0b8bf4b86c0ccb6484179183460fa27192670e96b",
+   "cves/2025-12-06.00000.json": "45a975ce190b59e05c1361c60082acde75a98e1a70e790f9a9f39e336907a2aa",
+   "cves/2025-12-21.00000.json": "7007b8d4c1111e5db4d46a531700f38d62519392a4f5889c54e0094d3dc8de74",
+   "cves/2026-01-05.00000.json": "ab1fd634a334271e5b04bc2e37e477583ef05f552755db4fa2884b47f4146e5f",
+   "cves/2026-01-20.00000.json": "92efc6bcf3657d5542d6f00d099292bcb6e19591bc82dde4e54602564ea58df4",
+   "cves/2026-02-04.00000.json": "b7f3eff06b2cc6ff4aff4e673d75f1101b2502818d15674359ed4faeca6ae20d",
+   "cves/2026-02-19.00000.json": "b3f0b875f10d2228dae0e2216d2762551b27ca314ac3c7c89d6e52990f6ab6d3",
+   "cves/2026-03-06.00000.json": "751b2c617b7a45d49f2d10069b3e4f7e99918e57f9feb95ee9bae632e0a1eaae",
+   "cves/2026-03-21.00000.json": "43d3b7ce11db7d955c3d77f155c5e712519758d1eba958ed3ad1ad47c092e981",
+   "cves/2026-04-05.00000.json": "cae3b4a97347b80a7ba951875a1d0052e84f642f1150a6eb16dc9e5c9fd44b40",
+   "cves/2026-04-20.00000.json": "96ec65df4e75f147e24ad9a1ce4ea14733988cbc67d97ecce52e9ec8531d0126",
+   "cves/2026-05-05.00000.json": "9f9c3bbf5d137fe8d280c5ddde8f59fc34227186d7e5b76db2f21eff185e353c",
+   "cves/2026-05-20.00000.json": "f411385e38f9888f5b99e66c5089ace126d3a6009261fa531afeaffcce182c2c",
+   "cves/2026-06-04.00000.json": "6c473a8a58302adc40a0f99a7a9d5e8cc87c95cd0ffbdbddb9435cb232f461b0",
+   "cves/2026-06-19.00000.json": "eb3eb6af5ee8b2360f41ed96f5259723b130cd1e177fb52b11e5fde8ebe0d2d3",
+   "cves/2026-07-04.00000.json": "a2d55843c6b9daf41dcf16adebcdb76a353d1eed15f85fd0fb044d8e18d6cfa2",
+   "cves/2026-07-19.00000.json": "2f1202255e7946e53a789716bd61ab0adc35eaa5251c8577cae399af9a26621b",
+   "cves/2026-08-03.00000.json": "b9dcd6f63da24f6a39ac347eb0994275fa3a0baa2456e8b4884d6c7c66bbe7c6",
+   "cves/2026-08-08.00000.json": "cff72f436f9d57dffec377d860cb260a91624fe3f0829375a2a8c94bca57bc6c",
+   "cves/2026-08-18.00000.json": "620200957184b7fbce9a3ce286f9d3e649fc3fe214ac344c745d469a8ab8d65d",
+   "cves/2026-08-23.00000.json": "294137896dea1d6166ef387048d9fcbaf9fd52066addb2e6d32fe4805dd9ccfc",
+   "cves/2026-09-02.00000.json": "abc382f8275de7685e0c547995781392006c51a745d5c6e01d20a16f6ffb402d",
+   "cves/2026-09-07.00000.json": "09bdf916121cc7c651b270789875dc329b2d1f569a4f5a94610dd2d6f05b8578",
+   "cves/2026-09-17.00000.json": "be092060971c133bfb9e9e409916a3145691bda48a14a6d5e6d67c94d0347183",
+   "cves/2026-09-22.00000.json": "bc99044129d5134d2d7188bb8ae9442c2084079066d1718a76c137bc12e284f5",
+   "cves/2026-10-02.00000.json": "21c1760d13c38f317fed584e5cfa6ce1d9c1fd348872e474968e0bbf2affc162",
+   "cves/2026-10-07.00000.json": "0f00136edf01d90aab6a0c759fea3480e8c6c78fa525d42482465da6e0fd23c9",
+   "cves/2026-10-17.00000.json": "7e801162c28803df1a0b5ef297361487936fe6a67cc32d8f1c15ae97887ae58d",
+   "cves/2026-10-22.00000.json": "21cce7101edb86d7f3a1151205a14ee7da0e5c6074117cf1b189214fff1521db"
+  },
+  "excluded_cves_from": "data/generalist/raw/ghsa_severity/2026-10-27 (github-reviewed aliases)"
+ },
+ "label_field": "metrics.cvssMetricV31 / cvssMetricV30 [].cvssData.baseSeverity (primary preferred)",
+ "labels": {
+  "LOW": "Low (CVSS v3 base score 0.1-3.9)",
+  "MEDIUM": "Medium (CVSS v3 base score 4.0-6.9)",
+  "HIGH": "High (CVSS v3 base score 7.0-8.9)",
+  "CRITICAL": "Critical (CVSS v3 base score 9.0-10.0)"
+ },
+ "records_read": 14439,
+ "label_from": {
+  "cvssMetricV30 secondary": 74,
+  "cvssMetricV31 primary": 3267,
+  "cvssMetricV31 secondary": 8776
+ },
+ "dropped": {
+  "CVE of a GitHub-reviewed advisory (left to ghsa_severity)": 998,
+  "conflicting secondary metrics, no primary": 20,
+  "description marked ** ... ** (disputed, unsupported, ...)": 2,
+  "no CVSS v3 metric": 1301,
+  "same item text as a CVE of another severity": 227,
+  "same item text as a CVE of the same severity (one kept)": 460,
+  "severity NONE": 1
+ },
+ "dropped_unrenderable_or_scrub": 174,
+ "kept_before_caps": 11256,
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 2628.0,
+   "cap": 7884
+  },
+  "select": {
+   "median": 160.5,
+   "cap": 481
+  },
+  "test": {
+   "median": 138.5,
+   "cap": 415
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 962,
+   "class_prior": {
+    "Medium (CVSS v3 base score 4.0-6.9)": 1348,
+    "High (CVSS v3 base score 7.0-8.9)": 1167,
+    "Critical (CVSS v3 base score 9.0-10.0)": 377,
+    "Low (CVSS v3 base score 0.1-3.9)": 108
+   },
+   "gold_position": {
+    "A": 733,
+    "B": 770,
+    "C": 734,
+    "D": 763
+   },
+   "options": {
+    "4": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 54,
+   "class_prior": {
+    "Medium (CVSS v3 base score 4.0-6.9)": 67,
+    "High (CVSS v3 base score 7.0-8.9)": 62,
+    "Critical (CVSS v3 base score 9.0-10.0)": 18,
+    "Low (CVSS v3 base score 0.1-3.9)": 3
+   },
+   "gold_position": {
+    "A": 33,
+    "B": 39,
+    "C": 36,
+    "D": 42
+   },
+   "options": {
+    "4": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 54,
+   "class_prior": {
+    "Medium (CVSS v3 base score 4.0-6.9)": 67,
+    "High (CVSS v3 base score 7.0-8.9)": 60,
+    "Critical (CVSS v3 base score 9.0-10.0)": 14,
+    "Low (CVSS v3 base score 0.1-3.9)": 9
+   },
+   "gold_position": {
+    "A": 45,
+    "B": 33,
+    "C": 38,
+    "D": 34
+   },
+   "options": {
+    "4": 150
+   }
+  }
+ },
+ "files": {
+  "nvd_severity.train.jsonl": "d361de5cd7494d56e5a5a49451858b697c73857b7d8e2341a67f62fab3818960",
+  "nvd_severity.select.jsonl": "accb45e8a7135f6bf5bb6db1c7b495a460b42aef4142f080acba1a14bb9285c4",
+  "nvd_severity.test.jsonl": "396f136ed9f0a27c6d3cfaaaa48b2a0b36ed0e380636c6c4f6f3e7a14e6dbf58"
+ }
+}

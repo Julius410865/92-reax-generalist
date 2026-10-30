@@ -1,0 +1,1336 @@
+{
+ "what": "types added to t2 on 2026-10-29 (new files only; no existing t2 file changed)",
+ "check_generalist_pass": {
+  "insurance_payout": true,
+  "loan_approval": true,
+  "warranty_claim": true,
+  "coupon_stacking": true,
+  "library_fine": true,
+  "toll_charge": true,
+  "building_permit_fee": true,
+  "sla_credit": true
+ },
+ "types": {
+  "congress_bill_status": {
+   "source": "dataset/n_records (congress.gov API, built 2026-10-27)",
+   "licence": "US government work, public domain",
+   "gold_basis": "record's structured status field",
+   "splits": {
+    "train": {
+     "rows": 1027,
+     "questions": 1027,
+     "task_type": [
+      "congress_bill_status"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 29,
+      "1": 25,
+      "2": 23,
+      "3": 23
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "congress_bill_status"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 27,
+      "1": 21,
+      "2": 29,
+      "3": 22
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "congress_bill_status"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 21,
+      "1": 26,
+      "2": 24,
+      "3": 29
+     }
+    }
+   },
+   "sha256": {
+    "congress_bill_status.train.jsonl": "a19545a1b8916cbd99b0d7a624029a7d8391e96b83d83691e3738574d922f44f",
+    "congress_bill_status.select.jsonl": "38ec85cbccf0ddc1eaaaa122035c821c92d832f65efec44ba860b03b6798bce3",
+    "congress_bill_status.test.jsonl": "75f90b99a1f32b3a3f8802055abdf2c0d710135134b2bb5cdf35fc5ed3aee74f"
+   }
+  },
+  "ghsa_severity": {
+   "source": "dataset/n_records (GitHub Advisory Database)",
+   "licence": "CC-BY-4.0",
+   "gold_basis": "record's structured severity field",
+   "splits": {
+    "train": {
+     "rows": 1027,
+     "questions": 1027,
+     "task_type": [
+      "ghsa_severity"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 25,
+      "1": 25,
+      "2": 25,
+      "3": 26
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ghsa_severity"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 27,
+      "1": 23,
+      "2": 23,
+      "3": 28
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ghsa_severity"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 29,
+      "1": 17,
+      "2": 31,
+      "3": 23
+     }
+    }
+   },
+   "sha256": {
+    "ghsa_severity.train.jsonl": "56fde2b08e0f52b668355ef6f12415d09ee90b5b25ba239136ff9ce368f32fcc",
+    "ghsa_severity.select.jsonl": "09fc543d3c4227b16cb8a6a196badc41847560652ff4ee8643668fc21699b2fc",
+    "ghsa_severity.test.jsonl": "4f0916749e021e479be8389d73a75b69318a9f4a4204d552be722a685cdbffc7"
+   }
+  },
+  "ntrs_subject_category": {
+   "source": "dataset/n_records (NASA NTRS)",
+   "licence": "US government work, NTRS Public Use Permitted",
+   "gold_basis": "record's subject category field",
+   "splits": {
+    "train": {
+     "rows": 1027,
+     "questions": 1027,
+     "task_type": [
+      "ntrs_subject_category"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 4,
+      "1": 5,
+      "2": 3,
+      "3": 5,
+      "4": 5,
+      "5": 4,
+      "6": 3,
+      "7": 4,
+      "8": 4,
+      "9": 4,
+      "10": 3,
+      "11": 4,
+      "12": 4,
+      "13": 3,
+      "14": 3,
+      "15": 4,
+      "16": 5,
+      "17": 3,
+      "18": 4,
+      "19": 5,
+      "20": 5,
+      "21": 3,
+      "22": 4,
+      "23": 4,
+      "24": 3,
+      "25": 3
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ntrs_subject_category"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 3,
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 4,
+      "6": 4,
+      "7": 7,
+      "8": 2,
+      "9": 5,
+      "10": 1,
+      "11": 2,
+      "12": 5,
+      "13": 4,
+      "14": 7,
+      "15": 4,
+      "16": 3,
+      "17": 3,
+      "18": 3,
+      "19": 4,
+      "20": 3,
+      "21": 3,
+      "22": 3,
+      "23": 5,
+      "24": 5,
+      "25": 5
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ntrs_subject_category"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 4,
+      "1": 3,
+      "2": 4,
+      "3": 3,
+      "4": 1,
+      "5": 4,
+      "6": 5,
+      "7": 5,
+      "8": 3,
+      "9": 5,
+      "10": 1,
+      "11": 6,
+      "12": 3,
+      "13": 3,
+      "14": 3,
+      "15": 3,
+      "16": 3,
+      "17": 6,
+      "18": 5,
+      "19": 4,
+      "20": 5,
+      "21": 4,
+      "22": 6,
+      "23": 5,
+      "24": 3,
+      "25": 2
+     }
+    }
+   },
+   "sha256": {
+    "ntrs_subject_category.train.jsonl": "08e6601a495bd53f183a3c31346e6882ac5bea9dfbfbaaa845b3b5043948d8a2",
+    "ntrs_subject_category.select.jsonl": "ea845472b37eac178326f760c6a0bff92836bd249b6f20757b57efa0cabb4575",
+    "ntrs_subject_category.test.jsonl": "883c25fda34b8b913e1f2daa1b3806f01e175baddd776e69ffddeafaae4c78cf"
+   }
+  },
+  "ntsb_injury_severity": {
+   "source": "dataset/n_records (NTSB aviation database)",
+   "licence": "US government work, public domain",
+   "gold_basis": "record's injury severity field",
+   "splits": {
+    "train": {
+     "rows": 1027,
+     "questions": 1027,
+     "task_type": [
+      "ntsb_injury_severity"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 25,
+      "1": 27,
+      "2": 25,
+      "3": 24
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ntsb_injury_severity"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 26,
+      "1": 29,
+      "2": 22,
+      "3": 23
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ntsb_injury_severity"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 25,
+      "1": 27,
+      "2": 19,
+      "3": 29
+     }
+    }
+   },
+   "sha256": {
+    "ntsb_injury_severity.train.jsonl": "284ad66b4f1a9f7c59d6905fbf64e8cbba3797673afe4920a05810116ab19c6e",
+    "ntsb_injury_severity.select.jsonl": "f9670adf6ea13e74f84529a46bc91edb4247037c5e88cc01b406d9cdee7b112a",
+    "ntsb_injury_severity.test.jsonl": "4f101b49047207b540c6918d0628e499b7601ecc33d2cf54831a0f73b101679b"
+   }
+  },
+  "ted_cpv_division": {
+   "source": "dataset/n_records (TED EU tenders)",
+   "licence": "Commission Decision 2011/833/EU",
+   "gold_basis": "record's CPV code",
+   "splits": {
+    "train": {
+     "rows": 1027,
+     "questions": 1027,
+     "task_type": [
+      "ted_cpv_division"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 5,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 3,
+      "5": 4,
+      "6": 4,
+      "7": 4,
+      "8": 4,
+      "9": 4,
+      "10": 4,
+      "11": 3,
+      "12": 4,
+      "13": 3,
+      "14": 3,
+      "15": 4,
+      "16": 3,
+      "17": 4,
+      "18": 5,
+      "19": 4,
+      "20": 4,
+      "21": 4,
+      "22": 3,
+      "23": 5,
+      "24": 3,
+      "25": 5
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ted_cpv_division"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 3,
+      "1": 3,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 4,
+      "6": 5,
+      "7": 4,
+      "8": 5,
+      "9": 3,
+      "10": 3,
+      "11": 3,
+      "12": 5,
+      "13": 5,
+      "14": 2,
+      "15": 8,
+      "16": 5,
+      "17": 5,
+      "18": 4,
+      "19": 2,
+      "20": 3,
+      "21": 3,
+      "22": 6,
+      "23": 5,
+      "24": 3,
+      "25": 5
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "ted_cpv_division"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 4,
+      "1": 3,
+      "2": 5,
+      "3": 7,
+      "4": 7,
+      "5": 1,
+      "6": 4,
+      "7": 1,
+      "8": 5,
+      "9": 7,
+      "10": 5,
+      "11": 3,
+      "12": 3,
+      "13": 3,
+      "14": 4,
+      "15": 3,
+      "16": 2,
+      "17": 3,
+      "18": 2,
+      "19": 3,
+      "20": 4,
+      "21": 6,
+      "22": 4,
+      "23": 3,
+      "24": 4,
+      "25": 3
+     }
+    }
+   },
+   "sha256": {
+    "ted_cpv_division.train.jsonl": "b43e8fafed73c1022ae73a346ee9aa0fce0d36e5504bcdbac47180d3b89cf628",
+    "ted_cpv_division.select.jsonl": "1e3eeae4f58cb86badc0061c6a23ede7fa5d012dc9c283b56310db29b1057624",
+    "ted_cpv_division.test.jsonl": "d335b4b2f5cafbf35a091005999a5902b7d99a73182f29fc30fabb48392f8a7c"
+   }
+  },
+  "asf_podling_outcome": {
+   "source": "dataset/n_records (ASF Incubator)",
+   "licence": "Apache-2.0",
+   "gold_basis": "record's podling status",
+   "splits": {
+    "train": {
+     "rows": 294,
+     "questions": 294,
+     "task_type": [
+      "asf_podling_outcome"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 48,
+      "1": 52
+     }
+    },
+    "select": {
+     "rows": 28,
+     "questions": 28,
+     "task_type": [
+      "asf_podling_outcome"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 57,
+      "1": 43
+     }
+    },
+    "test": {
+     "rows": 29,
+     "questions": 29,
+     "task_type": [
+      "asf_podling_outcome"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 41,
+      "1": 59
+     }
+    }
+   },
+   "sha256": {
+    "asf_podling_outcome.train.jsonl": "85d2da25df439cddd7cc9813e7149f62dbb3e31f8727f7b6de586c63a0de8db6",
+    "asf_podling_outcome.select.jsonl": "a30e004c42c3bf769b24f42920a60c07bcabe47f53cb2bbeb44799f595465dce",
+    "asf_podling_outcome.test.jsonl": "fee1946a361d719bdfd94e6b534137debf184470e5b062486c0135ce12c3fa5f"
+   }
+  },
+  "insurance_payout": {
+   "source": "tools/gen/insurance_payout.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 1000,
+     "task_type": [
+      "insurance_payout"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 19,
+      "2": 35,
+      "3": 33,
+      "4": 8,
+      "5": 5
+     },
+     "closest_to_mean_pct": 26,
+     "gold_letter_position_pct": {
+      "0": 19,
+      "1": 21,
+      "2": 20,
+      "3": 20,
+      "4": 19
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "insurance_payout"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 14,
+      "2": 44,
+      "3": 26,
+      "4": 13,
+      "5": 3
+     },
+     "closest_to_mean_pct": 20,
+     "gold_letter_position_pct": {
+      "0": 14,
+      "1": 21,
+      "2": 21,
+      "3": 22,
+      "4": 21
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "insurance_payout"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 19,
+      "2": 37,
+      "3": 27,
+      "4": 9,
+      "5": 8
+     },
+     "closest_to_mean_pct": 22,
+     "gold_letter_position_pct": {
+      "0": 24,
+      "1": 20,
+      "2": 17,
+      "3": 14,
+      "4": 25
+     }
+    }
+   },
+   "sha256": {
+    "insurance_payout.train.jsonl": "c1d6c68d4a5869663a24a99e0964b81d7996a3b02371ffbee7e439a499e22a6c",
+    "insurance_payout.select.jsonl": "7d30196a7a6af66e5af11561df22e022e20a1f80f7df51186b774de239b82014",
+    "insurance_payout.test.jsonl": "8f60ffcdea68028f4c715c0c2df7a040669ae40c040e5857d1447ae5c8bb1ea7"
+   }
+  },
+  "loan_approval": {
+   "source": "tools/gen/loan_approval.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 4003,
+     "task_type": [
+      "loan_approval"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.498,
+     "yes_share_by_question_position": {
+      "0": 0.465,
+      "1": 0.511,
+      "2": 0.504,
+      "3": 0.511,
+      "4": 0.516
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 590,
+     "task_type": [
+      "loan_approval"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.514,
+     "yes_share_by_question_position": {
+      "0": 0.52,
+      "1": 0.507,
+      "2": 0.453,
+      "3": 0.611,
+      "4": 0.511
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 599,
+     "task_type": [
+      "loan_approval"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.476,
+     "yes_share_by_question_position": {
+      "0": 0.553,
+      "1": 0.48,
+      "2": 0.427,
+      "3": 0.43,
+      "4": 0.469
+     }
+    }
+   },
+   "sha256": {
+    "loan_approval.train.jsonl": "bf688413f3f6f69c52baf2f2d06a4d987abede0f34aece6e1540a6843f44f4e9",
+    "loan_approval.select.jsonl": "5c8ca5ac12f107d4b95f5e97ebf7fb82372b36289fba212fdb730aa61eccdf34",
+    "loan_approval.test.jsonl": "f13285f2ccda6b9102871b506e6ac65f0761ec636d3fb5cdae2c0283bc36ddd5"
+   }
+  },
+  "warranty_claim": {
+   "source": "tools/gen/warranty_claim.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 4024,
+     "task_type": [
+      "warranty_claim"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.516,
+     "yes_share_by_question_position": {
+      "0": 0.521,
+      "1": 0.496,
+      "2": 0.525,
+      "3": 0.521,
+      "4": 0.52
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 597,
+     "task_type": [
+      "warranty_claim"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.496,
+     "yes_share_by_question_position": {
+      "0": 0.52,
+      "1": 0.52,
+      "2": 0.48,
+      "3": 0.465,
+      "4": 0.457
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 595,
+     "task_type": [
+      "warranty_claim"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.508,
+     "yes_share_by_question_position": {
+      "0": 0.533,
+      "1": 0.5,
+      "2": 0.42,
+      "3": 0.598,
+      "4": 0.542
+     }
+    }
+   },
+   "sha256": {
+    "warranty_claim.train.jsonl": "f1006d27c9e0abcf4ec4f46dbfdf4c330e9324c90a389d71f6dfcd3f4eb600a0",
+    "warranty_claim.select.jsonl": "2d701480dd3c8b30e77c95c2673c3494d74f31882a5de362e1617950d6042083",
+    "warranty_claim.test.jsonl": "4bca3eb35c82d8271762b966a5dffb3620edf721a5451ddede52bd4f729c9464"
+   }
+  },
+  "coupon_stacking": {
+   "source": "tools/gen/coupon_stacking.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 1000,
+     "task_type": [
+      "coupon_stacking"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 18,
+      "2": 36,
+      "3": 32,
+      "4": 10,
+      "5": 5
+     },
+     "closest_to_mean_pct": 21,
+     "gold_letter_position_pct": {
+      "0": 20,
+      "1": 18,
+      "2": 24,
+      "3": 17,
+      "4": 20
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "coupon_stacking"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 21,
+      "2": 37,
+      "3": 29,
+      "4": 7,
+      "5": 5
+     },
+     "closest_to_mean_pct": 16,
+     "gold_letter_position_pct": {
+      "0": 17,
+      "1": 28,
+      "2": 19,
+      "3": 16,
+      "4": 20
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "coupon_stacking"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 17,
+      "2": 42,
+      "3": 27,
+      "4": 9,
+      "5": 5
+     },
+     "closest_to_mean_pct": 18,
+     "gold_letter_position_pct": {
+      "0": 22,
+      "1": 17,
+      "2": 21,
+      "3": 24,
+      "4": 16
+     }
+    }
+   },
+   "sha256": {
+    "coupon_stacking.train.jsonl": "222acf3c793c866012e129eda0f5f2a8caf611a5cb3b276e35c3604b5a2d1c69",
+    "coupon_stacking.select.jsonl": "90d91202c0d183a2b734cd7095ae55c24850beb59dfd7210f43c8ae4885c1d79",
+    "coupon_stacking.test.jsonl": "02a99ecb527f2498c0b1d160750e6eb889b585dbea2ec6dd362b89620cc82a8a"
+   }
+  },
+  "library_fine": {
+   "source": "tools/gen/library_fine.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 1000,
+     "task_type": [
+      "library_fine"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 18,
+      "2": 35,
+      "3": 33,
+      "4": 8,
+      "5": 5
+     },
+     "closest_to_mean_pct": 22,
+     "gold_letter_position_pct": {
+      "0": 19,
+      "1": 20,
+      "2": 21,
+      "3": 20,
+      "4": 21
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "library_fine"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 20,
+      "2": 36,
+      "3": 35,
+      "4": 7,
+      "5": 3
+     },
+     "closest_to_mean_pct": 28,
+     "gold_letter_position_pct": {
+      "0": 21,
+      "1": 20,
+      "2": 23,
+      "3": 20,
+      "4": 17
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "library_fine"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 15,
+      "2": 44,
+      "3": 29,
+      "4": 9,
+      "5": 3
+     },
+     "closest_to_mean_pct": 23,
+     "gold_letter_position_pct": {
+      "0": 18,
+      "1": 20,
+      "2": 17,
+      "3": 23,
+      "4": 21
+     }
+    }
+   },
+   "sha256": {
+    "library_fine.train.jsonl": "409e3ef6fde04f0c3768ae842fd708e24f5a94439b5f8a5920f7f27bea67e756",
+    "library_fine.select.jsonl": "1d20291dd25bcffb469bf0fe56438d3706b6592c5d421ea07e9f2b126d778567",
+    "library_fine.test.jsonl": "d314a7b5580189a411564b1d1f133c96e03d7fb357882088133a209894b53ce2"
+   }
+  },
+  "toll_charge": {
+   "source": "tools/gen/toll_charge.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 1000,
+     "task_type": [
+      "toll_charge"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 18,
+      "2": 37,
+      "3": 31,
+      "4": 8,
+      "5": 6
+     },
+     "closest_to_mean_pct": 28,
+     "gold_letter_position_pct": {
+      "0": 22,
+      "1": 20,
+      "2": 19,
+      "3": 21,
+      "4": 18
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "toll_charge"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 16,
+      "2": 39,
+      "3": 29,
+      "4": 12,
+      "5": 4
+     },
+     "closest_to_mean_pct": 25,
+     "gold_letter_position_pct": {
+      "0": 19,
+      "1": 17,
+      "2": 21,
+      "3": 22,
+      "4": 21
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "toll_charge"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 15,
+      "2": 39,
+      "3": 31,
+      "4": 11,
+      "5": 5
+     },
+     "closest_to_mean_pct": 29,
+     "gold_letter_position_pct": {
+      "0": 20,
+      "1": 23,
+      "2": 23,
+      "3": 21,
+      "4": 12
+     }
+    }
+   },
+   "sha256": {
+    "toll_charge.train.jsonl": "1e76f699b716d9e86aa8798523197f8a0673226c798998bf657109815f904481",
+    "toll_charge.select.jsonl": "8eda1353dc73033e790335f4763e0bd4fb434ff57294fe57c2c561f7c23c205c",
+    "toll_charge.test.jsonl": "b41e66ec1d17c8813dd4dc9e382d3dd64cbe8fdd245b0964cfcfd54bc101de9c"
+   }
+  },
+  "building_permit_fee": {
+   "source": "tools/gen/building_permit_fee.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 1000,
+     "task_type": [
+      "building_permit_fee"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 17,
+      "2": 35,
+      "3": 35,
+      "4": 8,
+      "5": 6
+     },
+     "closest_to_mean_pct": 34,
+     "gold_letter_position_pct": {
+      "0": 21,
+      "1": 20,
+      "2": 18,
+      "3": 18,
+      "4": 23
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "building_permit_fee"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 24,
+      "2": 33,
+      "3": 27,
+      "4": 10,
+      "5": 5
+     },
+     "closest_to_mean_pct": 26,
+     "gold_letter_position_pct": {
+      "0": 25,
+      "1": 18,
+      "2": 19,
+      "3": 15,
+      "4": 22
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "building_permit_fee"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 13,
+      "2": 37,
+      "3": 42,
+      "4": 4,
+      "5": 4
+     },
+     "closest_to_mean_pct": 43,
+     "gold_letter_position_pct": {
+      "0": 27,
+      "1": 21,
+      "2": 19,
+      "3": 16,
+      "4": 17
+     }
+    }
+   },
+   "sha256": {
+    "building_permit_fee.train.jsonl": "58a9959071c611cab011180ffbb545b34b3d44bded993668a1cfddc716b94e75",
+    "building_permit_fee.select.jsonl": "e7e6c53feda5b629bd0379a1827c3f5a36338c692b9666ab690238111bcc3bd4",
+    "building_permit_fee.test.jsonl": "d8a48072f860285e034947f26d695ca2fbf2a14ae2ed28039a8970a2ccbe1b6e"
+   }
+  },
+  "sla_credit": {
+   "source": "tools/gen/sla_credit.py (gen-1; data/generalist/gen, first 1,000 train rows)",
+   "licence": "original items generated by this repository's code; no third-party data",
+   "gold_basis": "computed by the generator's solve(); second solver 0 disagreements",
+   "splits": {
+    "train": {
+     "rows": 1000,
+     "questions": 1000,
+     "task_type": [
+      "sla_credit"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 17,
+      "2": 38,
+      "3": 29,
+      "4": 12,
+      "5": 5
+     },
+     "closest_to_mean_pct": 30,
+     "gold_letter_position_pct": {
+      "0": 19,
+      "1": 20,
+      "2": 21,
+      "3": 19,
+      "4": 21
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "sla_credit"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 12,
+      "2": 40,
+      "3": 33,
+      "4": 7,
+      "5": 8
+     },
+     "closest_to_mean_pct": 31,
+     "gold_letter_position_pct": {
+      "0": 16,
+      "1": 23,
+      "2": 17,
+      "3": 23,
+      "4": 20
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "sla_credit"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_value_rank_pct": {
+      "1": 17,
+      "2": 31,
+      "3": 32,
+      "4": 10,
+      "5": 10
+     },
+     "closest_to_mean_pct": 27,
+     "gold_letter_position_pct": {
+      "0": 23,
+      "1": 15,
+      "2": 22,
+      "3": 17,
+      "4": 23
+     }
+    }
+   },
+   "sha256": {
+    "sla_credit.train.jsonl": "a8c2317633e8a1d41c93e1c0f3d55132eaf7005f9f91cfbc63490990429d0173",
+    "sla_credit.select.jsonl": "1cd9afd43337e966350918af6d2e0c9479e054f181df37426034b159ef7baf3e",
+    "sla_credit.test.jsonl": "c22ebd402df45e19e960c4c86ef288d8c6ab80d525968ec098a5d5644082259d"
+   }
+  },
+  "arxiv_category_api": {
+   "source": "arXiv API (export.arxiv.org), newest submissions per category, fetched 2026-10-29; tools/records/build_arxiv_category.py",
+   "licence": "CC0 1.0 (arXiv descriptive metadata)",
+   "gold_basis": "arxiv:primary_category",
+   "splits": {
+    "train": {
+     "rows": 2500,
+     "questions": 2500,
+     "task_type": [
+      "arxiv_category"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 3,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 2,
+      "6": 3,
+      "7": 3,
+      "8": 2,
+      "9": 3,
+      "10": 2,
+      "11": 3,
+      "12": 3,
+      "13": 2,
+      "14": 3,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 3,
+      "20": 2,
+      "21": 3,
+      "22": 2,
+      "23": 3,
+      "24": 3,
+      "25": 3,
+      "26": 2,
+      "27": 2,
+      "28": 2,
+      "29": 3,
+      "30": 2,
+      "31": 3,
+      "32": 2,
+      "33": 3,
+      "34": 3,
+      "35": 3,
+      "36": 3,
+      "37": 3,
+      "38": 2,
+      "39": 3,
+      "40": 3
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "arxiv_category"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 4,
+      "1": 3,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 4,
+      "6": 1,
+      "7": 4,
+      "8": 2,
+      "9": 1,
+      "10": 3,
+      "11": 3,
+      "12": 6,
+      "13": 1,
+      "14": 3,
+      "15": 2,
+      "16": 2,
+      "18": 3,
+      "19": 1,
+      "20": 1,
+      "21": 2,
+      "22": 2,
+      "23": 3,
+      "24": 2,
+      "25": 1,
+      "26": 1,
+      "27": 3,
+      "28": 3,
+      "29": 2,
+      "30": 3,
+      "31": 1,
+      "32": 2,
+      "33": 2,
+      "34": 2,
+      "35": 3,
+      "36": 5,
+      "38": 5,
+      "39": 3,
+      "40": 4
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 150,
+     "task_type": [
+      "arxiv_category"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "gold_letter_position_pct": {
+      "0": 3,
+      "1": 3,
+      "2": 1,
+      "3": 3,
+      "4": 3,
+      "5": 4,
+      "6": 1,
+      "7": 2,
+      "8": 3,
+      "9": 5,
+      "10": 2,
+      "11": 4,
+      "12": 1,
+      "13": 2,
+      "14": 1,
+      "15": 5,
+      "16": 2,
+      "17": 2,
+      "18": 1,
+      "19": 1,
+      "20": 3,
+      "21": 3,
+      "22": 2,
+      "23": 1,
+      "24": 2,
+      "25": 5,
+      "26": 7,
+      "27": 2,
+      "28": 2,
+      "29": 3,
+      "30": 1,
+      "31": 3,
+      "32": 2,
+      "33": 2,
+      "34": 1,
+      "35": 2,
+      "36": 1,
+      "37": 3,
+      "38": 1,
+      "39": 2,
+      "40": 2
+     }
+    }
+   },
+   "sha256": {
+    "arxiv_category_api.train.jsonl": "b9111b771c984c617bd8d8b56041de2d809fcb6ee5da792b8c6ef96909be5eb2",
+    "arxiv_category_api.select.jsonl": "01d6d419194c4004e092971a094b149cbd9642608d01fa79e67222ddc7241c27",
+    "arxiv_category_api.test.jsonl": "fc249ddd52a3db227beb91ca5ba02a27627ed116ccb0054717718cbb54533bd6"
+   }
+  },
+  "wildguard_aegis": {
+   "source": "nvidia/Aegis-AI-Content-Safety-Dataset-2.0@d86bb8be + fixed refusal templates; tools/records/build_wildguard_aegis.py",
+   "licence": "CC-BY-4.0 (attribution: NVIDIA Aegis AI Content Safety Dataset 2.0); refusal templates written for this set",
+   "gold_basis": "prompt: human prompt_label; refusal: template = yes, human-labelled safe answer without refusal phrase = no; reply harmful: no (refusal templates and human-labelled safe responses)",
+   "splits": {
+    "train": {
+     "rows": 1500,
+     "questions": 4500,
+     "task_type": [
+      "wildguard"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.333,
+     "yes_share_by_question_position": {
+      "0": 0.375,
+      "1": 0.625,
+      "2": 0.0
+     }
+    },
+    "select": {
+     "rows": 150,
+     "questions": 450,
+     "task_type": [
+      "wildguard"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.333,
+     "yes_share_by_question_position": {
+      "0": 0.373,
+      "1": 0.627,
+      "2": 0.0
+     }
+    },
+    "test": {
+     "rows": 150,
+     "questions": 450,
+     "task_type": [
+      "wildguard"
+     ],
+     "dup_question_vs_dev": 0,
+     "dup_record_vs_dev": 0,
+     "yes_share": 0.333,
+     "yes_share_by_question_position": {
+      "0": 0.373,
+      "1": 0.627,
+      "2": 0.0
+     }
+    }
+   },
+   "sha256": {
+    "wildguard_aegis.train.jsonl": "55932557fb48c66377f4cc4c609818261aa1a97174809356698ced572adfff63",
+    "wildguard_aegis.select.jsonl": "57d38bc16706c6c0c394754b3147772025275d559b5eccb42af3107b661b672b",
+    "wildguard_aegis.test.jsonl": "dac8119ae1af03ddacedd07d35456084167cc614915251a82991894c75b65fae"
+   }
+  }
+ }
+}

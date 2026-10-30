@@ -1,0 +1,115 @@
+{
+ "stage": "train_42k",
+ "base": "/models/merge-w05",
+ "seed": 0,
+ "max_len": 4096,
+ "s1_holdout": {
+  "select": 0.01,
+  "test": 0.02
+ },
+ "sources": [
+  {
+   "name": "train_42k",
+   "kind": "mirror",
+   "glob": "dataset/train_42k/train.jsonl",
+   "augment": true
+  }
+ ],
+ "select": [
+  {
+   "kind": "s1",
+   "name": "hf",
+   "glob": "data/generalist/hf/sn92-generalist-train-v1/train-*.jsonl.gz",
+   "exclude_author_family": [
+    "openai",
+    "anthropic"
+   ]
+  },
+  {
+   "name": "n_records",
+   "kind": "mirror",
+   "glob": "dataset/n_records/select.jsonl"
+  },
+  {
+   "name": "openai_anthropic",
+   "kind": "mirror",
+   "glob": "dataset/openai_anthropic/select.jsonl"
+  },
+  {
+   "name": "t_part",
+   "kind": "mirror",
+   "glob": "dataset/data/generalist/t/*.select.jsonl"
+  },
+  {
+   "name": "n_records_extra",
+   "kind": "mirror",
+   "glob": "dataset/n_records_extra/select.jsonl"
+  },
+  {
+   "name": "gen",
+   "kind": "mirror",
+   "glob": "dataset/data/generalist/gen/*.select.jsonl"
+  }
+ ],
+ "test": [
+  {
+   "kind": "s1",
+   "name": "hf",
+   "glob": "data/generalist/hf/sn92-generalist-train-v1/train-*.jsonl.gz",
+   "exclude_author_family": [
+    "openai",
+    "anthropic"
+   ]
+  },
+  "eval-v5/devset-v1/dev.jsonl",
+  {
+   "name": "n_records",
+   "kind": "mirror",
+   "glob": "dataset/n_records/test.jsonl"
+  },
+  {
+   "name": "openai_anthropic",
+   "kind": "mirror",
+   "glob": "dataset/openai_anthropic/test.jsonl"
+  },
+  {
+   "name": "t_part",
+   "kind": "mirror",
+   "glob": "dataset/data/generalist/t/*.test.jsonl"
+  },
+  {
+   "name": "n_records_extra",
+   "kind": "mirror",
+   "glob": "dataset/n_records_extra/test.jsonl"
+  },
+  {
+   "name": "gen",
+   "kind": "mirror",
+   "glob": "dataset/data/generalist/gen/*.test.jsonl"
+  }
+ ],
+ "train": {
+  "kl_to_base": 0.5,
+  "kl_fraction": 0.25,
+  "micro_batch": 32,
+  "eval_every": 50
+ },
+ "checks": {
+  "learn": [
+   "hf",
+   "n_records",
+   "openai_anthropic",
+   "t_part",
+   "n_records_extra",
+   "gen"
+  ],
+  "transfer": [
+   "dev"
+  ]
+ },
+ "run": {
+  "eval": "prepared/eval_42k",
+  "reports": "reports_42k",
+  "skip_base": true
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "domain": "fda_device_recall",
+ "kind": "rec",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "nb_accuracy": 0.73,
+   "best_constant": 0.6467,
+   "margin_allowed": 0.25,
+   "telling_words": {
+    "Class I (most serious: may cause serious harm or death)": [
+     "respironics",
+     "puritan",
+     "bennett",
+     "impella",
+     "freestyle",
+     "bezel",
+     "trilogy",
+     "v60",
+     "gemstar",
+     "rh",
+     "driveline",
+     "purge"
+    ],
+    "Class II (may cause temporary or reversible harm)": [
+     "immulite",
+     "nail",
+     "artis",
+     "stem",
+     "somatom",
+     "pacs",
+     "vinci",
+     "syngo",
+     "shoulder",
+     "gantry",
+     "table",
+     "azurion"
+    ],
+    "Class III (unlikely to cause harm)": [
+     "pointe",
+     "cuvette",
+     "tox",
+     "cl-",
+     "urinalysis",
+     "pessary",
+     "fitc",
+     "perkinelmer",
+     "acumedia",
+     "volk",
+     "ivus",
+     "cutoff"
+    ]
+   },
+   "eval_items": 300
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "CC0-1.0 (openFDA: public domain, Creative Commons CC0 1.0 Universal dedication)",
+    "url": "https://open.fda.gov/license/",
+    "terms": "https://open.fda.gov/terms/"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.2145,
+   "most_word_overlap": 0.3264,
+   "most_frequent_position": 0.3403,
+   "best_constant_answer": 0.6588,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.333,
+     0.326,
+     0.341
+    ],
+    "max_deviation": 0.007
+   },
+   "select": {
+    "gold_position_shares": [
+     0.313,
+     0.36,
+     0.327
+    ],
+    "max_deviation": 0.027
+   },
+   "test": {
+    "gold_position_shares": [
+     0.353,
+     0.3,
+     0.347
+    ],
+    "max_deviation": 0.033
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 308,
+   "p99": 599,
+   "max": 849,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

@@ -1,0 +1,92 @@
+{
+ "total": 57372,
+ "t_part": 16500,
+ "whole_files": {
+  "dataset/n_records_extra/train.jsonl": 872
+ },
+ "new": 30000,
+ "replay": 0,
+ "n_records": 10000,
+ "previous_set": "dataset/train_50k",
+ "t_part_by_task_type": {
+  "intent_utterance": 3000,
+  "nli": 3000,
+  "omniscience": 3000,
+  "story_continuation": 2500,
+  "chess_best_move": 2000,
+  "poem_pair": 1500,
+  "stance": 1500
+ },
+ "whole_by_task_type": {
+  "cpsc_hazard_type": 632,
+  "kep_status": 240
+ },
+ "new_by_part": {
+  "S1": 30000
+ },
+ "new_by_task_type": {
+  "s1:support_ops_logistics": 8839,
+  "s1:rules_policy_law": 4631,
+  "s1:finance_commerce_insurance": 4196,
+  "s1:tools_agent_routing": 4040,
+  "s1:knowledge_reasoning": 2018,
+  "s1:math_quant": 1890,
+  "s1:coding_data_it": 1616,
+  "s1:forecasting_risk_science": 1263,
+  "s1:language_taste": 891,
+  "s1:safety_security_harm": 616
+ },
+ "replay_by_part": {},
+ "replay_by_task_type": {},
+ "n_records_by_task_type": {
+  "congress_bill_status": 946,
+  "fda_device_recall_class": 946,
+  "fda_drug_marketing_status": 946,
+  "fedreg_agency": 946,
+  "ghsa_severity": 946,
+  "noaa_storm_event_type": 946,
+  "ntrs_subject_category": 946,
+  "ntsb_injury_severity": 946,
+  "nvd_cvss_severity": 946,
+  "ted_cpv_division": 946,
+  "rust_rfc_outcome": 265,
+  "eip_status": 182,
+  "asf_podling_outcome": 93
+ },
+ "pool": {
+  "t_rows": 16500,
+  "unused_other_rows": 50988,
+  "previous_rows": 50000
+ },
+ "rule": "all T-part rows and the --all files; new: unused openai_anthropic / n_records rows per task type in proportion; replay: previous-set rows per task type in proportion; n_records: dataset/n_records rows per task type in proportion; ranked by sha256 of the id (salts 'new', 'replay', 'n_records')",
+ "sha256": "d4442d41e4753107e8f38f377db688344a9d1fe32da7836a61aba16aabf84d3b",
+ "validation": {
+  "rows": 3629,
+  "questions": 3629,
+  "by_source": {
+   "hf": 385,
+   "n_records": 1696,
+   "openai_anthropic": 385,
+   "t_part": 1050,
+   "n_records_extra": 113
+  },
+  "sha256": "14527534501c37fcfcdeb2f7ddab6ca7fa02d49b77560b7f1c30987bea03c46d",
+  "from": "prepared/eval_57k/select.items.jsonl.gz",
+  "config": "data/stages/train_57k.json"
+ },
+ "test": {
+  "rows": 4602,
+  "questions": 4734,
+  "by_source": {
+   "hf": 718,
+   "dev": 300,
+   "n_records": 1695,
+   "openai_anthropic": 704,
+   "t_part": 1050,
+   "n_records_extra": 135
+  },
+  "sha256": "ee2b3f028befd183c42a236299ef949f0808d254c87580d5e1f89a79594bfdc8",
+  "from": "prepared/eval_57k/test.items.jsonl.gz",
+  "config": "data/stages/train_57k.json"
+ }
+}

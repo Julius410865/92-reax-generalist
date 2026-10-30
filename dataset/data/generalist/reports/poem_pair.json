@@ -1,0 +1,79 @@
+{
+ "task": "poem_pair",
+ "counts": {
+  "train": 1500,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 1500,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {
+    "2": 0.0
+   },
+   "yes_share": null,
+   "top_gold_text_share": 0.001,
+   "distinct_gold_texts": 1800
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.5,
+   "cue_accuracy": {
+    "longest": 0.499,
+    "shortest": 0.501,
+    "overlap": 0.5
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.222,
+    "shortest": 0.778,
+    "overlap": 0.5
+   },
+   "limit": {
+    "longest": 0.65,
+    "shortest": 0.878,
+    "overlap": 0.65
+   },
+   "questions": 3600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 217,
+   "p99": 267,
+   "max": 304
+  },
+  "source": {
+   "pass": true,
+   "licence": "Public domain in the USA (Project Gutenberg texts, header/licence stripped)",
+   "files": 48
+  }
+ },
+ "sha256": {
+  "train": "bd42c60e2e5811de90fc4ef720dbc7e3d3e1e2a0d13ea0d80e8260ae707b7b6c",
+  "select": "e0b33a1aaa8f1d24caaafebcd771922e33d6f48fcf3f3d56fad31e77159cdf3b",
+  "test": "c3a2e60b3dd2ec081632d569fa6170a3d58027608fe8953e49330574eec818b3"
+ },
+ "pass": true
+}

@@ -1,0 +1,152 @@
+{
+ "domain": "congress_bill",
+ "kind": "rec",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "nb_accuracy": 0.56,
+   "best_constant": 0.5567,
+   "margin_allowed": 0.25,
+   "telling_words": {
+    "Became law": [
+     "clinic",
+     "captain",
+     "michigan",
+     "cr",
+     "boulevard",
+     "anderson",
+     "memphis",
+     "post",
+     "jr",
+     "avenue",
+     "cord",
+     "texas"
+    ],
+    "Introduced only: never reported by a committee or passed by either chamber": [
+     "deduction",
+     "tissue",
+     "circuit",
+     "cable",
+     "retail",
+     "forgiveness",
+     "skills",
+     "academy",
+     "ed",
+     "taxable",
+     "parental",
+     "overdoses"
+    ],
+    "Passed one chamber (the House or the Senate) only": [
+     "selectusa",
+     "wrongdoing",
+     "delayed",
+     "comments",
+     "trials",
+     "archivist",
+     "semiconductor-related",
+     "debris",
+     "monroe",
+     "modeling",
+     "mathematical",
+     "risk-based"
+    ],
+    "Reported by a committee, but never passed by either chamber": [
+     "plum",
+     "inventories",
+     "generics",
+     "fork",
+     "buffalo",
+     "brand",
+     "lakes",
+     "platform's",
+     "ste",
+     "buy",
+     "original",
+     "infringement"
+    ]
+   },
+   "eval_items": 300
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "US government work, public domain (17 U.S.C. 105)",
+    "url": "https://www.govinfo.gov/about/policies",
+    "note": "BILLSTATUS bulk data of the Library of Congress and the US Government Publishing Office"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.5448,
+   "most_word_overlap": 0.2948,
+   "most_frequent_position": 0.2661,
+   "best_constant_answer": 0.5448,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.268,
+     0.237,
+     0.249,
+     0.246
+    ],
+    "max_deviation": 0.018
+   },
+   "select": {
+    "gold_position_shares": [
+     0.273,
+     0.213,
+     0.293,
+     0.22
+    ],
+    "max_deviation": 0.043
+   },
+   "test": {
+    "gold_position_shares": [
+     0.213,
+     0.26,
+     0.24,
+     0.287
+    ],
+    "max_deviation": 0.037
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 338,
+   "p99": 484,
+   "max": 529,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

@@ -1,0 +1,111 @@
+{
+ "domain": "eip",
+ "task_type": "eip_status",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "CC0-1.0",
+  "url": "https://github.com/ethereum/EIPs/blob/master/LICENSE.md"
+ },
+ "sources": {
+  "EIPs.head.json": {
+   "url": "https://api.github.com/repos/ethereum/EIPs/commits/master",
+   "sha256": "6bd0f8df4989c7d682ff4bf577ef7950c5bb345c5bbc11b999fd128e10a32711"
+  },
+  "EIPs-d4c575521d99.tar.gz": {
+   "url": "https://codeload.github.com/ethereum/EIPs/tar.gz/d4c575521d99ec881a444ab3af604e684b5f0743",
+   "sha256": "77b53d45084fc770ee01753eb000bcd6e5aad3353d1a1c989eb559df5957d7fb"
+  },
+  "ERCs.head.json": {
+   "url": "https://api.github.com/repos/ethereum/ERCs/commits/master",
+   "sha256": "c65da4729acc9b9ec5e5d55410cc6c174ce4ae64e008af51f017dfa03e5d0eca"
+  },
+  "ERCs-15568610b358.tar.gz": {
+   "url": "https://codeload.github.com/ethereum/ERCs/tar.gz/15568610b3583f0709aaa31b71611a39ed49af40",
+   "sha256": "f7e6b519749318fb324dabe35f82078401097165c6e86dbbb0167a13c6cfa8c3"
+  }
+ },
+ "label_field": "front matter 'status'",
+ "labels": {
+  "Final": "Final (accepted and part of the standard)",
+  "Stagnant": "Stagnant (inactive for six months or more, never finished)",
+  "Withdrawn": "Withdrawn by its authors"
+ },
+ "records_read": 728,
+ "dropped_unrenderable_or_scrub": 4,
+ "classes_dropped_under_min": {
+  "Living": 3
+ },
+ "caps": {
+  "train": {
+   "median": 228,
+   "cap": 684
+  },
+  "select": {
+   "median": 25,
+   "cap": 75
+  },
+  "test": {
+   "median": 29,
+   "cap": 87
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 579,
+   "fresh": 0,
+   "class_prior": {
+    "Stagnant (inactive for six months or more, never finished)": 315,
+    "Final (accepted and part of the standard)": 228,
+    "Withdrawn by its authors": 36
+   },
+   "gold_position": {
+    "A": 190,
+    "B": 196,
+    "C": 193
+   },
+   "options": {
+    "3": 579
+   }
+  },
+  "select": {
+   "rows": 61,
+   "fresh": 0,
+   "class_prior": {
+    "Stagnant (inactive for six months or more, never finished)": 33,
+    "Final (accepted and part of the standard)": 25,
+    "Withdrawn by its authors": 3
+   },
+   "gold_position": {
+    "A": 19,
+    "B": 18,
+    "C": 24
+   },
+   "options": {
+    "3": 61
+   }
+  },
+  "test": {
+   "rows": 81,
+   "fresh": 0,
+   "class_prior": {
+    "Stagnant (inactive for six months or more, never finished)": 46,
+    "Final (accepted and part of the standard)": 29,
+    "Withdrawn by its authors": 6
+   },
+   "gold_position": {
+    "A": 23,
+    "B": 29,
+    "C": 29
+   },
+   "options": {
+    "3": 81
+   }
+  }
+ },
+ "files": {
+  "eip.train.jsonl": "014c01f2a11c2fe70528158d3de5cfae93dbbbf0db35cc38e24af9883544e061",
+  "eip.select.jsonl": "b792c5c69a762d8c71619f318a810abc74d30e93cfc519a8a597e16c6f4d4c84",
+  "eip.test.jsonl": "e86cd71ad425c63057d4f241f77ec10dc418b7c974f02312063fc939f3ec868e"
+ }
+}

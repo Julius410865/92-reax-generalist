@@ -1,0 +1,18 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/train_50k.json",
+ "stage": "train_50k",
+ "split": "train",
+ "digest": "90729d0944dcc5d7",
+ "tokenizer": "a5cd9732badce41d",
+ "sources": {
+  "train_50k": {
+   "items": 50000,
+   "unconvertible": 0,
+   "files": 1
+  }
+ },
+ "rows": 49998,
+ "tokens": 26016147,
+ "over_max_len": 2,
+ "render_failed": 0
+}

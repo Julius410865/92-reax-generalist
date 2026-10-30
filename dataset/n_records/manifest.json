@@ -1,0 +1,265 @@
+{
+ "what": "N part: real public records turned into questions (answers from the records' structured fields)",
+ "built_by": "tools/records/build_<domain>.py; checks data/generalist/reports/<domain>.json (all pass), audits 0 errors",
+ "format": "eval-v5.1 mirror rows: questions[0] {instructions, criteria A.., expected}",
+ "domains": {
+  "asf_podling": {
+   "task_type": "asf_podling_outcome",
+   "area": "language",
+   "licence": {
+    "name": "Apache-2.0",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "note": "ASF project metadata: projects.apache.org JSON (generated from the Incubator's podlings.xml, whose header states the Apache License 2.0)"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "asf_podling.train.jsonl": "ddbe545926b0f2d1d697dedec9890ff9ad10fc3c29f29d4ab4638596eedd5ec9",
+    "asf_podling.select.jsonl": "895a65ffb8acfd691b2ea6cb1c322a43df473fa4c0db40a5c67a90abd3fed87e",
+    "asf_podling.test.jsonl": "c7bfc356738e7277d5553160d6d5bc72a16aa96afd78ee5da068348930656f93"
+   }
+  },
+  "congress_bill": {
+   "task_type": "congress_bill_status",
+   "area": "language",
+   "licence": {
+    "name": "US government work, public domain (17 U.S.C. 105)",
+    "url": "https://www.govinfo.gov/about/policies",
+    "note": "BILLSTATUS bulk data of the Library of Congress and the US Government Publishing Office"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "congress_bill.train.jsonl": "058d654ac2558aa9b41b042a8d0bbeb09461c06c2e22b09ac6859410c98daffb",
+    "congress_bill.select.jsonl": "6a0cc355dde6d84e7a737067b27aa8763cdee2e1c77562199aa9f8cf2580ef20",
+    "congress_bill.test.jsonl": "f633dfc26d3bdb764ce36f549586f2f70e27ca95e3307791fb9b1f9c0498ac6b"
+   }
+  },
+  "eip": {
+   "task_type": "eip_status",
+   "area": "language",
+   "licence": {
+    "name": "CC0-1.0",
+    "url": "https://github.com/ethereum/EIPs/blob/master/LICENSE.md"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "eip.train.jsonl": "014c01f2a11c2fe70528158d3de5cfae93dbbbf0db35cc38e24af9883544e061",
+    "eip.select.jsonl": "b792c5c69a762d8c71619f318a810abc74d30e93cfc519a8a597e16c6f4d4c84",
+    "eip.test.jsonl": "e86cd71ad425c63057d4f241f77ec10dc418b7c974f02312063fc939f3ec868e"
+   }
+  },
+  "fda_device_recall": {
+   "task_type": "fda_device_recall_class",
+   "area": "language",
+   "licence": {
+    "name": "CC0-1.0 (openFDA: public domain, Creative Commons CC0 1.0 Universal dedication)",
+    "url": "https://open.fda.gov/license/",
+    "terms": "https://open.fda.gov/terms/"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "fda_device_recall.train.jsonl": "960a0b62f348e979ec030efb7f6bbd8a2786ed3d9522890e2729c801a379e34a",
+    "fda_device_recall.select.jsonl": "919c13e502e342e6b8b9637a89ad72e7a8cc624a2112f5ab86c18118084116bb",
+    "fda_device_recall.test.jsonl": "221e562843d64fb6b08355a206c0f7eae614a89601f1112bf7f25ab9038143ed"
+   }
+  },
+  "fda_drug": {
+   "task_type": "fda_drug_marketing_status",
+   "area": "language",
+   "licence": {
+    "name": "CC0-1.0 (openFDA: public domain, Creative Commons CC0 1.0 Universal dedication)",
+    "url": "https://open.fda.gov/license/",
+    "terms": "https://open.fda.gov/terms/"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "fda_drug.train.jsonl": "915b586eba746806681ed0cb29860975235e90630029e857a03d659f80c8d827",
+    "fda_drug.select.jsonl": "7e909d4e75f26cc9023ea44146417049b4f6baece4a320fb80315c7363d7542a",
+    "fda_drug.test.jsonl": "2b1d77758251bdcb7b9676cf45f0c6044556ebf8ddeffcf74965907164a2284a"
+   }
+  },
+  "fedreg_agency": {
+   "task_type": "fedreg_agency",
+   "area": "retrieval",
+   "licence": {
+    "name": "US government work, public domain (17 U.S.C. 105)",
+    "url": "https://www.govinfo.gov/about/policies",
+    "note": "Federal Register documents (Office of the Federal Register / GPO) via the federalregister.gov API v1, https://www.federalregister.gov/developers/documentation/api/v1 (no key)"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "fedreg_agency.train.jsonl": "91226802591aecf13412b8722420dd51b8ca6ad9e51fbf71c7b5ae8cfc186ac4",
+    "fedreg_agency.select.jsonl": "f1ac9bb15357435cccdc9e752cbd7c45d96b6b8d07c4fa530e193787734e3db4",
+    "fedreg_agency.test.jsonl": "f016ab7c9417bbf20a685d0505a80dfe24239c9d06885b40d0e5b1bd8e8ac119"
+   }
+  },
+  "ghsa_severity": {
+   "task_type": "ghsa_severity",
+   "area": "language",
+   "licence": {
+    "name": "CC-BY-4.0",
+    "url": "https://github.com/github/advisory-database/blob/048deacdbddda9fcd84f7063549b0b8b9905b90f/LICENSE.md",
+    "attribution": "GitHub Advisory Database (github/advisory-database), CC BY 4.0"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "ghsa_severity.train.jsonl": "1fb989621ce39f25b0520745c795eacb3dc7842adb8a3ece7f04cc8dedd90c62",
+    "ghsa_severity.select.jsonl": "3ff50568b041679eda42e9b6a75a12b96009b2d53974ce42adfb072dfecb7a81",
+    "ghsa_severity.test.jsonl": "74feed4663965b74ce6728ec3984eb5133995b99ea09f41bde3c2e3935027979"
+   }
+  },
+  "noaa_storm_type": {
+   "task_type": "noaa_storm_event_type",
+   "area": "retrieval",
+   "licence": {
+    "name": "Public domain (US government work, 17 U.S.C. 105; NOAA NCEI Storm Events Database)",
+    "url": "https://www.usa.gov/government-works",
+    "source_page": "https://www.ncei.noaa.gov/stormevents/"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "noaa_storm_type.train.jsonl": "93f2ae519c9f1b8cde28d3d68580194b434191ac660c454584f45b7d81b6a84f",
+    "noaa_storm_type.select.jsonl": "e9074d52d526b8e834727d3a2b39770c9b3e9a6a6ec507011647cdd3def8369e",
+    "noaa_storm_type.test.jsonl": "bc8916fb366a110d4ab5fcf4f0758698819d76acf79c06baa4181e4f1f892835"
+   }
+  },
+  "ntrs_subject": {
+   "task_type": "ntrs_subject_category",
+   "area": "retrieval",
+   "licence": {
+    "name": "US government work, NTRS records marked Public Use Permitted",
+    "url": "https://ntrs.nasa.gov"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "ntrs_subject.train.jsonl": "d7b69ac10dc8b1f6c22240486de0d6358e4b995a6a98a87aaae9a481b2dab316",
+    "ntrs_subject.select.jsonl": "552935e81096f9889f8c8990cd988f46b0e2637878d6db8cfe425ef29d118d5f",
+    "ntrs_subject.test.jsonl": "01cec43c6474c847ae2584be1684edb908dcf85e6bea14b97827bd14bcf41ec7"
+   }
+  },
+  "ntsb_injury": {
+   "task_type": "ntsb_injury_severity",
+   "area": "language",
+   "licence": {
+    "name": "Public domain (US government work, 17 U.S.C. 105; NTSB aviation accident database)",
+    "url": "https://www.usa.gov/government-works",
+    "source_page": "https://data.ntsb.gov/avdata"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "ntsb_injury.train.jsonl": "7fed75319a4f83a28f8f372532f66022209096312c3f577e743664f8ac05bf85",
+    "ntsb_injury.select.jsonl": "3333c4085d9398eed27fe01cabd1b9587920b82ed7cebef2affee73636a7dd00",
+    "ntsb_injury.test.jsonl": "d38f0b2c3ae76ee10be9ef0eb1d60293cb7dc15e4ecca207c4bde5bcbf2610db"
+   }
+  },
+  "nvd_severity": {
+   "task_type": "nvd_cvss_severity",
+   "area": "language",
+   "licence": {
+    "name": "NVD public domain; CVE descriptions: CVE Terms of Use (MITRE)",
+    "url": "https://www.cve.org/Legal/TermsOfUse",
+    "notice": "CVE descriptions (c) The MITRE Corporation, reproduced under the CVE Terms of Use"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "nvd_severity.train.jsonl": "d361de5cd7494d56e5a5a49451858b697c73857b7d8e2341a67f62fab3818960",
+    "nvd_severity.select.jsonl": "accb45e8a7135f6bf5bb6db1c7b495a460b42aef4142f080acba1a14bb9285c4",
+    "nvd_severity.test.jsonl": "396f136ed9f0a27c6d3cfaaaa48b2a0b36ed0e380636c6c4f6f3e7a14e6dbf58"
+   }
+  },
+  "rust_rfc": {
+   "task_type": "rust_rfc_outcome",
+   "area": "language",
+   "licence": {
+    "name": "MIT OR Apache-2.0",
+    "url": "https://github.com/rust-lang/rfcs/blob/1dc48d761daaa2a0c80135d91f30d20ebdfb97b2/README.md#license",
+    "files": [
+     "https://github.com/rust-lang/rfcs/blob/1dc48d761daaa2a0c80135d91f30d20ebdfb97b2/LICENSE-MIT",
+     "https://github.com/rust-lang/rfcs/blob/1dc48d761daaa2a0c80135d91f30d20ebdfb97b2/LICENSE-APACHE"
+    ],
+    "note": "README: the repository is 'in the process of being licensed under either of' Apache-2.0 or MIT 'at your option. Some parts of the repository are already licensed according to those terms' (RFC 2044). The pull request titles and bodies used here are GitHub metadata of the repository."
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "rust_rfc.train.jsonl": "98c474404cec10a1c269d5296d10e2dba614551f6c0b5bacdb2b462a3195aabe",
+    "rust_rfc.select.jsonl": "59482cd43bb7d7d2f6497da1a430be8bf3d1fb2fd2aaf5a81d1e23caa21b3ff2",
+    "rust_rfc.test.jsonl": "4e8a8dabc797df9e59b8659f2767ecefd3f73d26765d1ecd9eb808d6ab84bb8a"
+   }
+  },
+  "ted_cpv": {
+   "task_type": "ted_cpv_division",
+   "area": "retrieval",
+   "licence": {
+    "name": "Commission Decision 2011/833/EU (reuse of Commission documents)",
+    "url": "https://eur-lex.europa.eu/eli/dec/2011/833/oj/eng",
+    "notice": "Source: TED - Tenders Electronic Daily, (c) European Union, https://ted.europa.eu"
+   },
+   "snapshot": "2026-10-27",
+   "source_files_sha256": {
+    "ted_cpv.train.jsonl": "8101a55c199a2c20ecb64eaa471ef1a1e48e35d3cefeff5c4b1431614832c895",
+    "ted_cpv.select.jsonl": "58a0ca7d61330645fdc32b8e50580f9c802b3dba86e7c194e312f61aa8ea9129",
+    "ted_cpv.test.jsonl": "480d9c35970ee265a98fede817db98b4934363af8f0d049e370185db75858fc4"
+   }
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 31715,
+   "by_domain": {
+    "asf_podling": 294,
+    "congress_bill": 3000,
+    "eip": 579,
+    "fda_device_recall": 3000,
+    "fda_drug": 3000,
+    "fedreg_agency": 3000,
+    "ghsa_severity": 3000,
+    "noaa_storm_type": 3000,
+    "ntrs_subject": 3000,
+    "ntsb_injury": 3000,
+    "nvd_severity": 3000,
+    "rust_rfc": 842,
+    "ted_cpv": 3000
+   }
+  },
+  "select": {
+   "rows": 1696,
+   "by_domain": {
+    "asf_podling": 28,
+    "congress_bill": 150,
+    "eip": 61,
+    "fda_device_recall": 150,
+    "fda_drug": 150,
+    "fedreg_agency": 150,
+    "ghsa_severity": 150,
+    "noaa_storm_type": 150,
+    "ntrs_subject": 150,
+    "ntsb_injury": 150,
+    "nvd_severity": 150,
+    "rust_rfc": 107,
+    "ted_cpv": 150
+   }
+  },
+  "test": {
+   "rows": 1695,
+   "by_domain": {
+    "asf_podling": 29,
+    "congress_bill": 150,
+    "eip": 81,
+    "fda_device_recall": 150,
+    "fda_drug": 150,
+    "fedreg_agency": 150,
+    "ghsa_severity": 150,
+    "noaa_storm_type": 150,
+    "ntrs_subject": 150,
+    "ntsb_injury": 150,
+    "nvd_severity": 150,
+    "rust_rfc": 85,
+    "ted_cpv": 150
+   }
+  }
+ },
+ "files": {
+  "train.jsonl": "b2afa28322c6eea434df91e0270b98c64df988837634b7728cdecc9f151144ff",
+  "select.jsonl": "4e65111ffc41978b428c1afe55429c2f0f8cdb0530bbd05a12262a818271fa31",
+  "test.jsonl": "e511c0744632e0074668e71f6458830a2a323327fd81a0a1cb239d9792ee13f0"
+ }
+}

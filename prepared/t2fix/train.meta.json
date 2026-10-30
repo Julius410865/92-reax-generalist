@@ -1,0 +1,23 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/t2fix.json",
+ "stage": "t2fix",
+ "split": "train",
+ "digest": "6f116cfa8f8f2c24",
+ "tokenizer": "a5cd9732badce41d",
+ "sources": {
+  "t2fix": {
+   "items": 77932,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "hf_mix": {
+   "items": 10250,
+   "unconvertible": 0,
+   "files": 1
+  }
+ },
+ "rows": 104283,
+ "tokens": 44208688,
+ "over_max_len": 2,
+ "render_failed": 0
+}

@@ -1,0 +1,152 @@
+{
+ "domain": "fda_drug",
+ "kind": "rec",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "nb_accuracy": 0.6467,
+   "best_constant": 0.4967,
+   "margin_allowed": 0.25,
+   "telling_words": {
+    "Discontinued: no longer on the market": [
+     "propoxyphene",
+     "wyeth",
+     "methyldopa",
+     "gentamicin",
+     "prednisolone",
+     "verapamil",
+     "sulfamethoxazole",
+     "trimethoprim",
+     "meperidine",
+     "ayerst",
+     "reserpine",
+     "roxane"
+    ],
+    "Over-the-counter: on the market, sold without a prescription": [
+     "cetirizine",
+     "allergy",
+     "relief",
+     "insulin",
+     "women",
+     "minoxidil",
+     "perrigo",
+     "recombinant",
+     "olopatadine",
+     "miconazole",
+     "novo",
+     "tris"
+    ],
+    "Prescription: on the market, dispensed only with a prescription": [
+     "dimesylate",
+     "lenalidomide",
+     "gland",
+     "lisdexamfetamine",
+     "enoxaparin",
+     "ascent",
+     "pemetrexed",
+     "dasatinib",
+     "bisoprolol",
+     "baclofen",
+     "desoximetasone",
+     "brivaracetam"
+    ],
+    "Tentative approval only: may not be sold yet": [
+     "zidovudine",
+     "ibrutinib",
+     "aizant",
+     "lamivudine",
+     "empagliflozin",
+     "nevirapine",
+     "pharmaceuticals",
+     "abacavir",
+     "valerate",
+     "nimodipine",
+     "stavudine",
+     "pvt"
+    ]
+   },
+   "eval_items": 300
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "CC0-1.0 (openFDA: public domain, Creative Commons CC0 1.0 Universal dedication)",
+    "url": "https://open.fda.gov/license/",
+    "terms": "https://open.fda.gov/terms/"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.5118,
+   "most_word_overlap": 0.2903,
+   "most_frequent_position": 0.2603,
+   "best_constant_answer": 0.5118,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.262,
+     0.244,
+     0.25,
+     0.244
+    ],
+    "max_deviation": 0.012
+   },
+   "select": {
+    "gold_position_shares": [
+     0.227,
+     0.3,
+     0.207,
+     0.267
+    ],
+    "max_deviation": 0.05
+   },
+   "test": {
+    "gold_position_shares": [
+     0.26,
+     0.22,
+     0.26,
+     0.26
+    ],
+    "max_deviation": 0.03
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 225,
+   "p99": 289,
+   "max": 418,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

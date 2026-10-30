@@ -1,0 +1,9 @@
+Lineage (continued): the model described as "this model" in the lineage above is
+MstJeon410/sn92-gen-merge1@8febff44891d7a1f4ba957b23b9cb1a5d5601bff (our earlier submission, MIT License; its notices are
+retained above).
+-> this model: one further LoRA fine-tune of MstJeon410/sn92-gen-merge1 (MIT License, Copyright (c) 2026 mst jeon; see
+   LICENSE), trained on the sources listed above, merged into the backbone weights (see MODIFICATIONS.md).
+Declared base for the subnet: baselabs/mammoth-1@61cec44c281c693992e3d6ebeb44dd3402dfa186.
+
+This model is not affiliated with, endorsed by, or sponsored by Base Labs / Baseten, the Qwen team, REAX or the authors
+of the parent models.

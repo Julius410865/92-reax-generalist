@@ -1,0 +1,79 @@
+{
+ "task": "story_continuation",
+ "counts": {
+  "train": 2500,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 2500,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {
+    "4": 0.02
+   },
+   "yes_share": null,
+   "top_gold_text_share": 0.0,
+   "distinct_gold_texts": 2800
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.25,
+   "cue_accuracy": {
+    "longest": 0.254,
+    "shortest": 0.241,
+    "overlap": 0.256
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.2,
+    "shortest": 0.1,
+    "overlap": 0.45
+   },
+   "limit": {
+    "longest": 0.4,
+    "shortest": 0.4,
+    "overlap": 0.55
+   },
+   "questions": 5600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 302,
+   "p99": 531,
+   "max": 578
+  },
+  "source": {
+   "pass": true,
+   "licence": "Public domain in the USA: Project Gutenberg eBooks of works whose US copyright has expired; the distributor's header, footer and licence text are stripped and the Project Gutenberg trademark is not used in the rows",
+   "files": 67
+  }
+ },
+ "sha256": {
+  "train": "2b340204aba039db7fd71b96d2d6695d59f60b4d41a73d348fd2df41b2bb9dd7",
+  "select": "5f5b998abf9a846bc2a66f91f45302571205ba85263c4b99aa7c08111d340667",
+  "test": "b8172a3f5c395310a203f89b3498eaf616fe05bf1f83c82f9fe75a2b6418a564"
+ },
+ "pass": true
+}

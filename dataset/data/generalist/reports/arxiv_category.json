@@ -1,0 +1,85 @@
+{
+ "task": "arxiv_category",
+ "counts": {
+  "train": 2500,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 2500,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {},
+   "yes_share": null,
+   "top_gold_text_share": 0.039,
+   "distinct_gold_texts": 26
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.038,
+   "cue_accuracy": {
+    "longest": 0.039,
+    "shortest": 0.039,
+    "overlap": 0.07
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.167,
+    "shortest": 0.083,
+    "overlap": 0.148
+   },
+   "limit": {
+    "longest": 0.267,
+    "shortest": 0.188,
+    "overlap": 0.248
+   },
+   "questions": 5600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 512,
+   "p99": 657,
+   "max": 783
+  },
+  "source": {
+   "pass": true,
+   "licence": "CC0 1.0 (OpenAlex data: titles, abstracts as inverted indexes, topics, ids). Only works whose publisher version (primary_location) carries a CC BY, CC BY-SA or public-domain licence in OpenAlex are used, so the abstract texts are openly licensed as well (CC BY / CC BY-SA require attribution: every row's source_id is the OpenAlex work id, which resolves to the DOI and the licence)",
+   "files": 105
+  },
+  "determinism": {
+   "pass": true,
+   "sha256": {
+    "train": "439c620979af9de150507eb14cf8cd0867a00527082df5142a0903a569ded688",
+    "select": "9d8854a1c8966244b05e3c563e82d42e180ca5506e8387daba62e190dd1aada0",
+    "test": "5f95239fb208de0d2ffc0af3568171b9e812aa14911a8ce32106de09ef7b652b"
+   }
+  }
+ },
+ "sha256": {
+  "train": "439c620979af9de150507eb14cf8cd0867a00527082df5142a0903a569ded688",
+  "select": "9d8854a1c8966244b05e3c563e82d42e180ca5506e8387daba62e190dd1aada0",
+  "test": "5f95239fb208de0d2ffc0af3568171b9e812aa14911a8ce32106de09ef7b652b"
+ },
+ "pass": true
+}

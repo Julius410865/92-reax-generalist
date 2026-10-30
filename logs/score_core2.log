@@ -1,0 +1,2 @@
+core2 test: local 72.95  dev_v51 80.6  item acc 0.7534  failed 0  486 s (3511 tok/s)
+core2 select: local 69.93  dev_v51 None  item acc 0.7013  failed 0  318 s (3470 tok/s)

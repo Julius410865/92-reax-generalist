@@ -1,0 +1,128 @@
+{
+ "domain": "ghsa_severity",
+ "task_type": "ghsa_severity",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "CC-BY-4.0",
+  "url": "https://github.com/github/advisory-database/blob/048deacdbddda9fcd84f7063549b0b8b9905b90f/LICENSE.md",
+  "attribution": "GitHub Advisory Database (github/advisory-database), CC BY 4.0"
+ },
+ "sources": {
+  "advisory-database.head.json": {
+   "url": "https://api.github.com/repos/github/advisory-database/commits/HEAD",
+   "sha256": "94fdcb74a56d2c9eaa7aff041ba6e2c1dcc1a4d0e9ecbf807b52f3dc67e24f6a"
+  },
+  "advisory-database-048deacdbddd.tar.gz": {
+   "url": "https://codeload.github.com/github/advisory-database/tar.gz/048deacdbddda9fcd84f7063549b0b8b9905b90f",
+   "sha256": "5ce9ec719d5d1b5d54420a4deef1316772fec9db1235618c0eaa2ad8f7dfa24c"
+  }
+ },
+ "label_field": "database_specific.severity, kept where the CVSS v3 base rating agrees",
+ "labels": {
+  "LOW": "Low severity",
+  "MODERATE": "Moderate severity",
+  "HIGH": "High severity",
+  "CRITICAL": "Critical severity"
+ },
+ "records_read": 37289,
+ "selection": {
+  "reviewed_advisories": 37289,
+  "withdrawn": 1240,
+  "no_label": 0,
+  "no_cvss3": 7086,
+  "cvss3_disagrees": 1641,
+  "duplicate_text": 137,
+  "duplicate_text_conflicting": 40,
+  "same_package_summary": 905,
+  "same_package_summary_conflicting": 934,
+  "same_record_text": 0,
+  "same_record_text_conflicting": 0
+ },
+ "kept_before_caps": {
+  "CRITICAL": 3686,
+  "HIGH": 9295,
+  "LOW": 1237,
+  "MODERATE": 10768
+ },
+ "dropped_unrenderable_or_scrub": 320,
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 5831.5,
+   "cap": 17494
+  },
+  "select": {
+   "median": 319.0,
+   "cap": 957
+  },
+  "test": {
+   "median": 340.0,
+   "cap": 1020
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 233,
+   "class_prior": {
+    "Moderate severity": 1294,
+    "High severity": 1112,
+    "Critical severity": 451,
+    "Low severity": 143
+   },
+   "gold_position": {
+    "A": 712,
+    "B": 741,
+    "C": 772,
+    "D": 775
+   },
+   "options": {
+    "4": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 14,
+   "class_prior": {
+    "Moderate severity": 67,
+    "High severity": 42,
+    "Critical severity": 35,
+    "Low severity": 6
+   },
+   "gold_position": {
+    "A": 40,
+    "B": 34,
+    "C": 34,
+    "D": 42
+   },
+   "options": {
+    "4": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 14,
+   "class_prior": {
+    "Moderate severity": 57,
+    "High severity": 55,
+    "Critical severity": 32,
+    "Low severity": 6
+   },
+   "gold_position": {
+    "A": 43,
+    "B": 26,
+    "C": 47,
+    "D": 34
+   },
+   "options": {
+    "4": 150
+   }
+  }
+ },
+ "files": {
+  "ghsa_severity.train.jsonl": "1fb989621ce39f25b0520745c795eacb3dc7842adb8a3ece7f04cc8dedd90c62",
+  "ghsa_severity.select.jsonl": "3ff50568b041679eda42e9b6a75a12b96009b2d53974ce42adfb072dfecb7a81",
+  "ghsa_severity.test.jsonl": "74feed4663965b74ce6728ec3984eb5133995b99ea09f41bde3c2e3935027979"
+ }
+}

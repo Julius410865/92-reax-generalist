@@ -1,0 +1,14 @@
+{
+ "task": "nli",
+ "licence": "OANC licence (permissive: free to use, modify and share) for the MultiNLI government, slate, telephone and travel genres, per the MultiNLI data statement (Williams, Nangia and Bowman 2018); the fiction genre is excluded because one of its works is CC BY-SA 3.0 and rows do not identify it",
+ "licence_url": "https://anc.org/OANC/license.txt",
+ "downloaded": "2026-10-27",
+ "files": {
+  "data__train-00000-of-00001.parquet": {
+   "url": "https://huggingface.co/datasets/nyu-mll/multi_nli/resolve/da70db2af9d09693783c3320c4249840212ee221/data/train-00000-of-00001.parquet",
+   "sha256": "1c1de03640b168e410aabfca19e7cc2f3dfcd7f0e126e935674e56fb102c4529",
+   "bytes": 213961663
+  }
+ },
+ "notes": "MultiNLI 1.0 train split (nyu-mll/multi_nli @ da70db2af9d09693783c3320c4249840212ee221). Data statement: https://cims.nyu.edu/~sbowman/multinli/ and https://aclanthology.org/N18-1101/. Used genres: government, slate, telephone, travel; fiction excluded. Label from the 'label' field (0 entailment, 1 neutral, 2 contradiction); label -1 dropped; pairs whose premise or hypothesis has fewer than 3 words dropped; pairs whose premise or hypothesis text equals a dev-set one dropped; duplicate (premise, hypothesis) pairs dropped. Group key = promptID; split = sha256 hash of the group key; at most one pair per premise; equal label thirds per split. Premise and hypothesis keep their own wording (whitespace collapsed only)."
+}

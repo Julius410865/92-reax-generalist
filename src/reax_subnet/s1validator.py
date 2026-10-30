@@ -1,0 +1,1357 @@
+"""The reax-s1 validator: miners serve the exact REAX reference models.
+
+Each round:
+1. read the metagraph with commitments; a miner's role is its inference element
+   ``reax-s1/1:<model>:<manifest_id>`` (or ``reax-s1m/1:...`` for several models on one hotkey) for an enabled pool
+   and this release's manifest; every model is its own scoring slot (elements.slot_key) and a changed role restarts
+   that slot from zero,
+2. draw n fresh typed decisions per slot and query all slots at once (signed),
+3. *after* the answers are in, draw a secret set of k items per miner and compute
+   their references on the validator's own runtime of the same pinned model,
+4. score in logit space (s1scoring.py): a round mean above tau_strike or any item above tau_item = strike
+   (moving average to 0); a mean within tau_mean passes,
+5. combine per-pool averages into weights with fixed pool shares; save state; set weights.
+Unverified items still cost the miner full work because it cannot tell them apart.
+"""
+
+from __future__ import annotations
+
+import collections
+import asyncio
+import dataclasses
+import functools
+import logging
+import math
+import os
+import secrets
+import time
+from datetime import datetime, timezone
+from typing import Any, Awaitable, Callable, Mapping, Optional
+
+import aiohttp
+from multidict import CIMultiDict
+
+from . import auth, elements, eutier, probeshard
+from .chain import Neuron, Snapshot
+from .elements import MODEL_INDEX, MODEL_ORDER, SLOT_STRIDE, slot_key, slot_uid
+from .manifest import load_manifest, parse_commitment
+from .protocol import ProtocolError
+from .s1backends import S1Backend
+from .s1contract import Decision, parse_decision
+from .s1items import generate_s1_items
+from .s1protocol import MAX_RESPONSE_BYTES, S1_DECIDE_PATH, S1Request, parse_s1_request, parse_s1_response
+from .s1scoring import PoolParams, choose_verified, compute_pool_weights, score_round
+from .state import MinerState, save
+from .tiers import (CAPACITY, CapacityParams, TierBudgets, compute_tiered_weights, pool_shares,
+                    fold_capacity_bounded, probe_budgets)
+from .validator import CHAIN_READ_TIMEOUT_S, QueryResult, Validator, _read_limited, ip_allowed
+
+log = logging.getLogger("reax.s1validator")
+
+# Release constants (docs/DESIGN-v1.1.md, CALIBRATION.md). Validators refuse overrides on finney.
+POOL_PARAMS: dict[str, PoolParams] = {
+    "s1-fast": PoolParams("s1-fast", temperature=2.07, tau_mean=0.20, tau_strike=0.50, tau_item=2.0,
+                          items_per_round=8, verified_per_round=8, latency_fast_s=0.5, latency_slow_s=8.0),
+    "s1-pro": PoolParams("s1-pro", temperature=2.0, tau_mean=0.20, tau_strike=0.50, tau_item=2.0,
+                         items_per_round=8, verified_per_round=3, latency_fast_s=1.0, latency_slow_s=12.0),
+    # Tiered pools (REAX_FEATURE_TIERED_POOLS, on in 1.2). Tolerances from the cross-backend
+    # calibration in docs/DESIGN-POOLS.md section 6 (llama.cpp CPU x86 / aarch64 / CUDA against each other);
+    # the latency curve fits the tier's hardware (4 decisions per request).
+    # s1-lite tau_mean 0.30: a validator may use its bf16 s1-fast runtime (the same weights, no extra GPU memory) as
+    # the s1-lite reference; honest Q8 miners then sit at mean 0.11 (P(round fails) ~ 0), a Q4 substitute still fails
+    # 92 % of rounds and is struck in 61 %. Against the GGUF reference itself honest distances are smaller still.
+    "s1-lite": PoolParams("s1-lite", temperature=2.07, tau_mean=0.30, tau_strike=0.50, tau_item=2.0,
+                          items_per_round=4, verified_per_round=4, latency_fast_s=1.0, latency_slow_s=12.0),
+    "s1-cpu": PoolParams("s1-cpu", temperature=1.0, tau_mean=0.20, tau_strike=0.50, tau_item=2.0,
+                         items_per_round=4, verified_per_round=4, latency_fast_s=2.0, latency_slow_s=30.0),
+}
+TIERED_POOLS = ("s1-lite", "s1-cpu")
+SHARES_FAST_ONLY = {"s1-fast": 1.0}
+# If our own runtime fails on more than this share of the verified items, nobody is scored this round.
+MAX_REFERENCE_FAILURE_SHARE = 0.10
+# A hung reference runtime (health green, decisions never return) must not stall the validator for hours:
+# the whole reference step of a round gets this budget in multiples of the round interval.
+REFERENCE_BUDGET_ROUNDS = 1.5
+REFERENCE_BUDGET_MIN_S = 60.0
+SHIELD_COOLDOWN_ROUNDS = 30
+# Tiered pools: a capacity probe runs in about one round in this many.
+PROBE_EVERY_ROUNDS = 10
+
+SHARES_BOTH = {"s1-fast": 0.35, "s1-pro": 0.65}
+# Tiered pools: reference decisions per round a validator spends per pool (normal rounds; capacity probes share
+# the same number). With more miners than fit, miners are verified in fair rotation. Defaults fit a validator
+# that runs the s1-lite reference on its GPU (~30 ms/decision) and the s1-cpu reference on 8 CPU threads
+# (~3.7 decisions/s); override per validator with REAX_REFERENCE_CAP_S1_LITE / REAX_REFERENCE_CAP_S1_CPU.
+REFERENCE_CAP = {"s1-lite": 240, "s1-cpu": 160}
+
+
+# Capacity probes: the window's measurement is dropped when the validator itself was the bottleneck (review C1). The
+# event loop is sampled every PROBE_TICK_S; a lag p95 above PROBE_LAG_P95_MAX_S means answers waited for the
+# validator's CPU; first sends spread over more than PROBE_SEND_SKEW_MAX_S mean the validator could not load all UIDs
+# at once. REAX_PROBE_CEILING_DPS (validator-local, from scripts/bench_probe.py; 0 = off) drops a probe whose
+# total throughput reaches what this host can take. Neither changes how a measured probe is scored.
+PROBE_TICK_S = 0.010
+PROBE_LAG_P95_MAX_S = 0.050
+# Each UID's window starts at the validator's first send to it; a probe whose first sends spread over more than this
+# is dropped (siblings' windows would differ by more than ~5 % of the shortest GPU window).
+PROBE_SEND_SKEW_MAX_S = 0.250
+# A probe whose busiest window loop (the validator's, or one probe shard's) used more than this share of a core is
+# dropped (cpu_saturated, 1.2.0rc7, review M2): its numbers were bounded by the validator. The lag guard does not see
+# it: on the live validator host (probemp-host bench) a saturated loop read s1-fast ~0.00 at 99-100 % of a core with a
+# loop lag p95 of only 1-2 ms and the skew guard quiet, while sharded probes ran at 13-29 % of a core.
+PROBE_CPU_SATURATED = 0.90
+# A probe answer may be this much older than the probe's own duration when its signature is checked.
+PROBE_RESPONSE_AGE_SLACK_S = 10.0
+# Before the window each probe lane's connection is opened with a GET /health, bounded by this time.
+PROBE_WARMUP_S = 2.0
+# The preparation of a probe's requests (a worker thread) comes before its window and reference budget.
+PROBE_PREPARE_BUDGET_S = 180.0
+# Release constant: at most this many requests are prepared per probe, whatever the fleet does. Preparing costs
+# 0.34-0.64 ms per request (s1-pro / s1-fast, measured on the loaded Sandy host); today's x1 fleet (~234 UIDs) needs
+# ~45k requests (~21 s of the 60 s budget above). (Original sizing, superseded below:) 60k left today's fleet untouched and kept the preparation near
+# 30 s even if every UID is at a x4 budget or a swarm of junk-fast UIDs drives all budgets up. Above it every UID's
+# budget is scaled down by the same factor (never below its target; tiers.scale_budgets_to_ceiling; the scaled measurement is a floor, see tiers.fold_capacity), which only limits
+# how high a UID can show in that probe and is the same for everyone (sybil-neutral).
+# 1.2.0rc11.post7 (s1-pro cap x4, s1-fast x2): 160k. Fully ramped live-size fleet (largest live counts 23-25 Oct 2026:
+# 172 s1-pro slots x 704 + 60 s1-fast slots x 432 = 147.0k, plus s1-lite / s1-cpu at their targets ~5.5k = ~152.5k) is prepared
+# without scaling, with ~5 % headroom (about 10 more s1-pro slots); at 0.34-0.78 ms per request (measured loaded hosts) that is
+# 55-125 s, hence PROBE_PREPARE_BUDGET_S 110 (typical 0.6 ms: ~96 s). Re-size both from the shadow bench's `prepbench`
+# (node/bench-capx4pro.sh).
+# 1.2.0rc11.post7 (both GPU pools at x4): 220k. Worst case, every slot at its cap at the 25 Oct 2026 counts (cap-headroom Q2):
+# 55 s1-fast x 864 (47.6k) + 168 s1-pro x 704 (118.3k) + s1-lite 10.7k + s1-cpu 5.5k = ~182.1k; x 1.2 growth margin = 218.5k -> 220k.
+# At 0.34-0.78 ms per request that is up to ~172 s, hence PROBE_PREPARE_BUDGET_S 180 (the bench measured 0.29 ms: ~64 s).
+# (Superseded, s1-pro x4 / s1-fast x2: 160k with PROBE_PREPARE_BUDGET_S 110.)
+# (Earlier sizing, x2/x2:) Mechanism-v2 lead review: 90k, so the x2 fleet at full ramp (146 s1-pro x 352 + 88 s1-fast x 432 = ~89k requests,
+# ~41 s at the measured costs) is prepared without scaling and the held-average rule below stays an attack-time
+# fallback. Before x4 this number must be re-sized from a bench on the validator host.
+PROBE_MAX_PREPARED_REQUESTS = 220_000
+# A probe response for 16 decisions is 3.5-5 kB. In a loopback test (validator challenge, 2026-10-15) 40 hotkeys of one
+# operator answering every lane with a gzip bomb cut an honest miner's measurement by 74 % and 80 of them tripped the
+# lag guard. Probe responses are therefore limited to this size and never decompressed (a response that is not plain
+# JSON counts 0 for that UID); it also bounds what a shard holds in memory per answer (review M1).
+PROBE_MAX_RESPONSE_BYTES = 32 * 1024
+# After this many probes dropped in a row (any reason) every further drop also logs "capacity probe: N probes dropped
+# in a row" at ERROR (review N2): unmeasured UIDs earn nothing until a probe is kept, so the owner must look.
+PROBE_DROPS_ALERT = 3
+# Probe verification off the round cadence (1.2.0rc11.post6, operational; REAX_PROBE_BACKGROUND=0 = the synchronous
+# probe of rc11.post5). The window and the signature check stay in the round; the reference verification of the sampled
+# answers and the capacity fold then run as one background task while the next rounds go on (on mainnet the s1-cpu
+# references of a probe, ~2 per slot on a single-lock CPU runtime, held a probe round at ~340 s). Those references yield
+# to the rounds' own: they go to a runtime in chunks (PROBE_REFERENCE_CHUNK decisions for pools with a REFERENCE_CAP,
+# PROBE_REFERENCE_CHUNK_GPU otherwise) and a chunk starts only while no round reference of that pool is in flight, so a
+# round waits at most one chunk. The reference budget counts the chunks' own time; the wall clock is bounded at
+# PROBE_BACKGROUND_WALL_FACTOR x that budget. One verification at a time: a probe due while one runs waits.
+PROBE_REFERENCE_CHUNK = 16
+PROBE_REFERENCE_CHUNK_GPU = 256
+PROBE_BACKGROUND_WALL_FACTOR = 4.0
+
+
+def probe_request_load(cap: CapacityParams, budget_dps: float) -> float:
+    """Requests/s a UID can draw from its shard in a probe: all its prepared requests inside its window. The shard
+    plan is balanced by this, not by the UID's expected rate (review N1): a UID with a high past capacity answering
+    junk instantly gets every prepared request (up to ``headroom`` x its last measurement), and planned by its expected
+    rate its coldkey could saturate its own shard and so drop every probe."""
+    return cap.requests_for(budget_dps) / cap.window_s
+
+
+def _probe_ceiling_dps() -> float:
+    raw = os.environ.get("REAX_PROBE_CEILING_DPS", "").strip()
+    try:
+        value = float(raw) if raw else 0.0
+    except ValueError:
+        return 0.0
+    return value if math.isfinite(value) and value > 0 else 0.0
+
+
+def _probe_prepare_budget_s() -> float:
+    """PROBE_PREPARE_BUDGET_S, overridable by the validator operator (REAX_PROBE_PREPARE_BUDGET_S, float > 0; validator-local,
+    not consensus): it pads the probe's outer timeout, it is not a limit on the preparation itself."""
+    raw = os.environ.get("REAX_PROBE_PREPARE_BUDGET_S", "").strip()
+    try:
+        value = float(raw) if raw else PROBE_PREPARE_BUDGET_S
+    except ValueError:
+        return PROBE_PREPARE_BUDGET_S
+    return value if math.isfinite(value) and value > 0 else PROBE_PREPARE_BUDGET_S
+
+
+class _LoopLag:
+    """Event-loop lag sampler: a ticker that sleeps PROBE_TICK_S and records how late it wakes up."""
+
+    def __init__(self) -> None:
+        self.samples: list[float] = []
+
+    async def run(self) -> None:
+        while True:
+            t0 = time.monotonic()
+            await asyncio.sleep(PROBE_TICK_S)
+            self.samples.append(max(0.0, time.monotonic() - t0 - PROBE_TICK_S))
+
+    def p95(self) -> float:
+        if not self.samples:
+            return 0.0
+        ordered = sorted(self.samples)
+        return ordered[min(len(ordered) - 1, math.ceil(0.95 * len(ordered)) - 1)]
+
+
+class _WarmupTimeout(Exception):
+    """The probe's connection warm-up did not finish in time: the probe is dropped like a lagging one."""
+
+
+def _merge_windows(got: list, shards: int) -> probeshard.ProbeWindow:
+    """The shards' windows as one: every UID's result, the worst lag and CPU share; a failure drops the probe."""
+    if len(got) != shards or any(not isinstance(w, probeshard.ProbeWindow) for w in got):
+        return probeshard.ProbeWindow(results=[], failed=[f"probe {r}" for r in got] or ["probe shards failed"])
+    trace = None
+    if any(w.trace is not None for w in got):
+        trace = {uid: ev for w in got for uid, ev in (w.trace or {}).items()}
+    return probeshard.ProbeWindow(results=[r for w in got for r in w.results],
+                                  lag_p95=max(w.lag_p95 for w in got), lag_samples=sum(w.lag_samples for w in got),
+                                  cpu_share=max(w.cpu_share for w in got), started=min(w.started for w in got),
+                                  trace=trace, refused={uid: k for w in got for uid, k in w.refused.items()})
+
+
+class _HttpStatus(Exception):
+    """A miner answered with a status other than 200 (a refusal, an overload or an error)."""
+
+    def __init__(self, status: int):
+        super().__init__(f"http {status}")
+        self.status = status
+
+
+@dataclasses.dataclass
+class _PendingProbe:
+    """A kept probe between its window (``_probe_measure``) and its verification (``_probe_verify``)."""
+    probed: list  # (uid, answered requests, window seconds, decisions) per probed UID
+    checked: dict  # uid -> (answers, decisions) or None (invalid answer)
+    verify: dict  # uid -> (model, sampled decisions)
+    roles: dict  # uid -> model
+    budgets: dict  # uid -> budget dps of this probe
+    scale: float  # tiers.probe_budgets' common factor of this probe
+    refused: dict  # uid -> lanes refused by the miner's own limits
+    left: float  # reference budget (s)
+    ended: float  # time.monotonic() at the end of the signature check
+    owners: dict  # uid -> (hotkey, role) at the window
+
+
+def s1_endpoint_url(ip: str, port: int) -> str:
+    host = f"[{ip}]" if ":" in ip else ip
+    return f"http://{host}:{port}{S1_DECIDE_PATH}"
+
+
+class S1Validator(Validator):
+    def __init__(self, cfg, wallet, chain, backends: Mapping[str, S1Backend],
+                 pools: Optional[Mapping[str, PoolParams]] = None, shares: Optional[Mapping[str, float]] = None,
+                 engine: Optional[Any] = None, competitions: Optional[Any] = None):
+        super().__init__(cfg, wallet, chain, backend=None)  # type: ignore[arg-type]
+        self.tiered = bool(getattr(cfg, "tiered_pools", False))
+        # Development networks may probe more often (localnet runs last minutes, not hours).
+        self.probe_every = PROBE_EVERY_ROUNDS
+        dev_every = os.environ.get("REAX_DEV_PROBE_EVERY_ROUNDS", "")
+        if self.tiered and dev_every.isdigit() and cfg.common.allow_dev_models:
+            self.probe_every = max(1, int(dev_every))
+        self.budgets = TierBudgets()
+        if self.tiered and shares is None:
+            # A validator without the reference of a tiered pool leaves that pool unscored (its share goes to the
+            # other pools pro rata, like an empty pool); the GPU pools' references are required as before.
+            enabled = ["s1-fast", *(["s1-pro"] if cfg.s1_pro_pool else [])]
+            for m in TIERED_POOLS:
+                if m in backends:
+                    enabled.append(m)
+                else:
+                    log.warning("no reference runtime for tiered pool %s: its miners are not scored by this validator", m)
+            shares = pool_shares(enabled, self.budgets)
+        self.shares = dict(shares or (SHARES_BOTH if cfg.s1_pro_pool else SHARES_FAST_ONLY))
+        self.pools = {m: (pools or POOL_PARAMS)[m] for m in self.shares}
+        missing = [m for m in self.pools if m not in backends]
+        if missing:
+            raise ValueError(f"no reference runtime for enabled pool(s): {', '.join(missing)}")
+        self.backends = dict(backends)
+        self.manifests = {m: load_manifest(m) for m in self.pools}
+        self.last_round: dict[str, Any] = {}
+        self._role_pending: dict[int, str] = {}
+        self._unconfirmed_streak: dict[int, int] = {}
+        self._last_shield: dict[int, int] = {}
+        self._rejected_commitment: dict[int, str] = {}
+        # Unreleased engine competition (engvalidator.EngineCompetition), None = off.
+        self.engine = engine
+        # competitions.CompetitionDriver: runs the engine and specialist cycles on one GPU. Given -> cycles run as a
+        # background task and serving rounds never wait for them. Without it an engine is driven inline (tests).
+        if competitions is None and engine is not None:
+            from .competitions import CompetitionDriver
+
+            competitions = CompetitionDriver(engine, background=False)
+        self.competitions = competitions
+        self._weights_lock = asyncio.Lock()
+        # Every per-UID table below (and in the state) is keyed by scoring slot = elements.slot_key(uid, model); the
+        # s1-fast slot of a UID is the UID itself. A slot is queried, scored, struck and probed like a separate hotkey.
+        # The inference view (what the serving rounds and weights use) and the competition view of the last round.
+        self._latest_snap: Optional[Snapshot] = None
+        self._latest_comp: Optional[Snapshot] = None
+        self._last_verified: dict[int, int] = {}  # slot -> round of its last verified answer (rotation)
+        self._probe_scale = 1.0  # common factor the last probe's budgets were cut by (tiers.probe_budgets)
+        self._probe_holds: dict[int, int] = {}  # held averages in a row per slot (tiers.fold_capacity_bounded)
+        self._probe_last: dict[int, float] = {}  # slot -> last verified probe measurement (sizes its next probe)
+        self.last_probe_stats: dict[str, Any] = {}  # the last probe's total throughput and event-loop lag
+        self._probe_skipped_round = -10 ** 9  # round of the last probe dropped by the saturation guard
+        self._probe_drops = 0  # probes dropped in a row (any reason); a kept probe resets it (review N2)
+        self._probe_drop_reasons: collections.deque[str] = collections.deque(maxlen=PROBE_DROPS_ALERT)
+        self.probe_background = os.environ.get("REAX_PROBE_BACKGROUND", "1") != "0"
+        self._probe_task: Optional[asyncio.Task] = None  # the background verification of the last probe
+        self._probe_started = 0.0  # time.monotonic() at which it was handed to the background
+        self._probe_owed = False  # a probe fell due while that verification ran
+        self._probe_report: Optional[dict[int, Any]] = None  # its report, shown in the next round's summary
+        self._ref_busy: dict[str, int] = {}  # model -> round reference calls in flight (background chunks wait)
+        self._ref_idle: dict[str, asyncio.Event] = {}
+        # Debug (REAX_PROBE_TRACE=1): every lane's send/receive times of the last probe in last_probe_trace.
+        self.probe_trace = os.environ.get("REAX_PROBE_TRACE", "") == "1"
+        self.last_probe_trace: dict[str, Any] = {}
+        # EU tier (eutier.py: Scheme A x1.5 + contract tier). The shipped registry lists no operator: inactive, and then
+        # the weights are exactly the weights without it. Any failure here leaves it off (never stops the validator).
+        self.eu: Optional[eutier.EUTier] = None
+        try:
+            self.eu = eutier.EUTier.from_env(os.environ, getattr(cfg, "state_path", "") or "~/.reax/validator-state.json")
+        except Exception:
+            log.exception("EU tier could not start: off (no multiplier, no contract pay)")
+
+    # --------------------------------------------------------------- roles
+    def slot_roles(self, n: Neuron) -> dict[str, str]:
+        """{model: role} of the inference element in ``n.commitment`` (a neuron of the inference view): every model
+        that is an enabled pool with this release's manifest, role ``<model>:<manifest_id>``. A stale manifest or a
+        disabled pool for one model never voids the other models of the element."""
+        models = elements.parse_inference(n.commitment) or {}
+        return {m: f"{m}:{mid}" for m, mid in sorted(models.items(), key=lambda kv: MODEL_INDEX[kv[0]])
+                if m in self.pools and mid == self.manifests[m].manifest_id}
+
+    def role_of(self, n: Neuron) -> Optional[str]:
+        """The model of a single-model inference commitment this release scores, else None."""
+        if elements.is_multimodel(n.commitment):
+            return None
+        return next(iter(self.slot_roles(n)), None)
+
+    def _why_rejected(self, commitment: str) -> str:
+        parsed = parse_commitment(commitment)
+        if parsed is None:
+            return "not a reax-s1/1 commitment"
+        model, manifest_id = parsed
+        return self._why_model_rejected(model, manifest_id)
+
+    def _why_model_rejected(self, model: str, manifest_id: str) -> str:
+        if model not in self.pools:
+            return f"the {model} pool is not enabled in this release"
+        return (f"manifest {manifest_id} differs from this release's {model} manifest "
+                f"{self.manifests[model].manifest_id} (miner and validator run different releases)")
+
+    def _why_invalid(self, n: Neuron, block: int) -> str:
+        """Why the raw commitment of ``n`` has no role at all (``elements.split_elements`` returned None)."""
+        fields = elements.fields_of(n)
+        kinds = [elements.kind_of(f.strip()) if isinstance(f, str) else None for f in fields]
+        if len(fields) == 1:
+            if kinds[0] == elements.INFERENCE:  # a valid multi-model element, not started
+                return (f"multi-model commitments count from block {elements.MULTIMODEL_START_BLOCK}, held before "
+                        "the start block")
+            return self._why_rejected(n.commitment)
+        if len(fields) != 2 or None in kinds or len(set(kinds)) != 2:
+            return "invalid multi-element commitment (needs exactly one inference and one competition element)"
+        if not elements._started(elements.DUALROLE_START_BLOCK, block):
+            return (f"multi-field commitments count from block {elements.DUALROLE_START_BLOCK}, held before the start "
+                    "block")
+        return (f"multi-model commitments count from block {elements.MULTIMODEL_START_BLOCK}, held before the start "
+                "block")
+
+    def _log_rejected_commitments(self, snap: Snapshot, views: Optional[elements.RoleViews] = None) -> None:
+        """Say once per UID and commitment why a committed miner is not queried (or not for some model)."""
+        views = views or elements.role_views(snap)
+        inference = {n.uid: n for n in views.inference.neurons}
+        seen: dict[int, str] = {}
+        for n in snap.neurons:
+            if not n.commitment or n.hotkey == self.hotkey or n.uid == snap.owner_uid:
+                continue
+            el = views.elements.get(n.uid)
+            if el is None:
+                reason = self._why_invalid(n, snap.block)
+            elif not el.inference:  # a competition entry only
+                if self.engine is not None and self.engine.is_engine_commitment(el.competition):
+                    continue
+                reason = self._why_rejected(el.competition)
+            else:
+                have = self.slot_roles(inference[n.uid])
+                models = elements.parse_inference(el.inference) or {}
+                missing = [self._why_model_rejected(m, mid) for m, mid in sorted(models.items(),
+                           key=lambda kv: MODEL_INDEX[kv[0]]) if m not in have]
+                if not missing:
+                    continue
+                reason = "; ".join(missing)
+            seen[n.uid] = n.commitment
+            if self._rejected_commitment.get(n.uid) != n.commitment:
+                log.warning("uid %d is not queried: commitment %r: %s", n.uid, n.commitment[:80], reason)
+        self._rejected_commitment = seen
+
+    # --------------------------------------------------------------- query
+    async def _post_s1(self, session: aiohttp.ClientSession, sem: asyncio.Semaphore, neuron: Neuron, body: bytes,
+                       timeout_s: float, max_bytes: int = MAX_RESPONSE_BYTES) -> tuple[bytes, CIMultiDict, float]:
+        """Signed POST of a serialised request: (raw response, response headers, latency). Raises on a refusal
+        (``_HttpStatus``), timeout or network error; the response is neither verified nor parsed here."""
+        assert neuron.ip is not None and neuron.port is not None
+        async with sem:
+            headers = auth.sign_request(self.wallet, body, neuron.hotkey, path=S1_DECIDE_PATH)
+            headers["Content-Type"] = "application/json"
+            started = time.monotonic()
+            async with session.post(s1_endpoint_url(neuron.ip, neuron.port), data=body, headers=headers,
+                                    allow_redirects=False, timeout=aiohttp.ClientTimeout(total=timeout_s)) as resp:
+                if resp.status != 200:
+                    raise _HttpStatus(resp.status)
+                raw = await _read_limited(resp, max_bytes)
+                return raw, CIMultiDict(resp.headers), time.monotonic() - started  # keeps duplicate headers
+
+    def _check_s1(self, neuron: Neuron, req: S1Request, raw: bytes, headers: Mapping[str, str],
+                  max_age: float) -> dict[str, tuple[float, ...]]:
+        """Signature (bound to this validator, the miner's hotkey and the request id) and strict parse."""
+        auth.verify_response(headers, raw, req.request_id, self.hotkey, neuron.hotkey, self.nonce_store,
+                             max_age=max_age, path=S1_DECIDE_PATH)
+        return parse_s1_response(raw, req)
+
+    @staticmethod
+    def _s1_error(neuron: Neuron, exc: BaseException) -> str:
+        if isinstance(exc, _HttpStatus):
+            return f"http {exc.status}"
+        if isinstance(exc, asyncio.TimeoutError):
+            return "timeout"
+        if isinstance(exc, auth.AuthError):
+            return f"auth: {type(exc).__name__}"
+        if isinstance(exc, ProtocolError):
+            return f"protocol: {exc}"
+        if isinstance(exc, (aiohttp.ClientError, OSError, ValueError)):
+            return f"network: {type(exc).__name__}"
+        log.warning("unexpected error querying uid %d: %r", slot_uid(neuron.uid), exc)
+        return f"internal: {type(exc).__name__}"
+
+    async def _query_s1(self, session: aiohttp.ClientSession, sem: asyncio.Semaphore, neuron: Neuron,
+                        req: S1Request, timeout_s: float) -> QueryResult:
+        try:
+            raw, headers, latency = await self._post_s1(session, sem, neuron, req.to_bytes(), timeout_s)
+            return QueryResult(neuron.uid, self._check_s1(neuron, req, raw, headers, timeout_s + 10.0), latency)
+        except Exception as exc:  # a miner must never be able to abort the round
+            return QueryResult(neuron.uid, None, math.inf, self._s1_error(neuron, exc))
+
+    # --------------------------------------------------------------- round
+    def _new_request(self, model: str, items: Optional[int] = None) -> S1Request:
+        params = self.pools[model]
+        decisions = []
+        for it in generate_s1_items(items or params.items_per_round):
+            decisions.append(parse_decision(it.decision(), model))
+        return S1Request(secrets.token_hex(16), model, self.manifests[model].manifest_id, tuple(decisions))
+
+    async def _references(
+        self, verify: dict[int, tuple[str, list[Decision]]], background_budget: Optional[float] = None
+    ) -> tuple[dict[int, dict[str, tuple[float, ...]]], set[int], int, int]:
+        """Reference probabilities for every verified decision, batched per model.
+
+        Returns (references, uids whose reference failed, failed items, total items). A failed item
+        (after one retry) leaves only that miner unscored this round, never the whole round.
+        ``background_budget`` set: a background probe's references (``_decide_background``).
+        """
+        out: dict[int, dict[str, tuple[float, ...]]] = {uid: {} for uid in verify}
+        failed_uids: set[int] = set()
+        failed = total = 0
+        for model in sorted(self.pools):
+            flat = [(uid, d) for uid, (m, ds) in sorted(verify.items()) if m == model for d in ds]
+            if not flat:
+                continue
+            decisions = [d for _, d in flat]
+            if background_budget is None:
+                results = await self._decide_foreground(model, decisions)
+            else:
+                results = await self._decide_background(model, decisions, background_budget)
+            for (uid, d), a in zip(flat, results):
+                total += 1
+                if isinstance(a, BaseException):
+                    failed += 1
+                    failed_uids.add(uid)
+                    continue
+                out[uid][d.ident] = tuple(float(a["probabilities"][k]) for k in d.question.keys)
+        return out, failed_uids, failed, total
+
+    def _idle(self, model: str) -> asyncio.Event:
+        """Set while no round reference of ``model`` is in flight."""
+        ev = self._ref_idle.get(model)
+        if ev is None:
+            ev = self._ref_idle[model] = asyncio.Event()
+            ev.set()
+        return ev
+
+    async def _decide_foreground(self, model: str, decisions: list[Decision]) -> list[Any]:
+        """A round's references: sent at once; a background probe's next chunk waits until they are done."""
+        self._ref_busy[model] = self._ref_busy.get(model, 0) + 1
+        self._idle(model).clear()
+        try:
+            return await self.backends[model].decide_each(decisions)
+        finally:
+            self._ref_busy[model] -= 1
+            if not self._ref_busy[model]:
+                self._idle(model).set()
+
+    async def _decide_background(self, model: str, decisions: list[Decision], budget: float) -> list[Any]:
+        """A background probe's references, in chunks that yield to the rounds' own (PROBE_REFERENCE_CHUNK). Only the
+        chunks' own time counts against ``budget``: time spent waiting for a round is not the runtime's fault."""
+        size = PROBE_REFERENCE_CHUNK if model in REFERENCE_CAP else PROBE_REFERENCE_CHUNK_GPU
+        out: list[Any] = []
+        spent = 0.0
+        for i in range(0, len(decisions), size):
+            ev = self._idle(model)
+            while not ev.is_set():  # asyncio may wake us after a round cleared the event again
+                await ev.wait()
+            if spent > budget:
+                raise asyncio.TimeoutError
+            t0 = time.monotonic()
+            out += await self.backends[model].decide_each(decisions[i:i + size])
+            spent += time.monotonic() - t0
+        return out
+
+    async def _references_isolated(
+        self, verify: dict[int, tuple[str, list[Decision]]], budget: float, background: bool = False
+    ) -> tuple[dict[int, dict[str, tuple[float, ...]]], set[int], list[str]]:
+        """References pool by pool, concurrently, each pool with its own budget and its own failure share.
+
+        One pool's slow, hung or failing runtime never costs another pool its round: it leaves only its own miners
+        unscored (no score update either way). Returns (references, uids left unscored, pools that failed).
+        ``background``: a background probe's references (own-time budget, wall clock PROBE_BACKGROUND_WALL_FACTOR x).
+        """
+        by_model: dict[str, dict[int, tuple[str, list[Decision]]]] = {}
+        for uid, (model, ds) in verify.items():
+            by_model.setdefault(model, {})[uid] = (model, ds)
+
+        async def one(model: str, sub: dict[int, tuple[str, list[Decision]]]):
+            try:
+                refs, bad, failed, total = await asyncio.wait_for(
+                    self._references(sub, budget if background else None),
+                    PROBE_BACKGROUND_WALL_FACTOR * budget if background else budget)
+            except asyncio.TimeoutError:
+                log.error("%s reference runtime did not finish %d miners' items within %.0f s; %s miners unscored this "
+                          "round (check that sidecar: it may be hung while /health stays green)",
+                          model, len(sub), budget, model)
+                return model, None, set(sub)
+            except Exception:
+                log.exception("%s reference computation failed; %s miners unscored this round", model, model)
+                return model, None, set(sub)
+            if total and failed > MAX_REFERENCE_FAILURE_SHARE * total:
+                log.error("%s reference runtime failed on %d of %d items; %s miners unscored this round",
+                          model, failed, total, model)
+                return model, None, set(sub)
+            if failed:
+                log.warning("%s reference runtime failed on %d of %d items; %d miner(s) left unscored this round",
+                            model, failed, total, len(bad))
+            return model, refs, bad
+
+        references: dict[int, dict[str, tuple[float, ...]]] = {}
+        unscored: set[int] = set()
+        failed_pools: list[str] = []
+        for model, refs, bad in await asyncio.gather(*(one(m, sub) for m, sub in sorted(by_model.items()))):
+            if refs is None:
+                failed_pools.append(model)
+            else:
+                references.update(refs)
+            unscored |= bad
+        return references, unscored, failed_pools
+
+    def _reference_cap(self, model: str) -> Optional[int]:
+        """Reference decisions per round this validator spends on a pool (None = no cap). Validator-local resource
+        limit, not a scoring constant: it changes how often a miner is verified, never how it is scored."""
+        if model not in REFERENCE_CAP:
+            return None
+        raw = os.environ.get(f"REAX_REFERENCE_CAP_{model.upper().replace('-', '_')}", "")
+        return max(1, int(raw)) if raw.isdigit() else REFERENCE_CAP[model]
+
+    def _rotate(self, model: str, candidates: list[Neuron]) -> tuple[list[Neuron], list[Neuron]]:
+        """Fair rotation under the pool's reference cap: least recently verified first (random among equals).
+        Returns (queried this round, rested this round). Rested miners are neither queried nor decayed."""
+        cap = self._reference_cap(model)
+        if cap is None:
+            return candidates, []
+        room = max(1, cap // self.pools[model].verified_per_round)
+        if len(candidates) <= room:
+            return candidates, []
+        order = sorted(candidates, key=lambda n: (self._last_verified.get(n.uid, -1), secrets.randbits(32)))
+        return order[:room], order[room:]
+
+    async def run_round(self, session: aiohttp.ClientSession) -> Optional[dict[str, Any]]:
+        try:
+            snap = await self.read_snapshot()
+        except asyncio.TimeoutError:
+            log.warning("metagraph read did not finish within %.0f s, skipping round", CHAIN_READ_TIMEOUT_S)
+            return None
+        except Exception as exc:
+            log.warning("chain unavailable, skipping round: %s", exc)
+            return None
+        count = len(snap.neurons)
+        if count == 0:
+            log.warning("metagraph read returned no neurons; skipping round")
+            return None
+        known = self._last_neuron_count
+        if known and count < 0.9 * known and self._shrunk_count != count:
+            self._shrunk_count = count
+            log.warning("metagraph shrank from %d to %d neurons; skipping round until a second read confirms", known, count)
+            return None
+        self._shrunk_count = None
+        self._last_neuron_count = count
+        views = elements.role_views(snap)
+        isnap = views.inference  # commitment = the inference element; the competition code gets views.competition
+        reset = self.state.sync(isnap)
+        if reset:
+            log.info("hotkey changed on uids %s; their scores were reset", reset)
+        reset_uids = set(reset)
+        for slot in [s for s in self._last_shield if s not in self.state.miners or slot_uid(s) in reset_uids]:
+            self._last_shield.pop(slot, None)  # a new hotkey starts without the previous one's cooldown
+        self._log_rejected_commitments(snap, views)
+
+        # One scoring slot per (UID, model) of the inference element; a UID that serves no s1-fast keeps its plain
+        # entry (role "") like any non-miner. A slot whose model left the commitment proposes the empty role.
+        excluded = {n.uid for n in isnap.neurons if n.hotkey == self.hotkey or n.uid == isnap.owner_uid}
+        proposed: dict[int, tuple[Optional[str], str]] = {}
+        slot_neurons: dict[int, Neuron] = {}  # slot -> the neuron with uid = slot (virtual: same endpoint and keys)
+        for n in isnap.neurons:
+            if n.uid in excluded:
+                continue
+            slot_roles = self.slot_roles(n)
+            if "s1-fast" not in slot_roles:
+                proposed[n.uid] = (None, "")
+            for model in MODEL_ORDER:
+                if model in slot_roles:
+                    slot = slot_key(n.uid, model)
+                    proposed[slot] = (model, slot_roles[model])
+                    slot_neurons[slot] = dataclasses.replace(n, uid=slot)
+                    self.state.miners.setdefault(slot, MinerState(hotkey=n.hotkey))
+        for slot in [s for s in self.state.miners if s >= SLOT_STRIDE and s not in proposed]:
+            if slot_uid(slot) in excluded:
+                self.state.drop_slot(slot)
+            else:
+                proposed[slot] = (None, "")
+        # Commitments have no "shrank" signal like the neuron count. A role change is applied only when two
+        # consecutive reads agree on it for that slot; until then the slot is neither queried nor scored. One bad
+        # read can therefore never reset anybody; a whole-round guard could be stalled by a
+        # few rotating hotkeys). A slot that stays unconfirmed for a second read in a row (it keeps flipping its
+        # commitment) is decayed like a miner that did not answer, so flipping cannot freeze an old score
+        #.
+        unconfirmed: set[int] = set()
+        pending: dict[int, str] = {}
+        streak: dict[int, int] = {}
+        for slot, (_model, role) in proposed.items():
+            if self.state.miners[slot].role != role and self._role_pending.get(slot) != role:
+                unconfirmed.add(slot)
+                pending[slot] = role
+                streak[slot] = self._unconfirmed_streak.get(slot, 0) + 1
+        self._role_pending = pending
+        self._unconfirmed_streak = streak
+        # The first unconfirmed read is shielded at most once per SHIELD_COOLDOWN_ROUNDS per slot, so alternating
+        # between the stored role and anything else on every read cannot skip half the work (round 3, MECH-L5).
+        shielded = {slot for slot in unconfirmed if streak[slot] == 1
+                    and self.state.rounds - self._last_shield.get(slot, -SHIELD_COOLDOWN_ROUNDS) >= SHIELD_COOLDOWN_ROUNDS}
+        for slot in shielded:
+            if self.state.miners[slot].role:  # a first registration has nothing to protect and uses no shield
+                self._last_shield[slot] = self.state.rounds
+        if unconfirmed:
+            log.info("role change on uids %s seen once; applied when the next read confirms",
+                     [_slot_label(s) for s in sorted(unconfirmed)])
+
+        roles: dict[int, str] = {}  # slot -> model
+        targets: list[Neuron] = []  # one virtual neuron per queryable slot (uid = slot)
+        for slot, (model, role) in proposed.items():
+            if slot in unconfirmed:
+                continue
+            if self.state.set_role(slot, role):
+                log.info("uid %s changed its committed role to %r; score restarts from zero", _slot_label(slot),
+                         role or "none")
+            if not role:
+                self.state.drop_slot(slot)  # a model slot whose model left the commitment (plain entries stay)
+            n = slot_neurons.get(slot)
+            if model is None or n is None or n.ip is None or n.port is None or not ip_allowed(n.ip, self.cfg.allow_private_ips):
+                continue
+            roles[slot] = model
+            targets.append(n)
+
+        rested: set[int] = set()  # slots
+        if self.tiered:
+            for model in sorted(m for m in REFERENCE_CAP if m in self.pools):
+                pool_targets = [n for n in targets if roles[n.uid] == model]
+                keep, rest = self._rotate(model, pool_targets)
+                if rest:
+                    rested |= {n.uid for n in rest}
+                    log.info("%s: %d slots, reference cap %d decisions/round: %d verified this round, %d rested "
+                             "(rotation)", model, len(pool_targets), self._reference_cap(model), len(keep), len(rest))
+        queryable = list(targets)
+        if rested:
+            targets = [n for n in targets if n.uid not in rested]
+        requests = {n.uid: self._new_request(roles[n.uid]) for n in targets}
+        sem = asyncio.Semaphore(self.cfg.max_parallel)
+        timeouts = {m: p.latency_slow_s for m, p in self.pools.items()}
+        gathered = await asyncio.gather(
+            *(self._query_s1(session, sem, n, requests[n.uid], timeouts[roles[n.uid]]) for n in targets),
+            return_exceptions=True,
+        )
+        results = [
+            r if isinstance(r, QueryResult) else QueryResult(n.uid, None, math.inf, f"internal: {type(r).__name__}")
+            for n, r in zip(targets, gathered)
+        ]
+        # The verified set is drawn only now, after every answer has arrived.
+        verify: dict[int, tuple[str, list[Decision]]] = {}
+        for res in results:
+            if res.answers is None:
+                continue
+            req = requests[res.uid]
+            chosen = set(choose_verified([d.ident for d in req.decisions], self.pools[req.model].verified_per_round))
+            verify[res.uid] = (req.model, [d for d in req.decisions if d.ident in chosen])
+        budget = max(REFERENCE_BUDGET_MIN_S, REFERENCE_BUDGET_ROUNDS * self.cfg.round_interval_s)
+        references, unscored, failed_pools = await self._references_isolated(verify, budget)
+        if verify and set(failed_pools) >= {m for m, _ds in verify.values()}:
+            log.error("every pool's reference runtime failed or timed out; skipping the round without scoring anyone")
+            return None
+
+        summary: dict[str, Any] = {"block": snap.block, "targets": len(targets), "ok": 0, "failed": 0, "scores": {}}
+        queried = set()
+        for res in results:
+            queried.add(res.uid)
+            if res.uid in unscored:  # our own reference failed for this miner: no update either way
+                summary["scores"][res.uid] = {"model": roles[res.uid], "score": None, "error": "reference unavailable"}
+                continue
+            params = self.pools[roles[res.uid]]
+            refs = references.get(res.uid, {})
+            if res.answers is None:
+                outcome_score, strike, passed, verified, worst, mean = 0.0, False, 0, 0, math.inf, math.inf
+            else:
+                o = score_round(res.answers, refs, res.latency_s, params)
+                outcome_score, strike, passed, verified, worst, mean = (
+                    o.score, o.strike, o.passed, o.verified, o.max_distance, o.mean_distance)
+            fidelity = passed / verified if verified else 0.0
+            if strike:
+                self.state.strike(res.uid, fidelity)
+            else:
+                self.state.update(res.uid, outcome_score, fidelity, self.params.ema_alpha)
+            self._last_verified[res.uid] = self.state.rounds
+            summary["ok" if res.answers is not None else "failed"] += 1
+            summary["scores"][res.uid] = {
+                "model": roles[res.uid], "score": round(outcome_score, 4), "verified": verified, "passed": passed,
+                "strike": strike, "max_distance": None if not math.isfinite(worst) else round(worst, 4),
+                "mean_distance": None if not math.isfinite(mean) else round(mean, 4),
+                "latency_s": None if math.isinf(res.latency_s) else round(res.latency_s, 3), "error": res.error,
+            }
+            log.info("uid %d [%s]: score %.3f items %d/%d mean_d %s max_d %s latency %s ema %.3f%s%s",
+                     slot_uid(res.uid), roles[res.uid], outcome_score, passed, verified,
+                     "-" if not math.isfinite(mean) else f"{mean:.3f}",
+                     "-" if not math.isfinite(worst) else f"{worst:.3f}",
+                     "-" if math.isinf(res.latency_s) else f"{res.latency_s:.2f}s", self.state.miners[res.uid].ema,
+                     " STRIKE" if strike else "", f" error={res.error}" if res.error else "")
+        for slot in list(self.state.miners):
+            if (slot not in queried and slot not in shielded and slot not in rested
+                    and slot_uid(slot) not in excluded):
+                self.state.update(slot, 0.0, 0.0, self.params.ema_alpha)
+        answered = {res.uid for res in results if res.answers is not None and res.uid not in unscored}
+        # A probe measures every queryable UID of each pool at once, rested by the rotation or not, answered this round
+        # or not (a UID that is down measures 0): probing only part of a pool would let a machine's hotkeys be
+        # measured apart, each at the whole machine (review H2). Its verification stays bounded per pool.
+        probe_targets = [n for n in queryable if roles[n.uid] in CAPACITY]
+        # A UID that has never been measured (new registration or new role) triggers a probe in the next round in
+        # which it answers, so it does not wait ~10 rounds at zero capacity weight.
+        unmeasured = any(self.state.miners[n.uid].capacity is None for n in probe_targets if n.uid in answered)
+        # After a probe the saturation guard dropped, wait for the normal schedule: re-probing every round for a new
+        # UID would load an overloaded validator further.
+        if self.state.rounds - self._probe_skipped_round < self.probe_every:
+            unmeasured = False
+        # A probe that falls due while the last one's verification still runs (background) is owed: it runs in the
+        # first round after that verification, so the number of probes stays what the schedule draws.
+        due = bool(self.tiered and probe_targets and (unmeasured or self._probe_due() or self._probe_owed))
+        if due and self._probe_task is not None and not self._probe_task.done():
+            (log.debug if self._probe_owed else log.info)(
+                "capacity probe due, but the last probe's verification is still running (%.0f s); probing once "
+                "it has finished", time.monotonic() - self._probe_started)
+            self._probe_owed = True
+        elif due:
+            self._probe_owed = False
+            # The probe's own time (preparation, connection warm-up, window + one latency bound) comes on top of the
+            # reference budget.
+            # Probe shards add their start, go and result slack (review L2: a shard's own timeout must fire first, so
+            # the log names the shard instead of "did not finish").
+            probe_budget = _probe_prepare_budget_s() + PROBE_WARMUP_S + 1.0 + budget + max((CAPACITY[m].window_s + self.pools[m].latency_slow_s
+                                                                  for m in self.pools if m in CAPACITY), default=0.0)
+            probe_budget += (probeshard.PROBE_SHARD_START_SLACK_S + probeshard.PROBE_SHARD_GO_DELAY_S
+                             + probeshard.PROBE_SHARD_RESULT_SLACK_S)
+            try:
+                if not self.probe_background:
+                    summary["capacity"] = await asyncio.wait_for(
+                        self._probe_capacity(session, probe_targets, roles, budget), probe_budget + 5.0)
+                else:
+                    pending = await asyncio.wait_for(
+                        self._probe_measure(session, probe_targets, roles, budget), probe_budget + 5.0)
+                    if pending is None:
+                        summary["capacity"] = {}
+                    else:
+                        self._probe_started = pending.ended
+                        self._probe_task = asyncio.create_task(self._probe_finish(pending))
+                        summary["capacity_pending"] = len(pending.probed)
+            except asyncio.TimeoutError:
+                log.error("capacity probe did not finish within %.0f s; no capacity update this round", probe_budget)
+                self._probe_dropped([f"did not finish within {probe_budget:.0f} s"])
+            except Exception as exc:
+                log.exception("capacity probe failed; no capacity update this round")
+                self._probe_dropped([f"failed: {type(exc).__name__}"])
+        if self._probe_report is not None:  # a background verification finished since the last round
+            summary["capacity"] = {**self._probe_report, **summary.get("capacity", {})}
+            self._probe_report = None
+        self._eu_record(summary)
+        self.state.rounds += 1
+        for slot in [s for s, m in self.state.miners.items() if s >= SLOT_STRIDE and not m.role
+                     and s not in self._role_pending]:
+            self.state.drop_slot(slot)  # model slots that never got a role are not kept
+        try:
+            save(self.state, self.cfg.state_path)
+        except OSError as exc:
+            log.error("could not save state: %s", exc)
+        log.info("round %d at block %d: %d miners queried, %d answered, %d failed",
+                 self.state.rounds, snap.block, len(targets), summary["ok"], summary["failed"])
+        self.last_round = summary
+        csnap = views.competition  # the engine, specialist and generalist code see the competition element only
+        self._latest_snap, self._latest_comp = isnap, csnap
+        drv = self.competitions
+        if drv is not None:
+            drv.refresh(csnap)
+            between = lambda: self.maybe_set_weights(self._latest_snap or isnap)  # noqa: E731
+            if drv.background:
+                drv.kick(csnap, self._not_competitors(csnap), between=between)
+            elif drv.due():
+                try:
+                    summary["engine_competition"] = await drv.run(csnap, self._not_competitors(csnap), between=between)
+                except Exception:
+                    log.exception("engine competition cycle failed; serving rounds continue")
+        await self.maybe_set_weights(isnap)
+        return summary
+
+    def _eu_record(self, summary: Mapping[str, Any]) -> None:
+        """Feed this round's outcomes per hotkey (answered without error, any strike incl. the capacity probe's) to the
+        EU contract-tier ledger. Reloads the registry first (once per round). Never raises."""
+        if self.eu is None:
+            return
+        try:
+            self.eu.refresh()
+            if not self.eu.contract_hotkeys():
+                return
+            outcomes: dict[str, tuple[bool, bool]] = {}
+            for slot, e in summary.get("scores", {}).items():
+                m = self.state.miners.get(slot)
+                if m is None or e.get("score") is None:  # our own reference failed: no information either way
+                    continue
+                ok, failed = outcomes.get(m.hotkey, (False, False))
+                outcomes[m.hotkey] = (ok or (e.get("error") is None and not e.get("strike")),
+                                      failed or bool(e.get("strike")))
+            for slot, e in (summary.get("capacity") or {}).items():
+                m = self.state.miners.get(slot)
+                hk = e.get("hotkey") or (m.hotkey if m is not None else None)  # the hotkey checked at the window
+                if hk is not None and e.get("strike"):
+                    ok, _failed = outcomes.get(hk, (False, False))
+                    outcomes[hk] = (ok, True)
+            self.eu.record_round(datetime.now(timezone.utc), outcomes)
+        except Exception:
+            log.exception("EU tier: recording the round failed (no effect on scoring)")
+
+    def _eu_inputs(self, snap: Snapshot, ema_by_pool: dict[str, dict[int, float]],
+                   capacity_by_pool: Mapping[str, Mapping[int, float]], now: datetime
+                   ) -> tuple[dict[str, dict[int, float]], dict[int, float]]:
+        """(Scheme A score multipliers per pool and slot, contract-tier pay per UID as a fraction of the inference
+        share). Removes the slots of paid contract-tier hotkeys from ``ema_by_pool`` (no double pay). Both empty when
+        the registry lists no active operator; any error -> both empty and ``ema_by_pool`` untouched."""
+        if self.eu is None or self.eu.registry.empty:
+            return {}, {}
+        try:
+            hotkey_by_uid = {n.uid: n.hotkey for n in snap.neurons}
+            uid_by_hotkey = {n.hotkey: n.uid for n in snap.neurons}
+            pay_hk, excluded = self.eu.contract_pay(now)
+            pay = {uid_by_hotkey[h]: f for h, f in pay_hk.items()
+                   if h in uid_by_hotkey and uid_by_hotkey[h] != snap.owner_uid}
+            drop: dict[str, list[int]] = {}
+            if pay:
+                for pool, emas in ema_by_pool.items():
+                    drop[pool] = [s for s in emas if hotkey_by_uid.get(slot_uid(s)) in excluded]
+            hotkey_of = {s: hotkey_by_uid[slot_uid(s)] for emas in ema_by_pool.values() for s in emas
+                         if slot_uid(s) in hotkey_by_uid}
+            factors: dict[str, dict[int, float]] = {}
+            for pool, emas in ema_by_pool.items():
+                caps = capacity_by_pool.get(pool, {})
+                gone = set(drop.get(pool, ()))
+                # The unit count the pool pays a slot for (a pool without any measurement pays 1 per slot).
+                factors[pool] = {s: (CAPACITY[pool].factor(caps.get(s, 0.0)) if caps and pool in CAPACITY else 1.0)
+                                 for s in emas if s not in gone}
+            mult = self.eu.slot_multipliers(now, factors, hotkey_of)
+        except Exception:
+            log.exception("EU tier: weight inputs failed; weights without it this time")
+            return {}, {}
+        for pool, slots in drop.items():
+            for s in slots:
+                del ema_by_pool[pool][s]
+        if mult or pay:
+            log.info("EU tier: Scheme A multipliers on %d slots; contract-tier pay %s",
+                     sum(len(v) for v in mult.values()), {u: round(f, 6) for u, f in sorted(pay.items())})
+        return mult, pay
+
+    async def maybe_set_weights(self, snap: Snapshot) -> bool:
+        # The competition task and the serving round both end here: one at a time.
+        async with self._weights_lock:
+            return await super().maybe_set_weights(snap)
+
+    def _not_competitors(self, snap: Snapshot) -> set[int]:
+        out = {n.uid for n in snap.neurons if n.hotkey == self.hotkey}
+        if snap.owner_uid is not None:
+            out.add(snap.owner_uid)
+        return out
+    # --------------------------------------------------------------- capacity (tiered pools)
+    def _probe_due(self) -> bool:
+        """About one round in PROBE_EVERY_ROUNDS, at a time miners cannot predict."""
+        every = min(self.probe_every, PROBE_EVERY_ROUNDS)  # tests patch the module constant
+        return self.state.rounds >= 1 and secrets.randbelow(every) == 0
+
+    async def _probe_capacity(self, session: aiohttp.ClientSession, targets: list[Neuron],
+                              roles: Mapping[int, str], reference_budget: float = REFERENCE_BUDGET_MIN_S
+                              ) -> dict[int, Any]:
+        """Verified throughput of every target, all probed at the same moment (``_probe_measure``, then
+        ``_probe_verify`` in the same call: the synchronous probe). Returns the per-UID report ({} = dropped)."""
+        pending = await self._probe_measure(session, targets, roles, reference_budget)
+        return {} if pending is None else await self._probe_verify(pending)
+
+    async def _probe_measure(self, session: aiohttp.ClientSession, targets: list[Neuron],
+                             roles: Mapping[int, str], reference_budget: float = REFERENCE_BUDGET_MIN_S
+                             ) -> Optional[_PendingProbe]:
+        """The probe's window and signature check. Returns what ``_probe_verify`` needs, or None if dropped.
+
+        Each UID is offered ``lanes_for(budget)`` concurrent lanes (at least ``inflight``) of fresh requests (it accepts as many as its own limit allows;
+        a refused lane just ends) and throughput = decisions answered inside the UID's window / window. A UID's window
+        opens at the validator's first send to it (1.2.0rc3 opened one window for all UIDs before the first send, so
+        the UIDs the validator reached last lost the burst of sends to the others, ~0.6-2.5 s of a 5 s window). The
+        first sends of all UIDs go out within one pass over the targets and the probe is dropped if they spread over
+        more than ``PROBE_SEND_SKEW_MAX_S``, so every UID of a pool is still loaded at nearly the same moment: UIDs
+        served by one shared backend together measure at most what that backend does in the window plus the skew.
+
+        Inside the window the validator only sends pre-serialised bodies and records (response, headers, arrival
+        time); answers are counted by request size. Signatures and answers are checked after the window, so the
+        validator's own CPU is not shared out per lane while it measures (review C1): any forged or malformed answer
+        sets that UID's probe to 0. A secret sample of the answers is then verified against the reference like a
+        normal round: a failed item is a strike, so fast garbage cannot buy capacity. If the validator's event loop
+        still lags during the window, its first sends spread too far, or the probe total reaches
+        ``REAX_PROBE_CEILING_DPS``, the measurement is bounded by the validator, not the miners, and the probe is
+        dropped without any capacity update.
+
+        With many UIDs the window runs in forked shard processes (probeshard.py, ``REAX_PROBE_SHARDS``): one event loop
+        measured only ~800 requests/s on mainnet. Shards open their windows at one common moment, the skew guard covers
+        all of them, big coldkey groups are split over shards, and a failed or saturated shard drops the whole probe.
+        """
+        # Best recent measurement per UID (None = new or reset UID: start from the target). A scaled-down probe (fleet
+        # above the preparation ceiling) understates capacity by the scale factor, so tiers.probe_budgets divides it out.
+        previous = {n.uid: (None if self.state.miners[n.uid].capacity is None
+                            else max(self.state.miners[n.uid].capacity, self._probe_last.get(n.uid, 0.0)))
+                    for n in targets}
+        budgets, scale = probe_budgets(previous, {n.uid: CAPACITY[roles[n.uid]] for n in targets},
+                                                   PROBE_MAX_PREPARED_REQUESTS, self._probe_scale)
+        # Lanes per UID follow its budget (tiers.CapacityParams.lanes_for): a UID that can show 2560/s needs more
+        # requests in flight than one at 160/s. Today's pool value is the minimum.
+        lanes = {n.uid: CAPACITY[roles[n.uid]].lanes_for(budgets[n.uid]) for n in targets}
+        lanes_total = max(1, sum(lanes.values()))
+
+        # Every request is prepared and serialised before the window opens (in a worker thread): generating them inside
+        # the window would start the UIDs' windows at different moments, and only a common window keeps a shared
+        # machine's hotkeys from taking turns. Only (decisions, body) is kept; the Decision objects of the requests
+        # that were really sent are rebuilt from their bodies after the window (review M3: memory).
+        def prepare() -> dict[int, list[tuple[int, bytes]]]:
+            out = {}
+            for n in targets:
+                cap = CAPACITY[roles[n.uid]]
+                out[n.uid] = [(cap.items_per_request, self._new_request(roles[n.uid], cap.items_per_request).to_bytes())
+                              for _ in range(cap.requests_for(budgets[n.uid]))]
+            return out
+
+        prepared = await asyncio.to_thread(prepare)
+        # The reference deadline starts after the preparation, which can take seconds at the cap (review M3).
+        deadline = time.monotonic() + reference_budget + max(
+            (CAPACITY[roles[n.uid]].window_s + self.pools[roles[n.uid]].latency_slow_s for n in targets), default=0.0)
+
+        shards = probeshard.shard_count(lanes_total, len(targets))
+        shard_uids: list[int] = [len(targets)]
+        shard_load: list[float] = [1.0]
+        shard_cpu: list[float] = []
+        if shards <= 1:
+            # One process (the 1.2.0rc4 probe): the validator's own event loop runs the whole window.
+            try:
+                win = await self._probe_window(targets, roles, prepared, lanes=lanes)
+            except _WarmupTimeout as exc:
+                win = probeshard.ProbeWindow(results=[], failed=[str(exc)])
+        else:
+            def load(n: Neuron) -> float:
+                return probe_request_load(CAPACITY[roles[n.uid]], budgets[n.uid])
+
+            plan = probeshard.plan_shards(targets, load, shards)
+            # Per shard: UIDs and share of the requests the validator may send (review H1: a group can no longer pile
+            # onto one shard, and the log shows it if the load is ever uneven).
+            total_load = math.fsum(load(n) for n in targets) or 1.0
+            shard_uids = [len(part) for part in plan]
+            shard_load = [math.fsum(load(n) for n in part) / total_load for part in plan]
+            longest = max(CAPACITY[roles[n.uid]].window_s + self.pools[roles[n.uid]].latency_slow_s for n in targets)
+            got = await probeshard.run_shards(
+                [functools.partial(self._probe_window, part, roles, prepared, lanes=lanes) for part in plan],
+                ready_timeout_s=PROBE_WARMUP_S + 1.0 + probeshard.PROBE_SHARD_START_SLACK_S,
+                result_timeout_s=probeshard.PROBE_SHARD_GO_DELAY_S + longest + probeshard.PROBE_SHARD_RESULT_SLACK_S)
+            win = _merge_windows(got, len(plan))
+            shards = len(plan)
+            shard_cpu = [w.cpu_share for w in got if isinstance(w, probeshard.ProbeWindow)]
+        order = {n.uid: i for i, n in enumerate(targets)}
+        results = sorted(win.results, key=lambda r: order[r[0]])
+        if win.trace is not None:
+            self.last_probe_trace = {"started": win.started, "uids": win.trace,
+                                     "windows": {uid: start for uid, _d, _s, _i, start, _r in results}}
+        probed = [(uid, done, seconds, items) for uid, done, seconds, items, _start, _reqs in results]
+        # Each UID's window starts at the validator's first send to it, so a UID the validator reaches late is not
+        # under-counted. UIDs on one machine still share it for all but the send skew: siblings' windows differ by at
+        # most the spread of the first sends (over all shards), which bounds what a split can gain (skew / window); a
+        # probe whose spread exceeds PROBE_SEND_SKEW_MAX_S was bounded by the validator and is dropped.
+        starts = [start for _uid, _d, _s, _i, start, _r in results if start is not None]
+        skew = max(starts) - min(starts) if starts else 0.0
+        total_dps = math.fsum(items / seconds for _uid, _done, seconds, items in probed if seconds > 0)
+        total_rps = math.fsum(reqs / seconds for _uid, _d, seconds, _i, _s, reqs in results if seconds > 0)
+        ceiling = _probe_ceiling_dps()
+        p95 = win.lag_p95
+        saturated = win.cpu_share > PROBE_CPU_SATURATED
+        reasons = list(win.failed)
+        if saturated:
+            reasons.append(f"busiest window loop at {100 * win.cpu_share:.0f} % of a core, limit "
+                           f"{100 * PROBE_CPU_SATURATED:.0f} %")
+        if p95 > PROBE_LAG_P95_MAX_S:
+            reasons.append(f"event-loop lag p95 {1000 * p95:.0f} ms, limit {1000 * PROBE_LAG_P95_MAX_S:.0f} ms")
+        if skew > PROBE_SEND_SKEW_MAX_S:
+            reasons.append(f"first sends spread over {1000 * skew:.0f} ms, limit {1000 * PROBE_SEND_SKEW_MAX_S:.0f} ms")
+        if ceiling and total_dps >= ceiling:
+            reasons.append(f"{total_dps:.0f} decisions/s in total, ceiling {ceiling:.0f}/s")
+        skipped = bool(reasons)
+        self.last_probe_stats = {"uids": len(targets), "total_dps": round(total_dps, 1),
+                                 "lag_p95_ms": round(1000 * p95, 1), "send_skew_ms": round(1000 * skew, 1),
+                                 "skipped": skipped, "shards": shards, "total_rps": round(total_rps, 1),
+                                 "cpu_share": round(win.cpu_share, 3), "cpu_saturated": saturated,
+                                 "shard_uids": shard_uids, "shard_load": [round(x, 3) for x in shard_load],
+                                 "shard_cpu": [round(x, 3) for x in shard_cpu], "drops_in_row": self._probe_drops}
+        # Diagnostics for every probe, kept or not. cpu_saturated (the busiest window loop above 90 % of a core) drops
+        # the probe (above); if it repeats, raise REAX_PROBE_SHARDS.
+        log.info("capacity probe: %d UIDs in %d process(es): %.0f requests/s, %.0f decisions/s answered in the "
+                 "windows; busiest loop %.0f %% of a core%s; loop lag p95 %.0f ms; first sends spread over %.0f ms",
+                 len(targets), shards, total_rps, total_dps, 100 * win.cpu_share, " (cpu_saturated)" if saturated else "",
+                 1000 * p95, 1000 * skew)
+        if shards > 1:
+            log.info("capacity probe shards: UIDs %s; share of the prepared requests %s; CPU share of a core %s",
+                     shard_uids, " ".join(f"{100 * x:.0f}%" for x in shard_load),
+                     " ".join(f"{100 * x:.0f}%" for x in shard_cpu) or "-")
+        if skipped:
+            self._probe_skipped_round = self.state.rounds
+            log.error("capacity probe skipped: the validator was the bottleneck (%s); no capacity update this probe "
+                      "(see scripts/bench_probe.py)", "; ".join(reasons))
+            self._probe_dropped(reasons)
+            return None
+
+        # Signatures and answers, checked now (in a worker thread, the nonce store is thread-safe). One forged or
+        # malformed answer sets the UID's probe to 0; requests that were not answered are never rebuilt.
+        def check() -> dict[int, Optional[tuple[dict, dict[str, Decision]]]]:
+            out: dict[int, Optional[tuple[dict, dict[str, Decision]]]] = {}
+            by_uid = {n.uid: n for n in targets}
+            retention = getattr(self.nonce_store, "retention", None) or math.inf
+            retention -= auth.http_auth.DEFAULT_ALLOWED_SKEW
+            for uid, done, _seconds, _items in probed:
+                if not done:
+                    continue
+                n, cap, params = by_uid[uid], CAPACITY[roles[uid]], self.pools[roles[uid]]
+                answers: dict = {}
+                decisions: dict[str, Decision] = {}
+                try:
+                    for index, raw, headers in done:
+                        req = parse_s1_request(prepared[uid][index][1])
+                        # Answers are checked after the slowest pool's window (s1-lite: 16 s + its latency bound) and
+                        # one after the other, so their age includes the probe's own duration: an s1-fast answer must
+                        # not turn stale because the validator was slow (1.2.0rc4 scored such UIDs 0). Replays stay
+                        # impossible: a response signature is bound to its fresh request id, and its nonce is checked
+                        # as before (the age stays within the nonce store's retention, which closes that gap).
+                        max_age = min(max(cap.window_s + 2 * params.latency_slow_s, time.monotonic() - win.started)
+                                      + PROBE_RESPONSE_AGE_SLACK_S, retention)
+                        answers.update(self._check_s1(n, req, raw, headers, max_age))
+                        decisions.update((d.ident, d) for d in req.decisions)
+                except Exception as exc:
+                    log.warning("uid %d [%s] capacity probe: invalid answer (%s); probe counts 0", slot_uid(uid), roles[uid],
+                                self._s1_error(n, exc))
+                    out[uid] = None
+                    continue
+                out[uid] = (answers, decisions)
+            return out
+
+        checked = await asyncio.to_thread(check)
+        # The pool's reference cap also bounds a probe's verification: shared out over the probed UIDs (at least 2).
+        per_pool = {m: sum(1 for n in targets if roles[n.uid] == m) for m in {roles[n.uid] for n in targets}}
+        # A UID measured above the old cap is checked on a bigger sample (tiers.CapacityParams.verified).
+        seconds_by_uid = {uid: items / seconds for uid, _done, seconds, items in probed if seconds > 0}
+        verify: dict[int, tuple[str, list[Decision]]] = {}
+        for uid, got in checked.items():
+            if got is None:
+                continue
+            decisions = got[1]
+            k = CAPACITY[roles[uid]].verified(len(decisions), seconds_by_uid.get(uid))
+            pool_cap = self._reference_cap(roles[uid])
+            if pool_cap is not None:
+                k = min(k, max(2, pool_cap // per_pool[roles[uid]]))
+            chosen = choose_verified(sorted(decisions), k)
+            verify[uid] = (roles[uid], [decisions[i] for i in chosen])
+        return _PendingProbe(
+            probed=probed, checked=checked, verify=verify, roles={n.uid: roles[n.uid] for n in targets},
+            budgets=budgets, scale=scale, refused=dict(win.refused), left=max(1.0, deadline - time.monotonic()),
+            ended=time.monotonic(),
+            owners={n.uid: (self.state.miners[n.uid].hotkey, self.state.miners[n.uid].role) for n in targets})
+
+    async def _probe_verify(self, p: _PendingProbe, background: bool = False) -> dict[int, Any]:
+        """The probe's reference verification and capacity fold. In the background (``REAX_PROBE_BACKGROUND``) it runs
+        while later rounds go on; the fold itself has no await, so no round sees half of it. A slot whose hotkey or
+        role changed (or that was dropped) since the window is skipped: its old measurement is not the new owner's."""
+        probed, checked, roles, budgets, scale = p.probed, p.checked, p.roles, p.budgets, p.scale
+        references, unscored, _failed_pools = await self._references_isolated(p.verify, p.left, background=background)
+        report: dict[int, Any] = {}
+        for uid, done, elapsed, items in probed:
+            if uid in unscored:
+                continue
+            m = self.state.miners.get(uid)
+            if m is None or (m.hotkey, m.role) != p.owners[uid]:
+                log.info("uid %s capacity probe: hotkey or role changed since the probe window; not folded",
+                         _slot_label(uid))
+                continue
+            model = roles[uid]
+            cap, params = CAPACITY[model], self.pools[model]
+            got = checked.get(uid)
+            dps = items / elapsed if got is not None and elapsed > 0 else 0.0
+            o = score_round(got[0], references.get(uid, {}), 0.0, params) if got is not None else None
+            if o is not None and o.strike:
+                self.state.strike(uid, o.passed / o.verified if o.verified else 0.0)
+                dps = 0.0
+            elif o is None or o.mean_distance > params.tau_mean:
+                dps = 0.0
+            # Clamp before averaging: one burst far above the cap must not carry the miner for many probes.
+            dps = min(dps, cap.cap_dps)
+            self._probe_last[uid] = dps
+            self.state.miners[uid].capacity, self._probe_holds[uid] = fold_capacity_bounded(
+                self.state.miners[uid].capacity, dps, budgets[uid], scale, cap.alpha, self._probe_holds.get(uid, 0))
+            report[uid] = {"hotkey": p.owners[uid][0], "model": model, "items": items, "seconds": round(elapsed, 3), "dps": round(dps, 3),
+                           "budget_dps": round(budgets[uid], 3), "invalid": bool(done) and got is None,
+                           "strike": bool(o and o.strike), "capacity": round(self.state.miners[uid].capacity or 0.0, 3),
+                           "refused_lanes": p.refused.get(uid, 0)}
+            log.info("uid %d [%s] capacity probe: %d decisions in %.2fs = %.2f/s%s; moving average %.2f/s%s",
+                     slot_uid(uid), model, items, elapsed, dps, " STRIKE" if o and o.strike else "",
+                     self.state.miners[uid].capacity or 0.0,
+                     f"; {p.refused[uid]} lanes refused by the miner's own limits" if p.refused.get(uid) else "")
+        self._probe_scale = scale  # only a kept probe updates the capacities, so only it changes the divisor
+        self._probe_drops = 0
+        self._probe_drop_reasons.clear()
+        self.last_probe_stats["drops_in_row"] = 0
+        return report
+
+    async def _probe_finish(self, p: _PendingProbe) -> None:
+        """Background task: verifies and folds a kept probe (``_probe_verify``); its report goes into the next round's
+        summary (EU ledger, dashboard). A failure counts as a dropped probe, like a failed synchronous probe."""
+        try:
+            report = await self._probe_verify(p, background=True)
+        except Exception as exc:
+            log.exception("capacity probe verification failed; no capacity update from this probe")
+            self._probe_dropped([f"verification failed: {type(exc).__name__}"])
+            return
+        self._probe_report = {**(self._probe_report or {}), **report}
+        log.info("capacity probe verified in the background %.0f s after its window: %d slots folded",
+                 time.monotonic() - p.ended, len(report))
+
+    def _probe_dropped(self, reasons: list[str]) -> None:
+        """Counts a dropped probe (review N2). Unmeasured UIDs earn nothing until a probe is kept, so from
+        PROBE_DROPS_ALERT drops in a row every drop logs one greppable ERROR line with the reasons of each."""
+        self._probe_drops += 1
+        self._probe_drop_reasons.append("; ".join(reasons) or "unknown")
+        self.last_probe_stats["drops_in_row"] = self._probe_drops
+        if self._probe_drops >= PROBE_DROPS_ALERT:
+            log.error("capacity probe: %d probes dropped in a row; no capacity update since, unmeasured UIDs earn "
+                      "nothing (reasons of the last %d, oldest first: %s)", self._probe_drops,
+                      len(self._probe_drop_reasons), " | ".join(self._probe_drop_reasons))
+
+    async def _probe_window(self, targets: list[Neuron], roles: Mapping[int, str],
+                            prepared: Mapping[int, list[tuple[int, bytes]]],
+                            ready: Optional[Callable[[], None]] = None,
+                            go: Optional[Callable[[], Awaitable[None]]] = None,
+                            lanes: Optional[Mapping[int, int]] = None) -> probeshard.ProbeWindow:
+        """The probe window for ``targets``: warm-up, then every UID's lanes send their prepared requests and record
+        (request index, raw response, headers) per answer. Runs on the validator's own loop, or in a probe shard
+        (probeshard.py), which reports ``ready`` after the warm-up and opens the window when ``go`` returns."""
+        def lanes_of(uid: int) -> int:  # lanes per UID (default: the pool's minimum)
+            return lanes[uid] if lanes is not None and uid in lanes else CAPACITY[roles[uid]].inflight
+
+        lanes_total = max(1, sum(lanes_of(n.uid) for n in targets))
+        # Own semaphore and connection pool sized for every lane: probe lanes never queue behind each other (a shared,
+        # smaller limit would under-count UIDs by queue position, and hanging UIDs could starve honest lanes).
+        sem = asyncio.Semaphore(lanes_total)
+        trace: Optional[dict[int, list[tuple[int, float, float, bool]]]] = {} if self.probe_trace else None
+        # Lanes a miner turned away with 429/503 (its own concurrency, rate or queue limit): such a miner is measured
+        # below its machine. Observability only; it changes no score.
+        refused: dict[int, int] = {}
+
+        async def probe(n: Neuron, psession: aiohttp.ClientSession
+                        ) -> tuple[int, list[tuple[int, bytes, CIMultiDict]], float, int, Optional[float], int]:
+            model = roles[n.uid]
+            cap, params = CAPACITY[model], self.pools[model]
+            pending = iter(enumerate(prepared[n.uid]))
+            done: list[tuple[int, bytes, CIMultiDict]] = []  # (request index, raw response, headers), checked later
+            in_window = in_window_requests = 0
+            start: Optional[float] = None  # this UID's window: from the validator's first send to it, window_s long
+            events = trace.setdefault(n.uid, []) if trace is not None else None
+
+            async def lane(k: int) -> None:
+                nonlocal in_window, in_window_requests, start
+                for index, (size, body) in pending:  # one iterator shared by the lanes
+                    sent = time.monotonic()
+                    if start is None:
+                        start = sent
+                    elif sent - start > cap.window_s:
+                        return
+                    try:
+                        raw, headers, _latency = await self._post_s1(psession, sem, n, body, 2 * params.latency_slow_s,
+                                                                     PROBE_MAX_RESPONSE_BYTES)
+                    except Exception as exc:  # a refusal, timeout or network error ends the lane
+                        if isinstance(exc, _HttpStatus) and exc.status in (429, 503):
+                            refused[n.uid] = refused.get(n.uid, 0) + 1
+                        if events is not None:
+                            events.append((k, sent, time.monotonic(), False))
+                        log.debug("uid %d capacity probe lane ended: %s", slot_uid(n.uid), self._s1_error(n, exc))
+                        return
+                    arrived = time.monotonic()
+                    if events is not None:
+                        events.append((k, sent, arrived, True))
+                    done.append((index, raw, headers))
+                    if arrived - start <= cap.window_s:
+                        in_window += size
+                        in_window_requests += 1
+
+            # Lanes open one per UID per loop pass: every UID's first request leaves within one pass over the targets
+            # (sending a lane costs the validator ~0.2 ms of CPU; all lanes of the low UIDs first would start the last
+            # UIDs' windows a whole burst later). A request started just before the window ends may run up to its own
+            # timeout; stop waiting one latency bound after the window so a slow miner cannot stretch the probe.
+            lane_tasks: list[asyncio.Future] = []
+            try:
+                for k in range(lanes_of(n.uid)):
+                    lane_tasks.append(asyncio.ensure_future(lane(k)))
+                    await asyncio.sleep(0)
+                first = start if start is not None else time.monotonic()
+                await asyncio.wait(lane_tasks, timeout=max(0.0, first + cap.window_s + params.latency_slow_s
+                                                      - time.monotonic()))
+            finally:  # also when the whole probe is cancelled by its time budget
+                for task in lane_tasks:
+                    task.cancel()
+                await asyncio.gather(*lane_tasks, return_exceptions=True)
+            return n.uid, done, cap.window_s, in_window, start, in_window_requests
+
+        async def warm(n: Neuron, psession: aiohttp.ClientSession) -> None:
+            assert n.ip is not None and n.port is not None
+            host = f"[{n.ip}]" if ":" in n.ip else n.ip
+            url = f"http://{host}:{n.port}/health"
+
+            async def one() -> None:
+                try:
+                    async with psession.get(url, allow_redirects=False,
+                                            timeout=aiohttp.ClientTimeout(total=PROBE_WARMUP_S)) as resp:
+                        await resp.content.read(4096)
+                except Exception:
+                    pass  # this lane connects inside the window, as before
+
+            await asyncio.gather(*(one() for _ in range(lanes_of(n.uid))))
+
+        connector = aiohttp.TCPConnector(limit=lanes_total)
+        lag = _LoopLag()
+        shortest = min((CAPACITY[roles[n.uid]].window_s for n in targets), default=0.0)
+        # Plain answers only: no decompression, and the miner is asked for none (aiohttp would offer gzip/deflate).
+        async with aiohttp.ClientSession(connector=connector, trust_env=False, auto_decompress=False,
+                                         headers={"Accept-Encoding": "identity"}) as psession:
+            # Open the lanes' connections before the window (review L2): thousands of TCP connects at the window's start
+            # would stall the validator's event loop and delay the first answers of the UIDs connected last.
+            try:
+                await asyncio.wait_for(asyncio.gather(*(warm(n, psession) for n in targets)), PROBE_WARMUP_S + 1.0)
+            except asyncio.TimeoutError:
+                raise _WarmupTimeout(f"the connection warm-up did not finish within {PROBE_WARMUP_S + 1.0:.0f} s") \
+                    from None
+            if ready is not None:
+                ready()
+            if go is not None:
+                await go()
+            started = time.monotonic()
+            cpu0 = time.thread_time()
+            # CPU of this loop's thread over the shortest window, while every pool's lanes are busy (a late callback
+            # means the loop was busy; the time is measured, not assumed).
+            window_cpu: list[float] = []
+            handle = asyncio.get_running_loop().call_later(
+                shortest, lambda: window_cpu.append((time.thread_time() - cpu0) / max(1e-6, time.monotonic() - started)))
+            ticker = asyncio.ensure_future(lag.run())
+            try:
+                results = await asyncio.gather(*(probe(n, psession) for n in targets))
+            finally:
+                handle.cancel()
+                ticker.cancel()
+                await asyncio.gather(ticker, return_exceptions=True)
+        share = window_cpu[0] if window_cpu else (time.thread_time() - cpu0) / max(1e-6, time.monotonic() - started)
+        return probeshard.ProbeWindow(results=list(results), lag_p95=lag.p95(), lag_samples=len(lag.samples),
+                                      cpu_share=share, started=started, trace=trace, refused=refused)
+
+    def _competition_view(self, snap: Snapshot) -> Snapshot:
+        """The snapshot the competition code reads: its view of the round that produced ``snap`` (the inference view the
+        serving round hands to the weights); for any other snapshot (tests, tools) the split is made here."""
+        if self._latest_comp is not None:
+            if snap is self._latest_snap:
+                return self._latest_comp
+            if snap is self._latest_comp:
+                return snap
+        return elements.role_views(snap).competition
+
+    def compute_weights(self, snap: Snapshot) -> dict[int, float]:
+        ema_by_pool: dict[str, dict[int, float]] = {m: {} for m in self.pools}
+        capacity_by_pool: dict[str, dict[int, float]] = {m: {} for m in self.pools}
+        current = {f"{model}:{man.manifest_id}": model for model, man in self.manifests.items()}
+        for slot, m in self.state.miners.items():
+            model = current.get(m.role)  # only roles on the current manifest count (MECH-M1)
+            if model is not None:
+                ema_by_pool[model][slot] = m.ema
+                if m.capacity is not None:
+                    capacity_by_pool[model][slot] = m.capacity
+        # A slot of the owner's UID never earns as a miner (the owner UID has no slots; stale state is ignored).
+        if snap.owner_uid is not None:
+            for pool in self.pools:
+                for slot in [s for s in ema_by_pool[pool] if s >= SLOT_STRIDE and slot_uid(s) == snap.owner_uid]:
+                    del ema_by_pool[pool][slot]
+        # Per pool each slot is a miner of that pool with the pool's cap (the tier-order cap counts slots); the slot
+        # weights are summed per UID before the competition layer.
+        eu_pay: dict[int, float] = {}
+        if self.tiered:
+            now = datetime.now(timezone.utc)
+            # EU tier (eutier.py; release default: no operator, nothing changes): Scheme A multipliers, and the
+            # slots of paid contract-tier hotkeys leave the pools (they are paid by the carve-out below instead).
+            eu_mult, eu_pay = self._eu_inputs(snap, ema_by_pool, capacity_by_pool, now)
+            # Per-coldkey diminishing returns (tiers.COLDKEY_DR_START_UTC; None = off): a slot's coldkey is its UID's.
+            coldkey_by_uid = {n.uid: n.coldkey for n in snap.neurons if n.coldkey}
+            coldkey_of = {slot: coldkey_by_uid[slot_uid(slot)] for pool in self.pools for slot in ema_by_pool[pool]
+                          if slot_uid(slot) in coldkey_by_uid}
+            slot_weights = compute_tiered_weights(ema_by_pool, capacity_by_pool, self.budgets, snap.owner_uid,
+                                                  self.params.min_ema, self.params.burn_fraction,
+                                                  coldkey_of=coldkey_of, now=now, score_multipliers=eu_mult or None)
+        else:
+            slot_weights = compute_pool_weights(ema_by_pool, self.shares, snap.owner_uid, self.params.min_ema,
+                                                self.params.burn_fraction)
+        per_uid: dict[int, list[float]] = {}
+        for slot, w in slot_weights.items():
+            per_uid.setdefault(slot_uid(slot), []).append(w)
+        base = {uid: math.fsum(ws) for uid, ws in sorted(per_uid.items())}
+        if eu_pay:
+            try:  # contract tier: A_o as a fraction of the inference share, carved out of the miner part
+                base = eutier.carve_out(base, eu_pay, snap.owner_uid)
+            except Exception:
+                log.exception("EU tier: carve-out failed; weights without it this time")
+        if self.engine is None:
+            return base
+        csnap = self._competition_view(snap)
+        return self.engine.weights(base, csnap, self._not_competitors(csnap), self.params.burn_fraction)
+
+
+def _slot_label(slot: int) -> Any:
+    """A slot for log lines: the UID for a plain slot, "<uid> [<model>]" for a model slot."""
+    return slot if slot < SLOT_STRIDE else f"{slot_uid(slot)} [{elements.slot_model(slot)}]"

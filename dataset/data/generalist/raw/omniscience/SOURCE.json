@@ -1,0 +1,99 @@
+{
+ "task": "omniscience",
+ "licence": "CC0 1.0 (Wikidata structured data)",
+ "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+ "downloaded": "2026-10-27",
+ "files": {
+  "persons_painter.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fp%20%3Fl%20%3Fd%20%3Fst%20%3Ft%20%3Fprec%20%3Fsl%20WHERE%20%7B%0A%20%20%3Fp%20wdt%3AP106%20wd%3AQ1028181%20.%0A%20%20%3Fp%20wdt%3AP31%20wd%3AQ5%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2015%29%0A%20%20%3Fp%20p%3AP569%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP569%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20%3Fp%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fp%20schema%3Adescription%20%3Fd%20.%20FILTER%28LANG%28%3Fd%29%20%3D%20%22en%22%29%20%7D%0A%7D%20LIMIT%2020000",
+   "sha256": "76d3af15bdeaebd6c80ba86e859ffb12dceb3398ac1950f46290bfafebe97681",
+   "bytes": 4144663
+  },
+  "persons_composer.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fp%20%3Fl%20%3Fd%20%3Fst%20%3Ft%20%3Fprec%20%3Fsl%20WHERE%20%7B%0A%20%20%3Fp%20wdt%3AP106%20wd%3AQ36834%20.%0A%20%20%3Fp%20wdt%3AP31%20wd%3AQ5%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2015%29%0A%20%20%3Fp%20p%3AP569%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP569%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20%3Fp%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fp%20schema%3Adescription%20%3Fd%20.%20FILTER%28LANG%28%3Fd%29%20%3D%20%22en%22%29%20%7D%0A%7D%20LIMIT%2020000",
+   "sha256": "6374b1a3d9cfdaed40cbb11cd31090e8a3d5539df733796ed18e87705db91959",
+   "bytes": 6940261
+  },
+  "persons_architect.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fp%20%3Fl%20%3Fd%20%3Fst%20%3Ft%20%3Fprec%20%3Fsl%20WHERE%20%7B%0A%20%20%3Fp%20wdt%3AP106%20wd%3AQ42973%20.%0A%20%20%3Fp%20wdt%3AP31%20wd%3AQ5%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2012%29%0A%20%20%3Fp%20p%3AP569%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP569%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20%3Fp%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fp%20schema%3Adescription%20%3Fd%20.%20FILTER%28LANG%28%3Fd%29%20%3D%20%22en%22%29%20%7D%0A%7D%20LIMIT%2020000",
+   "sha256": "83430d25ab472cd22081fa53f63487edee922125765dd73525d9ebb53000f7f5",
+   "bytes": 1680976
+  },
+  "persons_mathematician.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fp%20%3Fl%20%3Fd%20%3Fst%20%3Ft%20%3Fprec%20%3Fsl%20WHERE%20%7B%0A%20%20%3Fp%20wdt%3AP106%20wd%3AQ170790%20.%0A%20%20%3Fp%20wdt%3AP31%20wd%3AQ5%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2015%29%0A%20%20%3Fp%20p%3AP569%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP569%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20%3Fp%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fp%20schema%3Adescription%20%3Fd%20.%20FILTER%28LANG%28%3Fd%29%20%3D%20%22en%22%29%20%7D%0A%7D%20LIMIT%2020000",
+   "sha256": "d4cee2693b6284cb82b956b2c37f32e44cdf0ba6d351393ec04541b2d781857d",
+   "bytes": 2097066
+  },
+  "persons_sculptor.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fp%20%3Fl%20%3Fd%20%3Fst%20%3Ft%20%3Fprec%20%3Fsl%20WHERE%20%7B%0A%20%20%3Fp%20wdt%3AP106%20wd%3AQ1281618%20.%0A%20%20%3Fp%20wdt%3AP31%20wd%3AQ5%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2012%29%0A%20%20%3Fp%20p%3AP569%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP569%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20%3Fp%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fp%20schema%3Adescription%20%3Fd%20.%20FILTER%28LANG%28%3Fd%29%20%3D%20%22en%22%29%20%7D%0A%7D%20LIMIT%2020000",
+   "sha256": "20d471507da4e7546ab6f7d18a6ee6ea2a0056d30a208c3f1e9125c720d2e9a8",
+   "bytes": 1609761
+  },
+  "persons_explorer.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fp%20%3Fl%20%3Fd%20%3Fst%20%3Ft%20%3Fprec%20%3Fsl%20WHERE%20%7B%0A%20%20%3Fp%20wdt%3AP106%20wd%3AQ11900058%20.%0A%20%20%3Fp%20wdt%3AP31%20wd%3AQ5%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2010%29%0A%20%20%3Fp%20p%3AP569%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP569%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20%3Fp%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fp%20schema%3Adescription%20%3Fd%20.%20FILTER%28LANG%28%3Fd%29%20%3D%20%22en%22%29%20%7D%0A%7D%20LIMIT%2020000",
+   "sha256": "8ba58b3a3b4a2251527ef7eb3dba8f4c85948390a9224f3bae8fac1cb981d60d",
+   "bytes": 1898680
+  },
+  "persons_poet.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fp%20%3Fl%20%3Fd%20%3Fst%20%3Ft%20%3Fprec%20%3Fsl%20WHERE%20%7B%0A%20%20%3Fp%20wdt%3AP106%20wd%3AQ49757%20.%0A%20%20%3Fp%20wdt%3AP31%20wd%3AQ5%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2020%29%0A%20%20%3Fp%20p%3AP569%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP569%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20%3Fp%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fp%20schema%3Adescription%20%3Fd%20.%20FILTER%28LANG%28%3Fd%29%20%3D%20%22en%22%29%20%7D%0A%7D%20LIMIT%2020000",
+   "sha256": "1c2fffc417fa0bfebf6c302bb6b8783e8e1377aaada82265c7a266459739f228",
+   "bytes": 4229739
+  },
+  "nobel_laureates.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20DISTINCT%20%3Fp%20WHERE%20%7B%0A%20%20VALUES%20%3Fa%20%7B%20wd%3AQ38104%20wd%3AQ44585%20wd%3AQ80061%20wd%3AQ37922%20wd%3AQ35637%20wd%3AQ47170%20%7D%0A%20%20%3Fp%20p%3AP166%20%3Fs%20.%20%3Fs%20ps%3AP166%20%3Fa%20.%0A%7D%20LIMIT%205000",
+   "sha256": "19077b5a9188260beba1543115e374a7de4e66041eb5de7f32203cb693e773aa",
+   "bytes": 117618
+  },
+  "countries.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fc%20%3Fl%20%3Fsl%20%3Fcont%20%3Fcontl%20%3Fcap%20%3Fcapl%20WHERE%20%7B%0A%20%20%3Fc%20wdt%3AP31%20wd%3AQ3624078%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%0A%20%20FILTER%20NOT%20EXISTS%20%7B%20%3Fc%20wdt%3AP576%20%3Fend%20%7D%0A%20%20%3Fc%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fc%20wdt%3AP30%20%3Fcont%20.%20%3Fcont%20rdfs%3Alabel%20%3Fcontl%20.%20FILTER%28LANG%28%3Fcontl%29%20%3D%20%22en%22%29%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fc%20wdt%3AP36%20%3Fcap%20.%20OPTIONAL%20%7B%20%3Fcap%20rdfs%3Alabel%20%3Fcapl%20.%20FILTER%28LANG%28%3Fcapl%29%20%3D%20%22en%22%29%20%7D%20%7D%0A%7D%20LIMIT%205000",
+   "sha256": "0174d71ecc6767f918adcf519a0d411b4c3e9421c3f08c0375753259e53c91c1",
+   "bytes": 167768
+  },
+  "regions.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fr%20%3Fl%20%3Fsl%20%3Fcountry%20%3Fcap%20%3Fcapl%20WHERE%20%7B%0A%20%20%3Fr%20wdt%3AP31%20%3Ftype%20.%20%3Ftype%20wdt%3AP279%20wd%3AQ10864048%20.%0A%20%20%3Fr%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%208%29%0A%20%20FILTER%20NOT%20EXISTS%20%7B%20%3Fr%20wdt%3AP576%20%3Fend%20%7D%0A%20%20%3Fr%20wdt%3AP17%20%3Fcountry%20.%0A%20%20%3Fr%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fr%20wdt%3AP36%20%3Fcap%20.%20OPTIONAL%20%7B%20%3Fcap%20rdfs%3Alabel%20%3Fcapl%20.%20FILTER%28LANG%28%3Fcapl%29%20%3D%20%22en%22%29%20%7D%20%7D%0A%7D%20LIMIT%2030000",
+   "sha256": "955aad8d0a3ac33c70f207250e7c460bd11bc37124c36f023d5cd2d0bdab561e",
+   "bytes": 2438796
+  },
+  "cities.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fc%20%3Fl%20%3Fsl%20%3Fcountry%20%3Fcountryl%20WHERE%20%7B%0A%20%20VALUES%20%3Fcls%20%7B%20wd%3AQ515%20wd%3AQ1549591%20wd%3AQ1637706%20wd%3AQ200250%20wd%3AQ208511%20%7D%0A%20%20%3Fc%20wdt%3AP31%20%3Fcls%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%208%29%0A%20%20%3Fc%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20OPTIONAL%20%7B%20%3Fc%20wdt%3AP17%20%3Fcountry%20.%20OPTIONAL%20%7B%20%3Fcountry%20rdfs%3Alabel%20%3Fcountryl%20.%20FILTER%28LANG%28%3Fcountryl%29%20%3D%20%22en%22%29%20%7D%20%7D%0A%7D%20LIMIT%2040000",
+   "sha256": "023e0f9d727b3b258d7c71ec93c2e089b10d7eb522c87c808d63000bb85a76ff",
+   "bytes": 5458207
+  },
+  "works_author.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fw%20%3Fl%20%3Fsl%20%3Fcls%20%3Fa%20%3Fal%20%28MIN%28YEAR%28%3Fab%29%29%20AS%20%3Faby%29%20%28SAMPLE%28%3Fo%29%20AS%20%3Forigin%29%20WHERE%20%7B%0A%20%20VALUES%20%3Fcls%20%7B%20wd%3AQ7725634%20wd%3AQ8261%20wd%3AQ25379%20wd%3AQ5185279%20wd%3AQ49084%20%7D%0A%20%20%3Fw%20wdt%3AP31%20%3Fcls%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%208%29%0A%20%20%3Fw%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20%3Fw%20wdt%3AP50%20%3Fa%20.%0A%20%20OPTIONAL%20%7B%20%3Fa%20rdfs%3Alabel%20%3Fal%20.%20FILTER%28LANG%28%3Fal%29%20%3D%20%22en%22%29%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fa%20wdt%3AP569%20%3Fab%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fw%20wdt%3AP495%20%3Fo%20%7D%0A%7D%20GROUP%20BY%20%3Fw%20%3Fl%20%3Fsl%20%3Fcls%20%3Fa%20%3Fal%20LIMIT%2040000",
+   "sha256": "3541e11a751e9de6e013ea7ccd8f580927bbc7dae7022e518829d48674c6ade8",
+   "bytes": 6800694
+  },
+  "works_pubdate.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fw%20%3Fl%20%3Fsl%20%3Fst%20%3Ft%20%3Fprec%20WHERE%20%7B%0A%20%20hint%3AQuery%20hint%3Aoptimizer%20%22None%22%20.%0A%20%20%3Fw%20wdt%3AP31%20wd%3AQ7725634%20.%0A%20%20%3Fw%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2015%29%0A%20%20%3Fw%20p%3AP577%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP577%20%3Fv%20.%20%3Fv%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20.%0A%20%20%3Fw%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%7D%20LIMIT%2040000",
+   "sha256": "c3b68047bd5afecbc6d54ebbe8a66bbadf6e79c96b6e59d4591b4e5f7ab141cb",
+   "bytes": 2108179
+  },
+  "films.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Ff%20%3Fl%20%3Fsl%20%3Fdir%20%3Fdirl%20%28MIN%28YEAR%28%3Fdate%29%29%20AS%20%3Fy%29%20%28SAMPLE%28%3Fo%29%20AS%20%3Forigin%29%20WHERE%20%7B%0A%20%20%3Ff%20wdt%3AP31%20wd%3AQ11424%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%2015%29%0A%20%20%3Ff%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20%3Ff%20wdt%3AP57%20%3Fdir%20.%0A%20%20OPTIONAL%20%7B%20%3Fdir%20rdfs%3Alabel%20%3Fdirl%20.%20FILTER%28LANG%28%3Fdirl%29%20%3D%20%22en%22%29%20%7D%0A%20%20OPTIONAL%20%7B%20%3Ff%20wdt%3AP577%20%3Fdate%20%7D%0A%20%20OPTIONAL%20%7B%20%3Ff%20wdt%3AP495%20%3Fo%20%7D%0A%7D%20GROUP%20BY%20%3Ff%20%3Fl%20%3Fsl%20%3Fdir%20%3Fdirl%20LIMIT%2040000",
+   "sha256": "da20eb4b63fbf7e35a71f04820031dc29f5eb32e297addd181f88e809945953e",
+   "bytes": 12697622
+  },
+  "universities.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fu%20%3Fl%20%3Fsl%20%3Fst%20%3Ft%20%3Fprec%20%28SAMPLE%28%3Fc%29%20AS%20%3Fcountry%29%20WHERE%20%7B%0A%20%20%3Fu%20wdt%3AP31%20wd%3AQ3918%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%208%29%0A%20%20%3Fu%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20%3Fu%20p%3AP571%20%3Fst%20.%20%3Fst%20a%20wikibase%3ABestRank%20%3B%20psv%3AP571%20%5B%20wikibase%3AtimeValue%20%3Ft%20%3B%20wikibase%3AtimePrecision%20%3Fprec%20%5D%20.%0A%20%20OPTIONAL%20%7B%20%3Fu%20wdt%3AP17%20%3Fc%20%7D%0A%7D%20GROUP%20BY%20%3Fu%20%3Fl%20%3Fsl%20%3Fst%20%3Ft%20%3Fprec%20LIMIT%2030000",
+   "sha256": "7b9c4676534568b743c9d4f01681b9d922f66d53909a18b9a6add10b535ee5e9",
+   "bytes": 1876892
+  },
+  "mountains.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fm%20%3Fl%20%3Fsl%20%3Frng%20%3Frngl%20%28SAMPLE%28%3Fc%29%20AS%20%3Fcountry%29%20WHERE%20%7B%0A%20%20%3Fm%20wdt%3AP31%20wd%3AQ8502%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%208%29%0A%20%20%3Fm%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20%3Fm%20wdt%3AP4552%20%3Frng%20.%0A%20%20OPTIONAL%20%7B%20%3Frng%20rdfs%3Alabel%20%3Frngl%20.%20FILTER%28LANG%28%3Frngl%29%20%3D%20%22en%22%29%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fm%20wdt%3AP17%20%3Fc%20%7D%0A%7D%20GROUP%20BY%20%3Fm%20%3Fl%20%3Fsl%20%3Frng%20%3Frngl%20LIMIT%2040000",
+   "sha256": "474a413a56fd16e79ca0861cf2cd1103e5d732c2e7db7af455f00b07b8fec1c0",
+   "bytes": 4907868
+  },
+  "operas.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fo%20%3Fl%20%3Fsl%20%3Fc%20%3Fcl%20%3Fcb%20%3Fctry%20WHERE%20%7B%0A%20%20%3Fo%20wdt%3AP31%20wd%3AQ58483083%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%204%29%0A%20%20FILTER%20EXISTS%20%7B%20%3Fo%20wdt%3AP136/wdt%3AP279%2A%20wd%3AQ1344%20%7D%0A%20%20%3Fo%20rdfs%3Alabel%20%3Fl%20.%20FILTER%28LANG%28%3Fl%29%20%3D%20%22en%22%29%0A%20%20%3Fo%20wdt%3AP86%20%3Fc%20.%0A%20%20OPTIONAL%20%7B%20%3Fc%20rdfs%3Alabel%20%3Fcl%20.%20FILTER%28LANG%28%3Fcl%29%20%3D%20%22en%22%29%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fc%20wdt%3AP569%20%3Fcb%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fo%20wdt%3AP495%20%3Fctry%20%7D%0A%7D%20LIMIT%2040000",
+   "sha256": "9b9f9217c54d0aceb8a548afe370bba63b92346904a7643879b9f36de442a919",
+   "bytes": 721794
+  },
+  "range_parents.json": {
+   "url": "https://query.wikidata.org/sparql?format=json&query=SELECT%20DISTINCT%20%3Fr%20%3Fparent%20WHERE%20%7B%0A%20%20%3Fm%20wdt%3AP31%20wd%3AQ8502%20%3B%20wikibase%3Asitelinks%20%3Fsl%20.%20FILTER%28%3Fsl%20%3E%3D%208%29%0A%20%20%3Fm%20wdt%3AP4552%20%3Fr%20.%0A%20%20%3Fr%20%28wdt%3AP4552%7Cwdt%3AP361%29%2B%20%3Fparent%20.%0A%7D%20LIMIT%2050000",
+   "sha256": "759456e8944c97ea7c7e958359cf45d2cdaae5708d366da374a25ed8043e2370",
+   "bytes": 1297626
+  }
+ },
+ "notes": "Wikidata (CC0 1.0) through the public SPARQL endpoint https://query.wikidata.org/sparql, queried on 2026-10-27, one query at a time and at most one per minute (the endpoint's current rate limit), every query with a LIMIT; each file here is one query's raw JSON result, unmodified, and its URL holds the full query text. Wikidata is edited continuously: a fresh fetch on another machine or day can return different rows, so the build reads these saved files. Fact kinds: birth_year, city_country, capital, work_author, work_year, film_director, founding_year, mountain_range, opera_composer. Only best-rank (truthy) statements are used and only subjects with exactly ONE value for the property; time values need year precision or better (day-precision dates on 1-12 January before 1924 are dropped because of the Julian-to-Gregorian conversion). Subjects need an English label; subjects whose label repeats within their kind (birth year: label plus description) are dropped as ambiguous. Nobel laureates (any rank of P166 for the six Nobel prizes) are never subjects and no text mentions Nobel (the dev set's source is the Nobel Prize API). Distractors: years = four distinct years within the gold +-1..15 (the gold's rank among the options is uniform); entities = four values of the same kind from the same continent / country / era first, weighted by how often a value is a gold answer, never sharing or nesting wording with the gold or the subject, and for mountain ranges never an ancestor or descendant range of the gold (gold and distractor ranges are leaf ranges, i.e. no other range in the data lies inside them). Group key (source_id) = the subject QID; split = sha256 of the QID; one fact kind per subject; per split each kind is filled from interleaved sitelink terciles (popular to obscure), one gold value at most 3 % of a kind, no kind above 24 % of a split."
+}

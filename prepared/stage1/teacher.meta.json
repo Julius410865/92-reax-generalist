@@ -1,0 +1,10 @@
+{
+ "base": "/models/mammoth-1",
+ "tokenizer": "a5cd9732badce41d",
+ "rows_digest": "3db912e36693cb07",
+ "rows": 5000,
+ "failed": 0,
+ "tokens": 3176509,
+ "seconds": 899.0,
+ "base_right": 0.9096
+}

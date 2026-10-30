@@ -1,0 +1,28 @@
+{
+ "domain": "fda_drug",
+ "snapshot": "2026-10-27",
+ "files": {
+  "download.json": {
+   "url": "https://api.fda.gov/download.json",
+   "method": "GET",
+   "status": 200,
+   "bytes": 593805,
+   "sha256": "0ec5ae8c3c04fb6829d7b205fb158e932cc2341bdae390a712601fc5c8ca7aeb",
+   "fetched_utc": "2026-10-27T21:16:00Z"
+  },
+  "drug-drugsfda-0001-of-0001.json.zip": {
+   "url": "https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 9208986,
+   "sha256": "f3d8910f459f27346b2da623b3ae4f7d301cb39d5f7893c86c12629b08b94fb6",
+   "fetched_utc": "2026-10-27T21:16:01Z"
+  }
+ },
+ "licence": {
+  "name": "CC0-1.0 (openFDA: public domain, Creative Commons CC0 1.0 Universal dedication)",
+  "url": "https://open.fda.gov/license/",
+  "terms": "https://open.fda.gov/terms/"
+ },
+ "export_date": "2026-10-27"
+}

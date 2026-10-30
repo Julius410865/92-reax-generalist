@@ -1,0 +1,25 @@
+{
+ "stage": "t2fix",
+ "base": "/models/merge1",
+ "seed": 0,
+ "max_len": 4096,
+ "s1_holdout": {"select": 0.01, "test": 0.02},
+ "sources": [
+  {"name": "t2fix", "kind": "mirror", "glob": "dataset/t2fix/train.jsonl", "augment": true},
+  {"kind": "s1", "name": "hf_mix", "glob": "dataset/t2fix/hf_s1.jsonl", "exclude_author_family": [], "mix_tier": ["core"], "take": [0, null], "weight": 1.0, "augment": true}
+ ],
+ "select": [
+  "dataset/t2/MIX-select.jsonl",
+  "dataset/t2fix/select_extra.jsonl",
+  {"kind": "s1", "name": "hf_mix", "glob": "dataset/t2fix/hf_s1.jsonl", "exclude_author_family": []}
+ ],
+ "test": [
+  "dataset/t2/MIX-test.jsonl",
+  "dataset/t2/MIX-check.jsonl",
+  "dataset/t2fix/test_extra.jsonl",
+  {"name": "dev", "kind": "mirror", "glob": "dataset/t2fix/dev_holdout.jsonl"},
+  {"kind": "s1", "name": "hf_mix", "glob": "dataset/t2fix/hf_s1.jsonl", "exclude_author_family": []}
+ ],
+ "train": {"kl_to_base": 0.5, "kl_fraction": 0.25, "micro_batch": 32, "eval_every": 50},
+ "run": {"eval": "prepared/eval_t2fix", "reports": "reports_t2fix", "skip_base": false}
+}

@@ -1,0 +1,64 @@
+{
+ "stage": "stage1",
+ "base": "/models/mammoth-1",
+ "seed": 0,
+ "max_len": 4096,
+ "s1_holdout": {
+  "select": 0.01,
+  "test": 0.02
+ },
+ "sources": [
+  {
+   "name": "hf_core_a",
+   "kind": "s1",
+   "glob": "data/generalist/hf/sn92-generalist-train-v1/train-*.jsonl.gz",
+   "mix_tier": [
+    "core"
+   ],
+   "exclude_author_family": [],
+   "take": [
+    0,
+    5000
+   ],
+   "weight": 1.0,
+   "augment": true
+  }
+ ],
+ "select": [
+  "data/generalist/gen/*.select.jsonl",
+  {
+   "kind": "s1",
+   "name": "hf",
+   "glob": "data/generalist/hf/sn92-generalist-train-v1/train-*.jsonl.gz",
+   "exclude_author_family": [
+    "openai",
+    "anthropic"
+   ]
+  }
+ ],
+ "test": [
+  "data/generalist/gen/*.test.jsonl",
+  "eval-v5/devset-v1/dev.jsonl",
+  {
+   "kind": "s1",
+   "name": "hf",
+   "glob": "data/generalist/hf/sn92-generalist-train-v1/train-*.jsonl.gz",
+   "exclude_author_family": [
+    "openai",
+    "anthropic"
+   ]
+  }
+ ],
+ "train": {
+  "kl_to_base": 0.5
+ },
+ "checks": {
+  "learn": [
+   "hf"
+  ],
+  "transfer": [
+   "dev",
+   "gen"
+  ]
+ }
+}

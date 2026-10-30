@@ -1,0 +1,53 @@
+{
+ "stage": "t2mix",
+ "base": "/models/reax-1.1",
+ "seed": 0,
+ "max_len": 4096,
+ "s1_holdout": {
+  "select": 0.01,
+  "test": 0.02
+ },
+ "sources": [
+  {
+   "name": "t2_mix",
+   "kind": "mirror",
+   "glob": "data/generalist/t2/MIX-train.jsonl",
+   "weight": 1.0,
+   "augment": true
+  },
+  {
+   "kind": "s1",
+   "name": "hf_mix",
+   "glob": "data/generalist/t2/MIX-hf_s1.jsonl",
+   "exclude_author_family": [],
+   "mix_tier": [
+    "core"
+   ],
+   "take": [
+    0,
+    null
+   ],
+   "weight": 1.0,
+   "augment": true
+  }
+ ],
+ "select": [
+  "data/generalist/t2/MIX-select.jsonl",
+  {
+   "kind": "s1",
+   "name": "hf_mix",
+   "glob": "data/generalist/t2/MIX-hf_s1.jsonl",
+   "exclude_author_family": []
+  }
+ ],
+ "test": [
+  "data/generalist/t2/MIX-test.jsonl",
+  "data/generalist/t2/MIX-check.jsonl",
+  {
+   "kind": "s1",
+   "name": "hf_mix",
+   "glob": "data/generalist/t2/MIX-hf_s1.jsonl",
+   "exclude_author_family": []
+  }
+ ]
+}

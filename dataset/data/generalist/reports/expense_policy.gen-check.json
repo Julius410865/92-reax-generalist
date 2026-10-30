@@ -1,0 +1,65 @@
+{
+ "domain": "expense_policy",
+ "kind": "gen",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": []
+  },
+  "second_solver": {
+   "pass": true,
+   "questions": 16500,
+   "disagreements": 0,
+   "examples": []
+  },
+  "boundary_tests": {
+   "pass": true,
+   "summary": "13 passed in 0.27s"
+  },
+  "shortcut": {
+   "longest_option": 0.5063,
+   "most_word_overlap": 0.5013,
+   "most_frequent_position": 0.5063,
+   "best_constant_answer": 0.5063,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "yes_share": 0.509
+   },
+   "select": {
+    "yes_share": 0.492
+   },
+   "test": {
+    "yes_share": 0.475
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 698,
+   "p99": 856,
+   "max": 922,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

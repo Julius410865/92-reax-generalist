@@ -1,0 +1,79 @@
+{
+ "task": "stance",
+ "counts": {
+  "train": 1500,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 1500,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {
+    "2": 0.012
+   },
+   "yes_share": null,
+   "top_gold_text_share": 0.081,
+   "distinct_gold_texts": 14
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.5,
+   "cue_accuracy": {
+    "longest": 0.497,
+    "shortest": 0.503,
+    "overlap": 0.502
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.556,
+    "shortest": 0.444,
+    "overlap": 0.5
+   },
+   "limit": {
+    "longest": 0.656,
+    "shortest": 0.65,
+    "overlap": 0.65
+   },
+   "questions": 3600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 241,
+   "p99": 289,
+   "max": 298
+  },
+  "source": {
+   "pass": true,
+   "licence": "CC BY 4.0. args.me corpus (version 1.0-cleaned), Yamen Ajjour, Henning Wachsmuth, Johannes Kiesel, Martin Potthast, Matthias Hagen, Benno Stein (2020), Zenodo, doi:10.5281/zenodo.4139439, https://doi.org/10.5281/zenodo.4139439; described in Wachsmuth et al. (2017), 'Building an Argument Search Engine for the Web', Proceedings of the 4th Workshop on Argument Mining, pp. 49-59. Mirror used: https://huggingface.co/datasets/webis/args_me. Arguments originate from idebate.org and debatewise.org.",
+   "files": 2
+  }
+ },
+ "sha256": {
+  "train": "1a25aac0c54c5a4c099bd039ba3af88db72267226e09c060089c08410d04c983",
+  "select": "008f86b7554c8f1ced74c21f4d2ba3559bc6ff5dc0257e9db7b2cc6d1e067171",
+  "test": "fe6bf4dbc5492ecf3ec982696a468639055c34a71e58a8d2994a0d6e6dc62ad2"
+ },
+ "pass": true
+}

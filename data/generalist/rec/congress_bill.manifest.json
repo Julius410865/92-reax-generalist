@@ -1,0 +1,155 @@
+{
+ "domain": "congress_bill",
+ "task_type": "congress_bill_status",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "US government work, public domain (17 U.S.C. 105)",
+  "url": "https://www.govinfo.gov/about/policies",
+  "note": "BILLSTATUS bulk data of the Library of Congress and the US Government Publishing Office"
+ },
+ "sources": {
+  "BILLSTATUS-117-hr.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/117/hr",
+   "sha256": "f5ac8422bdb64a4f48f820e77775fb25942415ffed010e20f1521851bdfd4ae3"
+  },
+  "BILLSTATUS-117-hr.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/117/hr/BILLSTATUS-117-hr.zip",
+   "sha256": "658b2d280e4e7972c86bfd810ebff0c9bb61c115b242de8c8774034dea08de03"
+  },
+  "BILLSTATUS-117-s.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/117/s",
+   "sha256": "a284f5badf44939fba914a86ea895f3203302ef5ee34f372702557a3d3bc3e0e"
+  },
+  "BILLSTATUS-117-s.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/117/s/BILLSTATUS-117-s.zip",
+   "sha256": "69561f19333de31afd2e288700757f3794ecffa35287b9fb86bb2d5d313a1294"
+  },
+  "BILLSTATUS-118-hr.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/118/hr",
+   "sha256": "f15988c48e5856a16d80721011ae769fe40e3c243737538f7d0d811430eaf7f8"
+  },
+  "BILLSTATUS-118-hr.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118-hr.zip",
+   "sha256": "8e7ca7dab50a7b9b977f021ec1b3231f8fedf82c33494553857b892fadfdba98"
+  },
+  "BILLSTATUS-118-s.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/118/s",
+   "sha256": "70019c7304b38dd0fcb0e982c9bf424719a1ae0aa0662fc06a07ce95bf1ee89a"
+  },
+  "BILLSTATUS-118-s.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/s/BILLSTATUS-118-s.zip",
+   "sha256": "b883c7e54eb48cebacfb9e847293bd9e3a840e81bbff0575ac178840fd4d95d8"
+  }
+ },
+ "label_field": "BILLSTATUS laws element + Library of Congress action codes (furthest status)",
+ "labels": {
+  "introduced": "Introduced only: never reported by a committee or passed by either chamber",
+  "reported": "Reported by a committee, but never passed by either chamber",
+  "one_chamber": "Passed one chamber (the House or the Senate) only",
+  "both_chambers": "Passed both chambers, but did not become law",
+  "vetoed": "Vetoed by the President",
+  "law": "Became law"
+ },
+ "records_read": 31268,
+ "zip_members_not_a_bill_record": 11,
+ "status_read": {
+  "None": 17,
+  "both_chambers": 7,
+  "introduced": 28095,
+  "law": 627,
+  "one_chamber": 1291,
+  "reported": 1230,
+  "vetoed": 1
+ },
+ "dropped": {
+  "duplicate_text": 6,
+  "label_conflict_or_failed_vote": 17,
+  "no_introduced_summary": 6874,
+  "no_summary_left_after_scrub": 66,
+  "private_relief_bill": 58,
+  "title_has_scrub_word": 235
+ },
+ "kept_before_caps": 24012,
+ "classes_dropped_under_min": {
+  "both_chambers": 7
+ },
+ "caps": {
+  "train": {
+   "median": 957.0,
+   "cap": 2871
+  },
+  "select": {
+   "median": 46.0,
+   "cap": 138
+  },
+  "test": {
+   "median": 49.5,
+   "cap": 148
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 0,
+   "class_prior": {
+    "Introduced only: never reported by a committee or passed by either chamber": 1631,
+    "Passed one chamber (the House or the Senate) only": 619,
+    "Reported by a committee, but never passed by either chamber": 430,
+    "Became law": 320
+   },
+   "gold_position": {
+    "A": 805,
+    "B": 710,
+    "C": 748,
+    "D": 737
+   },
+   "options": {
+    "4": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 0,
+   "class_prior": {
+    "Introduced only: never reported by a committee or passed by either chamber": 82,
+    "Passed one chamber (the House or the Senate) only": 28,
+    "Reported by a committee, but never passed by either chamber": 25,
+    "Became law": 15
+   },
+   "gold_position": {
+    "A": 41,
+    "B": 32,
+    "C": 44,
+    "D": 33
+   },
+   "options": {
+    "4": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 0,
+   "class_prior": {
+    "Introduced only: never reported by a committee or passed by either chamber": 85,
+    "Passed one chamber (the House or the Senate) only": 30,
+    "Reported by a committee, but never passed by either chamber": 29,
+    "Became law": 6
+   },
+   "gold_position": {
+    "A": 32,
+    "B": 39,
+    "C": 36,
+    "D": 43
+   },
+   "options": {
+    "4": 150
+   }
+  }
+ },
+ "files": {
+  "congress_bill.train.jsonl": "058d654ac2558aa9b41b042a8d0bbeb09461c06c2e22b09ac6859410c98daffb",
+  "congress_bill.select.jsonl": "6a0cc355dde6d84e7a737067b27aa8763cdee2e1c77562199aa9f8cf2580ef20",
+  "congress_bill.test.jsonl": "f633dfc26d3bdb764ce36f549586f2f70e27ca95e3307791fb9b1f9c0498ac6b"
+ }
+}

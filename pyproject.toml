@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reax-subnet"
+version = "1.2.0rc11.post7"
+description = "REAX Bittensor subnet: miners serve an approved decision model, validators verify fidelity"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10,<3.15"
+# Exact pins: miners and validators must run the same code paths.
+dependencies = [
+    "bittensor==11.1.0",
+    "aiohttp==3.14.3",
+    # Ed25519 for the owner's award approvals (award.py); already installed with bittensor (eth-account -> eth-keyfile).
+    "pycryptodome==3.23.0",
+]
+
+[project.optional-dependencies]
+# Needed by every real miner and validator (the reference model runs locally).
+model = [
+    "torch==2.14.1",
+    "transformers==5.18.0",
+    "accelerate==1.15.0",
+]
+# Specialist track evaluator (src/reax_subnet/spec): the hub client for downloads and numpy (also pulled in by bittensor;
+# listed so `reax-spec-eval` and the tests work without the full validator install).
+spec = ["huggingface_hub==1.33.0", "numpy>=1.26,<3"]
+test = [
+    "pytest==9.1.1", "pytest-asyncio==1.4.0", "numpy>=1.26,<3",
+    # The fetch error-classification tests exercise the hub client without a model.
+    "httpx==0.28.1", "huggingface_hub==1.33.0",
+]
+
+[project.scripts]
+reax-miner = "reax_subnet.cli:miner_main"
+reax-validator = "reax_subnet.cli:validator_main"
+reax-router = "reax_subnet.router:main"
+reax-selfcheck = "reax_subnet.selfcheck:main"
+reax-engine-eval = "reax_subnet.engcli:eval_main"
+reax-engine-submit = "reax_subnet.engcli:submit_main"
+reax-commit = "reax_subnet.commitcli:main"
+reax-spec-eval = "reax_subnet.spec.cli:main"
+reax-competition-worker = "reax_subnet.worker:main"
+reax-award-approve = "reax_subnet.award:main"
+reax-runtime-relay = "reax_subnet.multinode:relay_main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+reax_subnet = ["manifests/*.json", "eu_registry.json", "selfcheck_data/*.json", "spec/ccfix/sitecustomize.py", "spec/templates/*.jinja"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+markers = [
+    "model: needs torch/transformers and a downloaded Hugging Face model",
+    "localnet: needs a running local subtensor (scripts/localnet)",
+    "fla_checksum: runs the real published-FLA-config checksum verification",
+    "gpu: needs Docker, the NVIDIA runtime, a GPU and a model directory (REAX_SPEC_TEST_MODEL); skipped by default",
+    "real_opening: keep the release engine opening block (competition_split.ENGINE_TRACK_START_BLOCK) instead of switching it off",
+]

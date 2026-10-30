@@ -1,0 +1,4 @@
+model-00001-of-00002.safetensors: 367 merged
+model-00002-of-00002.safetensors: 33 merged
+serve check: 8 dev questions answered by JointRunner, 0 malformed
+VALIDATOR RULES: OK (/models/merge-w05); nothing uploaded or committed

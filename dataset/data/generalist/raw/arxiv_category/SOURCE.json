@@ -1,0 +1,917 @@
+{
+ "task": "arxiv_category",
+ "licence": "CC0 1.0 (OpenAlex data: titles, abstracts as inverted indexes, topics, ids). Only works whose publisher version (primary_location) carries a CC BY, CC BY-SA or public-domain licence in OpenAlex are used, so the abstract texts are openly licensed as well (CC BY / CC BY-SA require attribution: every row's source_id is the OpenAlex work id, which resolves to the DOI and the licence)",
+ "licence_url": "https://help.openalex.org/access/pricing/#free-data-paid-services (CC0: https://creativecommons.org/publicdomain/zero/1.0/)",
+ "downloaded": "2026-10-28",
+ "files": {
+  "fields.json": {
+   "url": "https://api.openalex.org/fields?per_page=100&select=id,display_name,domain,subfields",
+   "sha256": "33f6407ad4558af0b761582db97dfcf5082facf4896572c7c265582a6f273ae0",
+   "bytes": 27990,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:27Z",
+   "credits_used": "1"
+  },
+  "works__field-11__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/11,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "cf0d901eb2987047baab49206ff253148e60b8e270f740d937dc3ff2f126f55b",
+   "bytes": 1020060,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:29Z",
+   "credits_used": "1"
+  },
+  "works__field-11__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/11,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "5068082a0a99a2b9bdc46415f6f9da2fe90e0814dd060aed4ad05a7da3107ff5",
+   "bytes": 998418,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:31Z",
+   "credits_used": "1"
+  },
+  "works__field-11__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/11,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "5cda456128c7bc452670b6acfcf5aef2eab1f955205995c328f4cc262e123b9c",
+   "bytes": 1005225,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:33Z",
+   "credits_used": "1"
+  },
+  "works__field-11__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/11,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "02f9052073887134bd379f5b20e48bcdf9520236da16bd8b279febff998b33ed",
+   "bytes": 1024837,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:35Z",
+   "credits_used": "1"
+  },
+  "works__field-12__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/12,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "0103c792857d8299e38821bef7e6f97dc85dfa62d3f5aab2fbf8141c0c5a5f08",
+   "bytes": 836468,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:36Z",
+   "credits_used": "1"
+  },
+  "works__field-12__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/12,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "f68733c81e38f6608f9b085b68b6370f100cb775382a31c12d2997cb3cbbc73c",
+   "bytes": 845387,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:38Z",
+   "credits_used": "1"
+  },
+  "works__field-12__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/12,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "28c57447caafc609549bd161344d5d48b5a8d3a1732c1dda716913dcaecc8c64",
+   "bytes": 900026,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:40Z",
+   "credits_used": "1"
+  },
+  "works__field-12__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/12,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "ed91a39f40a3dfc6cf486efc685f50329dff1bd0bddf0721ffe0a355b00cebf2",
+   "bytes": 853745,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:42Z",
+   "credits_used": "1"
+  },
+  "works__field-13__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/13,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "ef0b684c4b2850878252ed856466437b139c85cdf4f831c00d376e4148868115",
+   "bytes": 1126409,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:43Z",
+   "credits_used": "1"
+  },
+  "works__field-13__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/13,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "ea42869b34c9679c4a5d629cad464964fbd84bdc40fd645111e5ab266067751e",
+   "bytes": 1147426,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:45Z",
+   "credits_used": "1"
+  },
+  "works__field-13__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/13,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "f7bca7c9b6c5f81169474b42b0a086268a99cc59a2a3686ca4b8589be43892db",
+   "bytes": 1096823,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:47Z",
+   "credits_used": "1"
+  },
+  "works__field-13__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/13,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "2480b80b810e9ddfe935a92c8daf018eb1d07a7573e59227834baed63a6853b2",
+   "bytes": 1098626,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:49Z",
+   "credits_used": "1"
+  },
+  "works__field-14__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/14,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "a56c54db9420a9b03e37d1329f30f2c0d40041e6d4d3cfed48f45ffae2153962",
+   "bytes": 868189,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:50Z",
+   "credits_used": "1"
+  },
+  "works__field-14__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/14,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "ded6a1f99a01d13fccf8b0ccc5cb6bdfa6763fef5550375ea16e18b82e7b88bb",
+   "bytes": 874004,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:52Z",
+   "credits_used": "1"
+  },
+  "works__field-14__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/14,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "8e4d5f16d9b3c5958be8cb0cc91badb9a2ba802595d52c59f597384a4d957890",
+   "bytes": 862557,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:54Z",
+   "credits_used": "1"
+  },
+  "works__field-14__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/14,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "0742f95b4490359aaa1c0bf915a95ae572657e379504809277c0a2faf75a1023",
+   "bytes": 841097,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:55Z",
+   "credits_used": "1"
+  },
+  "works__field-15__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/15,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "9649149b9ccfe4e724a1ba8f483bf4e8108afa24601d6456418b56dee27060cc",
+   "bytes": 969170,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:41:57Z",
+   "credits_used": "1"
+  },
+  "works__field-15__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/15,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "c8db88f1ad84d73afa80d32867786e811531fd65ab43db347948890754db9a9c",
+   "bytes": 915993,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:00Z",
+   "credits_used": "1"
+  },
+  "works__field-15__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/15,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "a4dcc363f72eef10b37c02c2d91a094971e82bda453a1d6b343036c5a88bd06f",
+   "bytes": 921459,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:01Z",
+   "credits_used": "1"
+  },
+  "works__field-15__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/15,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "b42e9d257d8fab2da05162cd083ca5e69e0d78f66e44a1d36f13fc3a687a543b",
+   "bytes": 899935,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:03Z",
+   "credits_used": "1"
+  },
+  "works__field-16__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/16,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "f47c897f146ed5a9a3ba0dcd9bbe9f247435a04f0fb8be9467033486c778d5cf",
+   "bytes": 942850,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:05Z",
+   "credits_used": "1"
+  },
+  "works__field-16__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/16,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "f00e53a00e17f5d0a3d0f7bd249095e4d8957babb32bbadc1c66b8920802d2b0",
+   "bytes": 956649,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:06Z",
+   "credits_used": "1"
+  },
+  "works__field-16__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/16,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "f0f7fe69827feb2d2b470a563c08e14d25b4c1a50ecb65932a1c9db0e72043d3",
+   "bytes": 926051,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:08Z",
+   "credits_used": "1"
+  },
+  "works__field-16__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/16,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "43402c6ae25b575a5257d16586be038258296ce5b978eb7154f00610e752dcdd",
+   "bytes": 997528,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:10Z",
+   "credits_used": "1"
+  },
+  "works__field-17__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/17,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "f66d98dab2de63099beea5195d47db3d4068b0dfafe4c9022a03ab198849a45c",
+   "bytes": 902064,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:12Z",
+   "credits_used": "1"
+  },
+  "works__field-17__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/17,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "5c5994d37745585ed7122f689c28d5f036d0314b53c7de482e172bc7da1cdb29",
+   "bytes": 892742,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:13Z",
+   "credits_used": "1"
+  },
+  "works__field-17__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/17,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "0ec3dcd0ee61b2dba11dce9ba91b1f8546e832cbca6323376f9d48b98ca1f837",
+   "bytes": 914869,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:15Z",
+   "credits_used": "1"
+  },
+  "works__field-17__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/17,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "22a46e6371f0575babad5ed8225a5b06fa7f2b36d3f58d40767328c221321603",
+   "bytes": 903736,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:17Z",
+   "credits_used": "1"
+  },
+  "works__field-18__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/18,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "224b5a6add4eb56ad6d48f55a8e8a707368aab2071db4f69716948c2c78ce672",
+   "bytes": 929418,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:19Z",
+   "credits_used": "1"
+  },
+  "works__field-18__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/18,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "fe40af673c9e4e06234c0b26544ea0af6d2b64bd4ac68fa22c7fd62d6f19934b",
+   "bytes": 931375,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:20Z",
+   "credits_used": "1"
+  },
+  "works__field-18__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/18,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "9f8d8a32569d5d71c6cf7153f1e8dc773e2be30d6bd68652a70e3968ef1fff3b",
+   "bytes": 926937,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:22Z",
+   "credits_used": "1"
+  },
+  "works__field-18__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/18,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "5ce0a1243209ae52b595ced5e06a9f63b6ef3d7cbda02458a93923c2b459f284",
+   "bytes": 939556,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:24Z",
+   "credits_used": "1"
+  },
+  "works__field-19__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/19,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "1561e83620503e08afd9079692b5f4a3c6939198e475261f35353b5073a437d1",
+   "bytes": 1073602,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:25Z",
+   "credits_used": "1"
+  },
+  "works__field-19__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/19,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "7d574eb57b0d8f3a7e85eb3f614957510ec779105435525c67f81626dba7705b",
+   "bytes": 1059140,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:27Z",
+   "credits_used": "1"
+  },
+  "works__field-19__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/19,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "ae68c023d86d9b39cf23762ce6ffea69eee1090fd30bcf27ce0fdf03ce6b5cb8",
+   "bytes": 1009786,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:29Z",
+   "credits_used": "1"
+  },
+  "works__field-19__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/19,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "6abec41fb16ed47e05651c151418117ab5b6d7cfbd5b4b7fb2f277a5ff7a1094",
+   "bytes": 1063936,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:31Z",
+   "credits_used": "1"
+  },
+  "works__field-20__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/20,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "a763a6f68ef05644bc74eaa305c63d2cb89084883558808f272bf616d548ab67",
+   "bytes": 937950,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:32Z",
+   "credits_used": "1"
+  },
+  "works__field-20__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/20,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "00fc9c5ca5aff5154fe8bd4cc768a5571a4eab694a878dc5ed74d626e9b3dbef",
+   "bytes": 904977,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:34Z",
+   "credits_used": "1"
+  },
+  "works__field-20__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/20,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "6fc0fbcbf0564bf9dcd242fae035c775883507d42cbe28ec5111f688b1739b82",
+   "bytes": 971144,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:36Z",
+   "credits_used": "1"
+  },
+  "works__field-20__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/20,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "e0d468faf57b773920d6099755d227fafd7177fc09e0b16d8a4f230c60c0d985",
+   "bytes": 894345,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:37Z",
+   "credits_used": "1"
+  },
+  "works__field-21__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/21,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "4d8f7dd3dbf7d3645a468135b8cddb1f5c0895c651050b2a063ddfda00662425",
+   "bytes": 927508,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:39Z",
+   "credits_used": "1"
+  },
+  "works__field-21__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/21,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "a16c9c479fa303864c762368bb9fb7af8dcce4364b27c6e9c4868babdabbbe82",
+   "bytes": 982053,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:41Z",
+   "credits_used": "1"
+  },
+  "works__field-21__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/21,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "dab7b1ce064d5138e17d15a87e212202a1ef16658089914abaede97ce9ce9ce8",
+   "bytes": 941680,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:42Z",
+   "credits_used": "1"
+  },
+  "works__field-21__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/21,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "74bd44d941ac5921bc2f0f7c553eb1941b97c535d28c71e131005bd22e657c87",
+   "bytes": 939436,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:44Z",
+   "credits_used": "1"
+  },
+  "works__field-22__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/22,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "865b48763c4ff84066c5c862fdf81d4800859dfdc1afa28618ea359e04ec4ed9",
+   "bytes": 923355,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:46Z",
+   "credits_used": "1"
+  },
+  "works__field-22__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/22,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "befad9728159742ee3ea64045d8fcedadef3f496cdb516564e7cc9491fa0341f",
+   "bytes": 925661,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:47Z",
+   "credits_used": "1"
+  },
+  "works__field-22__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/22,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "656f57501ef09b69d4523fece2931647eaa6e29001c58ffbe6606ac2fbadf7f3",
+   "bytes": 898983,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:49Z",
+   "credits_used": "1"
+  },
+  "works__field-22__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/22,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "24506050c474bfee5d8e077343ec68f828ca9ddf49ef637ab6e898a61986b114",
+   "bytes": 920908,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:51Z",
+   "credits_used": "1"
+  },
+  "works__field-23__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/23,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "b225c34e2f53b597ec9141b5f8e0a02f21ec340df24d3756d2b1280e3e887d0a",
+   "bytes": 1019570,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:53Z",
+   "credits_used": "1"
+  },
+  "works__field-23__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/23,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "ebc20c2876ef0874ee481a6fa723a9604f434875ff9d7a54a5fadb47b3c4523f",
+   "bytes": 1025465,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:55Z",
+   "credits_used": "1"
+  },
+  "works__field-23__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/23,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "9c33cf59b7bf8294fc5326eef1ece2932753c6934b2f0c8ac4b9cf79e8c15ed7",
+   "bytes": 1015495,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:57Z",
+   "credits_used": "1"
+  },
+  "works__field-23__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/23,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "0b46b02a0ddb865d2e3e9c592eaba8c543009faba6a44c501a95237b99c2b92f",
+   "bytes": 1042121,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:42:58Z",
+   "credits_used": "1"
+  },
+  "works__field-24__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/24,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "181c9c3ee82eb15980e3b555eaa504036a60f011acaa2de9507101e1b897e0c3",
+   "bytes": 1128509,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:00Z",
+   "credits_used": "1"
+  },
+  "works__field-24__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/24,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "b4c71b79bf024da7e2611243755d8a5213af51c95797ed938722b13801e26e74",
+   "bytes": 1131226,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:02Z",
+   "credits_used": "1"
+  },
+  "works__field-24__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/24,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "22487b847db7abc23d2a7284b8552bcea017e884d68da22b85695b2fd41bb58b",
+   "bytes": 1156323,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:04Z",
+   "credits_used": "1"
+  },
+  "works__field-24__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/24,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "49556b09a7f278e2c6652083c71b9269f66afac87c14d8dc99f93ecf8aa330df",
+   "bytes": 1134742,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:06Z",
+   "credits_used": "1"
+  },
+  "works__field-25__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/25,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "1278c4efe96528420278a0193e282b3d665e65496afce61d10d1aef1fd12867a",
+   "bytes": 927834,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:07Z",
+   "credits_used": "1"
+  },
+  "works__field-25__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/25,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "9618626953c39a1e86fa750744d0b6470866d3c62b1abc5ad55fc28e60a75eb8",
+   "bytes": 967564,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:09Z",
+   "credits_used": "1"
+  },
+  "works__field-25__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/25,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "594559c885e6e5d653edc5b0ca10ec1ffd6db14e38131de78e2b393ccbe95aad",
+   "bytes": 960751,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:11Z",
+   "credits_used": "1"
+  },
+  "works__field-25__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/25,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "4afac7b09e373b0e562baafd32041e11253f2bc728ba3859b91307afb7e758f1",
+   "bytes": 976386,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:13Z",
+   "credits_used": "1"
+  },
+  "works__field-26__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/26,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "9cf31613c11a9df558c0c59cbe2dd483d32fa31ac2b536f655e031222d1f4639",
+   "bytes": 856398,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:14Z",
+   "credits_used": "1"
+  },
+  "works__field-26__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/26,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "e06e73e7757b9790b3dc9389fdde71651a60ab93860c7dc36737b3ce3082b047",
+   "bytes": 850866,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:16Z",
+   "credits_used": "1"
+  },
+  "works__field-26__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/26,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "5f5910eba09aa2565918ce6e8e31faba846bedce0ba41acab3e9751c7a91a790",
+   "bytes": 814215,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:18Z",
+   "credits_used": "1"
+  },
+  "works__field-26__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/26,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "ce9333b6082efb6c353a0bf217e2b9d6054a171affade698737da32c659ae551",
+   "bytes": 836348,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:19Z",
+   "credits_used": "1"
+  },
+  "works__field-27__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/27,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "24b2598b8d8a9fc7d781a3389e8159fdcfc44118587cc1d81c7a24f3c9949c3c",
+   "bytes": 1133331,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:21Z",
+   "credits_used": "1"
+  },
+  "works__field-27__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/27,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "42166c5235ca18f401412311bdf1149584abc7eeda6ffcb38cbbf2a4ab7e9f9c",
+   "bytes": 1105665,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:23Z",
+   "credits_used": "1"
+  },
+  "works__field-27__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/27,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "e9bc5c0d5f3f9a495d49589bfe68ed808d415def77e8633dfd224be7250b39f4",
+   "bytes": 1165285,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:25Z",
+   "credits_used": "1"
+  },
+  "works__field-27__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/27,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "953f7cbaf0f5cdddefb628dfe18cca069e6d4b88d2e780cd767f9cc81df6182f",
+   "bytes": 1095711,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:27Z",
+   "credits_used": "1"
+  },
+  "works__field-28__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/28,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "98e90fe30276c8c82c8f1bd3900d54fe04256075ad8de6a760aa43b244ce34c9",
+   "bytes": 1136044,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:29Z",
+   "credits_used": "1"
+  },
+  "works__field-28__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/28,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "6972f02e872cd5665b2be603365f3dc4de7ea9dc702c8ce2b276b51bed6d9c5c",
+   "bytes": 1138323,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:31Z",
+   "credits_used": "1"
+  },
+  "works__field-28__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/28,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "3f1719ba3dcd7219a9abb144d2d52df2432326ea01f295f01482f7da9c67faad",
+   "bytes": 1147428,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:32Z",
+   "credits_used": "1"
+  },
+  "works__field-28__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/28,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "ae10df6f2198b7c240f451471dd1ce18c0c5588b202ed2556d6667aed2dd23b8",
+   "bytes": 1163547,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:34Z",
+   "credits_used": "1"
+  },
+  "works__field-29__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/29,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "8072309bd9052a1036764dcdc53433cb917107c8094b23a49af2c48f77e95288",
+   "bytes": 1012830,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:36Z",
+   "credits_used": "1"
+  },
+  "works__field-29__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/29,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "8c3233bb24473bee60b0c476323a776bfa8c5690029ff6ad14a683e985c25d4d",
+   "bytes": 1034828,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:37Z",
+   "credits_used": "1"
+  },
+  "works__field-29__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/29,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "2f739aa75f6b649c115562b8180c4c6aa1a62da74ffdc7d05cd5b456374bfcf4",
+   "bytes": 1042900,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:39Z",
+   "credits_used": "1"
+  },
+  "works__field-29__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/29,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "fc05c258a5a805de72e4643063f7b5066f62198b671cf2676c5e210c30319078",
+   "bytes": 1055744,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:41Z",
+   "credits_used": "1"
+  },
+  "works__field-30__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/30,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "635815f6ab21d13187b23072ba35c4acfd9979d0211c227abdb8a7aec888ed67",
+   "bytes": 973955,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:43Z",
+   "credits_used": "1"
+  },
+  "works__field-30__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/30,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "ea47326497af29f3d0ca01b11a203695b88942b066ad88f8c365c901fc4505ed",
+   "bytes": 1036974,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:44Z",
+   "credits_used": "1"
+  },
+  "works__field-30__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/30,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "6aeb5835de1c40a27b664a6540d37f4f9f79a615266d49d051b73630351ee469",
+   "bytes": 1059166,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:46Z",
+   "credits_used": "1"
+  },
+  "works__field-30__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/30,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "60dfc0499f30f375ffd4c1f888c5ef63b4560e2e257068b5ef6f5c4f62a8d9a3",
+   "bytes": 1062151,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:48Z",
+   "credits_used": "1"
+  },
+  "works__field-31__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/31,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "a90121ad02e4572c1f9cab2963db261c569cf7bf21264d029939cadd1116bdbc",
+   "bytes": 958485,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:50Z",
+   "credits_used": "1"
+  },
+  "works__field-31__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/31,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "29d8adb4755a1c8fc7b7864a5896a3819189299f4c1fdce196d45843a32bc19e",
+   "bytes": 941248,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:51Z",
+   "credits_used": "1"
+  },
+  "works__field-31__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/31,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "6c28d212c6a02a4b04298fcbec544f148bc6ad391367455f005c47c491988412",
+   "bytes": 930579,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:53Z",
+   "credits_used": "1"
+  },
+  "works__field-31__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/31,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "ff2bd91aa68813cf3b6a11e1259927e15f3c4d4663398685995b115378aeb7f4",
+   "bytes": 937994,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:55Z",
+   "credits_used": "1"
+  },
+  "works__field-32__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/32,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "4358f28d725aca3f2c0a6b324bd4c9fc3211c83093b8b05739c4a0f1ca199e40",
+   "bytes": 975865,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:57Z",
+   "credits_used": "1"
+  },
+  "works__field-32__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/32,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "77108d03223238e32cee9ca09bbfa1850983dc1fc986837c4e4f9a132870b56e",
+   "bytes": 1020524,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:43:59Z",
+   "credits_used": "1"
+  },
+  "works__field-32__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/32,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "fea330c6755fe49f153704a68acb9582aa3645e85b2ede084415f06b5b0bd8b5",
+   "bytes": 953698,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:00Z",
+   "credits_used": "1"
+  },
+  "works__field-32__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/32,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "e8d78462e2c5c1501be01e221a75228277a2b4d84de5156a744b5d9a10926706",
+   "bytes": 986615,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:02Z",
+   "credits_used": "1"
+  },
+  "works__field-33__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/33,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "240c73ebaa3d473a50c44e3657efb678cc8404c72d4dc1489d09adbfac714e69",
+   "bytes": 849761,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:04Z",
+   "credits_used": "1"
+  },
+  "works__field-33__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/33,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "4ee5de2095ddad5d2cec985295699e873222d6d9754639f7b44cc8c0ac1a49c3",
+   "bytes": 897666,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:06Z",
+   "credits_used": "1"
+  },
+  "works__field-33__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/33,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "e00c0b979016d947cc0ebd0bc9f3a28a196e5c690db6c250f55d3880a3326589",
+   "bytes": 887362,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:07Z",
+   "credits_used": "1"
+  },
+  "works__field-33__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/33,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "6ac2c83117c471652a4e7922b08f16a1250a5175956dddbde4fdfc47f6fd52b7",
+   "bytes": 931632,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:09Z",
+   "credits_used": "1"
+  },
+  "works__field-34__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/34,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "5d2953cde1e69e9da0889614736b6851ec93c54fdb138baf00bb5b00294cdee1",
+   "bytes": 1121017,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:11Z",
+   "credits_used": "1"
+  },
+  "works__field-34__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/34,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "d437907a61accbdc04210f030ac6cc9d2da40b76384f79a3729d594bb0d11f10",
+   "bytes": 1078933,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:13Z",
+   "credits_used": "1"
+  },
+  "works__field-34__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/34,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "46312ca618ed947188d02452e4f838da4c0d8d32b7c37b8ec4727febe72942aa",
+   "bytes": 1078690,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:15Z",
+   "credits_used": "1"
+  },
+  "works__field-34__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/34,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "b8ece71829b8822c5a004776b088af9cc35da31536efbf56d4dc1ab8a2736196",
+   "bytes": 1127829,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:16Z",
+   "credits_used": "1"
+  },
+  "works__field-35__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/35,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "b347368914a1571153fbee68406521c46c56cbd8159041f202601b19ce2c299e",
+   "bytes": 1029006,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:18Z",
+   "credits_used": "1"
+  },
+  "works__field-35__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/35,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "3c5af275c389e887b65beb81eef5df8199288de2c12d0c65024c736c3bc9e7d6",
+   "bytes": 1046213,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:20Z",
+   "credits_used": "1"
+  },
+  "works__field-35__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/35,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "dfea285f620e4a69006c3d9767ebca596dc983c8064085e704ca790989a1f27e",
+   "bytes": 1001496,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:22Z",
+   "credits_used": "1"
+  },
+  "works__field-35__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/35,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "4716eee4eda8b6f6b0c59ad6059f41756d99e5cfbc6e795a2482ba8d83c93e69",
+   "bytes": 992981,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:23Z",
+   "credits_used": "1"
+  },
+  "works__field-36__seed-92__page-1.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/36,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=1",
+   "sha256": "2813069e753c0f3e1bf50b5d1008e33f1a65d802454b635eb6ef8f2dc9cecc0c",
+   "bytes": 1069507,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:25Z",
+   "credits_used": "1"
+  },
+  "works__field-36__seed-92__page-2.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/36,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=2",
+   "sha256": "5c30d40f2a014c5f5fd19c20b8bb44ebd3dc0aeeb859c683e7c05b7ed345c789",
+   "bytes": 1088371,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:27Z",
+   "credits_used": "1"
+  },
+  "works__field-36__seed-92__page-3.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/36,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=3",
+   "sha256": "e92323c964d479eec4d98d931020ab7e8613a070879a15d534a15b21f89ead57",
+   "bytes": 1117024,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:29Z",
+   "credits_used": "1"
+  },
+  "works__field-36__seed-92__page-4.json": {
+   "url": "https://api.openalex.org/works?filter=primary_topic.field.id:fields/36,type:article,language:en,has_abstract:true,is_retracted:false,indexed_in:!arxiv,locations.source.id:!S4306400194,primary_location.source.type:journal,primary_location.license:cc-by|cc-by-sa|public-domain,from_publication_date:2010-01-01,to_publication_date:2026-07-31&select=id,doi,title,display_name,publication_year,publication_date,language,type,ids,indexed_in,primary_topic,topics,primary_location,best_oa_location,locations,locations_count,open_access,is_retracted,abstract_inverted_index&sample=400&seed=92&per_page=100&page=4",
+   "sha256": "da53506ce77cdc48ccfd9a32d201c564cda5425e10c35bacbf688123aef41042",
+   "bytes": 1007512,
+   "status": 200,
+   "fetched_utc": "2026-10-28T17:44:30Z",
+   "credits_used": "1"
+  }
+ },
+ "notes": "OpenAlex works API, keyless (no api_key, no mailto; nothing identifying the owner is sent). Per OpenAlex field 11..36: a seeded random sample (sample=400, seed=92) read with basic paging (per_page=100, pages 1..4); cursor paging past page 1 needs an API key, so it is not used. Server-side filters: type:article, language:en, has_abstract:true, is_retracted:false, indexed_in:!arxiv, locations.source.id:!S4306400194, primary_location.source.type:journal, primary_location.license:cc-by|cc-by-sa|public-domain, from_publication_date:2010-01-01, to_publication_date:2026-07-31. Fields selected: id, doi, title, display_name, publication_year, publication_date, language, type, ids, indexed_in, primary_topic, topics, primary_location, best_oa_location, locations, locations_count, open_access, is_retracted, abstract_inverted_index. fields.json is the OpenAlex field list (the label set). Gold = primary_topic.field of each work: a structured OpenAlex field, assigned by OpenAlex's own topic classifier (https://help.openalex.org/data/topics/#assigning-topics-to-works), not by this build. Every response is stored unmodified; the builder re-applies the exclusions (any location or id on arXiv, licence, language, abstract quality) on the stored records.",
+ "sampling": {
+  "api": "https://api.openalex.org",
+  "seed": 92,
+  "per_field": 400,
+  "per_page": 100,
+  "fields": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36
+  ],
+  "filters": [
+   "type:article",
+   "language:en",
+   "has_abstract:true",
+   "is_retracted:false",
+   "indexed_in:!arxiv",
+   "locations.source.id:!S4306400194",
+   "primary_location.source.type:journal",
+   "primary_location.license:cc-by|cc-by-sa|public-domain",
+   "from_publication_date:2010-01-01",
+   "to_publication_date:2026-07-31"
+  ],
+  "select": [
+   "id",
+   "doi",
+   "title",
+   "display_name",
+   "publication_year",
+   "publication_date",
+   "language",
+   "type",
+   "ids",
+   "indexed_in",
+   "primary_topic",
+   "topics",
+   "primary_location",
+   "best_oa_location",
+   "locations",
+   "locations_count",
+   "open_access",
+   "is_retracted",
+   "abstract_inverted_index"
+  ],
+  "paging": "basic (page=1..4), keyless"
+ }
+}

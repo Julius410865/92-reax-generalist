@@ -1,0 +1,286 @@
+{
+ "domain": "noaa_storm_type",
+ "task_type": "noaa_storm_event_type",
+ "area": "retrieval",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "Public domain (US government work, 17 U.S.C. 105; NOAA NCEI Storm Events Database)",
+  "url": "https://www.usa.gov/government-works",
+  "source_page": "https://www.ncei.noaa.gov/stormevents/"
+ },
+ "sources": {
+  "csvfiles.index.html": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+   "sha256": "0b2494a0377f6a8780a66f96eb632507309c1892148fde61b8cf152ef1d1c7c5"
+  },
+  "README": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/README",
+   "sha256": "a397a60ef942a5ce6594935be1a854a045e1eaca0ea68398fd41f95d66dacb34"
+  },
+  "Storm-Data-Bulk-csv-Format.pdf": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/Storm-Data-Bulk-csv-Format.pdf",
+   "sha256": "3bd18968d34da43e192f8a7fb8e5548c4fa7d24ede016d2d068d849ee1392df6"
+  },
+  "StormEvents_details-ftp_v1.0_d2024_c20260728.csv.gz": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2024_c20260728.csv.gz",
+   "sha256": "2070b83eccab041b36360ab73645b9a249c3eefc5b92b5b3fc0cbba4d9fcc09c"
+  },
+  "StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+   "sha256": "d9b46b4c6aae554723cadbb9691f3d5258371c02e530ba815d6fe41e4550149f"
+  },
+  "StormEvents_details-ftp_v1.0_d2026_c20261026.csv.gz": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2026_c20261026.csv.gz",
+   "sha256": "53e6118446f19a522abeb7ececca1dfdae3090117bc1297e2a774f21f13ee83a"
+  }
+ },
+ "label_field": "EVENT_TYPE",
+ "labels": {
+  "Thunderstorm Wind": "Thunderstorm Wind",
+  "Hail": "Hail",
+  "Flash Flood": "Flash Flood (rapid onset)",
+  "Flood": "Flood (slow-rising)",
+  "Drought": "Drought",
+  "High Wind": "High Wind (non-thunderstorm)",
+  "Winter Weather": "Winter Weather (advisory level)",
+  "Winter Storm": "Winter Storm (warning level)",
+  "Excessive Heat": "Excessive Heat",
+  "Tornado": "Tornado",
+  "Extreme Cold/Wind Chill": "Extreme Cold / Wind Chill",
+  "Dense Fog": "Dense Fog",
+  "Wildfire": "Wildfire",
+  "Frost/Freeze": "Frost / Freeze",
+  "Tropical Storm": "Tropical Storm",
+  "Dust Storm": "Dust Storm"
+ },
+ "top_types": [
+  "Thunderstorm Wind",
+  "Hail",
+  "Flash Flood",
+  "Drought",
+  "High Wind",
+  "Winter Weather",
+  "Heat",
+  "Winter Storm",
+  "Marine Thunderstorm Wind",
+  "Flood",
+  "Excessive Heat",
+  "Heavy Snow",
+  "Tornado",
+  "Extreme Cold/Wind Chill",
+  "Cold/Wind Chill",
+  "Strong Wind",
+  "Dense Fog",
+  "Heavy Rain",
+  "Blizzard",
+  "Wildfire",
+  "Frost/Freeze",
+  "Coastal Flood",
+  "Lightning",
+  "Tropical Storm",
+  "Funnel Cloud",
+  "Dust Storm"
+ ],
+ "types_dropped_not_separable": {
+  "Heat": {
+   "reason": "told apart from Excessive Heat only by local warning thresholds; once heat words are removed both are temperature reports (or heat-death reports with no cue left)",
+   "records": 7468
+  },
+  "Cold/Wind Chill": {
+   "reason": "told apart from Extreme Cold/Wind Chill only by local warning thresholds; both read as low temperature reports once cold / wind-chill words are removed",
+   "records": 2929
+  },
+  "Strong Wind": {
+   "reason": "told apart from High Wind only by the measured speed, which is in the removed wind / gust / mph sentences; the rest is the same tree and power-line damage",
+   "records": 2903
+  },
+  "Heavy Snow": {
+   "reason": "told apart from Winter Storm only by whether other hazards (sleet, ice, wind) occurred, which are removed words; both read as snowfall-amount reports",
+   "records": 5029
+  },
+  "Blizzard": {
+   "reason": "defined by wind, blowing snow and visibility together; with those words removed it reads as Winter Weather / Winter Storm",
+   "records": 1265
+  },
+  "Marine Thunderstorm Wind": {
+   "reason": "the narratives are wind-gust measurements; few records keep any text without the type's own words",
+   "records": 6299
+  },
+  "Funnel Cloud": {
+   "reason": "the narratives only say that a funnel was seen; almost nothing is left without the type's own words",
+   "records": 555
+  },
+  "Lightning": {
+   "reason": "what is left without lightning / thunderstorm words is a fire or an injury with no cue to the type",
+   "records": 568
+  },
+  "Coastal Flood": {
+   "reason": "with tide / coastal / flood words removed it reads as Flood (water on roads)",
+   "records": 693
+  },
+  "Heavy Rain": {
+   "reason": "with rain words removed what is left is an amount in inches (read as snowfall) or water, rock and mud on roads (read as Flood / Flash Flood)",
+   "records": 1668
+  }
+ },
+ "events_read": 192649,
+ "newest_event_begin": "2026-07-31",
+ "dropped_by_filter": {
+  "outside the top types": 2897
+ },
+ "candidates": 160375,
+ "dropped_short_after_scrub": 137994,
+ "dropped_scrub_word_in_state": 0,
+ "dropped_duplicate_text_same_type": 1950,
+ "dropped_duplicate_text_conflicting_type": 18,
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 451.5,
+   "cap": 1354
+  },
+  "select": {
+   "median": 23.5,
+   "cap": 70
+  },
+  "test": {
+   "median": 16.5,
+   "cap": 49
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 0,
+   "class_prior": {
+    "Tornado": 456,
+    "Drought": 442,
+    "Flash Flood (rapid onset)": 433,
+    "Thunderstorm Wind": 400,
+    "Winter Storm (warning level)": 225,
+    "Winter Weather (advisory level)": 219,
+    "High Wind (non-thunderstorm)": 208,
+    "Flood (slow-rising)": 199,
+    "Frost / Freeze": 106,
+    "Tropical Storm": 69,
+    "Dense Fog": 57,
+    "Excessive Heat": 50,
+    "Wildfire": 50,
+    "Extreme Cold / Wind Chill": 39,
+    "Hail": 27,
+    "Dust Storm": 20
+   },
+   "gold_position": {
+    "A": 180,
+    "B": 186,
+    "C": 200,
+    "D": 190,
+    "E": 217,
+    "F": 173,
+    "G": 207,
+    "H": 193,
+    "I": 189,
+    "J": 192,
+    "K": 173,
+    "L": 164,
+    "M": 179,
+    "N": 188,
+    "O": 188,
+    "P": 181
+   },
+   "options": {
+    "16": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 0,
+   "class_prior": {
+    "Flash Flood (rapid onset)": 26,
+    "Tornado": 20,
+    "Drought": 19,
+    "Thunderstorm Wind": 18,
+    "High Wind (non-thunderstorm)": 15,
+    "Winter Storm (warning level)": 9,
+    "Extreme Cold / Wind Chill": 8,
+    "Excessive Heat": 6,
+    "Flood (slow-rising)": 6,
+    "Winter Weather (advisory level)": 6,
+    "Tropical Storm": 4,
+    "Dust Storm": 4,
+    "Frost / Freeze": 3,
+    "Wildfire": 3,
+    "Dense Fog": 3
+   },
+   "gold_position": {
+    "A": 5,
+    "B": 5,
+    "C": 13,
+    "D": 9,
+    "E": 10,
+    "F": 11,
+    "G": 13,
+    "H": 7,
+    "I": 3,
+    "J": 11,
+    "K": 12,
+    "L": 10,
+    "M": 10,
+    "N": 11,
+    "O": 10,
+    "P": 10
+   },
+   "options": {
+    "16": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 0,
+   "class_prior": {
+    "Drought": 25,
+    "High Wind (non-thunderstorm)": 18,
+    "Thunderstorm Wind": 18,
+    "Flash Flood (rapid onset)": 16,
+    "Tornado": 16,
+    "Flood (slow-rising)": 11,
+    "Winter Storm (warning level)": 10,
+    "Tropical Storm": 6,
+    "Excessive Heat": 6,
+    "Winter Weather (advisory level)": 5,
+    "Extreme Cold / Wind Chill": 5,
+    "Dense Fog": 4,
+    "Wildfire": 4,
+    "Dust Storm": 3,
+    "Hail": 2,
+    "Frost / Freeze": 1
+   },
+   "gold_position": {
+    "A": 4,
+    "B": 14,
+    "C": 9,
+    "D": 15,
+    "E": 4,
+    "F": 12,
+    "G": 10,
+    "H": 10,
+    "I": 10,
+    "J": 5,
+    "K": 12,
+    "L": 12,
+    "M": 10,
+    "N": 6,
+    "O": 2,
+    "P": 15
+   },
+   "options": {
+    "16": 150
+   }
+  }
+ },
+ "files": {
+  "noaa_storm_type.train.jsonl": "93f2ae519c9f1b8cde28d3d68580194b434191ac660c454584f45b7d81b6a84f",
+  "noaa_storm_type.select.jsonl": "e9074d52d526b8e834727d3a2b39770c9b3e9a6a6ec507011647cdd3def8369e",
+  "noaa_storm_type.test.jsonl": "bc8916fb366a110d4ab5fcf4f0758698819d76acf79c06baa4181e4f1f892835"
+ }
+}

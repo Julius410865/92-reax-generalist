@@ -1,0 +1,104 @@
+{
+ "what": "T-part and generated training sources of dataset/train_42k (the N records and openai_anthropic rows have their own manifests)",
+ "licence_from": "dataset/data/generalist/reports/<task type>.json checks.source.licence",
+ "domains": {
+  "arith_word_10": {
+   "snapshot": "procgen_arith_word_10_gen-1",
+   "rows": 1500,
+   "licence": {
+    "name": "original items computed by this repository's generators (tools/gen); no third-party data"
+   }
+  },
+  "arith_word_4": {
+   "snapshot": "procgen_arith_word_4_gen-1",
+   "rows": 1500,
+   "licence": {
+    "name": "original items computed by this repository's generators (tools/gen); no third-party data"
+   }
+  },
+  "chess_best_move": {
+   "snapshot": "lichess_puzzles_461725966e",
+   "rows": 2000,
+   "licence": {
+    "name": "CC0 1.0 (Lichess puzzle database)"
+   }
+  },
+  "chord_from_notes": {
+   "snapshot": "procgen_chord_from_notes_gen-1",
+   "rows": 1500,
+   "licence": {
+    "name": "original items computed by this repository's generators (tools/gen); no third-party data"
+   }
+  },
+  "code_output": {
+   "snapshot": "procgen_code_output_gen-1",
+   "rows": 1500,
+   "licence": {
+    "name": "original items computed by this repository's generators (tools/gen); no third-party data"
+   }
+  },
+  "expense_policy": {
+   "snapshot": "procgen_expense_policy_gen-1",
+   "rows": 600,
+   "licence": {
+    "name": "original items computed by this repository's generators (tools/gen); no third-party data"
+   }
+  },
+  "intent_utterance": {
+   "snapshot": "banking77_57ec275_cc_by_4, clinc150_plus_155b9c7_cc_by_3",
+   "rows": 3000,
+   "licence": {
+    "name": "CLINC150: CC BY 3.0; Banking77: CC BY 4.0"
+   }
+  },
+  "logic_multistep": {
+   "snapshot": "procgen_logic_multistep_gen-1",
+   "rows": 1500,
+   "licence": {
+    "name": "original items computed by this repository's generators (tools/gen); no third-party data"
+   }
+  },
+  "nli": {
+   "snapshot": "multinli_train_oanc_da70db2",
+   "rows": 3000,
+   "licence": {
+    "name": "OANC licence (permissive: free to use, modify and share) for the MultiNLI government, slate, telephone and travel genres, per the MultiNLI data statement (Williams, Nangia and Bowman 2018); the fiction genre is excluded because one of its works is CC BY-SA 3.0 and rows do not identify it"
+   }
+  },
+  "omniscience": {
+   "snapshot": "wikidata_sparql_2026-10-27",
+   "rows": 3000,
+   "licence": {
+    "name": "CC0 1.0 (Wikidata structured data)"
+   }
+  },
+  "poem_pair": {
+   "snapshot": "gutenberg_poetry_2026-10-27",
+   "rows": 1500,
+   "licence": {
+    "name": "Public domain in the USA (Project Gutenberg texts, header/licence stripped)"
+   }
+  },
+  "shipping_rate": {
+   "snapshot": "procgen_shipping_rate_gen-1",
+   "rows": 1500,
+   "licence": {
+    "name": "original items computed by this repository's generators (tools/gen); no third-party data"
+   }
+  },
+  "stance": {
+   "snapshot": "args_me_1.0_cleaned_cc_by_4",
+   "rows": 1500,
+   "licence": {
+    "name": "CC BY 4.0. args.me corpus (version 1.0-cleaned), Yamen Ajjour, Henning Wachsmuth, Johannes Kiesel, Martin Potthast, Matthias Hagen, Benno Stein (2020), Zenodo, doi:10.5281/zenodo.4139439, https://doi.org/10.5281/zenodo.4139439; described in Wachsmuth et al. (2017), 'Building an Argument Search Engine for the Web', Proceedings of the 4th Workshop on Argument Mining, pp. 49-59. Mirror used: https://huggingface.co/datasets/webis/args_me. Arguments originate from idebate.org and debatewise.org."
+   }
+  },
+  "story_continuation": {
+   "snapshot": "pd_us_fiction_ebooks_2026-10-27",
+   "rows": 2500,
+   "licence": {
+    "name": "Public domain in the USA: Project Gutenberg eBooks of works whose US copyright has expired; the distributor's header, footer and licence text are stripped and the Project Gutenberg trademark is not used in the rows"
+   }
+  }
+ }
+}

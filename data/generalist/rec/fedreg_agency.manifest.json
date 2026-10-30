@@ -1,0 +1,711 @@
+{
+ "domain": "fedreg_agency",
+ "task_type": "fedreg_agency",
+ "area": "retrieval",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "US government work, public domain (17 U.S.C. 105)",
+  "url": "https://www.govinfo.gov/about/policies",
+  "note": "Federal Register documents (Office of the Federal Register / GPO) via the federalregister.gov API v1, https://www.federalregister.gov/developers/documentation/api/v1 (no key)"
+ },
+ "sources": {
+  "agencies.json": {
+   "url": "https://www.federalregister.gov/api/v1/agencies.json",
+   "sha256": "7a806d209d75ee543e6e91506e485ec6a8f42687056e14a1484c8bc9e79f5443"
+  },
+  "documents/2025-01-01_2025-01-07.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-01-01&conditions%5Bpublication_date%5D%5Blte%5D=2025-01-07&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "ee67eb301469e520cf11a9db79fba4b85442c2d8d6ad40ba5e52e616447012f4"
+  },
+  "documents/2025-01-08_2025-01-14.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-01-08&conditions%5Bpublication_date%5D%5Blte%5D=2025-01-14&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "f2248d3a2e53e9a982f060103acd1030e41d22371ff6efb92011e3d19a41d940"
+  },
+  "documents/2025-01-15_2025-01-21.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-01-15&conditions%5Bpublication_date%5D%5Blte%5D=2025-01-21&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "e67882221f6743d7bc36e97d8efe56e19739d5c01cb90ccc8ea19ef60a031be5"
+  },
+  "documents/2025-01-22_2025-01-28.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-01-22&conditions%5Bpublication_date%5D%5Blte%5D=2025-01-28&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "1697140eb63683694073c362e87bd0ed4970eeccbf5a6bdc19b80b0eef8ce385"
+  },
+  "documents/2025-01-29_2025-02-04.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-01-29&conditions%5Bpublication_date%5D%5Blte%5D=2025-02-04&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "1c9ec78d917517fe2ba67c3831df6d65573370aedf928afa7b02cf45fdb0be08"
+  },
+  "documents/2025-02-05_2025-02-11.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-02-05&conditions%5Bpublication_date%5D%5Blte%5D=2025-02-11&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "ff02196bd4731af3f23ff70fe0ea6066423750f1ef0474f32853d3e0ba43d5a6"
+  },
+  "documents/2025-02-12_2025-02-18.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-02-12&conditions%5Bpublication_date%5D%5Blte%5D=2025-02-18&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "6640f72bebeb209f17f1b7587a729b644f95e985b249ffc636c875991ef6eb72"
+  },
+  "documents/2025-02-19_2025-02-25.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-02-19&conditions%5Bpublication_date%5D%5Blte%5D=2025-02-25&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "69642aba058dc226186a28583e7be0976f949c417fa26729226009c0f68c6948"
+  },
+  "documents/2025-02-26_2025-03-04.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-02-26&conditions%5Bpublication_date%5D%5Blte%5D=2025-03-04&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "10ca72f17ff9e18d6802fd8d2973688d8ac91eface9bb8d3d9bf49fc7249ddb2"
+  },
+  "documents/2025-03-05_2025-03-11.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-03-05&conditions%5Bpublication_date%5D%5Blte%5D=2025-03-11&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "f7a66b791dc4dd7a6619e8c22340898012121c2353069828fae85eb3738545c7"
+  },
+  "documents/2025-03-12_2025-03-18.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-03-12&conditions%5Bpublication_date%5D%5Blte%5D=2025-03-18&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "03357dd8304fac6d401779918e7cadfe9d80bd982dab730905b9e259744936d2"
+  },
+  "documents/2025-03-19_2025-03-25.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-03-19&conditions%5Bpublication_date%5D%5Blte%5D=2025-03-25&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "3ffc034110cecf4a50570000c907039d5a252faa0b7647981acec83e75934be6"
+  },
+  "documents/2025-03-26_2025-04-01.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-03-26&conditions%5Bpublication_date%5D%5Blte%5D=2025-04-01&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "2091aedc36539cef1cc4a8a4efe548721567aeb5a8c8f43b908a020cee943d8e"
+  },
+  "documents/2025-04-02_2025-04-08.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-04-02&conditions%5Bpublication_date%5D%5Blte%5D=2025-04-08&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "e17625cbb0eb9ad4f69dc978532162871610f6a8ba4a90c012d1fea7578749af"
+  },
+  "documents/2025-04-09_2025-04-15.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-04-09&conditions%5Bpublication_date%5D%5Blte%5D=2025-04-15&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "033fa5c204df7da5850234c236505d8178d7c0ee70fc9e6d76a84a534b5d1b2b"
+  },
+  "documents/2025-04-16_2025-04-22.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-04-16&conditions%5Bpublication_date%5D%5Blte%5D=2025-04-22&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "89829b2c9b159c2d3ceb2d69fd59eb504205fa940e52af1fe7416abafb47e984"
+  },
+  "documents/2025-04-23_2025-04-29.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-04-23&conditions%5Bpublication_date%5D%5Blte%5D=2025-04-29&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "9e71555ed4dd73241b7675ceb3be69e4bbc2990095fde07217b0cf947f0419bc"
+  },
+  "documents/2025-04-30_2025-05-06.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-04-30&conditions%5Bpublication_date%5D%5Blte%5D=2025-05-06&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "3353f79eafc737095c0ca20ba5aaebd35a462b11e59a6498bd11ac705dc72b8a"
+  },
+  "documents/2025-05-07_2025-05-13.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-05-07&conditions%5Bpublication_date%5D%5Blte%5D=2025-05-13&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "283bfb2b7b4742dbe9a5c37acd5e4428cd71a0aef138a08936051a30ed189ece"
+  },
+  "documents/2025-05-14_2025-05-20.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-05-14&conditions%5Bpublication_date%5D%5Blte%5D=2025-05-20&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "1ac9eabf04f9dce2c34dda8e977271c3c582748e40f43d9ddc90ca0a9ec2db41"
+  },
+  "documents/2025-05-21_2025-05-27.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-05-21&conditions%5Bpublication_date%5D%5Blte%5D=2025-05-27&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "bc123b0985c8639912c646e1a0c1529d3a2c35a10aef69f39965d0f2629bf386"
+  },
+  "documents/2025-05-28_2025-06-03.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-05-28&conditions%5Bpublication_date%5D%5Blte%5D=2025-06-03&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "8f25a09a5d1e9388a9d7ba7df8834420251ca82b3bae29af0d36ab9b1e87e8fb"
+  },
+  "documents/2025-06-04_2025-06-10.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-06-04&conditions%5Bpublication_date%5D%5Blte%5D=2025-06-10&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "1f0d48e4c2b3b07b4986463ac8aae2dfc0e5b6efaee8203799498c2e64cd0de3"
+  },
+  "documents/2025-06-11_2025-06-17.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-06-11&conditions%5Bpublication_date%5D%5Blte%5D=2025-06-17&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "11e3f3144fb8e2d498edcbee47ae335f2ba11e685686c463eba45b22e361553e"
+  },
+  "documents/2025-06-18_2025-06-24.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-06-18&conditions%5Bpublication_date%5D%5Blte%5D=2025-06-24&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "c3c66c6d5f693f52ab815e740f4b1e451df221dffcf5902ffd77996a5b56ff39"
+  },
+  "documents/2025-06-25_2025-07-01.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-06-25&conditions%5Bpublication_date%5D%5Blte%5D=2025-07-01&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "378397be8e1d9bfadf486839a81895c2388b25d280bcdc6bb7586f6f52a2fdc2"
+  },
+  "documents/2025-07-02_2025-07-08.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-07-02&conditions%5Bpublication_date%5D%5Blte%5D=2025-07-08&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "c369b8de3a8fd89282a431dd663b21c1268b2edf50e4f97038cec6dcd47e896a"
+  },
+  "documents/2025-07-09_2025-07-15.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-07-09&conditions%5Bpublication_date%5D%5Blte%5D=2025-07-15&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "e7be2bdf458a1a68fe3d2879c2414118d40c734a539308e6dec0df7352ff7f21"
+  },
+  "documents/2025-07-16_2025-07-22.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-07-16&conditions%5Bpublication_date%5D%5Blte%5D=2025-07-22&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "b2526187358ee378076a76a4106d003739b0ec57d11950b9c4bc67c7640b320a"
+  },
+  "documents/2025-07-23_2025-07-29.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-07-23&conditions%5Bpublication_date%5D%5Blte%5D=2025-07-29&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "d1f3a8917c4c3665b72072c755a607b60b121b2e3b608dbb360ded23a8348996"
+  },
+  "documents/2025-07-30_2025-08-05.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-07-30&conditions%5Bpublication_date%5D%5Blte%5D=2025-08-05&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "0637e7d1d53ddbab185df3c0e79526876aa405cd61a15d3d1d752f8aa9ab62fe"
+  },
+  "documents/2025-08-06_2025-08-12.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-08-06&conditions%5Bpublication_date%5D%5Blte%5D=2025-08-12&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "3036364214f13596ee4a64a11271e5b4379a550388c72a73422662d280ce7075"
+  },
+  "documents/2025-08-13_2025-08-19.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-08-13&conditions%5Bpublication_date%5D%5Blte%5D=2025-08-19&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "06daf5bb1b3cac40bb38289c33c371b9bee0ec284006a3c21404d8ca2c989d7e"
+  },
+  "documents/2025-08-20_2025-08-26.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-08-20&conditions%5Bpublication_date%5D%5Blte%5D=2025-08-26&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "eced950b7f4cd58f1623e7de5f8a227360dcb79eba0363f384c46ade37624074"
+  },
+  "documents/2025-08-27_2025-09-02.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-08-27&conditions%5Bpublication_date%5D%5Blte%5D=2025-09-02&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "d82a32b9b6a656c4eddabe808c0963db002cd4ee469c6dd7995aa61b317e4d78"
+  },
+  "documents/2025-09-03_2025-09-09.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-09-03&conditions%5Bpublication_date%5D%5Blte%5D=2025-09-09&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "27ec7308ae78d498bcc6649af7a6a876a3bde1a24845ba584377c15fdc163477"
+  },
+  "documents/2025-09-10_2025-09-16.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-09-10&conditions%5Bpublication_date%5D%5Blte%5D=2025-09-16&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "ebc32e5606d6fb5bf19567a15fd843656d675b58ad9fb8a1a1b9357229339cd2"
+  },
+  "documents/2025-09-17_2025-09-23.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-09-17&conditions%5Bpublication_date%5D%5Blte%5D=2025-09-23&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "2c0a09afc3ca24e437682969a41771f66dfd0b8bb9972f76689c62c32eafb797"
+  },
+  "documents/2025-09-24_2025-09-30.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-09-24&conditions%5Bpublication_date%5D%5Blte%5D=2025-09-30&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "e09776ace0372298c72afffb5b6d3283a35b9e764782a1f0d1c849fe08a3ceca"
+  },
+  "documents/2025-10-01_2025-10-07.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-10-01&conditions%5Bpublication_date%5D%5Blte%5D=2025-10-07&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "ae872f9dcb8a96c9254d588e91692dc33844b0eaa86da3515d8d06d2df9444d1"
+  },
+  "documents/2025-10-08_2025-10-14.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-10-08&conditions%5Bpublication_date%5D%5Blte%5D=2025-10-14&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "18b4445ee1f70b957cc48d3188ee403f542625f225f7e08bd3f6a3b6c575be08"
+  },
+  "documents/2025-10-15_2025-10-21.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-10-15&conditions%5Bpublication_date%5D%5Blte%5D=2025-10-21&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "dfb152b35e4571d50d7127a6e5c70b6197368e05d3b4261d05aaa1c93db55d04"
+  },
+  "documents/2025-10-22_2025-10-28.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-10-22&conditions%5Bpublication_date%5D%5Blte%5D=2025-10-28&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "15ef85d7b5f7bb4e0940721875545e3f17e4f1153bf402aa19d5d31c95e8d266"
+  },
+  "documents/2025-10-29_2025-11-04.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-10-29&conditions%5Bpublication_date%5D%5Blte%5D=2025-11-04&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "61567826539d4b8a99ab9250e45e1ce34258f5ec51b2257980be9af1b25c50c2"
+  },
+  "documents/2025-11-05_2025-11-11.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-11-05&conditions%5Bpublication_date%5D%5Blte%5D=2025-11-11&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "b65ef60529b4db8da91dceae81dca412161fc6322aa0039f77cfc7f8a7df9e8b"
+  },
+  "documents/2025-11-12_2025-11-18.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-11-12&conditions%5Bpublication_date%5D%5Blte%5D=2025-11-18&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "fb8e7cee68d46d5f26dcf0b9a0d01fe32a338689f840022a0f2d43cde5963730"
+  },
+  "documents/2025-11-19_2025-11-25.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-11-19&conditions%5Bpublication_date%5D%5Blte%5D=2025-11-25&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "7a154b2ed3419b56f57f4840eb37abe5810bf69c642621534d708df69bc67a9c"
+  },
+  "documents/2025-11-26_2025-12-02.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-11-26&conditions%5Bpublication_date%5D%5Blte%5D=2025-12-02&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "4e3c78cc565670e82be2ac36db9915bc29cd06782db3ca27b56c5d07fc1cf809"
+  },
+  "documents/2025-12-03_2025-12-09.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-12-03&conditions%5Bpublication_date%5D%5Blte%5D=2025-12-09&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "1b8cf9450f96020b0f7c0dcc04f0b56377232653a44c292108f90fa2e52dcff4"
+  },
+  "documents/2025-12-10_2025-12-16.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-12-10&conditions%5Bpublication_date%5D%5Blte%5D=2025-12-16&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "0d9be59d7aa9383cbc84e199aecce3030416011731124c7ad527817cfac4e9e4"
+  },
+  "documents/2025-12-17_2025-12-23.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-12-17&conditions%5Bpublication_date%5D%5Blte%5D=2025-12-23&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "8b36805deb3ae25cca3e631af5424bd0627ea3a6c25d43db6694c62e0b1e5bac"
+  },
+  "documents/2025-12-24_2025-12-30.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-12-24&conditions%5Bpublication_date%5D%5Blte%5D=2025-12-30&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "026f663ecee79001fa8958dd8ba3770a576b30e3c6f6e4b881f49ca88f358423"
+  },
+  "documents/2025-12-31_2026-01-06.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2025-12-31&conditions%5Bpublication_date%5D%5Blte%5D=2026-01-06&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "8d42e562891e918400ca370defd1b9f7de6fc2d43b2736af9e62c775bd74e4fa"
+  },
+  "documents/2026-01-07_2026-01-13.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-01-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-01-13&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "929cd34a0074cb25e6af6b9d6abcc57726f06922b5b12fbe5c36434c8f5908dd"
+  },
+  "documents/2026-01-14_2026-01-20.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-01-14&conditions%5Bpublication_date%5D%5Blte%5D=2026-01-20&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "3419f3a1ecdf2ceaaaff689f563505107755433faff641ed803415db98c5d866"
+  },
+  "documents/2026-01-21_2026-01-27.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-01-21&conditions%5Bpublication_date%5D%5Blte%5D=2026-01-27&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "a5e9c661f215dac1942e5c7db845fbb027a0c8c2be0c5798540bfe4e7dd3b882"
+  },
+  "documents/2026-01-28_2026-02-03.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-01-28&conditions%5Bpublication_date%5D%5Blte%5D=2026-02-03&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "960c046aefd4cde570afab82adeb488b71173dfb7da49d9d5be5b969eaa795c1"
+  },
+  "documents/2026-02-04_2026-02-10.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-02-04&conditions%5Bpublication_date%5D%5Blte%5D=2026-02-10&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "8dbd5f4993ecc7ae5980b81b24e6fdf42ca8c62a5da0048018c0f5893f93486b"
+  },
+  "documents/2026-02-11_2026-02-17.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-02-11&conditions%5Bpublication_date%5D%5Blte%5D=2026-02-17&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "f2e29d65a3c1936a3f0be3e92bd626d10bb48b7bfdfad271645d28201963021d"
+  },
+  "documents/2026-02-18_2026-02-24.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-02-18&conditions%5Bpublication_date%5D%5Blte%5D=2026-02-24&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "8c632bcc38ed56c0f75d7f06ef56fdd0020591e3c3677823200f71edd909028d"
+  },
+  "documents/2026-02-25_2026-03-03.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-02-25&conditions%5Bpublication_date%5D%5Blte%5D=2026-03-03&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "71d679e8194d0c5f59f3304b3925f03df230417a690d11fede98663b4eb3db00"
+  },
+  "documents/2026-03-04_2026-03-10.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-03-04&conditions%5Bpublication_date%5D%5Blte%5D=2026-03-10&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "8e855f9ccccda5d49ae7c45d8c2f8b731d9a1a30a8f3bd61ae10b21d7f8962b4"
+  },
+  "documents/2026-03-11_2026-03-17.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-03-11&conditions%5Bpublication_date%5D%5Blte%5D=2026-03-17&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "111308c528937282c5aff801d2ef92118bddd67176750626a645d565a7c149e7"
+  },
+  "documents/2026-03-18_2026-03-24.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-03-18&conditions%5Bpublication_date%5D%5Blte%5D=2026-03-24&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "4764323f816fb55adb950b739c0521f52241f3051100b42822ad286e88609e21"
+  },
+  "documents/2026-03-25_2026-03-31.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-03-25&conditions%5Bpublication_date%5D%5Blte%5D=2026-03-31&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "59a35ab4afaa8825a0eba99de4232067bd7d71bfb504848d08e0ca6346ffa2fe"
+  },
+  "documents/2026-04-01_2026-04-07.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-04-01&conditions%5Bpublication_date%5D%5Blte%5D=2026-04-07&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "6bbbab12b29999fdb4be47637258460ff9a926b431439fc6f6f12a66bd32fda4"
+  },
+  "documents/2026-04-08_2026-04-14.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-04-08&conditions%5Bpublication_date%5D%5Blte%5D=2026-04-14&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "1a9ef7c166afd4705a9fbcaf7318dce8aad65046b48ae809d3daab02d0b98838"
+  },
+  "documents/2026-04-15_2026-04-21.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-04-15&conditions%5Bpublication_date%5D%5Blte%5D=2026-04-21&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "36f64bdaa17a6001dabeb50b50cfc83d1fbbd745f574a4ddd549b2c99c0dd9c7"
+  },
+  "documents/2026-04-22_2026-04-28.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-04-22&conditions%5Bpublication_date%5D%5Blte%5D=2026-04-28&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "0f8749e93b19be0ac36e175f3f57a1a18667614e00515a0b7339f3e42c0b3db9"
+  },
+  "documents/2026-04-29_2026-05-05.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-04-29&conditions%5Bpublication_date%5D%5Blte%5D=2026-05-05&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "96642ce52fc4b57789d23fc62de008f4f5533097042a9e8cf84adc9aa9679a2a"
+  },
+  "documents/2026-05-06_2026-05-12.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-06&conditions%5Bpublication_date%5D%5Blte%5D=2026-05-12&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "4add0cd604a873db8b003ee56de7f27e7d6946786a1f6679ea5e8493eb412ee5"
+  },
+  "documents/2026-05-13_2026-05-19.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-13&conditions%5Bpublication_date%5D%5Blte%5D=2026-05-19&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "2874d8545d68271632e95e65b11be3ac810d68c59619afb0c12439a4d1f994dd"
+  },
+  "documents/2026-05-20_2026-05-26.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-20&conditions%5Bpublication_date%5D%5Blte%5D=2026-05-26&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "ee2bec35c5b0818e89c66e8df9f4a0111a8fb21b2c32b9befa0878d9fca10209"
+  },
+  "documents/2026-05-27_2026-06-02.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-05-27&conditions%5Bpublication_date%5D%5Blte%5D=2026-06-02&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "53a5204f7c3108a91442ecf929e8f0838cd700633d509f5fd797075f6d09ad29"
+  },
+  "documents/2026-06-03_2026-06-09.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-06-03&conditions%5Bpublication_date%5D%5Blte%5D=2026-06-09&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "e11febfc282b38bb09095736f4f8b31b031ec0f007e40524a87ef704846a607b"
+  },
+  "documents/2026-06-10_2026-06-16.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-06-10&conditions%5Bpublication_date%5D%5Blte%5D=2026-06-16&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "c2ccba71155e31d0c00ab032e530ec7a87184c2e7efac2021ab5919c02d64f78"
+  },
+  "documents/2026-06-17_2026-06-23.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-06-17&conditions%5Bpublication_date%5D%5Blte%5D=2026-06-23&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "b68d68daf1f92a0a7e3e6126f4699f4b50310a9a90649faaba33387d80e131fb"
+  },
+  "documents/2026-06-24_2026-06-30.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-06-24&conditions%5Bpublication_date%5D%5Blte%5D=2026-06-30&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "de868def4bd79094b22f51a4457b74001730ee346237299d29765c1f9986d202"
+  },
+  "documents/2026-07-01_2026-07-07.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-07-01&conditions%5Bpublication_date%5D%5Blte%5D=2026-07-07&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "24b7edc07688e040430785e82ea2d67bd3c263a19df46b33279dd51183f76895"
+  },
+  "documents/2026-07-08_2026-07-14.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-07-08&conditions%5Bpublication_date%5D%5Blte%5D=2026-07-14&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "d7adb75d7a8987e720018ebd7c699b357551412eee85e2706f4083ae119b7384"
+  },
+  "documents/2026-07-15_2026-07-21.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-07-15&conditions%5Bpublication_date%5D%5Blte%5D=2026-07-21&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "9929e2f268ea4e0a1708e2d711ced968b55ef973f1df06f8637991cb06936590"
+  },
+  "documents/2026-07-22_2026-07-28.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-07-22&conditions%5Bpublication_date%5D%5Blte%5D=2026-07-28&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "b17deefc82c8b50863a9a73c94cb2def9bafc93afc68978342395406d7f293ce"
+  },
+  "documents/2026-07-29_2026-08-04.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-07-29&conditions%5Bpublication_date%5D%5Blte%5D=2026-08-04&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "ba3ab675fb40d5e970a7162ff6a4c3ced807cdab3a193bedf0af634080113d1f"
+  },
+  "documents/2026-08-05_2026-08-11.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-08-05&conditions%5Bpublication_date%5D%5Blte%5D=2026-08-11&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "9b9dedd0321560365a7d7634ae943f40732a4664db2f4964f23877f26f0d1307"
+  },
+  "documents/2026-08-12_2026-08-18.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-08-12&conditions%5Bpublication_date%5D%5Blte%5D=2026-08-18&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "a43eff9cf7584c8293dd181709ce558fa77d2e230b0d64413c4a6b94944a16d6"
+  },
+  "documents/2026-08-19_2026-08-25.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-08-19&conditions%5Bpublication_date%5D%5Blte%5D=2026-08-25&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "defdcae966a11d35628a3d3164b71f05752b12783adb5b91e8da5c24c1482c3c"
+  },
+  "documents/2026-08-26_2026-09-01.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-08-26&conditions%5Bpublication_date%5D%5Blte%5D=2026-09-01&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "848407cc9701ec5b6760bf871949b8ca35bdee03e5a64717f4b69576109cb144"
+  },
+  "documents/2026-09-02_2026-09-08.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-09-02&conditions%5Bpublication_date%5D%5Blte%5D=2026-09-08&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "c4d72efe338dfb78a94501ed92b17fe9505ba59fb31219e49179fb1ecc6fab0a"
+  },
+  "documents/2026-09-09_2026-09-15.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-09-09&conditions%5Bpublication_date%5D%5Blte%5D=2026-09-15&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "3b1625e10160b52867618ace2605293c0b2cd36b07c829de4b674f3cfd576c10"
+  },
+  "documents/2026-09-16_2026-09-22.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-09-16&conditions%5Bpublication_date%5D%5Blte%5D=2026-09-22&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "d8ec92f59da84c3c232867f57acff27ca272a6f054e811614cbbb6bac432637a"
+  },
+  "documents/2026-09-23_2026-09-29.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-09-23&conditions%5Bpublication_date%5D%5Blte%5D=2026-09-29&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "fc0342085739bac97aa9d561e03c81127b448c66a75bc179f528611e79cb45c9"
+  },
+  "documents/2026-09-30_2026-10-06.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-09-30&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-06&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "312f86cce280f32701cdee982eaf2f5e8902fb74ed8f3c96002c043daeac9675"
+  },
+  "documents/2026-10-07_2026-10-13.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-13&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "f1c7344466fe6352362326566fd04498c7ab22fa70bf8c417800201a359fd322"
+  },
+  "documents/2026-10-14_2026-10-20.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-14&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-20&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "6e0a7b545129c4f57abc1c9522359458a9b8b2b49f14dfcebfc71e05eeb998b6"
+  },
+  "documents/2026-10-21_2026-10-26.p1.json": {
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1000&order=oldest&conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-21&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-26&fields%5B%5D=abstract&fields%5B%5D=action&fields%5B%5D=agencies&fields%5B%5D=document_number&fields%5B%5D=publication_date&fields%5B%5D=title&fields%5B%5D=type",
+   "sha256": "4b6c63f9110b0465cdd3ed143a082d660fa3bc5fb06dddbd0817cba33884b419"
+  }
+ },
+ "label_field": "agencies (single chain; the most specific agency)",
+ "labels": {
+  "Federal Aviation Administration": "Federal Aviation Administration",
+  "National Park Service": "National Park Service",
+  "National Oceanic and Atmospheric Administration": "National Oceanic and Atmospheric Administration",
+  "International Trade Administration": "International Trade Administration",
+  "Environmental Protection Agency": "Environmental Protection Agency",
+  "Food and Drug Administration": "Food and Drug Administration",
+  "Coast Guard": "Coast Guard",
+  "Defense Department": "Department of Defense",
+  "Federal Communications Commission": "Federal Communications Commission",
+  "International Trade Commission": "U.S. International Trade Commission",
+  "Postal Service": "United States Postal Service",
+  "Nuclear Regulatory Commission": "Nuclear Regulatory Commission",
+  "Education Department": "Department of Education",
+  "Small Business Administration": "Small Business Administration",
+  "Internal Revenue Service": "Internal Revenue Service",
+  "Postal Regulatory Commission": "Postal Regulatory Commission",
+  "Energy Department": "Department of Energy",
+  "State Department": "Department of State",
+  "Federal Emergency Management Agency": "Federal Emergency Management Agency",
+  "Justice Department": "Department of Justice",
+  "Centers for Medicare & Medicaid Services": "Centers for Medicare & Medicaid Services",
+  "Veterans Affairs Department": "Department of Veterans Affairs",
+  "Drug Enforcement Administration": "Drug Enforcement Administration",
+  "Federal Motor Carrier Safety Administration": "Federal Motor Carrier Safety Administration",
+  "Maritime Administration": "Maritime Administration",
+  "Housing and Urban Development Department": "Department of Housing and Urban Development",
+  "Federal Railroad Administration": "Federal Railroad Administration",
+  "U.S. Customs and Border Protection": "U.S. Customs and Border Protection",
+  "Fish and Wildlife Service": "Fish and Wildlife Service",
+  "Foreign Assets Control Office": "Office of Foreign Assets Control",
+  "Pipeline and Hazardous Materials Safety Administration": "Pipeline and Hazardous Materials Safety Administration",
+  "Civil Rights Commission": "U.S. Commission on Civil Rights",
+  "Labor Department": "Department of Labor",
+  "Land Management Bureau": "Bureau of Land Management"
+ },
+ "classes_kept": [
+  "Federal Aviation Administration",
+  "National Oceanic and Atmospheric Administration",
+  "Environmental Protection Agency",
+  "Food and Drug Administration",
+  "Coast Guard",
+  "International Trade Administration",
+  "Department of State",
+  "Nuclear Regulatory Commission",
+  "Drug Enforcement Administration",
+  "Fish and Wildlife Service",
+  "Internal Revenue Service",
+  "Department of Energy",
+  "U.S. Commission on Civil Rights",
+  "Small Business Administration",
+  "Federal Communications Commission",
+  "Federal Motor Carrier Safety Administration",
+  "Department of Education",
+  "U.S. International Trade Commission",
+  "Pipeline and Hazardous Materials Safety Administration",
+  "Bureau of Land Management",
+  "Department of Housing and Urban Development",
+  "Department of Defense",
+  "Centers for Medicare & Medicaid Services",
+  "Department of Veterans Affairs",
+  "Maritime Administration",
+  "U.S. Customs and Border Protection"
+ ],
+ "documents_read": 44987,
+ "records_read": 44987,
+ "usable_per_agency": {
+  "Federal Aviation Administration": 698,
+  "National Oceanic and Atmospheric Administration": 689,
+  "Environmental Protection Agency": 661,
+  "Food and Drug Administration": 457,
+  "Coast Guard": 414,
+  "International Trade Administration": 259,
+  "Department of State": 234,
+  "Nuclear Regulatory Commission": 230,
+  "Drug Enforcement Administration": 214,
+  "Fish and Wildlife Service": 201,
+  "Internal Revenue Service": 200,
+  "Department of Energy": 159,
+  "U.S. Commission on Civil Rights": 150,
+  "Small Business Administration": 150,
+  "Federal Communications Commission": 147,
+  "Federal Motor Carrier Safety Administration": 128,
+  "Department of Education": 123,
+  "U.S. International Trade Commission": 114,
+  "Pipeline and Hazardous Materials Safety Administration": 94,
+  "Bureau of Land Management": 93,
+  "Department of Housing and Urban Development": 84,
+  "Department of Defense": 83,
+  "Centers for Medicare & Medicaid Services": 79,
+  "Department of Veterans Affairs": 66,
+  "Maritime Administration": 62,
+  "U.S. Customs and Border Protection": 56
+ },
+ "dropped": {
+  "agency_not_a_candidate": 8379,
+  "agency_not_among_the_most_frequent": 233,
+  "duplicate_summary": 3622,
+  "held_out_or_dev_topic": 361,
+  "names_a_person": 255,
+  "no_abstract": 13217,
+  "no_single_issuing_agency": 281,
+  "table_not_prose": 20,
+  "too_little_left_after_scrub": 12774
+ },
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 133.0,
+   "cap": 399
+  },
+  "select": {
+   "median": 8.5,
+   "cap": 25
+  },
+  "test": {
+   "median": 8.5,
+   "cap": 25
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 384,
+   "class_prior": {
+    "Environmental Protection Agency": 277,
+    "National Oceanic and Atmospheric Administration": 270,
+    "Federal Aviation Administration": 263,
+    "Food and Drug Administration": 261,
+    "Coast Guard": 241,
+    "International Trade Administration": 160,
+    "Department of State": 138,
+    "Nuclear Regulatory Commission": 132,
+    "Fish and Wildlife Service": 120,
+    "Drug Enforcement Administration": 116,
+    "Internal Revenue Service": 110,
+    "Department of Energy": 96,
+    "Small Business Administration": 91,
+    "U.S. Commission on Civil Rights": 81,
+    "Federal Communications Commission": 79,
+    "Federal Motor Carrier Safety Administration": 73,
+    "Department of Education": 69,
+    "U.S. International Trade Commission": 65,
+    "Pipeline and Hazardous Materials Safety Administration": 60,
+    "Bureau of Land Management": 52,
+    "Department of Defense": 49,
+    "Centers for Medicare & Medicaid Services": 46,
+    "Department of Housing and Urban Development": 45,
+    "Department of Veterans Affairs": 40,
+    "Maritime Administration": 37,
+    "U.S. Customs and Border Protection": 29
+   },
+   "gold_position": {
+    "A": 119,
+    "B": 98,
+    "C": 103,
+    "D": 106,
+    "E": 110,
+    "F": 108,
+    "G": 114,
+    "H": 108,
+    "I": 98,
+    "J": 123,
+    "K": 121,
+    "L": 121,
+    "M": 126,
+    "N": 122,
+    "O": 128,
+    "P": 116,
+    "Q": 109,
+    "R": 110,
+    "S": 136,
+    "T": 121,
+    "U": 110,
+    "V": 117,
+    "W": 115,
+    "X": 114,
+    "Y": 129,
+    "Z": 118
+   },
+   "options": {
+    "26": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 16,
+   "class_prior": {
+    "Environmental Protection Agency": 16,
+    "Food and Drug Administration": 15,
+    "Federal Aviation Administration": 14,
+    "National Oceanic and Atmospheric Administration": 14,
+    "Coast Guard": 10,
+    "Internal Revenue Service": 9,
+    "Fish and Wildlife Service": 8,
+    "Nuclear Regulatory Commission": 7,
+    "Drug Enforcement Administration": 6,
+    "Federal Communications Commission": 5,
+    "U.S. Commission on Civil Rights": 5,
+    "Department of State": 4,
+    "Department of Education": 4,
+    "Federal Motor Carrier Safety Administration": 4,
+    "Pipeline and Hazardous Materials Safety Administration": 4,
+    "Small Business Administration": 4,
+    "U.S. Customs and Border Protection": 3,
+    "Department of Energy": 3,
+    "Centers for Medicare & Medicaid Services": 3,
+    "Department of Defense": 3,
+    "U.S. International Trade Commission": 3,
+    "International Trade Administration": 3,
+    "Department of Housing and Urban Development": 2,
+    "Maritime Administration": 1
+   },
+   "gold_position": {
+    "A": 5,
+    "B": 3,
+    "C": 5,
+    "D": 5,
+    "E": 6,
+    "F": 11,
+    "G": 6,
+    "H": 7,
+    "I": 6,
+    "J": 5,
+    "K": 5,
+    "L": 6,
+    "M": 4,
+    "N": 7,
+    "O": 5,
+    "P": 2,
+    "Q": 6,
+    "R": 6,
+    "S": 5,
+    "T": 5,
+    "U": 9,
+    "V": 3,
+    "W": 7,
+    "X": 8,
+    "Y": 4,
+    "Z": 9
+   },
+   "options": {
+    "26": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 17,
+   "class_prior": {
+    "Federal Aviation Administration": 16,
+    "Food and Drug Administration": 13,
+    "International Trade Administration": 11,
+    "Environmental Protection Agency": 10,
+    "Small Business Administration": 9,
+    "National Oceanic and Atmospheric Administration": 9,
+    "Department of State": 8,
+    "Fish and Wildlife Service": 7,
+    "Internal Revenue Service": 7,
+    "Federal Communications Commission": 7,
+    "Bureau of Land Management": 6,
+    "Department of Energy": 5,
+    "Centers for Medicare & Medicaid Services": 5,
+    "Department of Veterans Affairs": 5,
+    "U.S. Customs and Border Protection": 4,
+    "Nuclear Regulatory Commission": 4,
+    "Drug Enforcement Administration": 4,
+    "U.S. Commission on Civil Rights": 4,
+    "U.S. International Trade Commission": 4,
+    "Federal Motor Carrier Safety Administration": 3,
+    "Department of Housing and Urban Development": 3,
+    "Pipeline and Hazardous Materials Safety Administration": 2,
+    "Coast Guard": 2,
+    "Department of Defense": 1,
+    "Maritime Administration": 1
+   },
+   "gold_position": {
+    "A": 6,
+    "B": 6,
+    "C": 6,
+    "D": 5,
+    "E": 8,
+    "F": 6,
+    "G": 9,
+    "H": 6,
+    "I": 5,
+    "J": 7,
+    "K": 5,
+    "L": 3,
+    "M": 3,
+    "N": 6,
+    "O": 4,
+    "P": 7,
+    "Q": 7,
+    "R": 3,
+    "S": 8,
+    "T": 7,
+    "U": 4,
+    "V": 1,
+    "W": 6,
+    "X": 5,
+    "Y": 7,
+    "Z": 10
+   },
+   "options": {
+    "26": 150
+   }
+  }
+ },
+ "files": {
+  "fedreg_agency.train.jsonl": "91226802591aecf13412b8722420dd51b8ca6ad9e51fbf71c7b5ae8cfc186ac4",
+  "fedreg_agency.select.jsonl": "f1ac9bb15357435cccdc9e752cbd7c45d96b6b8d07c4fa530e193787734e3db4",
+  "fedreg_agency.test.jsonl": "f016ab7c9417bbf20a685d0505a80dfe24239c9d06885b40d0e5b1bd8e8ac119"
+ }
+}

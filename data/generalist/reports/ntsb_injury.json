@@ -1,0 +1,153 @@
+{
+ "domain": "ntsb_injury",
+ "kind": "rec",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "category_domain": false,
+   "nb_accuracy": 0.6767,
+   "best_constant": 0.5067,
+   "margin_allowed": 0.25,
+   "telling_words": {
+    "Fatal: at least one person died": [
+     "alnot",
+     "satellite",
+     "communications",
+     "eyewitnesses",
+     "ea",
+     "breakup",
+     "family",
+     "accidentreports",
+     "westbound",
+     "http",
+     "www",
+     "investigations"
+    ],
+    "Minor: the worst injury was minor": [
+     "uh-12e",
+     "le",
+     "rochester",
+     "aberdeen",
+     "sloping",
+     "plymouth",
+     "maria",
+     "leaning",
+     "rotorway",
+     "buildings",
+     "ever",
+     "braunfels"
+    ],
+    "None: nobody was injured": [
+     "unimproved",
+     "underside",
+     "extension",
+     "corrective",
+     "frozen",
+     "skin",
+     "crystal",
+     "reverse",
+     "loop",
+     "axle",
+     "sheared",
+     "extend"
+    ],
+    "Serious: the worst injury was serious (such as a fracture or over 48 hours in hospital), nobody died": [
+     "horseshoe",
+     "firefly",
+     "galley",
+     "attendants",
+     "fas",
+     "a320-232",
+     "occasional",
+     "dfw",
+     "knees",
+     "fa",
+     "attendant",
+     "erj"
+    ]
+   },
+   "eval_items": 300
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "Public domain (US government work, 17 U.S.C. 105; NTSB aviation accident database)",
+    "url": "https://www.usa.gov/government-works",
+    "source_page": "https://data.ntsb.gov/avdata"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.1276,
+   "most_word_overlap": 0.127,
+   "most_frequent_position": 0.2579,
+   "best_constant_answer": 0.5245,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.247,
+     0.243,
+     0.263,
+     0.247
+    ],
+    "max_deviation": 0.013
+   },
+   "select": {
+    "gold_position_shares": [
+     0.26,
+     0.293,
+     0.22,
+     0.227
+    ],
+    "max_deviation": 0.043
+   },
+   "test": {
+    "gold_position_shares": [
+     0.247,
+     0.267,
+     0.193,
+     0.293
+    ],
+    "max_deviation": 0.057
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 426,
+   "p99": 480,
+   "max": 531,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

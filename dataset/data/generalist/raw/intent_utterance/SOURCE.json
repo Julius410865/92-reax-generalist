@@ -1,0 +1,49 @@
+{
+ "task": "intent_utterance",
+ "licence": "CLINC150: CC BY 3.0; Banking77: CC BY 4.0",
+ "licence_url": "CLINC150: https://creativecommons.org/licenses/by/3.0/ (dataset card https://huggingface.co/datasets/clinc/clinc_oos); Banking77: https://creativecommons.org/licenses/by/4.0/ (https://github.com/PolyAI-LDN/task-specific-datasets/blob/57ec275d8078af65b7731c2a98be812d844a6d6b/LICENSE)",
+ "downloaded": "2026-10-27",
+ "files": {
+  "clinc__plus__train-00000-of-00001.parquet": {
+   "url": "https://huggingface.co/datasets/clinc/clinc_oos/resolve/155b9c710419136e17307b80d0a13e68cd46b4ec/plus/train-00000-of-00001.parquet",
+   "sha256": "30188119cf9f86fc9db27e1c22442d091cb5cb0913c9496f945fe11e7a02a28f",
+   "bytes": 312096
+  },
+  "clinc__plus__validation-00000-of-00001.parquet": {
+   "url": "https://huggingface.co/datasets/clinc/clinc_oos/resolve/155b9c710419136e17307b80d0a13e68cd46b4ec/plus/validation-00000-of-00001.parquet",
+   "sha256": "fbd545b46c611c4a7ba4b48cae6c7f09bb5b59f33ff56206ad1cd366c85cdfaa",
+   "bytes": 77789
+  },
+  "clinc__README.md": {
+   "url": "https://huggingface.co/datasets/clinc/clinc_oos/resolve/155b9c710419136e17307b80d0a13e68cd46b4ec/README.md",
+   "sha256": "e28704a3c04f6b05c286ca2a8891bbf32c69c000dedfc5825d6e1713369b7a89",
+   "bytes": 23960
+  },
+  "banking77__README.md": {
+   "url": "https://huggingface.co/datasets/PolyAI/banking77/resolve/90d4e2ee5521c04fc1488f065b8b083658768c57/README.md",
+   "sha256": "b494ae99274ad98adfedfefcb504469197a8732f9726f678320f4aaafc5502bf",
+   "bytes": 9779
+  },
+  "banking77__banking77.py.txt": {
+   "url": "https://huggingface.co/datasets/PolyAI/banking77/resolve/90d4e2ee5521c04fc1488f065b8b083658768c57/banking77.py",
+   "sha256": "0e2b20c18def828886300332b15c6f647b77cdc289d1b49fffe65d8fde1d0834",
+   "bytes": 7168
+  },
+  "banking77__train.csv": {
+   "url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/57ec275d8078af65b7731c2a98be812d844a6d6b/banking_data/train.csv",
+   "sha256": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+   "bytes": 839073
+  },
+  "banking77__categories.json": {
+   "url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/57ec275d8078af65b7731c2a98be812d844a6d6b/banking_data/categories.json",
+   "sha256": "53261da888122daf2d120d925458631d9619e15d82e56052e7a42e535ce32b63",
+   "bytes": 2036
+  },
+  "banking77__LICENSE": {
+   "url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/57ec275d8078af65b7731c2a98be812d844a6d6b/LICENSE",
+   "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661",
+   "bytes": 18650
+  }
+ },
+ "notes": "Builder iu-1. CLINC150: Larson et al., 'An Evaluation Dataset for Intent Classification and Out-of-Scope Prediction', EMNLP-IJCNLP 2019; data by Clinc, Inc., https://github.com/clinc/oos-eval, CC BY 3.0. Banking77: Casanueva et al., 'Efficient Intent Detection with Dual Sentence Encoders', NLP4ConvAI 2020; data by PolyAI, https://github.com/PolyAI-LDN/task-specific-datasets, CC BY 4.0. Changes: utterances wrapped in question templates, intent names shown with underscores as spaces (lower case), CLINC out-of-scope class dropped, duplicates and conflicting labels removed, subsampled. CLINC150 uses plus/train + plus/validation (oos dropped); Banking77 uses banking_data/train.csv only (the official test.csv is not used). The HF banking77.py loading script is stored as text and never executed."
+}

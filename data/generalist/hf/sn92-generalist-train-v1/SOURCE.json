@@ -1,0 +1,19 @@
+{
+ "repo": "decisionmodels/sn92-generalist-train-v1",
+ "revision": "2241ec2c5e9812178c3127165d830a3bc8006685",
+ "licence": "cc-by-4.0",
+ "fetched": "2026-10-27",
+ "sha256": {
+  "train-00000.jsonl.gz": "6724ab1b7aa1b2e9d5bcd6290a6397b98ee7bfea4416f1fc3fc6d61fc4830ec1",
+  "train-00001.jsonl.gz": "99996d8e2512e5924058e4280e077fd2a927504f1a6351600b1985e5005d2807",
+  "train-00002.jsonl.gz": "3ea8343ed60ef878155477a64edd6c071f1db70b3be27621c5ff84e9b1d40e2a",
+  "train-00003.jsonl.gz": "c97e8cca58a5c69e0f2d0def8c86ede8f3e955539753960462cac5bd45a2216b",
+  "train-00004.jsonl.gz": "de852e4682ac2bd61ecbbfe5997bda98df3417869e6ecd1aa09b62d683a12e73",
+  "train-00005.jsonl.gz": "22d2f3216d958c1bb501acb23801e7190136cf7103017ab2cb4b23c74f714faa",
+  "train-00006.jsonl.gz": "25cfa3faecf3cbc9553941a9a4059d7d4aaa6026bd957c90eaa01804a4592daa",
+  "train-00007.jsonl.gz": "f99416f99ff9c7c5cf018674f7271b1a664001e8df17acad16236345338ac7b2",
+  "train-00008.jsonl.gz": "4b301051fc8578a88a6f8ec56fb19f916bf3122b3f4b997d979b7a05c7c03572",
+  "train-00009.jsonl.gz": "b41a99ff12b53b9e65b0bb4f2cb78026ab6547371ea9eaa52b8f6e7e0068e0ce",
+  "train-00010.jsonl.gz": "1062087d62fa1cf29d4eaff9ab5c4d4c7b80914877fff8df39ebe29dfbd9bab8"
+ }
+}

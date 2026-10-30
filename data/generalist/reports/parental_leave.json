@@ -1,0 +1,65 @@
+{
+ "domain": "parental_leave",
+ "kind": "gen",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": []
+  },
+  "second_solver": {
+   "pass": true,
+   "questions": 14803,
+   "disagreements": 0,
+   "examples": []
+  },
+  "boundary_tests": {
+   "pass": false,
+   "summary": "1 failed, 3 passed in 0.12s"
+  },
+  "shortcut": {
+   "longest_option": 0.3995,
+   "most_word_overlap": 0.3995,
+   "most_frequent_position": 0.6005,
+   "best_constant_answer": 0.6005,
+   "pass": true
+  },
+  "balance": {
+   "pass": false,
+   "train": {
+    "yes_share": 0.398
+   },
+   "select": {
+    "yes_share": 0.417
+   },
+   "test": {
+    "yes_share": 0.411
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 468,
+   "p99": 554,
+   "max": 582,
+   "limit": 2000
+  }
+ },
+ "pass": false
+}

@@ -1,0 +1,79 @@
+{
+ "task": "omniscience",
+ "counts": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 3000,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {
+    "5": 0.013
+   },
+   "yes_share": null,
+   "top_gold_text_share": 0.005,
+   "distinct_gold_texts": 1796
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.2,
+   "cue_accuracy": {
+    "longest": 0.206,
+    "shortest": 0.202,
+    "overlap": 0.198
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.2,
+    "shortest": 0.2,
+    "overlap": 0.2
+   },
+   "limit": {
+    "longest": 0.35,
+    "shortest": 0.35,
+    "overlap": 0.35
+   },
+   "questions": 6600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 141,
+   "p99": 158,
+   "max": 162
+  },
+  "source": {
+   "pass": true,
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "files": 18
+  }
+ },
+ "sha256": {
+  "train": "9603d7e106c7df20427ba344f767b22b881aaf9451dbd7e34f1615044a2c5979",
+  "select": "6c379ddb8ccc2135eda19e096b1856ef21b30e7ce734bf292ac1c9b258f49000",
+  "test": "2acc7b8f1b74f810f847a282ed3a3c8698a1cb74d2498a4ee7eb01f5664332d8"
+ },
+ "pass": true
+}

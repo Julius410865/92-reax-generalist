@@ -1,0 +1,75 @@
+{
+ "domain": "congress_bill",
+ "snapshot": "2026-10-27",
+ "files": {
+  "BILLSTATUS-117-hr.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/117/hr",
+   "method": "GET",
+   "status": 200,
+   "bytes": 3461402,
+   "sha256": "f5ac8422bdb64a4f48f820e77775fb25942415ffed010e20f1521851bdfd4ae3",
+   "fetched_utc": "2026-10-27T21:17:09Z"
+  },
+  "BILLSTATUS-117-hr.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/117/hr/BILLSTATUS-117-hr.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 33733417,
+   "sha256": "658b2d280e4e7972c86bfd810ebff0c9bb61c115b242de8c8774034dea08de03",
+   "fetched_utc": "2026-10-27T21:17:30Z"
+  },
+  "BILLSTATUS-117-s.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/117/s",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1878304,
+   "sha256": "a284f5badf44939fba914a86ea895f3203302ef5ee34f372702557a3d3bc3e0e",
+   "fetched_utc": "2026-10-27T21:17:35Z"
+  },
+  "BILLSTATUS-117-s.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/117/s/BILLSTATUS-117-s.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 14088276,
+   "sha256": "69561f19333de31afd2e288700757f3794ecffa35287b9fb86bb2d5d313a1294",
+   "fetched_utc": "2026-10-27T21:17:45Z"
+  },
+  "BILLSTATUS-118-hr.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/118/hr",
+   "method": "GET",
+   "status": 200,
+   "bytes": 3768215,
+   "sha256": "f15988c48e5856a16d80721011ae769fe40e3c243737538f7d0d811430eaf7f8",
+   "fetched_utc": "2026-10-27T21:17:52Z"
+  },
+  "BILLSTATUS-118-hr.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118-hr.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 35522726,
+   "sha256": "8e7ca7dab50a7b9b977f021ec1b3231f8fedf82c33494553857b892fadfdba98",
+   "fetched_utc": "2026-10-27T21:18:13Z"
+  },
+  "BILLSTATUS-118-s.listing.json": {
+   "url": "https://www.govinfo.gov/bulkdata/json/BILLSTATUS/118/s",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1980774,
+   "sha256": "70019c7304b38dd0fcb0e982c9bf424719a1ae0aa0662fc06a07ce95bf1ee89a",
+   "fetched_utc": "2026-10-27T21:18:18Z"
+  },
+  "BILLSTATUS-118-s.zip": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/s/BILLSTATUS-118-s.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 14414272,
+   "sha256": "b883c7e54eb48cebacfb9e847293bd9e3a840e81bbff0575ac178840fd4d95d8",
+   "fetched_utc": "2026-10-27T21:18:28Z"
+  }
+ },
+ "licence": {
+  "name": "US government work, public domain (17 U.S.C. 105)",
+  "url": "https://www.govinfo.gov/about/policies",
+  "note": "BILLSTATUS bulk data of the Library of Congress and the US Government Publishing Office"
+ }
+}

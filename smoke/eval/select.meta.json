@@ -1,0 +1,23 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/stage1.json",
+ "stage": "stage1",
+ "split": "select",
+ "digest": "345f8d7895d27650",
+ "sources": {
+  "*": {
+   "items": 0,
+   "unconvertible": 0,
+   "files": 0
+  },
+  "hf": {
+   "items": 2002,
+   "unconvertible": 0,
+   "files": 11
+  }
+ },
+ "items": 2002,
+ "questions": 2002,
+ "tokens": 1939792,
+ "render_failed": 0,
+ "over_max_length": 0
+}

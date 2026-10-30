@@ -1,0 +1,97 @@
+{
+ "source": "decisionmodels/sn92-generalist-train-v1@2241ec2c5e9812178c3127165d830a3bc8006685",
+ "licence": "CC-BY-4.0",
+ "note": "rows whose author family is anthropic / openai; their providers' terms restrict using outputs to build competing models: the owner decided to use them for training",
+ "author_families": [
+  "anthropic",
+  "openai"
+ ],
+ "heldout_rule": {
+  "select": 0.01,
+  "test": 0.02
+ },
+ "unconvertible": 0,
+ "format": "one training item per line: state, questions[0] {instructions, criteria A.. / yes,no, expected}",
+ "splits": {
+  "train": {
+   "rows": 69273,
+   "by_category": {
+    "support_ops_logistics": 20410,
+    "rules_policy_law": 10693,
+    "finance_commerce_insurance": 9689,
+    "tools_agent_routing": 9330,
+    "knowledge_reasoning": 4660,
+    "math_quant": 4364,
+    "coding_data_it": 3732,
+    "forecasting_risk_science": 2916,
+    "language_taste": 2058,
+    "safety_security_harm": 1421
+   },
+   "by_author_family": {
+    "openai": 48061,
+    "anthropic": 21212
+   },
+   "by_question_type": {
+    "choice": 34882,
+    "noul": 22615,
+    "score": 11776
+   },
+   "programmatic_gold": 57596
+  },
+  "select": {
+   "rows": 1617,
+   "by_category": {
+    "rules_policy_law": 1219,
+    "support_ops_logistics": 154,
+    "tools_agent_routing": 72,
+    "finance_commerce_insurance": 53,
+    "knowledge_reasoning": 37,
+    "math_quant": 24,
+    "language_taste": 21,
+    "coding_data_it": 19,
+    "safety_security_harm": 15,
+    "forecasting_risk_science": 3
+   },
+   "by_author_family": {
+    "openai": 1378,
+    "anthropic": 239
+   },
+   "by_question_type": {
+    "choice": 1314,
+    "score": 171,
+    "noul": 132
+   },
+   "programmatic_gold": 1501
+  },
+  "test": {
+   "rows": 999,
+   "by_category": {
+    "support_ops_logistics": 204,
+    "rules_policy_law": 150,
+    "math_quant": 141,
+    "finance_commerce_insurance": 114,
+    "coding_data_it": 113,
+    "tools_agent_routing": 113,
+    "knowledge_reasoning": 74,
+    "language_taste": 54,
+    "safety_security_harm": 32,
+    "forecasting_risk_science": 4
+   },
+   "by_author_family": {
+    "openai": 591,
+    "anthropic": 408
+   },
+   "by_question_type": {
+    "noul": 600,
+    "choice": 257,
+    "score": 142
+   },
+   "programmatic_gold": 746
+  }
+ },
+ "files": {
+  "train.jsonl": "1971dc84bb459246e9eccf7f27bfceb6e6388134fb8f52d63b10a364898c6370",
+  "select.jsonl": "21427d4a485bdeba25c04f68d225c7307440897346d4553b9fa9db2fc729edf0",
+  "test.jsonl": "1e416e65d853d84615963d5256a81a49f522371234284e9e2507f83285589901"
+ }
+}

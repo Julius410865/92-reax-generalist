@@ -1,0 +1,14 @@
+{
+ "task": "chess_best_move",
+ "licence": "CC0 1.0 (Lichess puzzle database)",
+ "licence_url": "https://database.lichess.org/#puzzles",
+ "downloaded": "2026-10-27",
+ "files": {
+  "data__train-00000-of-00003.parquet": {
+   "url": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet",
+   "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+   "bytes": 294920084
+  }
+ },
+ "notes": "Hugging Face dataset Lichess/chess-puzzles at revision 461725966ea46898ec6481372a6326de3281bfbd, shard data/train-00000-of-00003.parquet (one of three), read with pyarrow. Kept: Popularity >= 80, NbPlays >= 200, Rating 700-2600, >= 4 legal moves, one puzzle per game, four rating bands of a quarter each, mate-in-one <= 18 % per band, longest-option cue capped at chance + 0.10 on questions with <= 26 options. Gold = the puzzle's first solver move (Moves[1]) in SAN after pushing Moves[0]; options = all legal moves. Group key = Lichess game id (GameId before '/' or '#'); the shard has GameId instead of GameUrl."
+}

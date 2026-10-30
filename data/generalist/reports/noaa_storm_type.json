@@ -1,0 +1,357 @@
+{
+ "domain": "noaa_storm_type",
+ "kind": "rec",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "category_domain": true,
+   "nb_accuracy": 0.6767,
+   "best_constant": 0.1467,
+   "margin_allowed": null,
+   "telling_words": {
+    "Dense Fog": [
+     "visalia",
+     "eighth",
+     "madera",
+     "reedley",
+     "porterville",
+     "fresno",
+     "merced",
+     "craig-moffat",
+     "tulare",
+     "webcams",
+     "kingsburg",
+     "web"
+    ],
+    "Drought": [
+     "normal",
+     "percentile",
+     "restrictions",
+     "streamflows",
+     "waterwatch",
+     "website",
+     "decreased",
+     "record-low",
+     "streamflow",
+     "aquifer",
+     "encouraged",
+     "nueces"
+    ],
+    "Dust Storm": [
+     "nmdot",
+     "las",
+     "brown",
+     "health",
+     "collision",
+     "significantly",
+     "chowchilla",
+     "midway",
+     "van",
+     "hospitals",
+     "chicago",
+     "zero"
+    ],
+    "Excessive Heat": [
+     "dew",
+     "tucson",
+     "gender",
+     "age",
+     "circumstances",
+     "unavailable",
+     "details",
+     "maricopa",
+     "records",
+     "daily",
+     "peaked",
+     "knoll"
+    ],
+    "Extreme Cold / Wind Chill": [
+     "laramie",
+     "overnight",
+     "daytime",
+     "highs",
+     "mornings",
+     "basin",
+     "wyoming",
+     "zero",
+     "remaining",
+     "carbon",
+     "grande",
+     "box"
+    ],
+    "Flash Flood (rapid onset)": [
+     "swift",
+     "rescues",
+     "flowing",
+     "rushing",
+     "rise",
+     "cfs",
+     "culvert",
+     "flowed",
+     "stalled",
+     "crossings",
+     "running",
+     "gauge"
+    ],
+    "Flood (slow-rising)": [
+     "offramp",
+     "streamstats",
+     "boulders",
+     "ari",
+     "elevated",
+     "aep",
+     "surrounded",
+     "washout",
+     "tributary",
+     "wastewater",
+     "slow",
+     "probability"
+    ],
+    "Frost / Freeze": [
+     "minimum",
+     "ndawn",
+     "maximum",
+     "sites",
+     "mn",
+     "hads",
+     "lowest",
+     "cwop",
+     "aws",
+     "uscrn",
+     "verification",
+     "personal"
+    ],
+    "Hail": [
+     "dents",
+     "image",
+     "holes",
+     "windshields",
+     "showing",
+     "shared",
+     "measurement",
+     "windshield",
+     "corn",
+     "estimate",
+     "etc",
+     "acreage"
+    ],
+    "High Wind (non-thunderstorm)": [
+     "nj",
+     "standard",
+     "i-25",
+     "flathead",
+     "ny",
+     "thousand",
+     "crushed",
+     "jet",
+     "essex",
+     "meters",
+     "lat",
+     "clear"
+    ],
+    "Thunderstorm Wind": [
+     "operator",
+     "sc",
+     "comms",
+     "colleton",
+     "dorchester",
+     "ham",
+     "blew",
+     "palm",
+     "dispatch",
+     "sheriffs",
+     "savannah",
+     "effingham"
+    ],
+    "Tornado": [
+     "satellite",
+     "imagery",
+     "survey",
+     "manufactured",
+     "lofted",
+     "thanks",
+     "drone",
+     "trunks",
+     "resolution",
+     "deaths",
+     "pivot",
+     "crossed"
+    ],
+    "Tropical Storm": [
+     "oct",
+     "tens",
+     "cumulative",
+     "assessment",
+     "sr",
+     "female",
+     "affecting",
+     "thousands",
+     "transportation",
+     "obstructing",
+     "brunswick",
+     "preliminary"
+    ],
+    "Wildfire": [
+     "orders",
+     "threatened",
+     "evacuation",
+     "humidity",
+     "acreage",
+     "evacuations",
+     "cost",
+     "ordered",
+     "date",
+     "evacuated",
+     "none",
+     "deer"
+    ],
+    "Winter Storm (warning level)": [
+     "treacherous",
+     "tennant",
+     "toketee",
+     "dangerous",
+     "callahan",
+     "indy",
+     "airstrip",
+     "medford",
+     "crazyman",
+     "annie",
+     "key",
+     "drivers"
+    ],
+    "Winter Weather (advisory level)": [
+     "locally",
+     "involving",
+     "massapequa",
+     "countywide",
+     "lyme",
+     "crashes",
+     "commute",
+     "accumulation",
+     "criteria",
+     "cuming",
+     "jervis",
+     "warwick"
+    ]
+   },
+   "eval_items": 300
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "Public domain (US government work, 17 U.S.C. 105; NOAA NCEI Storm Events Database)",
+    "url": "https://www.usa.gov/government-works",
+    "source_page": "https://www.ncei.noaa.gov/stormevents/"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.0697,
+   "most_word_overlap": 0.0603,
+   "most_frequent_position": 0.07,
+   "best_constant_answer": 0.1491,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.06,
+     0.062,
+     0.067,
+     0.063,
+     0.072,
+     0.058,
+     0.069,
+     0.064,
+     0.063,
+     0.064,
+     0.058,
+     0.055,
+     0.06,
+     0.063,
+     0.063,
+     0.06
+    ],
+    "max_deviation": 0.01
+   },
+   "select": {
+    "gold_position_shares": [
+     0.033,
+     0.033,
+     0.087,
+     0.06,
+     0.067,
+     0.073,
+     0.087,
+     0.047,
+     0.02,
+     0.073,
+     0.08,
+     0.067,
+     0.067,
+     0.073,
+     0.067,
+     0.067
+    ],
+    "max_deviation": 0.042
+   },
+   "test": {
+    "gold_position_shares": [
+     0.027,
+     0.093,
+     0.06,
+     0.1,
+     0.027,
+     0.08,
+     0.067,
+     0.067,
+     0.067,
+     0.033,
+     0.08,
+     0.08,
+     0.067,
+     0.04,
+     0.013,
+     0.1
+    ],
+    "max_deviation": 0.049
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 261,
+   "p99": 413,
+   "max": 478,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

@@ -1,0 +1,249 @@
+{
+ "task": "poem_pair",
+ "licence": "Public domain in the USA (Project Gutenberg texts, header/licence stripped)",
+ "licence_url": "https://www.gutenberg.org/policy/license.html",
+ "downloaded": "2026-10-27",
+ "files": {
+  "pg13.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/13/pg13.txt",
+   "sha256": "30d6d0a4fa246393ba85df5fa4fb3d0358bdf3f4784a8d0ebb96547275bc4f74",
+   "bytes": 54952
+  },
+  "pg136.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/136/pg136.txt",
+   "sha256": "0684e08feb0fc8df5206ca899ba66937bef011bec11ac8e829fa3a8bea0e94bf",
+   "bytes": 74306
+  },
+  "pg151.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/151/pg151.txt",
+   "sha256": "97b2a12f1ae2c7724680bcfe584a3328eb87f908dc68c3e23ecf52b790772ee4",
+   "bytes": 44253
+  },
+  "pg207.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/207/pg207.txt",
+   "sha256": "0723ce9010b7df6078bb850c4193b588769891d3d5faf2b11368934954c9eb6d",
+   "bytes": 97959
+  },
+  "pg213.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/213/pg213.txt",
+   "sha256": "80d20cb5b84daed17d10c4f4e6ca8cefb17f715e71514511fd773cddb6402f64",
+   "bytes": 162902
+  },
+  "pg214.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/214/pg214.txt",
+   "sha256": "dae08e7ad618b825884eefba2f07c75d175a2f4c8817612e855931350a7f2489",
+   "bytes": 182898
+  },
+  "pg246.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/246/pg246.txt",
+   "sha256": "711166b8e22f048a2fc79599d5db3520f78120f42b2473a431df07863ce769b0",
+   "bytes": 90380
+  },
+  "pg262.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/262/pg262.txt",
+   "sha256": "a5dd99336f11127c381fbfbfffbcc0c1b759b53ccacfbb0ee459a5c1caa82ce2",
+   "bytes": 176889
+  },
+  "pg263.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/263/pg263.txt",
+   "sha256": "4b459d41c46c4a50c10bd35623a0791e5accb1835074cf024956b596983a04d5",
+   "bytes": 60051
+  },
+  "pg301.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/301/pg301.txt",
+   "sha256": "4f7cd480ced9757e3e72869a63d9a979bbb45cb77280d74a739dbd2818dcdb1e",
+   "bytes": 84955
+  },
+  "pg353.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/353/pg353.txt",
+   "sha256": "0950230ce9e511bca99fa37882cd4f20d2973f953f69c98d6dc67cb0f29ab27a",
+   "bytes": 188024
+  },
+  "pg596.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/596/pg596.txt",
+   "sha256": "d7315354c96c7058e8c0c97de0bed2ba06e2464af83bb54678f7c2d5e1f9cc13",
+   "bytes": 89677
+  },
+  "pg931.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/931/pg931.txt",
+   "sha256": "3c9fac90425cd8c9b4e6a31c5d4f7adae9e90d516ff5f1926abe866557c4d20e",
+   "bytes": 160345
+  },
+  "pg941.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/941/pg941.txt",
+   "sha256": "a26dc0126b97e6e5fede69ac7f2c7f8da555c3da44bef365d3362ff49a222006",
+   "bytes": 202283
+  },
+  "pg1021.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1021/pg1021.txt",
+   "sha256": "8d00dd3ce69ee0d18ed9db308cd7a1ba53283ed5546ec09fdfe80e79fb667fba",
+   "bytes": 134729
+  },
+  "pg1034.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1034/pg1034.txt",
+   "sha256": "b7a3deee488c381262d4db0e7fcf23228d20d38c9d5da3a971d90d31cdabcbb6",
+   "bytes": 66918
+  },
+  "pg1041.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1041/pg1041.txt",
+   "sha256": "4a3a5466591e30ca93b2c19daeb24770bb08833b57b1616c972b97246e23580f",
+   "bytes": 119936
+  },
+  "pg1279.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1279/pg1279.txt",
+   "sha256": "b4f506d4460a78d61434d3fca7b4fba48a1c0795f9fefd23454ed14ee21aa65c",
+   "bytes": 894521
+  },
+  "pg1365.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1365/pg1365.txt",
+   "sha256": "9889340fd77d801429306af64a272646b0cbaaf259e4bc9089f5ca691856e641",
+   "bytes": 1968041
+  },
+  "pg1469.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1469/pg1469.txt",
+   "sha256": "470086e07432cbe353b8f6195d5e2cc74a3a5e71c3a01d2ae6903fb19d3a4c58",
+   "bytes": 95001
+  },
+  "pg1568.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1568/pg1568.txt",
+   "sha256": "dd312f8be16a82f073e06a5a2b34b8a4b22cf6802d0fc141024f420bce242e32",
+   "bytes": 186971
+  },
+  "pg1746.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1746/pg1746.txt",
+   "sha256": "9240f35c2d57c17b5c94a4d66044d157c4d748896f28992ba99da90fd3e2ae6f",
+   "bytes": 81559
+  },
+  "pg1934.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/1934/pg1934.txt",
+   "sha256": "a5b76d4de22f42e1bf40f08256a329728f4cb7ad18d6581709aa7a9683c5e455",
+   "bytes": 52815
+  },
+  "pg2819.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/2819/pg2819.txt",
+   "sha256": "e2de55400491f7b2a42901ddd8d9448505d2c4537b0a75cb907d939deca54488",
+   "bytes": 118022
+  },
+  "pg3011.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/3011/pg3011.txt",
+   "sha256": "11c3cd3a803278bf9b78115043dff2f064a984448f19ba14c53a72fdb556caaf",
+   "bytes": 511649
+  },
+  "pg3167.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/3167/pg3167.txt",
+   "sha256": "796536a9c21535b87c6266f95cb46d0ebae4310ea2627b21081491f080e17d65",
+   "bytes": 124623
+  },
+  "pg4798.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/4798/pg4798.txt",
+   "sha256": "095062184d815c8b49598a525f121a7d8975801ca27fef69fc50de12fa55f749",
+   "bytes": 418010
+  },
+  "pg5720.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/5720/pg5720.txt",
+   "sha256": "4cb77143d17f6cfcd845fe4575ac1bb83905c2471f259f0ebd8b8e03f7681f53",
+   "bytes": 84678
+  },
+  "pg7388.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/7388/pg7388.txt",
+   "sha256": "19b1e29a3a66e0b17e1a61808ecb9f0b799fa33f94d674c2ec9a0150ad32d7b1",
+   "bytes": 87191
+  },
+  "pg8209.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/8209/pg8209.txt",
+   "sha256": "dda508030b2098d8f77edec7d96124f7874ca6587f3790dddf7cb8fbc9514876",
+   "bytes": 100735
+  },
+  "pg8601.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/8601/pg8601.txt",
+   "sha256": "71906f15b2cf2fa6ab7c2221de6f1323b3f1e202e1c09610dc5c266f9890a9c4",
+   "bytes": 628187
+  },
+  "pg8930.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/8930/pg8930.txt",
+   "sha256": "fa630355c70e86b12568a61a452fa08c1790db0a5c1b1adbabd5ef3d7ef10b59",
+   "bytes": 66032
+  },
+  "pg9567.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/9567/pg9567.txt",
+   "sha256": "b67d1968fa7f9db62b12614908f722a84469e3b6f7aa187b88f33cf8dc19613d",
+   "bytes": 526399
+  },
+  "pg9889.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/9889/pg9889.txt",
+   "sha256": "0e80eaaceacac37292ff8c3b5b9bca37776f2a8eca16036e76f606627846c620",
+   "bytes": 168558
+  },
+  "pg12242.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/12242/pg12242.txt",
+   "sha256": "f4421418353de2737c9bfe3db1e4657534b6b8ae2a8603f31de2d77678d18791",
+   "bytes": 206765
+  },
+  "pg13310.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/13310/pg13310.txt",
+   "sha256": "a85046996f4b25be896a8eac1d43330a9b1141af8543b233d2b8e026472add74",
+   "bytes": 1676342
+  },
+  "pg13647.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/13647/pg13647.txt",
+   "sha256": "fa8bd7e37e362fc608c5daf83703ee9a248ecc4006a6654e2fcbd91166843e3a",
+   "bytes": 95765
+  },
+  "pg15079.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/15079/pg15079.txt",
+   "sha256": "8dd4a9c41d6f5d72e7bfd0ae9b6ced89cb90c5689d85207f3fe2315972c72e6b",
+   "bytes": 182485
+  },
+  "pg15652.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/15652/pg15652.txt",
+   "sha256": "d07da79629316f04dae1097f479716f6bf70a1334f1da9f0ae0503c9572137a2",
+   "bytes": 943988
+  },
+  "pg16341.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/16341/pg16341.txt",
+   "sha256": "a999e2f97f954404ff254048e40d67ca5f21a36c3d8fa0b94ea57d73132e28c7",
+   "bytes": 316477
+  },
+  "pg16776.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/16776/pg16776.txt",
+   "sha256": "11effd01598bf7a33a91ca961495bdd52e06c954595344db9b0c844dc19eef0f",
+   "bytes": 129583
+  },
+  "pg16950.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/16950/pg16950.txt",
+   "sha256": "9c218814d72367d42f6e2f3b94507ed869b34d5d25f78fc461435b5ebe45949e",
+   "bytes": 304411
+  },
+  "pg18338.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/18338/pg18338.txt",
+   "sha256": "0e97ad6cd6ea5775b96446a531e2b097116b4c7e2b7b313e45f31bfed9055a6c",
+   "bytes": 566810
+  },
+  "pg21029.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/21029/pg21029.txt",
+   "sha256": "c789e909cdecb623fa6dedb83af90998a6aa38d901b7f5293256fcd9d4241916",
+   "bytes": 133472
+  },
+  "pg21700.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/21700/pg21700.txt",
+   "sha256": "b47f24d980e964d42406544becbcba0e424d12c25d36e8243589347a5965243b",
+   "bytes": 778592
+  },
+  "pg35402.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/35402/pg35402.txt",
+   "sha256": "285fc048e1d0f2365e1862348e1adbd2308f663234e1df511fd0a7aa326ccef9",
+   "bytes": 383343
+  },
+  "pg50852.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/50852/pg50852.txt",
+   "sha256": "65688b75504252ddb7cad660d544f7a847744693a7b3907bf905de8ae7aa3bf3",
+   "bytes": 109516
+  },
+  "pg52761.txt": {
+   "url": "https://www.gutenberg.org/cache/epub/52761/pg52761.txt",
+   "sha256": "21ef6a62a357182549ae0398e2092fe129d2ad7e5d3f0c099dc5c0283ce8d8d9",
+   "bytes": 102161
+  }
+ },
+ "notes": "Project Gutenberg plain-text poetry collections, public domain in the USA; only the text between the '*** START OF' and '*** END OF' markers is read (header, footer and licence stripped). Ebooks: #13 The Hunting of the Snark (Lewis Carroll); #136 A Child's Garden of Verses (Robert Louis Stevenson); #151 The Rime of the Ancient Mariner (Samuel Taylor Coleridge); #207 The Spell of the Yukon and Other Verses (Robert W. Service); #213 The Man from Snowy River (A. B. Paterson); #214 In the Days When the World Was Wide, and Other Verses (Henry Lawson); #246 The Rubaiyat of Omar Khayyam (Edward FitzGerald (tr.)); #262 The Collected Poems of Rupert Brooke (Rupert Brooke); #263 Trees, and Other Poems (Joyce Kilmer); #301 The Ballad of Reading Gaol (Oscar Wilde); #353 In Flanders Fields, and Other Poems (John McCrae); #596 Rivers to the Sea (Sara Teasdale); #931 The Bab Ballads (W. S. Gilbert); #941 Just Folks (Edgar A. Guest); #1021 The Congo, and Other Poems (Vachel Lindsay); #1034 Poems (Wilfred Owen); #1041 Shakespeare's Sonnets (William Shakespeare); #1279 Poems and Songs of Robert Burns (Robert Burns); #1365 The Complete Poetical Works of Henry Wadsworth Longfellow (Henry Wadsworth Longfellow); #1469 Poems (Francis Thompson); #1568 Poems (William Ernest Henley); #1746 New Collected Rhymes (Andrew Lang); #1934 Songs of Innocence and of Experience (William Blake); #2819 Barrack-room Ballads (Rudyard Kipling); #3011 The Lady of the Lake (Walter Scott); #3167 Wessex Poems and Other Verses (Thomas Hardy); #4798 The Complete Poetical Works of Percy Bysshe Shelley, Volume 2 (Percy Bysshe Shelley); #5720 A Shropshire Lad (A. E. Housman); #7388 The Poetical Works of Oliver Wendell Holmes, Volume 01: Earlier Poems (Oliver Wendell Holmes); #8209 Poems 1817 (John Keats); #8601 The Early Poems of Alfred Lord Tennyson (Alfred Tennyson); #8930 Counter-Attack and Other Poems (Siegfried Sassoon); #9567 Narrative and Legendary Poems, Complete (Works of Whittier, Volume I) (John Greenleaf Whittier); #9889 Songs and Other Verse (Eugene Field); #12242 Poems by Emily Dickinson, Three Series, Complete (Emily Dickinson); #13310 The Complete Poetical Works of James Russell Lowell (James Russell Lowell); #13647 Nonsense Songs (Edward Lear); #15079 Green Fields and Running Brooks, and Other Poems (James Whitcomb Riley); #15652 The Poetical Works of Thomas Hood (Thomas Hood); #16341 Poems by William Cullen Bryant (William Cullen Bryant); #16776 Poems of Passion (Ella Wheeler Wilcox); #16950 Goblin Market, The Prince's Progress, and Other Poems (Christina Rossetti); #18338 The Complete Poems of Paul Laurence Dunbar (Paul Laurence Dunbar); #21029 The New Morning: Poems (Alfred Noyes); #21700 Don Juan (Lord Byron); #35402 Poems & Ballads (First Series) (Algernon Charles Swinburne); #50852 The Bells, and Other Poems (Edgar Allan Poe); #52761 Salt-Water Ballads (John Masefield). Each item: four consecutive verse lines whose lines 2 and 4 rhyme; the altered copy replaces only the last word of line 4 with a non-rhyming word of similar length from the same book. Split by ebook."
+}

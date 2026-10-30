@@ -1,0 +1,42 @@
+{
+ "domain": "eip",
+ "snapshot": "2026-10-27",
+ "files": {
+  "EIPs.head.json": {
+   "url": "https://api.github.com/repos/ethereum/EIPs/commits/master",
+   "method": "GET",
+   "status": 200,
+   "bytes": 8045,
+   "sha256": "6bd0f8df4989c7d682ff4bf577ef7950c5bb345c5bbc11b999fd128e10a32711",
+   "fetched_utc": "2026-10-27T21:03:22Z"
+  },
+  "EIPs-d4c575521d99.tar.gz": {
+   "url": "https://codeload.github.com/ethereum/EIPs/tar.gz/d4c575521d99ec881a444ab3af604e684b5f0743",
+   "method": "GET",
+   "status": 200,
+   "bytes": 46019096,
+   "sha256": "77b53d45084fc770ee01753eb000bcd6e5aad3353d1a1c989eb559df5957d7fb",
+   "fetched_utc": "2026-10-27T21:03:24Z"
+  },
+  "ERCs.head.json": {
+   "url": "https://api.github.com/repos/ethereum/ERCs/commits/master",
+   "method": "GET",
+   "status": 200,
+   "bytes": 25104,
+   "sha256": "c65da4729acc9b9ec5e5d55410cc6c174ce4ae64e008af51f017dfa03e5d0eca",
+   "fetched_utc": "2026-10-27T21:03:25Z"
+  },
+  "ERCs-15568610b358.tar.gz": {
+   "url": "https://codeload.github.com/ethereum/ERCs/tar.gz/15568610b3583f0709aaa31b71611a39ed49af40",
+   "method": "GET",
+   "status": 200,
+   "bytes": 47778095,
+   "sha256": "f7e6b519749318fb324dabe35f82078401097165c6e86dbbb0167a13c6cfa8c3",
+   "fetched_utc": "2026-10-27T21:03:28Z"
+  }
+ },
+ "licence": {
+  "name": "CC0-1.0",
+  "url": "https://github.com/ethereum/EIPs/blob/master/LICENSE.md"
+ }
+}

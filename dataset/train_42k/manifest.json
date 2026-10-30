@@ -1,0 +1,173 @@
+{
+ "total": 41972,
+ "questions": 44372,
+ "by_part": {
+  "T": 24000,
+  "N": 12972,
+  "S1": 5000
+ },
+ "draws": [
+  {
+   "path": "dataset/train_57k/train.jsonl",
+   "filter": "part=T",
+   "pool": 16500,
+   "taken": 16500,
+   "questions": 16500,
+   "by_task_type": {
+    "intent_utterance": 3000,
+    "nli": 3000,
+    "omniscience": 3000,
+    "story_continuation": 2500,
+    "chess_best_move": 2000,
+    "poem_pair": 1500,
+    "stance": 1500
+   }
+  },
+  {
+   "path": "dataset/train_57k/train.jsonl",
+   "filter": "part=N",
+   "pool": 10872,
+   "taken": 10872,
+   "questions": 10872,
+   "by_task_type": {
+    "congress_bill_status": 946,
+    "fda_device_recall_class": 946,
+    "fda_drug_marketing_status": 946,
+    "fedreg_agency": 946,
+    "ghsa_severity": 946,
+    "noaa_storm_event_type": 946,
+    "ntrs_subject_category": 946,
+    "ntsb_injury_severity": 946,
+    "nvd_cvss_severity": 946,
+    "ted_cpv_division": 946,
+    "cpsc_hazard_type": 632,
+    "rust_rfc_outcome": 265,
+    "kep_status": 240,
+    "eip_status": 182,
+    "asf_podling_outcome": 93
+   }
+  },
+  {
+   "path": "dataset/train_57k/train.jsonl",
+   "filter": "source=hf_openai_anthropic",
+   "pool": 30000,
+   "taken": 5000,
+   "questions": 5000,
+   "by_task_type": {
+    "s1:support_ops_logistics": 1473,
+    "s1:rules_policy_law": 772,
+    "s1:finance_commerce_insurance": 699,
+    "s1:tools_agent_routing": 673,
+    "s1:knowledge_reasoning": 336,
+    "s1:math_quant": 315,
+    "s1:coding_data_it": 269,
+    "s1:forecasting_risk_science": 211,
+    "s1:language_taste": 149,
+    "s1:safety_security_harm": 103
+   }
+  },
+  {
+   "path": "dataset/data/generalist/gen/chord_from_notes.train.jsonl",
+   "filter": null,
+   "pool": 3000,
+   "taken": 1500,
+   "questions": 1500,
+   "by_task_type": {
+    "chord_from_notes": 1500
+   }
+  },
+  {
+   "path": "dataset/data/generalist/gen/arith_word_4.train.jsonl",
+   "filter": null,
+   "pool": 3000,
+   "taken": 1500,
+   "questions": 1500,
+   "by_task_type": {
+    "arith_word_4": 1500
+   }
+  },
+  {
+   "path": "dataset/data/generalist/gen/arith_word_10.train.jsonl",
+   "filter": null,
+   "pool": 3000,
+   "taken": 1500,
+   "questions": 1500,
+   "by_task_type": {
+    "arith_word_10": 1500
+   }
+  },
+  {
+   "path": "dataset/data/generalist/gen/shipping_rate.train.jsonl",
+   "filter": null,
+   "pool": 3000,
+   "taken": 1500,
+   "questions": 1500,
+   "by_task_type": {
+    "shipping_rate": 1500
+   }
+  },
+  {
+   "path": "dataset/data/generalist/gen/code_output.train.jsonl",
+   "filter": null,
+   "pool": 3000,
+   "taken": 1500,
+   "questions": 1500,
+   "by_task_type": {
+    "code_output": 1500
+   }
+  },
+  {
+   "path": "dataset/data/generalist/gen/logic_multistep.train.jsonl",
+   "filter": null,
+   "pool": 3000,
+   "taken": 1500,
+   "questions": 1500,
+   "by_task_type": {
+    "logic_multistep": 1500
+   }
+  },
+  {
+   "path": "dataset/data/generalist/gen/expense_policy.train.jsonl",
+   "filter": null,
+   "pool": 3000,
+   "taken": 600,
+   "questions": 3000,
+   "by_task_type": {
+    "expense_policy": 600
+   }
+  }
+ ],
+ "rule": "per --take: rows matching the filter, the count drawn per task type in proportion, ranked by sha256 of the id (salt 'take|<path>')",
+ "sha256": "ce7c97b31f62670fcf934a57a6c77714bfb2dbd22e81aaaab400ebcbadda0752",
+ "validation": {
+  "rows": 4679,
+  "questions": 5279,
+  "by_source": {
+   "hf": 385,
+   "n_records": 1696,
+   "openai_anthropic": 385,
+   "t_part": 1050,
+   "n_records_extra": 113,
+   "gen": 1050
+  },
+  "sha256": "9b2013a23d82b3e32d54ee57988a5853ba651647fdf3c10958f3e94cafef913b",
+  "from": "prepared/eval_42k/select.items.jsonl.gz",
+  "config": "data/stages/train_42k.json"
+ },
+ "test": {
+  "rows": 5652,
+  "questions": 6384,
+  "by_source": {
+   "hf": 718,
+   "dev": 300,
+   "n_records": 1695,
+   "openai_anthropic": 704,
+   "t_part": 1050,
+   "n_records_extra": 135,
+   "gen": 1050
+  },
+  "sha256": "9f5e6a5fe74d0c0353192d2466e3297d265d890e4d707e502b6618e69d4a8680",
+  "from": "prepared/eval_42k/test.items.jsonl.gz",
+  "config": "data/stages/train_42k.json"
+ }
+}

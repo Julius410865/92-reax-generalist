@@ -1,0 +1,122 @@
+{
+ "domain": "kep",
+ "task_type": "kep_status",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "Apache-2.0",
+  "url": "https://github.com/kubernetes/enhancements/blob/ea3e81a0d41dd3df7dae584ea584c31de56cd3cb/LICENSE"
+ },
+ "sources": {
+  "enhancements.head.json": {
+   "url": "https://api.github.com/repos/kubernetes/enhancements/commits/HEAD",
+   "sha256": "29ea7715ff913a89576903bcf59828ea6ff863f65bc7505b0c051552f9cae719"
+  },
+  "enhancements-ea3e81a0d41d.tar.gz": {
+   "url": "https://codeload.github.com/kubernetes/enhancements/tar.gz/ea3e81a0d41dd3df7dae584ea584c31de56cd3cb",
+   "sha256": "da5b294b17e0ff6a965d6689a4c43efa502746c32180065b97bcc95ca01ffb7f"
+  }
+ },
+ "label_field": "kep.yaml 'status'",
+ "label_map": {
+  "implemented": "implemented",
+  "withdrawn": "ended",
+  "rejected": "ended",
+  "replaced": "ended",
+  "deferred": "ended"
+ },
+ "labels": {
+  "implemented": "Implemented: the enhancement was completed",
+  "ended": "Did not go ahead as proposed: withdrawn, rejected, replaced by another KEP, or deferred"
+ },
+ "records_read": 686,
+ "selection": {
+  "kep_dirs": 686,
+  "no_kep_yaml": 0,
+  "in_progress": 358,
+  "undocumented_status": {
+   "superseded": 1,
+   "provisional|implementable|implemented|deferred|rejected|withdrawn|replaced": 1,
+   "implemented (alpha)": 1,
+   "implemented": 1,
+   "imlpemented": 1,
+   "removed": 1
+  },
+  "conflicting_number": 2
+ },
+ "final_status_kept": {
+  "deferred": 1,
+  "implemented": 270,
+  "rejected": 3,
+  "replaced": 5,
+  "withdrawn": 11
+ },
+ "dropped_unrenderable_or_scrub": 28,
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 120.0,
+   "cap": 360
+  },
+  "select": {
+   "median": 10.5,
+   "cap": 31
+  },
+  "test": {
+   "median": 14.5,
+   "cap": 43
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 240,
+   "fresh": 0,
+   "class_prior": {
+    "Implemented: the enhancement was completed": 224,
+    "Did not go ahead as proposed: withdrawn, rejected, replaced by another KEP, or deferred": 16
+   },
+   "gold_position": {
+    "A": 126,
+    "B": 114
+   },
+   "options": {
+    "2": 240
+   }
+  },
+  "select": {
+   "rows": 21,
+   "fresh": 0,
+   "class_prior": {
+    "Implemented: the enhancement was completed": 20,
+    "Did not go ahead as proposed: withdrawn, rejected, replaced by another KEP, or deferred": 1
+   },
+   "gold_position": {
+    "A": 10,
+    "B": 11
+   },
+   "options": {
+    "2": 21
+   }
+  },
+  "test": {
+   "rows": 29,
+   "fresh": 0,
+   "class_prior": {
+    "Implemented: the enhancement was completed": 26,
+    "Did not go ahead as proposed: withdrawn, rejected, replaced by another KEP, or deferred": 3
+   },
+   "gold_position": {
+    "A": 14,
+    "B": 15
+   },
+   "options": {
+    "2": 29
+   }
+  }
+ },
+ "files": {
+  "kep.train.jsonl": "792d0c44ee570ee78e8ec1028a3ae183af57e8f7be012b0a0a018af1b2919c23",
+  "kep.select.jsonl": "b7b15031cb213fc986553414600324ac0bafc298b896a447174128b0ba6f5379",
+  "kep.test.jsonl": "ca3f1cb79dd925db561e8f9b826cf56a3a05ef2967a373768ba02eb62ced0cd4"
+ }
+}

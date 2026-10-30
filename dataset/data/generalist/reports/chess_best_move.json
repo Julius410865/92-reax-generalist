@@ -1,0 +1,77 @@
+{
+ "task": "chess_best_move",
+ "counts": {
+  "train": 2000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 2000,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {},
+   "yes_share": null,
+   "top_gold_text_share": 0.012,
+   "distinct_gold_texts": 570
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.05,
+   "cue_accuracy": {
+    "longest": 0.275,
+    "shortest": 0.032,
+    "overlap": 0.05
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.417,
+    "shortest": 0.0,
+    "overlap": 0.038
+   },
+   "limit": {
+    "longest": 0.517,
+    "shortest": 0.2,
+    "overlap": 0.2
+   },
+   "questions": 4600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 404,
+   "p99": 447,
+   "max": 458
+  },
+  "source": {
+   "pass": true,
+   "licence": "CC0 1.0 (Lichess puzzle database)",
+   "files": 1
+  }
+ },
+ "sha256": {
+  "train": "ac4a846212590f13c3bedcbe4587a1c8000ef2669f01a90265ed5f943cea3b0f",
+  "select": "39ebf3b648979742bf9585742fff015f1ca5cd6a3e26f9d091426ad6f90f237b",
+  "test": "20f26c6183be848dd56c82c910a5641a35657c62a3acb5b00843f49f5d1a389c"
+ },
+ "pass": true
+}

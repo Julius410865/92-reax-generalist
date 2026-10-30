@@ -1,0 +1,134 @@
+{
+ "domain": "eip",
+ "kind": "rec",
+ "rows": {
+  "train": 579,
+  "select": 61,
+  "test": 81
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 721,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "nb_accuracy": 0.6408,
+   "best_constant": 0.5563,
+   "margin_allowed": 0.25,
+   "telling_words": {
+    "Final (accepted and part of the standard)": [
+     "repository",
+     "ai",
+     "window",
+     "wire",
+     "bonds",
+     "devp2p",
+     "redemption",
+     "vaults",
+     "javascript",
+     "peer",
+     "physical",
+     "voluntary"
+    ],
+    "Stagnant (inactive for six months or more, never finished)": [
+     "eof",
+     "erc20",
+     "resolver",
+     "claims",
+     "section",
+     "deploy",
+     "calculation",
+     "dtype",
+     "governance",
+     "jumpdest",
+     "human",
+     "poll"
+    ],
+    "Withdrawn by its authors": [
+     "erc-4337",
+     "inputs",
+     "https",
+     "near-linear",
+     "initialization",
+     "pull",
+     "enr",
+     "validate",
+     "said",
+     "eip-4337",
+     "eip-778",
+     "ethash"
+    ]
+   },
+   "eval_items": 142
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "CC0-1.0",
+    "url": "https://github.com/ethereum/EIPs/blob/master/LICENSE.md"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.5465,
+   "most_word_overlap": 0.3883,
+   "most_frequent_position": 0.3412,
+   "best_constant_answer": 0.5465,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.328,
+     0.339,
+     0.333
+    ],
+    "max_deviation": 0.005
+   },
+   "select": {
+    "gold_position_shares": [
+     0.311,
+     0.295,
+     0.393
+    ],
+    "max_deviation": 0.06
+   },
+   "test": {
+    "gold_position_shares": [
+     0.284,
+     0.358,
+     0.358
+    ],
+    "max_deviation": 0.049
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 252,
+   "p99": 394,
+   "max": 441,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

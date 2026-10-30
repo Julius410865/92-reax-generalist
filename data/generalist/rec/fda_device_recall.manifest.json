@@ -1,0 +1,111 @@
+{
+ "domain": "fda_device_recall",
+ "task_type": "fda_device_recall_class",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "CC0-1.0 (openFDA: public domain, Creative Commons CC0 1.0 Universal dedication)",
+  "url": "https://open.fda.gov/license/",
+  "terms": "https://open.fda.gov/terms/"
+ },
+ "export_date": "2026-10-27",
+ "sources": {
+  "download.json": {
+   "url": "https://api.fda.gov/download.json",
+   "sha256": "0ec5ae8c3c04fb6829d7b205fb158e932cc2341bdae390a712601fc5c8ca7aeb"
+  },
+  "device-enforcement-0001-of-0001.json.zip": {
+   "url": "https://download.open.fda.gov/device/enforcement/device-enforcement-0001-of-0001.json.zip",
+   "sha256": "d58e5643b8bda077f297542c9635def9a04f376fb9358796833e856cf3ad3d0d"
+  }
+ },
+ "label_field": "classification",
+ "labels": {
+  "Class I": "Class I (most serious: may cause serious harm or death)",
+  "Class II": "Class II (may cause temporary or reversible harm)",
+  "Class III": "Class III (unlikely to cause harm)"
+ },
+ "group_key": "event_id (one record per event)",
+ "eval_frac": 0.05,
+ "records_read": 40358,
+ "events": 15136,
+ "events_unclassified": 1,
+ "events_conflicting_class": 5,
+ "events_unrenderable_or_scrub": 83,
+ "dropped_duplicate_text": 0,
+ "dropped_conflicting_text": 0,
+ "records_kept": 15047,
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 888,
+   "cap": 2664
+  },
+  "select": {
+   "median": 41,
+   "cap": 123
+  },
+  "test": {
+   "median": 54,
+   "cap": 162
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 51,
+   "class_prior": {
+    "Class II (may cause temporary or reversible harm)": 1980,
+    "Class I (most serious: may cause serious harm or death)": 649,
+    "Class III (unlikely to cause harm)": 371
+   },
+   "gold_position": {
+    "A": 999,
+    "B": 979,
+    "C": 1022
+   },
+   "options": {
+    "3": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 2,
+   "class_prior": {
+    "Class II (may cause temporary or reversible harm)": 92,
+    "Class III (unlikely to cause harm)": 30,
+    "Class I (most serious: may cause serious harm or death)": 28
+   },
+   "gold_position": {
+    "A": 47,
+    "B": 54,
+    "C": 49
+   },
+   "options": {
+    "3": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 0,
+   "class_prior": {
+    "Class II (may cause temporary or reversible harm)": 102,
+    "Class I (most serious: may cause serious harm or death)": 31,
+    "Class III (unlikely to cause harm)": 17
+   },
+   "gold_position": {
+    "A": 53,
+    "B": 45,
+    "C": 52
+   },
+   "options": {
+    "3": 150
+   }
+  }
+ },
+ "files": {
+  "fda_device_recall.train.jsonl": "960a0b62f348e979ec030efb7f6bbd8a2786ed3d9522890e2729c801a379e34a",
+  "fda_device_recall.select.jsonl": "919c13e502e342e6b8b9637a89ad72e7a8cc624a2112f5ab86c18118084116bb",
+  "fda_device_recall.test.jsonl": "221e562843d64fb6b08355a206c0f7eae614a89601f1112bf7f25ab9038143ed"
+ }
+}

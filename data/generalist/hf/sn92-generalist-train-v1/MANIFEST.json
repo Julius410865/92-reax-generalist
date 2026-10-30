@@ -1,0 +1,92 @@
+{
+ "name": "sn92-generalist-train-v1",
+ "rows": 109547,
+ "shards": {
+  "train-00000.jsonl.gz": "6724ab1b7aa1b2e9d5bcd6290a6397b98ee7bfea4416f1fc3fc6d61fc4830ec1",
+  "train-00001.jsonl.gz": "99996d8e2512e5924058e4280e077fd2a927504f1a6351600b1985e5005d2807",
+  "train-00002.jsonl.gz": "3ea8343ed60ef878155477a64edd6c071f1db70b3be27621c5ff84e9b1d40e2a",
+  "train-00003.jsonl.gz": "c97e8cca58a5c69e0f2d0def8c86ede8f3e955539753960462cac5bd45a2216b",
+  "train-00004.jsonl.gz": "de852e4682ac2bd61ecbbfe5997bda98df3417869e6ecd1aa09b62d683a12e73",
+  "train-00005.jsonl.gz": "22d2f3216d958c1bb501acb23801e7190136cf7103017ab2cb4b23c74f714faa",
+  "train-00006.jsonl.gz": "25cfa3faecf3cbc9553941a9a4059d7d4aaa6026bd957c90eaa01804a4592daa",
+  "train-00007.jsonl.gz": "f99416f99ff9c7c5cf018674f7271b1a664001e8df17acad16236345338ac7b2",
+  "train-00008.jsonl.gz": "4b301051fc8578a88a6f8ec56fb19f916bf3122b3f4b997d979b7a05c7c03572",
+  "train-00009.jsonl.gz": "b41a99ff12b53b9e65b0bb4f2cb78026ab6547371ea9eaa52b8f6e7e0068e0ce",
+  "train-00010.jsonl.gz": "1062087d62fa1cf29d4eaff9ab5c4d4c7b80914877fff8df39ebe29dfbd9bab8"
+ },
+ "dropped": {
+  "drop_file": 7415,
+  "benchmark_source": 923,
+  "generator_artifact": 137,
+  "secret_like": 27,
+  "cf_group_atomic": 548
+ },
+ "category": {
+  "support_ops_logistics": 26463,
+  "rules_policy_law": 18271,
+  "finance_commerce_insurance": 15066,
+  "tools_agent_routing": 12079,
+  "knowledge_reasoning": 9987,
+  "forecasting_risk_science": 8853,
+  "coding_data_it": 7929,
+  "math_quant": 4707,
+  "language_taste": 3324,
+  "safety_security_harm": 2868
+ },
+ "qtype": {
+  "choice": 50467,
+  "noul": 35517,
+  "score": 23563
+ },
+ "lang": {
+  "en": 68539,
+  "es": 4008,
+  "de": 3992,
+  "fr": 3590,
+  "ja": 3489,
+  "pt": 3345,
+  "zh": 3104,
+  "it": 2922,
+  "ko": 2424,
+  "ru": 2061,
+  "pl": 1292,
+  "vi": 1240,
+  "ar": 1235,
+  "tr": 1229,
+  "id": 1190,
+  "nl": 1139,
+  "cs": 1097,
+  "hi": 1085,
+  "sv": 1058,
+  "sw": 643,
+  "tl": 493,
+  "bn": 354,
+  "uk": 8,
+  "yo": 6,
+  "mr": 3,
+  "te": 1
+ },
+ "licence": {
+  "CC-BY-4.0": 107379,
+  "CC0-1.0": 2168
+ },
+ "author_family": {
+  "openai": 50030,
+  "anthropic": 21859,
+  "code": 10310,
+  "qwen": 9456,
+  "unknown": 9430,
+  "deepseek-ai": 2615,
+  "zai-org": 1989,
+  "mixed": 1286,
+  "google": 714,
+  "moonshot": 608,
+  "programmatic": 532,
+  "deepseek": 426,
+  "moonshotai": 292
+ },
+ "mix_tier": {
+  "extra": 77801,
+  "core": 31746
+ }
+}

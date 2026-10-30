@@ -1,0 +1,153 @@
+{
+ "domain": "nvd_severity",
+ "kind": "rec",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": [],
+   "returncode": 0
+  },
+  "scrub": {
+   "pass": true,
+   "hits": [],
+   "hit_count": 0
+  },
+  "leak": {
+   "pass": true,
+   "category_domain": false,
+   "nb_accuracy": 0.51,
+   "best_constant": 0.4467,
+   "margin_allowed": 0.25,
+   "telling_words": {
+    "Critical (CVSS v3 base score 9.0-10.0)": [
+     "weblogic",
+     "c1",
+     "adobe",
+     "projector",
+     "justines",
+     "srv",
+     "boafrm",
+     "acc",
+     "dwr-m961",
+     "ready",
+     "reservation",
+     "hotel"
+    ],
+    "High (CVSS v3 base score 7.0-8.9)": [
+     "vma",
+     "ntfs",
+     "llcp",
+     "ieee80211",
+     "inclusion'",
+     "python",
+     "nfc",
+     "wmi",
+     "descriptor",
+     "uaf",
+     "nr",
+     "detach"
+    ],
+    "Low (CVSS v3 base score 0.1-3.9)": [
+     "myxalytics",
+     "photos",
+     "uefi",
+     "rcube",
+     "owned",
+     "openbao",
+     "loader",
+     "indicated",
+     "einval",
+     "registrations",
+     "abap",
+     "realtime"
+    ],
+    "Medium (CVSS v3 base score 4.0-6.9)": [
+     "logo",
+     "title",
+     "mybb",
+     "gso",
+     "deadlock",
+     "led",
+     "author-level",
+     "trick",
+     "contributor-level",
+     "shortcodes",
+     "accessibility",
+     "soc"
+    ]
+   },
+   "eval_items": 300
+  },
+  "licence": {
+   "pass": true,
+   "licence": {
+    "name": "NVD public domain; CVE descriptions: CVE Terms of Use (MITRE)",
+    "url": "https://www.cve.org/Legal/TermsOfUse",
+    "notice": "CVE descriptions (c) The MITRE Corporation, reproduced under the CVE Terms of Use"
+   }
+  },
+  "shortcut": {
+   "longest_option": 0.1239,
+   "most_word_overlap": 0.2458,
+   "most_frequent_position": 0.2552,
+   "best_constant_answer": 0.4491,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "gold_position_shares": [
+     0.244,
+     0.257,
+     0.245,
+     0.254
+    ],
+    "max_deviation": 0.007
+   },
+   "select": {
+    "gold_position_shares": [
+     0.22,
+     0.26,
+     0.24,
+     0.28
+    ],
+    "max_deviation": 0.03
+   },
+   "test": {
+    "gold_position_shares": [
+     0.3,
+     0.22,
+     0.253,
+     0.227
+    ],
+    "max_deviation": 0.05
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 258,
+   "p99": 444,
+   "max": 711,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

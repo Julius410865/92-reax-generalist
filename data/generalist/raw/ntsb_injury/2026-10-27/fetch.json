@@ -1,0 +1,81 @@
+{
+ "domain": "ntsb_injury",
+ "snapshot": "2026-10-27",
+ "files": {
+  "avdata.index.html": {
+   "url": "https://data.ntsb.gov/avdata",
+   "method": "GET",
+   "status": 200,
+   "bytes": 227711,
+   "sha256": "d2e72e09802abedc3d09b39fae7c0995c323ed11172fdec498d39bf98a8ef816",
+   "fetched_utc": "2026-10-27T21:23:26Z"
+  },
+  "avall.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=avall.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 96583215,
+   "sha256": "bc74fefb1b39e1b86700a4be82b8ff6014bb1f6d81008524de73f2ddbd38b052",
+   "fetched_utc": "2026-10-27T21:23:31Z"
+  },
+  "up08OCT.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=up08OCT.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 556008,
+   "sha256": "1d64465696d13b6500cc313ee2ed637f36dc979a8e69cd906b6ec5ab72c913de",
+   "fetched_utc": "2026-10-27T21:23:33Z"
+  },
+  "up15OCT.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=up15OCT.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 650610,
+   "sha256": "7503a188a8f0b371319cfbb1f5bf8f5d3a29c3d95e3168eba4bcb519192b9c3f",
+   "fetched_utc": "2026-10-27T21:23:36Z"
+  },
+  "up22OCT.zip": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=up22OCT.zip",
+   "method": "GET",
+   "status": 200,
+   "bytes": 1055425,
+   "sha256": "6892ff7aa538fbcb71101261f657a62821dc80d87dbbc47d8f0326feda7eb433",
+   "fetched_utc": "2026-10-27T21:23:38Z"
+  },
+  "eadmspub.pdf": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=eadmspub.pdf",
+   "method": "GET",
+   "status": 200,
+   "bytes": 58852,
+   "sha256": "5073128dc8be4cc2e483f8138d1d124c2451f3f9b0df7c760bb08ab49d71ba79",
+   "fetched_utc": "2026-10-27T21:23:40Z"
+  },
+  "MDB_Release_Notes.pdf": {
+   "url": "https://data.ntsb.gov/avdata/FileDirectory/DownloadFile?fileID=MDB_Release_Notes.pdf",
+   "method": "GET",
+   "status": 200,
+   "bytes": 54606,
+   "sha256": "2bdd9ec386afc3ef7d9970d01553649f9a4b36715095480479c89bfc8eff80ca",
+   "fetched_utc": "2026-10-27T21:23:42Z"
+  }
+ },
+ "licence": {
+  "name": "Public domain (US government work, 17 U.S.C. 105; NTSB aviation accident database)",
+  "url": "https://www.usa.gov/government-works",
+  "source_page": "https://data.ntsb.gov/avdata"
+ },
+ "apply_order": [
+  "avall.zip",
+  "up08OCT.zip",
+  "up15OCT.zip",
+  "up22OCT.zip"
+ ],
+ "created": {
+  "avall.zip": "2026-10-01T07:36:33",
+  "up08OCT.zip": "2026-10-08T03:00:35",
+  "up15OCT.zip": "2026-10-15T08:49:18",
+  "up22OCT.zip": "2026-10-22T03:01:13",
+  "eadmspub.pdf": "2021-09-15T15:33:48",
+  "MDB_Release_Notes.pdf": "2026-05-05T20:21:31"
+ }
+}

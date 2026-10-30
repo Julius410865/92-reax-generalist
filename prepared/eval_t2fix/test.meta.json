@@ -1,0 +1,39 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/t2fix.json",
+ "stage": "t2fix",
+ "split": "test",
+ "digest": "e89008d83d759bad",
+ "tokenizer": "a5cd9732badce41d",
+ "sources": {
+  "MIX-test": {
+   "items": 5750,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "MIX-check": {
+   "items": 5700,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "test_extra": {
+   "items": 2279,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "dev": {
+   "items": 150,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "hf_mix": {
+   "items": 155,
+   "unconvertible": 0,
+   "files": 1
+  }
+ },
+ "items": 14034,
+ "questions": 19769,
+ "tokens": 7312844,
+ "render_failed": 0,
+ "over_max_length": 0
+}

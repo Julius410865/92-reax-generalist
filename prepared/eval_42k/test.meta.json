@@ -1,0 +1,50 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/train_42k.json",
+ "stage": "train_42k",
+ "split": "test",
+ "digest": "d8e797f81c805ae0",
+ "tokenizer": "a5cd9732badce41d",
+ "sources": {
+  "hf": {
+   "items": 718,
+   "unconvertible": 0,
+   "files": 11
+  },
+  "dev": {
+   "items": 300,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "n_records": {
+   "items": 1695,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "openai_anthropic": {
+   "items": 704,
+   "unconvertible": 0,
+   "files": 1,
+   "over_group_cap": 295
+  },
+  "t_part": {
+   "items": 1050,
+   "unconvertible": 0,
+   "files": 7
+  },
+  "n_records_extra": {
+   "items": 135,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "gen": {
+   "items": 1050,
+   "unconvertible": 0,
+   "files": 7
+  }
+ },
+ "items": 5652,
+ "questions": 6384,
+ "tokens": 2936700,
+ "render_failed": 0,
+ "over_max_length": 0
+}

@@ -1,0 +1,38 @@
+{
+ "what": "N part: real public records turned into questions (two record domains built with the others but not in dataset/n_records)",
+ "built_by": "tools/records/build_<domain>.py; checks data/generalist/reports/<domain>.json (all pass), audits 0 errors",
+ "format": "same rows as dataset/n_records, copied byte for byte",
+ "domains": {
+  "cpsc_hazard": {
+   "task_type": "cpsc_hazard_type",
+   "area": "retrieval",
+   "licence": {
+    "name": "US government work (public domain, 17 U.S.C. 105); CPSC: recall notices may be freely copied and distributed, please credit CPSC, no implied endorsement; recall photographs not used",
+    "url": "https://www.cpsc.gov/About-CPSC/Policies-Statements-and-Directives/Privacy-Policy",
+    "api": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information"
+   },
+   "snapshot": "2026-10-27",
+   "source_manifest": "data/generalist/rec/cpsc_hazard.manifest.json"
+  },
+  "kep": {
+   "task_type": "kep_status",
+   "area": "language",
+   "licence": {
+    "name": "Apache-2.0",
+    "url": "https://github.com/kubernetes/enhancements/blob/ea3e81a0d41dd3df7dae584ea584c31de56cd3cb/LICENSE"
+   },
+   "snapshot": "2026-10-27",
+   "source_manifest": "data/generalist/rec/kep.manifest.json"
+  }
+ },
+ "splits": {
+  "train": 872,
+  "select": 113,
+  "test": 135
+ },
+ "files": {
+  "train.jsonl": "535cf53451a9bba78af8358604f86b774296cb67efd4c53b5de05d6adb052c4a",
+  "select.jsonl": "667232f91002513ab4014e1bca6db855cfb55b0ee1afeefba8c166290ecbfe53",
+  "test.jsonl": "8b0d6626cda54bb18e23e39e05f03976e3a88e5e651e7b30cbe4f598bfa04f46"
+ }
+}

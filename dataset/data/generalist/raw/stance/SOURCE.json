@@ -1,0 +1,19 @@
+{
+ "task": "stance",
+ "licence": "CC BY 4.0. args.me corpus (version 1.0-cleaned), Yamen Ajjour, Henning Wachsmuth, Johannes Kiesel, Martin Potthast, Matthias Hagen, Benno Stein (2020), Zenodo, doi:10.5281/zenodo.4139439, https://doi.org/10.5281/zenodo.4139439; described in Wachsmuth et al. (2017), 'Building an Argument Search Engine for the Web', Proceedings of the 4th Workshop on Argument Mining, pp. 49-59. Mirror used: https://huggingface.co/datasets/webis/args_me. Arguments originate from idebate.org and debatewise.org.",
+ "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+ "downloaded": "2026-10-27",
+ "files": {
+  "README.md": {
+   "url": "https://huggingface.co/datasets/webis/args_me/resolve/042bdf645bc980c751e9b217cc77e47624394390/README.md",
+   "sha256": "b4a21d42a1a1c22885a08bb4618f72849fd1834aaa159749023b975fafc09b61",
+   "bytes": 4842
+  },
+  "args-me.jsonl": {
+   "url": "https://huggingface.co/datasets/webis/args_me/resolve/042bdf645bc980c751e9b217cc77e47624394390/args-me.jsonl",
+   "sha256": "dc49ce6a5547370034be99365e8041d91ce477dbb4e0012ae16c0a6ecdd28187",
+   "bytes": 886320113
+  }
+ },
+ "notes": "Builder stance-1. Label = the premise's structured stance field (PRO/CON) towards the record's conclusion; the dataset's loading script args_me.py was not downloaded or run. Topic = conclusion, argument = premise text, cleaned and cut to whole sentences within 700 characters; portals ['debatewise.org', 'idebate.org']; filters in tools/records/build_stance.py. Group key (source_id) = normalised conclusion; the split is the hash of the component joining topics that share a discussion title or an argument prefix."
+}

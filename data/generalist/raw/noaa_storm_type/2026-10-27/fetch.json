@@ -1,0 +1,64 @@
+{
+ "domain": "noaa_storm_type",
+ "snapshot": "2026-10-27",
+ "files": {
+  "csvfiles.index.html": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/",
+   "method": "GET",
+   "status": 200,
+   "bytes": 53139,
+   "sha256": "0b2494a0377f6a8780a66f96eb632507309c1892148fde61b8cf152ef1d1c7c5",
+   "fetched_utc": "2026-10-27T21:15:42Z"
+  },
+  "README": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/README",
+   "method": "GET",
+   "status": 200,
+   "bytes": 2013,
+   "sha256": "a397a60ef942a5ce6594935be1a854a045e1eaca0ea68398fd41f95d66dacb34",
+   "fetched_utc": "2026-10-27T21:15:44Z"
+  },
+  "Storm-Data-Bulk-csv-Format.pdf": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/Storm-Data-Bulk-csv-Format.pdf",
+   "method": "GET",
+   "status": 200,
+   "bytes": 341218,
+   "sha256": "3bd18968d34da43e192f8a7fb8e5548c4fa7d24ede016d2d068d849ee1392df6",
+   "fetched_utc": "2026-10-27T21:15:47Z"
+  },
+  "StormEvents_details-ftp_v1.0_d2024_c20260728.csv.gz": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2024_c20260728.csv.gz",
+   "method": "GET",
+   "status": 200,
+   "bytes": 12693243,
+   "sha256": "2070b83eccab041b36360ab73645b9a249c3eefc5b92b5b3fc0cbba4d9fcc09c",
+   "fetched_utc": "2026-10-27T21:15:50Z"
+  },
+  "StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+   "method": "GET",
+   "status": 200,
+   "bytes": 12585209,
+   "sha256": "d9b46b4c6aae554723cadbb9691f3d5258371c02e530ba815d6fe41e4550149f",
+   "fetched_utc": "2026-10-27T21:15:53Z"
+  },
+  "StormEvents_details-ftp_v1.0_d2026_c20261026.csv.gz": {
+   "url": "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_details-ftp_v1.0_d2026_c20261026.csv.gz",
+   "method": "GET",
+   "status": 200,
+   "bytes": 9233803,
+   "sha256": "53e6118446f19a522abeb7ececca1dfdae3090117bc1297e2a774f21f13ee83a",
+   "fetched_utc": "2026-10-27T21:15:56Z"
+  }
+ },
+ "licence": {
+  "name": "Public domain (US government work, 17 U.S.C. 105; NOAA NCEI Storm Events Database)",
+  "url": "https://www.usa.gov/government-works",
+  "source_page": "https://www.ncei.noaa.gov/stormevents/"
+ },
+ "details_files": {
+  "2024": "StormEvents_details-ftp_v1.0_d2024_c20260728.csv.gz",
+  "2025": "StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+  "2026": "StormEvents_details-ftp_v1.0_d2026_c20261026.csv.gz"
+ }
+}

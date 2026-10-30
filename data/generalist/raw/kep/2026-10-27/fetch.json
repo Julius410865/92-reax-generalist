@@ -1,0 +1,26 @@
+{
+ "domain": "kep",
+ "snapshot": "2026-10-27",
+ "files": {
+  "enhancements.head.json": {
+   "url": "https://api.github.com/repos/kubernetes/enhancements/commits/HEAD",
+   "method": "GET",
+   "status": 200,
+   "bytes": 5987,
+   "sha256": "29ea7715ff913a89576903bcf59828ea6ff863f65bc7505b0c051552f9cae719",
+   "fetched_utc": "2026-10-27T21:16:34Z"
+  },
+  "enhancements-ea3e81a0d41d.tar.gz": {
+   "url": "https://codeload.github.com/kubernetes/enhancements/tar.gz/ea3e81a0d41dd3df7dae584ea584c31de56cd3cb",
+   "method": "GET",
+   "status": 200,
+   "bytes": 33848052,
+   "sha256": "da5b294b17e0ff6a965d6689a4c43efa502746c32180065b97bcc95ca01ffb7f",
+   "fetched_utc": "2026-10-27T21:16:37Z"
+  }
+ },
+ "licence": {
+  "name": "Apache-2.0",
+  "url": "https://github.com/kubernetes/enhancements/blob/ea3e81a0d41dd3df7dae584ea584c31de56cd3cb/LICENSE"
+ }
+}

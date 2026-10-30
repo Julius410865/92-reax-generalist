@@ -1,0 +1,35 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/all.json",
+ "stage": "all",
+ "split": "test",
+ "digest": "7c6d7c9ac42ffa8f",
+ "tokenizer": "a5cd9732badce41d",
+ "sources": {
+  "hf": {
+   "items": 718,
+   "unconvertible": 0,
+   "files": 11
+  },
+  "dev": {
+   "items": 300,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "n_records": {
+   "items": 1695,
+   "unconvertible": 0,
+   "files": 1
+  },
+  "openai_anthropic": {
+   "items": 704,
+   "unconvertible": 0,
+   "files": 1,
+   "over_group_cap": 295
+  }
+ },
+ "items": 3417,
+ "questions": 3549,
+ "tokens": 1707687,
+ "render_failed": 0,
+ "over_max_length": 0
+}

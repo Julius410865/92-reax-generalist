@@ -1,0 +1,65 @@
+{
+ "domain": "warranty_claim",
+ "kind": "gen",
+ "rows": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "rows": 3300,
+   "problems": [],
+   "problem_count": 0
+  },
+  "determinism": {
+   "pass": true,
+   "files": 3,
+   "changed": []
+  },
+  "second_solver": {
+   "pass": true,
+   "questions": 13202,
+   "disagreements": 0,
+   "examples": []
+  },
+  "boundary_tests": {
+   "pass": true,
+   "summary": "3 passed in 0.13s"
+  },
+  "shortcut": {
+   "longest_option": 0.507,
+   "most_word_overlap": 0.5326,
+   "most_frequent_position": 0.507,
+   "best_constant_answer": 0.507,
+   "pass": true
+  },
+  "balance": {
+   "pass": true,
+   "train": {
+    "yes_share": 0.508
+   },
+   "select": {
+    "yes_share": 0.496
+   },
+   "test": {
+    "yes_share": 0.508
+   }
+  },
+  "duplicates": {
+   "pass": true,
+   "within_domain": [],
+   "against_other_files": [],
+   "count": 0
+  },
+  "prompt_length": {
+   "pass": true,
+   "p50": 499,
+   "p99": 571,
+   "max": 578,
+   "limit": 2000
+  }
+ },
+ "pass": true
+}

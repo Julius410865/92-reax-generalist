@@ -1,0 +1,116 @@
+{
+ "domain": "fda_drug",
+ "task_type": "fda_drug_marketing_status",
+ "area": "language",
+ "snapshot": "2026-10-27",
+ "licence": {
+  "name": "CC0-1.0 (openFDA: public domain, Creative Commons CC0 1.0 Universal dedication)",
+  "url": "https://open.fda.gov/license/",
+  "terms": "https://open.fda.gov/terms/"
+ },
+ "export_date": "2026-10-27",
+ "sources": {
+  "download.json": {
+   "url": "https://api.fda.gov/download.json",
+   "sha256": "0ec5ae8c3c04fb6829d7b205fb158e932cc2341bdae390a712601fc5c8ca7aeb"
+  },
+  "drug-drugsfda-0001-of-0001.json.zip": {
+   "url": "https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip",
+   "sha256": "f3d8910f459f27346b2da623b3ae4f7d301cb39d5f7893c86c12629b08b94fb6"
+  }
+ },
+ "label_field": "products[].marketing_status",
+ "labels": {
+  "Prescription": "Prescription: on the market, dispensed only with a prescription",
+  "Over-the-counter": "Over-the-counter: on the market, sold without a prescription",
+  "Discontinued": "Discontinued: no longer on the market",
+  "None (Tentative Approval)": "Tentative approval only: may not be sold yet"
+ },
+ "group_key": "application_number",
+ "eval_frac": 0.05,
+ "records_read": 51911,
+ "records_with_label": 51911,
+ "dropped_unrenderable_or_scrub": 1386,
+ "dropped_duplicate_text": 1721,
+ "dropped_conflicting_text": 1316,
+ "records_kept": 47488,
+ "classes_dropped_under_min": {},
+ "caps": {
+  "train": {
+   "median": 9967.0,
+   "cap": 29901
+  },
+  "select": {
+   "median": 576.0,
+   "cap": 1728
+  },
+  "test": {
+   "median": 572.5,
+   "cap": 1717
+  }
+ },
+ "splits": {
+  "train": {
+   "rows": 3000,
+   "fresh": 16,
+   "class_prior": {
+    "Prescription: on the market, dispensed only with a prescription": 1540,
+    "Discontinued: no longer on the market": 1366,
+    "Tentative approval only: may not be sold yet": 62,
+    "Over-the-counter: on the market, sold without a prescription": 32
+   },
+   "gold_position": {
+    "A": 786,
+    "B": 733,
+    "C": 750,
+    "D": 731
+   },
+   "options": {
+    "4": 3000
+   }
+  },
+  "select": {
+   "rows": 150,
+   "fresh": 1,
+   "class_prior": {
+    "Prescription: on the market, dispensed only with a prescription": 76,
+    "Discontinued: no longer on the market": 71,
+    "Over-the-counter: on the market, sold without a prescription": 2,
+    "Tentative approval only: may not be sold yet": 1
+   },
+   "gold_position": {
+    "A": 34,
+    "B": 45,
+    "C": 31,
+    "D": 40
+   },
+   "options": {
+    "4": 150
+   }
+  },
+  "test": {
+   "rows": 150,
+   "fresh": 2,
+   "class_prior": {
+    "Prescription: on the market, dispensed only with a prescription": 73,
+    "Discontinued: no longer on the market": 67,
+    "Over-the-counter: on the market, sold without a prescription": 6,
+    "Tentative approval only: may not be sold yet": 4
+   },
+   "gold_position": {
+    "A": 39,
+    "B": 33,
+    "C": 39,
+    "D": 39
+   },
+   "options": {
+    "4": 150
+   }
+  }
+ },
+ "files": {
+  "fda_drug.train.jsonl": "915b586eba746806681ed0cb29860975235e90630029e857a03d659f80c8d827",
+  "fda_drug.select.jsonl": "7e909d4e75f26cc9023ea44146417049b4f6baece4a320fb80315c7363d7542a",
+  "fda_drug.test.jsonl": "2b1d77758251bdcb7b9676cf45f0c6044556ebf8ddeffcf74965907164a2284a"
+ }
+}

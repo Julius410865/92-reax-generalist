@@ -1,0 +1,79 @@
+{
+ "task": "nli",
+ "counts": {
+  "train": 3000,
+  "select": 150,
+  "test": 150
+ },
+ "checks": {
+  "schema": {
+   "pass": true,
+   "problems": [],
+   "n_problems": 0
+  },
+  "sizes": {
+   "pass": true,
+   "counts": {
+    "train": 3000,
+    "select": 150,
+    "test": 150
+   }
+  },
+  "leakage": {
+   "pass": true,
+   "cross_split_duplicates": 0,
+   "dev_duplicates": 0,
+   "groups_in_two_splits": 0
+  },
+  "train_duplicates": {
+   "pass": true,
+   "n": 0
+  },
+  "balance": {
+   "pass": true,
+   "gold_position_max_deviation": {
+    "3": 0.009
+   },
+   "yes_share": null,
+   "top_gold_text_share": 0.05,
+   "distinct_gold_texts": 93
+  },
+  "shortcuts": {
+   "pass": true,
+   "chance": 0.333,
+   "cue_accuracy": {
+    "longest": 0.333,
+    "shortest": 0.32,
+    "overlap": 0.332
+   },
+   "dev_cue_accuracy": {
+    "longest": 0.35,
+    "shortest": 0.35,
+    "overlap": 0.367
+   },
+   "limit": {
+    "longest": 0.483,
+    "shortest": 0.483,
+    "overlap": 0.483
+   },
+   "questions": 6600
+  },
+  "prompt_tokens": {
+   "pass": true,
+   "p50": 178,
+   "p99": 251,
+   "max": 372
+  },
+  "source": {
+   "pass": true,
+   "licence": "OANC licence (permissive: free to use, modify and share) for the MultiNLI government, slate, telephone and travel genres, per the MultiNLI data statement (Williams, Nangia and Bowman 2018); the fiction genre is excluded because one of its works is CC BY-SA 3.0 and rows do not identify it",
+   "files": 1
+  }
+ },
+ "sha256": {
+  "train": "7ffde897565efcba8bf5f3633aa2c1191044e1eb9a7932fd93ce251461694ed8",
+  "select": "df332572b12c5749e8880d94a2a80fc11a1987fa02f09bc3f4ece155d199edb0",
+  "test": "ea5c588cade6b4f94e3d9ab68c2f76025755f5b50d26e94ca275721bba2cc6f4"
+ },
+ "pass": true
+}

@@ -1,0 +1,601 @@
+{
+ "rule": "every MIX-train row (REBALANCE / PAD repairs) plus REFILL plus dev_train; hf_s1 = MIX-hf_s1; see tools/build_t2fix.py",
+ "rebalance": {
+  "sources": {
+   "shipping_rate": [
+    "own_gen-1_shipping_rate",
+    "own_t2_shipping_rate_air",
+    "own_t2_shipping_rate_courier",
+    "own_t2_shipping_rate_gen",
+    "own_t2_shipping_rate_pallet",
+    "own_t2_shipping_rate_postal"
+   ]
+  },
+  "dev_positions": {
+   "shipping_rate": {
+    "1": 4,
+    "2": 8,
+    "3": 7,
+    "4": 2,
+    "5": 1
+   }
+  },
+  "method": "target position from the dev distribution (sha256 of the id); wrong options d -> 2 x gold - d"
+ },
+ "pad": {
+  "sources": {
+   "next_api": [
+    "own_gen-1_next_api"
+   ],
+   "tool_retrieval": [
+    "own_gen-1_tool_retrieval"
+   ]
+  },
+  "to": 26,
+  "method": "options of other rows of the same source; no resource of the item"
+ },
+ "repairs": {
+  "rebalance|own_t2_shipping_rate_courier": {
+   "moved_up": 258,
+   "at_target": 39,
+   "moved_down": 15
+  },
+  "pad|own_gen-1_next_api": {
+   "padded": 559,
+   "options_added": 5313,
+   "unchanged": 20
+  },
+  "rebalance|own_t2_shipping_rate_postal": {
+   "at_target": 42,
+   "moved_up": 206,
+   "moved_down": 16,
+   "short_up": 4
+  },
+  "rebalance|own_t2_shipping_rate_pallet": {
+   "at_target": 77,
+   "moved_up": 109,
+   "moved_down": 74
+  },
+  "rebalance|own_gen-1_shipping_rate": {
+   "moved_down": 161,
+   "at_target": 252,
+   "moved_up": 383,
+   "short_down": 5
+  },
+  "pad|own_gen-1_tool_retrieval": {
+   "padded": 449,
+   "options_added": 3868,
+   "unchanged": 33
+  },
+  "rebalance|own_t2_shipping_rate_air": {
+   "moved_up": 162,
+   "at_target": 44,
+   "moved_down": 19
+  },
+  "rebalance|own_t2_shipping_rate_gen": {
+   "moved_up": 184,
+   "at_target": 122,
+   "moved_down": 83,
+   "short_down": 4,
+   "short_up": 1
+  }
+ },
+ "shortcut_before": {
+  "own_gen-1_shipping_rate": {
+   "n": 801,
+   "position": {
+    "2": 0.333,
+    "3": 0.551,
+    "4": 0.115,
+    "5": 0.001
+   },
+   "nearest_mean": 0.282
+  },
+  "own_t2_shipping_rate_air": {
+   "n": 225,
+   "position": {
+    "2": 0.071,
+    "3": 0.462,
+    "4": 0.413,
+    "5": 0.053
+   },
+   "nearest_mean": 0.471
+  },
+  "own_t2_shipping_rate_courier": {
+   "n": 312,
+   "position": {
+    "2": 0.019,
+    "3": 0.244,
+    "4": 0.535,
+    "5": 0.202
+   },
+   "nearest_mean": 0.096
+  },
+  "own_t2_shipping_rate_gen": {
+   "n": 394,
+   "position": {
+    "2": 0.32,
+    "3": 0.543,
+    "4": 0.127,
+    "5": 0.01
+   },
+   "nearest_mean": 0.317
+  },
+  "own_t2_shipping_rate_pallet": {
+   "n": 260,
+   "position": {
+    "1": 0.054,
+    "2": 0.408,
+    "3": 0.442,
+    "4": 0.096
+   },
+   "nearest_mean": 0.319
+  },
+  "own_t2_shipping_rate_postal": {
+   "n": 268,
+   "position": {
+    "2": 0.026,
+    "3": 0.205,
+    "4": 0.616,
+    "5": 0.153
+   },
+   "nearest_mean": 0.09
+  },
+  "own_t2_shipping_rate_zone": {
+   "n": 410,
+   "position": {
+    "1": 0.171,
+    "2": 0.307,
+    "3": 0.329,
+    "4": 0.173,
+    "5": 0.02
+   },
+   "nearest_mean": 0.329
+  }
+ },
+ "shortcut_after": {
+  "own_gen-1_shipping_rate": {
+   "n": 801,
+   "position": {
+    "1": 0.194,
+    "2": 0.367,
+    "3": 0.332,
+    "4": 0.089,
+    "5": 0.019
+   },
+   "nearest_mean": 0.21
+  },
+  "own_t2_shipping_rate_air": {
+   "n": 225,
+   "position": {
+    "1": 0.196,
+    "2": 0.36,
+    "3": 0.351,
+    "4": 0.076,
+    "5": 0.018
+   },
+   "nearest_mean": 0.28
+  },
+  "own_t2_shipping_rate_courier": {
+   "n": 312,
+   "position": {
+    "1": 0.202,
+    "2": 0.381,
+    "3": 0.314,
+    "4": 0.087,
+    "5": 0.016
+   },
+   "nearest_mean": 0.288
+  },
+  "own_t2_shipping_rate_gen": {
+   "n": 394,
+   "position": {
+    "1": 0.188,
+    "2": 0.376,
+    "3": 0.307,
+    "4": 0.089,
+    "5": 0.041
+   },
+   "nearest_mean": 0.211
+  },
+  "own_t2_shipping_rate_pallet": {
+   "n": 260,
+   "position": {
+    "1": 0.2,
+    "2": 0.338,
+    "3": 0.3,
+    "4": 0.112,
+    "5": 0.05
+   },
+   "nearest_mean": 0.196
+  },
+  "own_t2_shipping_rate_postal": {
+   "n": 268,
+   "position": {
+    "1": 0.149,
+    "2": 0.384,
+    "3": 0.321,
+    "4": 0.131,
+    "5": 0.015
+   },
+   "nearest_mean": 0.317
+  },
+  "own_t2_shipping_rate_zone": {
+   "n": 410,
+   "position": {
+    "1": 0.171,
+    "2": 0.307,
+    "3": 0.329,
+    "4": 0.173,
+    "5": 0.02
+   },
+   "nearest_mean": 0.329
+  }
+ },
+ "shortcut_dev": {
+  "procedural_shipping_tariff": {
+   "n": 22,
+   "position": {
+    "1": 0.182,
+    "2": 0.364,
+    "3": 0.318,
+    "4": 0.091,
+    "5": 0.045
+   },
+   "nearest_mean": 0.364
+  }
+ },
+ "refill_rows": 163,
+ "refill_questions": 653,
+ "dev_train": 150,
+ "dev_holdout": 150,
+ "dev_train_by_type": {
+  "nhtsa_recall_component": 17,
+  "python_pep_status": 11,
+  "rfc_status": 11,
+  "shipping_rate": 11,
+  "expense_policy": 10,
+  "nli": 10,
+  "arxiv_category": 6,
+  "best_of_32": 6,
+  "intent_utterance": 6,
+  "logic_multistep": 6,
+  "poem_pair": 5,
+  "stance": 5,
+  "story_continuation": 5,
+  "tool_call_decision": 5,
+  "chord_from_notes": 4,
+  "code_output": 4,
+  "next_api": 4,
+  "tool_retrieval": 4,
+  "when2call": 4,
+  "wildguard": 4,
+  "arith_word_10": 3,
+  "arith_word_4": 3,
+  "causal_yesno": 3,
+  "omniscience": 2,
+  "chess_best_move": 1
+ },
+ "extra": {
+  "types": [
+   "congress_bill_status",
+   "ghsa_severity",
+   "ntrs_subject_category",
+   "ntsb_injury_severity",
+   "ted_cpv_division",
+   "asf_podling_outcome",
+   "insurance_payout",
+   "loan_approval",
+   "warranty_claim",
+   "coupon_stacking",
+   "library_fine",
+   "toll_charge",
+   "building_permit_fee",
+   "sla_credit",
+   "arxiv_category_api",
+   "wildguard_aegis"
+  ],
+  "rows": {
+   "train": 17429,
+   "select": 2278,
+   "test": 2279
+  },
+  "train_by_task_type": {
+   "arxiv_category": 2500,
+   "wildguard": 1500,
+   "congress_bill_status": 1027,
+   "ghsa_severity": 1027,
+   "ntrs_subject_category": 1027,
+   "ntsb_injury_severity": 1027,
+   "ted_cpv_division": 1027,
+   "insurance_payout": 1000,
+   "loan_approval": 1000,
+   "warranty_claim": 1000,
+   "coupon_stacking": 1000,
+   "library_fine": 1000,
+   "toll_charge": 1000,
+   "building_permit_fee": 1000,
+   "sla_credit": 1000,
+   "asf_podling_outcome": 294
+  }
+ },
+ "train": {
+  "rows": 77932,
+  "questions": 94035,
+  "by_task_type": {
+   "arith_word_10": {
+    "before": 1256,
+    "after": 1259
+   },
+   "arith_word_4": {
+    "before": 1256,
+    "after": 1259
+   },
+   "arxiv_category": {
+    "before": 2669,
+    "after": 5175
+   },
+   "asf_podling_outcome": {
+    "before": 0,
+    "after": 294
+   },
+   "best_of_32": {
+    "before": 2669,
+    "after": 2675
+   },
+   "building_permit_fee": {
+    "before": 0,
+    "after": 1000
+   },
+   "causal_yesno": {
+    "before": 1256,
+    "after": 1259
+   },
+   "chess_best_move": {
+    "before": 628,
+    "after": 629
+   },
+   "chord_from_notes": {
+    "before": 1882,
+    "after": 1886
+   },
+   "clinical_trial_status": {
+    "before": 1027,
+    "after": 1027
+   },
+   "code_output": {
+    "before": 1884,
+    "after": 1888
+   },
+   "congress_bill_status": {
+    "before": 0,
+    "after": 1027
+   },
+   "coupon_stacking": {
+    "before": 0,
+    "after": 1000
+   },
+   "cpsc_hazard": {
+    "before": 1027,
+    "after": 1027
+   },
+   "cve_severity": {
+    "before": 1027,
+    "after": 1027
+   },
+   "device_recall_class": {
+    "before": 1027,
+    "after": 1027
+   },
+   "drug_marketing_status": {
+    "before": 1027,
+    "after": 1027
+   },
+   "expense_policy": {
+    "before": 576,
+    "after": 586
+   },
+   "fedreg_agency": {
+    "before": 1027,
+    "after": 1027
+   },
+   "food_recall_class": {
+    "before": 1027,
+    "after": 1027
+   },
+   "ghsa_severity": {
+    "before": 0,
+    "after": 1027
+   },
+   "income_tax": {
+    "before": 1027,
+    "after": 1027
+   },
+   "insurance_payout": {
+    "before": 0,
+    "after": 1000
+   },
+   "intent_utterance": {
+    "before": 2669,
+    "after": 2675
+   },
+   "library_fine": {
+    "before": 0,
+    "after": 1000
+   },
+   "loan_approval": {
+    "before": 0,
+    "after": 1000
+   },
+   "logic_multistep": {
+    "before": 2096,
+    "after": 2102
+   },
+   "next_api": {
+    "before": 1928,
+    "after": 1932
+   },
+   "nhtsa_recall_component": {
+    "before": 2670,
+    "after": 2687
+   },
+   "nli": {
+    "before": 4682,
+    "after": 4692
+   },
+   "ntrs_subject_category": {
+    "before": 0,
+    "after": 1027
+   },
+   "ntsb_injury_severity": {
+    "before": 0,
+    "after": 1027
+   },
+   "omniscience": {
+    "before": 1047,
+    "after": 1049
+   },
+   "parental_leave": {
+    "before": 206,
+    "after": 206
+   },
+   "payroll_overtime": {
+    "before": 1027,
+    "after": 1027
+   },
+   "poem_pair": {
+    "before": 2118,
+    "after": 2123
+   },
+   "proposal_status": {
+    "before": 2362,
+    "after": 2362
+   },
+   "python_pep_status": {
+    "before": 308,
+    "after": 319
+   },
+   "refund_policy": {
+    "before": 1027,
+    "after": 1027
+   },
+   "rfc_status": {
+    "before": 2670,
+    "after": 2681
+   },
+   "shipping_rate": {
+    "before": 2670,
+    "after": 2681
+   },
+   "sla_credit": {
+    "before": 0,
+    "after": 1000
+   },
+   "stance": {
+    "before": 1756,
+    "after": 1761
+   },
+   "storm_event_type": {
+    "before": 1027,
+    "after": 1027
+   },
+   "story_continuation": {
+    "before": 2341,
+    "after": 2346
+   },
+   "ted_cpv_division": {
+    "before": 0,
+    "after": 1027
+   },
+   "toll_charge": {
+    "before": 0,
+    "after": 1000
+   },
+   "tool_call_decision": {
+    "before": 532,
+    "after": 700
+   },
+   "tool_retrieval": {
+    "before": 1607,
+    "after": 1611
+   },
+   "utility_tariff": {
+    "before": 1027,
+    "after": 1027
+   },
+   "warranty_claim": {
+    "before": 0,
+    "after": 1000
+   },
+   "when2call": {
+    "before": 1607,
+    "after": 1611
+   },
+   "wildguard": {
+    "before": 521,
+    "after": 2025
+   }
+  }
+ },
+ "inputs_sha256": {
+  "dataset/t2/MIX-train.jsonl": "d7dfaad9b578af5d3701535412ceb770b1073c88d270494825c0ee6dc7abd8f8",
+  "dataset/t2/MIX-hf_s1.jsonl": "402f42f190ab46138a2cacb9b0865d1f896307d0d34a6a507c7f742fbb6944dc",
+  "dataset/t2/tool_call_decision.train.jsonl": "e7ffc0887703f960437e21e19c8b462d8a4c8360f0b0a5e4c5ab1393fdab4e99",
+  "eval-v5/devset-v1/dev.jsonl": "64ef7f8620961c8e4b9d43e275d4261544a20c801371f68889bbed60cf5bb404",
+  "dataset/t2/congress_bill_status.train.jsonl": "a19545a1b8916cbd99b0d7a624029a7d8391e96b83d83691e3738574d922f44f",
+  "dataset/t2/congress_bill_status.select.jsonl": "38ec85cbccf0ddc1eaaaa122035c821c92d832f65efec44ba860b03b6798bce3",
+  "dataset/t2/congress_bill_status.test.jsonl": "75f90b99a1f32b3a3f8802055abdf2c0d710135134b2bb5cdf35fc5ed3aee74f",
+  "dataset/t2/ghsa_severity.train.jsonl": "56fde2b08e0f52b668355ef6f12415d09ee90b5b25ba239136ff9ce368f32fcc",
+  "dataset/t2/ghsa_severity.select.jsonl": "09fc543d3c4227b16cb8a6a196badc41847560652ff4ee8643668fc21699b2fc",
+  "dataset/t2/ghsa_severity.test.jsonl": "4f0916749e021e479be8389d73a75b69318a9f4a4204d552be722a685cdbffc7",
+  "dataset/t2/ntrs_subject_category.train.jsonl": "08e6601a495bd53f183a3c31346e6882ac5bea9dfbfbaaa845b3b5043948d8a2",
+  "dataset/t2/ntrs_subject_category.select.jsonl": "ea845472b37eac178326f760c6a0bff92836bd249b6f20757b57efa0cabb4575",
+  "dataset/t2/ntrs_subject_category.test.jsonl": "883c25fda34b8b913e1f2daa1b3806f01e175baddd776e69ffddeafaae4c78cf",
+  "dataset/t2/ntsb_injury_severity.train.jsonl": "284ad66b4f1a9f7c59d6905fbf64e8cbba3797673afe4920a05810116ab19c6e",
+  "dataset/t2/ntsb_injury_severity.select.jsonl": "f9670adf6ea13e74f84529a46bc91edb4247037c5e88cc01b406d9cdee7b112a",
+  "dataset/t2/ntsb_injury_severity.test.jsonl": "4f101b49047207b540c6918d0628e499b7601ecc33d2cf54831a0f73b101679b",
+  "dataset/t2/ted_cpv_division.train.jsonl": "b43e8fafed73c1022ae73a346ee9aa0fce0d36e5504bcdbac47180d3b89cf628",
+  "dataset/t2/ted_cpv_division.select.jsonl": "1e3eeae4f58cb86badc0061c6a23ede7fa5d012dc9c283b56310db29b1057624",
+  "dataset/t2/ted_cpv_division.test.jsonl": "d335b4b2f5cafbf35a091005999a5902b7d99a73182f29fc30fabb48392f8a7c",
+  "dataset/t2/asf_podling_outcome.train.jsonl": "85d2da25df439cddd7cc9813e7149f62dbb3e31f8727f7b6de586c63a0de8db6",
+  "dataset/t2/asf_podling_outcome.select.jsonl": "a30e004c42c3bf769b24f42920a60c07bcabe47f53cb2bbeb44799f595465dce",
+  "dataset/t2/asf_podling_outcome.test.jsonl": "fee1946a361d719bdfd94e6b534137debf184470e5b062486c0135ce12c3fa5f",
+  "dataset/t2/insurance_payout.train.jsonl": "c1d6c68d4a5869663a24a99e0964b81d7996a3b02371ffbee7e439a499e22a6c",
+  "dataset/t2/insurance_payout.select.jsonl": "7d30196a7a6af66e5af11561df22e022e20a1f80f7df51186b774de239b82014",
+  "dataset/t2/insurance_payout.test.jsonl": "8f60ffcdea68028f4c715c0c2df7a040669ae40c040e5857d1447ae5c8bb1ea7",
+  "dataset/t2/loan_approval.train.jsonl": "bf688413f3f6f69c52baf2f2d06a4d987abede0f34aece6e1540a6843f44f4e9",
+  "dataset/t2/loan_approval.select.jsonl": "5c8ca5ac12f107d4b95f5e97ebf7fb82372b36289fba212fdb730aa61eccdf34",
+  "dataset/t2/loan_approval.test.jsonl": "f13285f2ccda6b9102871b506e6ac65f0761ec636d3fb5cdae2c0283bc36ddd5",
+  "dataset/t2/warranty_claim.train.jsonl": "f1006d27c9e0abcf4ec4f46dbfdf4c330e9324c90a389d71f6dfcd3f4eb600a0",
+  "dataset/t2/warranty_claim.select.jsonl": "2d701480dd3c8b30e77c95c2673c3494d74f31882a5de362e1617950d6042083",
+  "dataset/t2/warranty_claim.test.jsonl": "4bca3eb35c82d8271762b966a5dffb3620edf721a5451ddede52bd4f729c9464",
+  "dataset/t2/coupon_stacking.train.jsonl": "222acf3c793c866012e129eda0f5f2a8caf611a5cb3b276e35c3604b5a2d1c69",
+  "dataset/t2/coupon_stacking.select.jsonl": "90d91202c0d183a2b734cd7095ae55c24850beb59dfd7210f43c8ae4885c1d79",
+  "dataset/t2/coupon_stacking.test.jsonl": "02a99ecb527f2498c0b1d160750e6eb889b585dbea2ec6dd362b89620cc82a8a",
+  "dataset/t2/library_fine.train.jsonl": "409e3ef6fde04f0c3768ae842fd708e24f5a94439b5f8a5920f7f27bea67e756",
+  "dataset/t2/library_fine.select.jsonl": "1d20291dd25bcffb469bf0fe56438d3706b6592c5d421ea07e9f2b126d778567",
+  "dataset/t2/library_fine.test.jsonl": "d314a7b5580189a411564b1d1f133c96e03d7fb357882088133a209894b53ce2",
+  "dataset/t2/toll_charge.train.jsonl": "1e76f699b716d9e86aa8798523197f8a0673226c798998bf657109815f904481",
+  "dataset/t2/toll_charge.select.jsonl": "8eda1353dc73033e790335f4763e0bd4fb434ff57294fe57c2c561f7c23c205c",
+  "dataset/t2/toll_charge.test.jsonl": "b41e66ec1d17c8813dd4dc9e382d3dd64cbe8fdd245b0964cfcfd54bc101de9c",
+  "dataset/t2/building_permit_fee.train.jsonl": "58a9959071c611cab011180ffbb545b34b3d44bded993668a1cfddc716b94e75",
+  "dataset/t2/building_permit_fee.select.jsonl": "e7e6c53feda5b629bd0379a1827c3f5a36338c692b9666ab690238111bcc3bd4",
+  "dataset/t2/building_permit_fee.test.jsonl": "d8a48072f860285e034947f26d695ca2fbf2a14ae2ed28039a8970a2ccbe1b6e",
+  "dataset/t2/sla_credit.train.jsonl": "a8c2317633e8a1d41c93e1c0f3d55132eaf7005f9f91cfbc63490990429d0173",
+  "dataset/t2/sla_credit.select.jsonl": "1cd9afd43337e966350918af6d2e0c9479e054f181df37426034b159ef7baf3e",
+  "dataset/t2/sla_credit.test.jsonl": "c22ebd402df45e19e960c4c86ef288d8c6ab80d525968ec098a5d5644082259d",
+  "dataset/t2/arxiv_category_api.train.jsonl": "b9111b771c984c617bd8d8b56041de2d809fcb6ee5da792b8c6ef96909be5eb2",
+  "dataset/t2/arxiv_category_api.select.jsonl": "01d6d419194c4004e092971a094b149cbd9642608d01fa79e67222ddc7241c27",
+  "dataset/t2/arxiv_category_api.test.jsonl": "fc249ddd52a3db227beb91ca5ba02a27627ed116ccb0054717718cbb54533bd6",
+  "dataset/t2/wildguard_aegis.train.jsonl": "55932557fb48c66377f4cc4c609818261aa1a97174809356698ced572adfff63",
+  "dataset/t2/wildguard_aegis.select.jsonl": "57d38bc16706c6c0c394754b3147772025275d559b5eccb42af3107b661b672b",
+  "dataset/t2/wildguard_aegis.test.jsonl": "dac8119ae1af03ddacedd07d35456084167cc614915251a82991894c75b65fae"
+ },
+ "outputs_sha256": {
+  "train.jsonl": "039d8fd67d5013cb4da57d29780770b24365a6954b63f1c0b29703b3d374422f",
+  "hf_s1.jsonl": "402f42f190ab46138a2cacb9b0865d1f896307d0d34a6a507c7f742fbb6944dc",
+  "dev_holdout.jsonl": "030734c6584dde38ad23f9f7a990100daed24fd25d07b1682f3c395b733a4120",
+  "select_extra.jsonl": "28b95d024906776d6511a0003d348ec3a0ccfd38d9e1419c7f1fdf59036ab92c",
+  "test_extra.jsonl": "312fdafc96c30450241e7b71a322fdb55c2088afda7b712aeab10decad3e3a12"
+ }
+}

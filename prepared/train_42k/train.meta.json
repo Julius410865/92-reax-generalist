@@ -1,0 +1,18 @@
+{
+ "config": "/workspace/reax-subnet/data/stages/train_42k.json",
+ "stage": "train_42k",
+ "split": "train",
+ "digest": "264f10043ad3bdf9",
+ "tokenizer": "a5cd9732badce41d",
+ "sources": {
+  "train_42k": {
+   "items": 41972,
+   "unconvertible": 0,
+   "files": 1
+  }
+ },
+ "rows": 44372,
+ "tokens": 17878505,
+ "over_max_len": 0,
+ "render_failed": 0
+}

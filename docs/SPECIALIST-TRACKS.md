@@ -1,0 +1,632 @@
+# Specialist tracks (`reax-spec/1`)
+
+A specialist track is a competition for one use case, for example demand forecasting. You fine-tune a small
+open-weight model for that use case, commit it on chain, and validators score it on items nobody has seen. The best
+model of a track is its champion. How much a champion earns is the track's share of the competition part of the
+rewards; see COMPETITIONS.md. Nothing on this page is a promise of any payout.
+
+Specialist models are described as **Jev-compatible specialist models**: they answer the same typed decision
+contract (choice, noul, score) as the reference models. They are not Jev models.
+
+## Schedule
+
+* **Demand forecasting** and **risk assessment** retain their small-class rules until the earlier of their published
+  end (30 Oct 2026, 12:00 UTC) and `GENERALIST_START_UTC`.
+* At `GENERALIST_START_UTC` the **generalist** track replaces them with one 0.30 slot. The default target is
+  30 Oct 2026, 12:00 UTC; the actual opening remains a release decision and may move earlier.
+* The 6 Nov extension and the DF/RA open class are cancelled. Generalist accepts commitments from
+  `GENERALIST_COMMIT_FROM_UTC` (the dated rules notice); every commitment first seen before opening joins the
+  opening cohort and the existing first-champion playoff. The notice constant defaults to disabled until the rules notice
+  is set. One commitment per hotkey remains unchanged.
+* See [GENERALIST-RELEASE.md](GENERALIST-RELEASE.md) for release gates and operator settings.
+
+## What you submit
+
+A Hugging Face model repository, pinned to one revision, containing **weights only**:
+
+| Requirement | Rule |
+|---|---|
+| Weights | `*.safetensors` only. No pickle, `.bin`, `.pt`, GGUF or ONNX file may be in the repo. |
+| Code | None is ever run. `trust_remote_code` is never enabled; a `config.json` with `auto_map` is refused. |
+| Size | DF/RA: at most **9 billion parameters** (counted from the safetensors headers) and at most 20 GiB of weights. Generalist from its opening: at most **36 billion parameters** and at most 68 GiB of weights (72 GiB in total to download). |
+| Architecture | One of the architectures the pinned vLLM image serves **and** that has a fixed chat template in this release: Qwen3 (dense and MoE), Qwen3.5, Gemma 3, Llama. Generalist also permits Gemma 4 (`Gemma4ForConditionalGeneration`, `Gemma4ForCausalLM`, `Gemma4UnifiedForConditionalGeneration`) and Qwen3.5 MoE (`Qwen3_5MoeForConditionalGeneration`, `Qwen3_5MoeForCausalLM`). DF/RA refuse these additional architectures. |
+| Licence | Apache-2.0, MIT, BSD-2-Clause or BSD-3-Clause (other licences only if the subnet owner has approved them in writing), plus a `LICENSE` file, so that the model can be hosted and served. |
+| Tokenizer | `tokenizer_config.json` and `tokenizer.json` (or `tokenizer.model`). Your **chat template is never used**: the validator renders the decision prompt with a fixed template per architecture family (below). A `chat_template.jinja`, a `chat_template` in `tokenizer_config.json` and any `*.jinja` are ignored (not even downloaded); `tokenizer.model` / `*.tiktoken` are ignored when `tokenizer.json` exists. |
+| Manifest | `reax-specialist.json` in the repo root (below). |
+
+```json
+{"schema": "reax-specialist/1", "category": "demand_forecasting", "hotkey": "<your hotkey ss58>",
+ "base_model": "<hf id>@<revision of the base you fine-tuned>", "licence": "apache-2.0"}
+```
+
+The manifest ties the model to your hotkey and to the track. `base_model` must be the model you fine-tuned: it is
+used to compare your weight changes with other submissions.
+
+Commit on chain (the Commitments pallet), **while the repo is still private if you like**:
+
+```
+reax-spec/1:<track_id>:<hf_repo>@<40-hex revision>
+```
+
+for example `reax-spec/1:demand_forecasting:acme/df-4b@0123456789abcdef0123456789abcdef01234567`. The revision must
+be the full 40-character commit hash, in lower case, never a branch name. The whole text must fit 128 bytes.
+
+Use the tool instead of a hand-made `btcli` commit: `reax-commit set "reax-spec/1:<track_id>:<hf_repo>@<40-hex revision>"`
+(`--dry-run` shows the fields it would write, `reax-commit show` how this release reads your hotkey, `reax-commit
+withdraw competition` removes the entry). Every commitment write replaces all fields; the tool keeps the hotkey's
+inference element next to your entry once a hotkey may hold both (`DUALROLE_START_BLOCK`, [DESIGN-MULTIROLE.md](DESIGN-MULTIROLE.md))
+and, before that, refuses to drop it unless you pass `--replace-all`. Hotkeys that hold only the entry are written exactly
+as before.
+
+* **Make the repo public within 7,200 blocks (about 24 hours) of the commitment** and keep it public. A repo that is
+  still not downloadable after that is dropped. For generalist commitments first seen before opening, this deadline
+  instead runs for 24 hours from opening (wall clock); nothing is fetched before opening.
+* Limits per coldkey: at most 2 open submissions per track and 4 new submissions per 7 days. Generalist pre-commitments
+  are admitted against these limits at opening, counting only generalist entries; their weekly window starts at opening.
+  Pre-opening sync never rejects them for this budget, and they do not consume the DF/RA weekly budget.
+* A new commitment from the same hotkey replaces the old one; the old model no longer counts.
+
+### Open class (generalist only)
+
+From `GENERALIST_START_UTC` generalist entries may be larger. DF/RA retain the small-class rules through their end.
+The rules in force are the ones at the time a check runs, for that submission category.
+
+* **Size:** up to 36 billion parameters, 68 GiB of weights and 72 GiB to download.
+* **Architectures:** Gemma 4 and Qwen3.5 MoE are allowed too (list in the table above). Gemma 4 gets its own fixed template,
+  `gemma4.jinja`, which writes a fixed `<bos>` (never the tokenizer's own `bos_token`) and the Gemma 4 turn tokens
+  `<|turn>`, `<turn|>`, `<|channel>` and `<channel|>`, thinking off; the tokenizer must define all five. Multimodal
+  checkpoints (`...ForConditionalGeneration`) of the new architectures are served text-only (no images). An architecture that
+  was allowed before (e.g. `Qwen3_5ForConditionalGeneration`, `Gemma3ForConditionalGeneration`) is served exactly as before up
+  to 20 GiB of weights and text-only above that.
+* **Declared base:** the base you name in the manifest may be as large as a submission (36 B, 68 GiB, 72 GiB). Before, it
+  could be twice the size of a submission.
+* **Keep-alive:** an entry with **more than 10 billion parameters** qualifies for the keep-alive only if its declared base
+  has a floor in `KEEPALIVE_BASE_FLOOR` (a release constant) and the entry's score is above that floor + 1.5 points. The
+  table is empty in this release, so for now an entry above 10 B parameters gets no keep-alive and no provisional
+  keep-alive. Entries with at most 10 B parameters are not affected.
+
+**Operator note (open-class box).** From the switch the box that serves the open class needs `REAX_SPEC_GPU_BUDGET_GB` >= 81,
+`REAX_SPEC_MIN_FREE_GB` >= 150, `REAX_SPEC_BASE_BUDGET_GB` 80, `REAX_SPEC_CONTAINER_MEM` about `72g` and
+`REAX_SPEC_STARTUP_TIMEOUT_S` 1800 (see "Operator notes"). Both worker and validator must run the generalist release:
+the validator computes the keep-alive base floor and schedule itself. The base download budget defaults to 80 GiB
+from opening (40 GiB before); an explicit `REAX_SPEC_BASE_BUDGET_GB` overrides both.
+
+### Chat templates
+
+A chat template is code (Jinja) that the validator would otherwise parse inside the vLLM container that holds the GPU, so
+a submission's template is never rendered. Each allowed architecture family maps to one template shipped in the package
+(`src/reax_subnet/spec/templates/`: `qwen.jinja` for Qwen3, Qwen3-MoE and Qwen3.5 (also the Qwen3.5 MoE models of the open class), `gemma3.jinja`, `gemma4.jinja` (open class), `llama3.jinja`),
+passed to vLLM with `--chat-template` and `--chat-template-content-format string`. The decision prompt is one system and
+one user message, so what a model sees is the family's standard turn layout around the fixed prompt (Qwen: ChatML, with the
+empty think block). `reax-spec-eval` uses the same templates, so your local number matches. Fine-tune with that layout.
+
+## How a model is scored
+
+1. **Checks, no GPU.** The validator reads the file list, `config.json`, the manifest and the safetensors headers as
+   data and checks every rule above. A refused submission is never loaded.
+2. **Serving.** The validator downloads the pinned revision (weights, json, tokenizer, licence only) and serves it in
+   its own pinned vLLM container: no network, read-only file system, no capabilities, the model mounted read-only, and
+   a GPU memory cap of at most 25 GB. No code from your repo runs.
+3. **Prompt and readout are fixed** (`reax-decide-prompt/1`, `src/reax_subnet/spec/prompt.py`): the state as JSON, the
+   question, and the options labelled A, B, C ...; one forward pass; your answer is the softmax (temperature 2) over
+   the logits of the option letters at the first generated position. The same renderer and scorer ship with
+   `reax-spec-eval`, so you can train against exactly this format.
+4. **Fresh sealed items.** Every round draws a new random sample (300 items by default, about a third per primitive)
+   from the sealed pool: 15 % programmatic-gold items from the published procedural families and 85 % LLM-written
+   items, split 50 / 25 / 25 between same-family items, items from new domains and items from new task families
+   (since 1.2.0rc6; rc5 drew 600 items, half of them programmatic). Every model of a round answers the same items. Items
+   are reused by rule: your model runs in our sandbox, so you never see an item and reuse leaks nothing. An item is
+   used at most 24 times (`ITEM_MAX_USES`); after its 24th use it is retired, never drawn again, and only retired items
+   are published later as training data. A confirmation draw is always disjoint from the entry's own first draw. When the
+   LLM-written items of a track have fewer than 48 draws' worth of uses left (about a day at two draws per hour; since
+   1.2.0rc8, before: three draws' worth of items), the validator logs "refill needed" (the only refill trigger). Each tier keeps its share of the draw: a tier that
+   runs out of unused items reuses its own least-used items first, and only a tier with too few items at all hands the
+   rest to the other LLM-written tiers. The programmatic tier never takes another tier's share and never holds more
+   than 15 % of the draw: without enough LLM-written items the draw is smaller (below 200 items there is no draw).
+5. **Score** `S = 0.75 x competence + 0.25 x calibration`, 0 to 100.
+   * *Competence* is the JevBench O1S chance-corrected score per primitive (choice, noul, score), averaged. A noul
+     answer between 0.20 and 0.80 counts as no decision; a score answer gets partial credit by distance.
+   * *Calibration* is `100 x max(0, 1 - Brier / Brier_uniform)`: honest probabilities are paid, a model that puts all its
+     mass on one option is punished when it is wrong.
+   * An invalid or missing answer counts as a wrong answer with the uniform probability.
+
+## Becoming champion
+
+* A challenger must beat the incumbent by `max(1.5 points, 2 x standard error)` on the same fresh draw. The standard
+  error is the paired bootstrap error of the score difference over the shared items.
+* It is then **confirmed on a second, disjoint fresh draw taken at least 12 hours later**, where it must beat the
+  incumbent again by at least half of that margin. Only then does it become the incumbent.
+* **Every pending confirmation gets its draw before the track closes** (from `CONFIRM_BEFORE_CLOSE_START_UTC`, date set in
+  the release notes; until then the plain 12 hours apply). The confirmation is due 12 hours after the first draw, but
+  not later than 6 hours (`CONFIRM_CLOSE_LEAD_S`) before the track closes, and never before the first draw itself: a first
+  pass 8 hours before the close is confirmed 2 hours later, one in the last 6 hours is confirmed at the next cycle. The 6
+  hours leave room for the confirmation, a possible v3 extra confirmation draw (it is due at once, not after another
+  delay) and the cohort step under the hourly evaluation budget. Inside those 6 hours a due confirmation is always served
+  before any new first-stage entry of the track. Entries that are already pending on the first cycle after the date and
+  would be due later than that are moved forward once (one line in the track log, with the old time). The keep-alive
+  window still counts from the first pass, which is stored separately (`first_pass_ts`). A track without a close (the
+  generalist) keeps the 12 hours. If the close arrives while an entry is still pending (for example its download
+  failed), nothing changes: there is no grace period, nobody is crowned after the close, and the validator logs the
+  entry once.
+* Challengers are handled in order of their commitment block (then UID). A challenger that is confirmed first becomes
+  the incumbent for the ones after it, and they must beat it by the full margin (on a track without a champion, a
+  cohort playoff picks the first champion, see "First champion of a track"). This holds whether it was confirmed
+  in the same round or an earlier one, and also when the track was vacant at a challenger's first draw: an incumbent
+  the first draw was not measured against has to be beaten by the full margin on the confirmation draw.
+* The incumbent is measured again every time a group is evaluated. The validator runs at most a fixed number of model
+  evaluations per hour (8 by default since 1.2.0rc8, 6 before; including the incumbent; the competition worker polls every 30 minutes, so a track can run two groups per hour), so a long queue waits; the queue is ordered by
+  commitment block, except that (mechanism v2) a first evaluation goes by immunity: entries whose hotkey is already past
+  its immunity period (registration block + `IMMUNITY_BLOCKS_ASSUMED` = 7200 blocks, about 24 hours, the chain's ImmunityPeriod since 17 Oct 2026) come first, in
+  commitment order, then the entries whose immunity ends soonest. An unknown registration block goes last. Confirmation
+  groups, the cohort playoff and the alternation between tracks are not affected. This queue order protects entries
+  only while the first-pass queue is shorter than immunity allows (about 120 entries at 8 evaluations per hour); a larger
+  queue, for example a flood of entries, can still outlast immunity.
+* The first model of an empty track has to reach the entry floor on both draws: the s1-fast model's score on release
+  draws plus 1.5 points (demand_forecasting 28.8, risk_assessment 30.0; see COMPETITIONS.md). Who among several such
+  models becomes the first champion is decided per cohort, see "First champion of a track".
+* Only the champion's model files stay on the validator between rounds. An entry pending confirmation is downloaded
+  again for its confirmation draw (the same pinned revision) and must have exactly the weights of its first check;
+  other weights under that revision reject it.
+* Ranks 2 and 3 of a track are the most recent former champions that are still committed.
+* The draws an entry pending confirmation still needs (its first draw, which the confirmation draw must avoid, and the
+  draw it passed its confirmation on) are always kept in the validator's state; of the other draws it keeps the 40
+  most recent (since 1.2.0rc7; before, the 40 most recent of all draws, so a long queue could push out a pending
+  entry's first draw and its confirmation could never run).
+
+In worker 1.2.0rc9.post2, an abandoned comparison after an incumbent start-up failure does not consume the draw
+or charge item uses, including when one challenger serves as the host probe. Serving attempts still spend the
+hourly budget. The champion retry shares its scheduled round; each separately scheduled v3 extra draw is a new round.
+
+### Decision rule v3 (variance-aware)
+
+*Staged in worker 1.2.0rc9.post2, off by default (eval mechanism v3, stage 1). It replaces the two bullets above ("beat the incumbent by `max(1.5, 2 x SE)`",
+"confirmed on a second draw by at least half of that margin") for entries whose first draw is taken after the switch.
+Everything else on this page (draw sizes, disjoint draws, the 12 hour wait, commitment order, cohort playoff, parent and
+twin checks) stays. The worker setting `REAX_SPEC_V3_DECISIONS=0` restores the old rule exactly.*
+
+In plain words: a single 300-item draw is noisy, so one lucky or unlucky draw should not decide a close race. The
+validator now counts evidence in **standard errors (z)**: `z = gain / SE`, where the gain is your score minus the
+incumbent's on the same items and the SE is the paired bootstrap error of that difference. Only draws taken against
+**the same incumbent** are added up. For `k` such draws the pooled evidence is the mean gain divided by
+`rms(SE) / sqrt(k)`.
+
+*First draw.*
+* `z >= 2.0` and gain `>= 1.5` points: passes, exactly as before (this is the old margin rule). The confirmation is
+  due 12 hours after this draw.
+* `1.0 <= z < 2.0` and gain `>= 0.75` points: a **close call**. You stay in the queue ("close call (z 1.4): one more draw") and get **one more
+  first-stage draw**, disjoint from the first. Pooled over both draws you need `z >= 2.0` and a mean gain of at least
+  1.5 points to pass; otherwise you are not better. The 12 hour wait is counted from your *first* draw, so a close
+  call costs no extra time. There is never a second extra draw.
+* `z < 1.0`: not better, as before.
+* On a track without a champion nothing changes: the entry floor decides, then the cohort playoff.
+
+*Confirmation* (12 hours or more after the first draw, on a draw disjoint from all your earlier draws):
+* You become champion when the pooled evidence over **all** your draws against that incumbent (first stage and
+  confirmation) is `z >= 2.75`, this confirmation's gain is at least 0.5 SE and the pooled mean gain is at least 1.5 points.
+* With positive confirmation gain and pooled `z >= 1.5`, if the crown conditions are not yet met, you stay pending
+  and get **one extra confirmation draw** on the next cycle ("confirmation:
+  pooled evidence 2.1 SE < 2.75, one more draw"). After it you need pooled `z >= 2.75`, the two confirmation gains
+  must have a positive pooled mean at least 0.5 of their pooled SE, and the mean over all draws must be at least
+  1.5 points. Otherwise you are not better.
+* Below `z = 1.5`: not better.
+* If the champion changed since your first draw, or one was crowned earlier in the same round, only the draws against
+  *that* incumbent count (normally just the confirmation) and the same thresholds apply: `z >= 2.75` crowns,
+  `1.5 <= z < 2.75` gets the extra draw, less is not better. **A tie inside the noise therefore goes to the earlier
+  commitment:** the later challenger needs clear evidence against the model that was crowned first.
+* A model that is a copy, twin or child of another model still has to beat that model by the full margin
+  (`max(1.5, 2 x SE)`) on every draw, as before.
+
+*Rules v4 (generalist track only; from `DRAWS_V4_START_UTC`, date set in the release notes).* Generalist draws grow from
+300 to 900 items (90 per category), which cuts the paired SE to about 58 % (by a factor of about 1.7), and the margin floor drops from 1.5 to
+**1.0 point** (`MARGIN_FLOOR_V4`) for every decision taken at or after that instant: "gain `>= 1.5`" above reads "gain
+`>= 1.0`", the close-call minimum 0.75 reads 0.5 (half the floor), the pooled-mean bars of the confirmation read 1.0, and
+`max(1.5, 2 x SE)` reads `max(1.0, 2 x SE)` (also for the copy, twin and child checks). The z-gates (2.0, 1.0, 1.5, 2.75,
+0.5) and the 3.0-point rule for entries close to the champion's weights do not change. Draws of different sizes are pooled
+as before, so an entry whose first stage was taken before the instant is confirmed on 900-item draws under the 1.0 floor.
+Specialist tracks (demand_forecasting, risk_assessment) keep 300-item draws and the 1.5 floor.
+
+*Entries already pending.* An entry that passed its first draw before the switch is confirmed under the old rule
+(positive gain of at least half the margin). The state records `decision_rule = "v3"` on entries decided under the new
+rule; each draw's `se`, `inc_key` (which incumbent), `z` and, for decisions, `pooled_z` are kept in the entry's history.
+
+### Cross-author tier, the shadow gap and the binding gap penalty
+
+*Off by default.* A pool may carry an optional tier `cross_author` (real-data items that arrive as `award_realdata` count
+as the same tier): items written by authors outside the families that generate the other items. With
+`REAX_SPEC_X_TIER_MODE` (`off` default, `shadow`, `scored`, `binding`) and `REAX_SPEC_X_TIER_SHARE` (default `0.20`)
+the validator can use it:
+* `off`: such items are never drawn; a pool without the tier behaves exactly as before in every mode.
+* `shadow`: `round(300 x share)` = 60 extra cross-author items are answered **in addition to** the normal 300. They are
+  scored separately and take no part in the total, a margin or a decision.
+* `scored`: currently runs as `shadow` (the items would count without a penalty).
+* `binding`: the items replace that share of the LLM-written tiers inside the 300 (the draw is still 300 items; the
+  programmatic tier is never reduced or enlarged by them) and **count in the score**. The same reuse cap and the same
+  disjointness rules apply as for every other item. If fewer cross-author items are usable than the share needs, the
+  normal tiers fill the rest and the shortage is logged; the refill alarm counts cross-author items separately from
+  the LLM-written ones. Playoff draws contain them too.
+
+For every entry and draw the validator records `s_gen` (score on the other items), `s_x` (score on the cross-author
+items) and the **gap** `s_gen - s_x` with its bootstrap error `se_gap`. In `shadow` mode the gap is only reported
+(history field `gap_shadow`, with a live median over the coldkeys scored on the same item set).
+
+*Binding mode (generalisation penalty).* An entry's gap is the mean of `s_gen - s_x` over its draws that contained
+cross-author items. A gap well above the field's is penalised:
+* `G_med`, the median gap of the field, is frozen in the configuration, per track: `REAX_SPEC_G_MED`, a JSON object such as
+  `{"demand_forecasting": 12.3, "risk_assessment": 9.8}`. Binding mode never uses a live median. A track without a
+  configured value runs as `shadow` (logged once per cycle); an unreadable value means no value at all, so no penalty.
+* The allowance comes from **one** draw, not pooled over the entry's draws: `A = max(8, 2 x SE)` with `SE` the
+  root-mean-square of the entry's `se_gap` values. A long-standing champion and a new challenger get the same allowance.
+* `P = min(CAP, 0.5 x max(0, gap - G_med - A))`. The weight 0.5 is fixed. `CAP` is `REAX_SPEC_GAP_PENALTY_CAP`
+  (default `10` points, the first-week cap; `none` or `inf` lifts it). A draw whose gap noise cannot be estimated
+  (fewer than two items on one side) is left out of the gap.
+* `S_eff = S - P`, and `S_eff` is the score every decision uses: the entry floor, the first stage, the close-call
+  draw, the confirmation (pooled evidence and margins), the playoff on a vacant track, keep-alive, and the displayed
+  score. For a pair on one draw the gain is `gain_raw - (P_challenger - P_champion)`; the paired standard error stays
+  the raw paired one. Each penalty is computed from that entry's own cross-author draws up to and including the draw
+  being decided; an entry without such a draw has `P = 0`. An entry that passed its first stage before binding mode
+  was switched on is confirmed with its penalty (its confirmation draw contains cross-author items); the
+  champion keeps its crown until a challenger beats it on `S_eff`.
+* Answering generator items worse never pays: one point less on them costs 0.8 in `S` and saves at most 0.5 in `P`.
+* Every decision is auditable: the history row of each draw carries `gap_binding` (raw `S`, `P`, `S_eff`, gap,
+  `se_gap` of the allowance, `A`, `G_med`, cap, number of draws). Switching back to `off` or `shadow` restores the
+  previous behaviour for new draws; the extra history fields are ignored by older builds.
+
+### First champion of a track
+
+Since 1.2.0rc7. On a track without a champion, the order in which entries are evaluated must not decide who is
+crowned: entries committed in the same block (the opening of a track sees every early entry in one block) reach their
+confirmation draws in different hours only because of the hourly evaluation budget and the queue.
+
+* **Cohort.** An entry that passes its confirmation draw on a track without a champion is not crowned at once. It waits
+  until every entry first seen in the same block or earlier is decided: none of them may still be queued, pending its
+  confirmation draw, or held because of the validator itself (a base model download deferred by the download budget
+  or the free disk space, a download in progress). A wait on the miner's side does not hold the cohort back: a repo
+  that is private or not uploaded yet, a base model that is gated, private or not on the hub, weights that cannot be
+  compared with their base. Whose wait it is is recorded when the wait starts, never read from the reason text (which
+  can contain the base model id the miner chose). Entries first seen in a later block are a later cohort and do not
+  hold back an earlier one.
+* **Deadline.** No open entry holds a cohort back for more than 12 hours after the earliest passed confirmation among
+  its waiting entries. After that the cohort is complete with the entries confirmed so far; the open ones take the
+  normal challenger path once a champion is crowned. This bounds waits that may never end on a given validator: a
+  legal base larger than the per-cycle download budget (base caps 40 GiB of weights, 44 GiB in total; budget 40 GiB)
+  is deferred on every cycle, and a disk that never fits a base never will.
+* **Playoff.** When the cohort is complete, its entries that passed their confirmation (the entry floor on both
+  draws) meet head to head on one shared fresh draw. The best score on that draw that reaches the entry floor becomes
+  the champion; an equal score goes to the earlier commitment (block, then UID). An entry whose answers on the
+  playoff draw match another playoff entry's (see "Same answers"), or whose weights derive from it, must beat that
+  entry by the full margin to win. A lone confirmed entry is crowned without a playoff, as before.
+* **Close playoffs get one more draw.** If the best and second-best playoff scores differ by less than 1.0 paired
+  standard error of their difference (`PLAYOFF_MIN_GAP_SE`), one more shared draw is run for the tied top group alone
+  (the best and every served entry within 1 SE of it; the entry floor applies to the two-draw means), disjoint from the first playoff draw where the pool allows
+  and otherwise from the least-used items. The champion is decided on the mean of each tied entry's two draw scores.
+  If the best still leads the next by less than 1 SE (both draws pooled), the earlier commitment among the entries
+  within 1 SE wins. There is at most one extension per playoff. It runs right after the first draw whatever is left of the
+  hour's budget and is charged to the rolling evaluation budget like any other evaluation (the other tracks wait in
+  the next cycle); only when one of its models cannot be served is the playoff decided on its first draw, as before.
+  An extended entry's stored score, non-proc score and per-tier scores are the means of its two draws (per-draw values
+  stay in its history).
+* **Budget.** The playoff runs only with a full field: every confirmed entry of the cohort, or a whole hour's
+  evaluations (6 by default) when there are more, filled by the best confirmation scores. It is not cut by what is
+  left of the current hour, because confirmation scores come from different draws and are a weak ranking. Every entry
+  it takes must be ready to serve; missing/private repositories are skipped and re-checked on later cycles, while an
+  infrastructure preparation failure makes the playoff wait for the next cycle, up to the three-abort bound below. The tracks share the hourly budget,
+  the least recently served track first, so a waiting playoff normally runs as soon as the hour's evaluations are
+  back. It can wait longer while another track keeps taking evaluations one at a time as they free up.
+* **Start-up failure window (worker 1.2.0rc9.post1).** A model is rejected after model-caused start-up failures
+  in 3 of its last 6 scheduled serve rounds, including champions and challengers. A successful serve does not reset
+  the window. Each round has one outcome: success, model failure, or infrastructure failure; the last 12 outcomes
+  are retained, and only model failures in the last 6 count. Infrastructure rounds occupy a window slot but add no
+  failure. Each separately scheduled draw is a round, including a playoff extension; an immediate champion retry
+  shares its original round. A champion that reaches the threshold loses the crown.
+* **Champion retry.** If the champion cannot start, it gets one immediate retry on the same rows and draw. Retry
+  success makes the round successful. If both attempts fail, the group is abandoned and the champion is re-measured
+  next cycle, even without a challenger. Both attempts are charged to the hourly evaluation budget; this mandatory
+  retry may use one extra slot, which reduces the next cycle's available budget. A round containing an infrastructure
+  failure and no successful retry is inconclusive for the champion. After a failed retry at most one other model is
+  served as a host probe; no scores from that abandoned comparison advance a challenger. GPU preflight polls for
+  up to 60 seconds. If only that preflight prevents the retry, the first attempt's verdict is retained. A lone
+  champion re-measure counts as a model failure only with model-specific evidence (config, weights, tokenizer,
+  architecture, or model OOM within budget after a successful free-GPU preflight); generic exits and driver faults
+  remain infrastructure failures.
+* **Failure attribution.** Invalid config/weights, unsupported architecture, tokenizer errors and model OOM inside
+  its budget on a free GPU are model failures. HF 5xx, network/download timeouts, Docker failures, a busy GPU before
+  start and disk/host failures are infrastructure failures. If every model in a multi-model group fails, the round is
+  treated as a host problem for every entry. Missing/private repositories (401/403/404) are skipped in grouping and
+  re-checked on later cycles; refetches do not add start-up strikes. A hash-verified entry, including the champion,
+  is rejected as "no longer available" after three such refetch failures spaced at least 600 seconds apart; a
+  rejected champion loses the crown. Only 401/403/404 and a missing revision count toward this separate bound,
+  never 5xx, network errors or timeouts. Waiting repositories cannot head-block confirmation groups. A
+  never-published entry still has the normal publish deadline; infrastructure outages do not trigger that deadline. Host failures are recorded in track events
+  for monitoring. The snapshot reason clears the old failure detail after a successful serve, retaining only the
+  neutral window count when there are recent model failures.
+* **Host failures.** If an entry cannot be started for an infrastructure reason (hub/network failure, Docker daemon,
+  busy GPU, disk or host problem), the playoff is abandoned and retried next cycle. Infrastructure failures never
+  count as a start-up failure; if a playoff is interrupted by infrastructure three times, it is decided among the
+  entries that were served and the others keep their first draw and go back to the challenger path. If nobody can
+  be served, there is no result to decide; the playoff waits without adding a strike.
+* **Champion liveness signal (validator change required).** If the champion has no successful round for 72 hours
+  while at least three rounds were attempted, the worker sets `pay_suspended_since_ts`, retaining the crown and
+  adding no strike. The next successful round clears the signal automatically. Last success and the number of
+  unsuccessful champion rounds persist independently of the bounded serve log. **Validator 1.2.0rc9 in REMOTE mode
+  ignores this new field and continues its existing payment behavior.** A validator payment-gate change is needed
+  to send the suspended award share to inference without promoting former champions; this worker release alone
+  does not enforce the payment suspension. No validator payment code is changed here.
+* **The others** stay pending and take the normal challenger path: they are confirmed against the new champion on
+  their next confirmation draw and must beat it by the full margin. The same holds for confirmed entries of a later
+  cohort that were waiting. If nobody in the playoff reaches the entry floor on its draw, nobody is crowned and the
+  entries it served are not better.
+* **The playoff draw is not disjoint.** Items are reused by rule (see "Fresh sealed items", retired after 24 uses), so the
+  playoff draw may reuse items of the entries' first and confirmation draws (it takes the least-used items first). Only aggregate scores ever leave the validator:
+  no per-item answer, score or item id of any draw is published before the item is retired.
+* While it waits for its cohort, a confirmed entry still counts as pending confirmation for the keep-alive (at most 24
+  hours from its first draw, see "Keep-alive while you wait").
+
+### Ranks
+
+The payout ranks of a track (75 / 17 / 8 % of the track's share, or of the share minus the keep-alive paid when the
+track has keep-alive entries, see "Keep-alive while you wait") follow one fixed order, not the scores:
+
+1. the current champion;
+2. the former champion crowned most recently before it;
+3. the one crowned before that.
+
+Only submissions whose hotkey still holds the commitment count; a missing one leaves its rank to the next in this
+order. The scores shown next to the ranks are each model's latest score, but the former champions are not all measured
+on every draw, so scores from different draws are never compared to reorder the ranks: a former champion with a higher
+score on an older draw does not outrank the champion that beat it. The entry floor still applies: a leader whose
+latest score is at or below the floor earns nothing, and the ones after it move up one rank. A rank nobody holds goes
+to the inference part.
+
+## Copies
+
+* **Tensor hash.** The hash is over every tensor (name, dtype, shape, bytes), not over files, so re-sharding the same
+  weights gives the same hash. A second hash ignores tensor names. The earliest commitment owns a hash; later
+  submissions with the same hash are refused before they use any GPU time.
+* **Near-duplicates.** The sampled weight change of your model (your weights minus the declared base) is compared with
+  those of earlier submissions on the same base. "Same base" means the same base weights (their tensor hash), not the
+  same `base_model` text: declaring a mirror or another name of the base changes nothing. Cosine above 0.98 and
+  relative distance below 0.05 mark yours as *derived*: it must then also beat its parent by the full margin in the
+  same round. A model identical to its declared base is refused. Independent fine-tunes of the same base are not
+  affected: only a change that nearly equals an earlier one counts.
+* **Any float dtype.** The weight change is taken after decoding both sides and rounding your values to the base
+  tensor's dtype, so a fine-tune saved in F32 or F16 of a BF16 base is compared like the same fine-tune saved in BF16
+  (in both directions: rounding an F32 model to BF16 does not hide a copy). The compared tensors (same name and shape
+  as in the base; a `base_model.model.` name prefix from a PEFT export is ignored) must hold at least 90 % of the
+  base's float parameters. FP8 and int-quantized tensors (GPTQ, AWQ) are not compared: save the weights in the base
+  model's dtype (bf16 for Qwen3-4B) or in F16/F32.
+* **Sample positions are secret.** The weight change is sampled at positions drawn from a secret seed of each
+  validator (one value in 4093 per tensor, and at least 64 values of small tensors such as norms). Changing a few
+  weights to look independent therefore needs luck, not knowledge of the rule.
+* **Same answers.** On the shared draw, the validator also compares your answer probabilities item by item with
+  those of every earlier submission served on the same draw (the champion included). If they are practically the same
+  (mean Jensen-Shannon divergence below 0.005 bits, or below 0.05 bits with the options in the same order on at least
+  99 % of the items that have three or more options; yes/no items do not count for the order),
+  yours is *derived* from it, whatever the weights look like (permuted neurons, rescaled layers): it must beat that
+  submission by the full margin, so a copy that answers like the champion cannot be crowned. Independent fine-tunes
+  of the same base answer differently enough not to be affected.
+* **Close to the champion (operator flag `REAX_SPEC_NC_NEAR_CHAMP`, off by default; announced in #92 at least 24 h before it
+  is switched on).** If your weights are close to the current champion's on the validator's delta sketch (cosine > 0.995,
+  or relative L2 distance < 0.15, or cosine > 0.98 with the champion's change at full length inside yours, i.e. the
+  champion plus added noise; the champion's weight change from its base is the reference), every draw that decides your race
+  against it (first draw, a close-call draw, the confirmation draw) also needs (1) more items right than the champion on that
+  draw, counting an item as right when your most probable answer is the correct one, and (2) a gain of at least max(the
+  draw's margin, 3.0) points. If you declare a different base model than the champion, your weights are compared against
+  the champion's base for this check. Rescaling the champion's answer letters or adding weight noise changes calibration, not
+  answers; a real improvement of the champion's model (also by its own author) still wins. Each check is recorded in your
+  history as `near_champ` (cosine, relative L2, alpha, items right on both sides, gain and the gain needed).
+* **Near-copy hardening (operator flags, all off by default; announced in #92 before they are switched on).**
+  `REAX_SPEC_NC_R1`: a submission that is derived from another one (by weights or by answers, the champion included)
+  must also beat it on *competence* alone by at least 1.0 point and 2 standard errors, so a copy that only recalibrates
+  the same answers cannot be crowned. `REAX_SPEC_NC_R2`: the answers comparison is also made after rescaling the
+  letter logits (a power of the probabilities between 0.40 and 2.50), and probabilities that differ by less than one
+  millionth of their size count as tied for the order. `REAX_SPEC_NC_R3`: the weight comparison also treats a model as
+  derived when its weight change has cosine > 0.98 with the other's and the same length along it (alpha within 5 % of 1),
+  whatever noise orthogonal to it was added; an entry derived from a derived entry must beat the root parents as well.
+* **Pending verification.** If the validator does not have the declared base (an unknown name or revision), or the
+  tensors your model shares with the declared base (name and shape) hold less than 90 % of its float parameters, the
+  near-duplicate check cannot be made. The submission is then *pending verification*: it is kept and keeps its place in
+  the commitment order, but it is not evaluated, ranked, crowned or paid. A missing base is checked again every cycle
+  and the submission goes ahead as soon as the base is available. Too little overlap with a base that is there does not
+  change by waiting: it is checked again only after a release changes this rule; otherwise commit a fixed model.
+  A champion whose check could not be made is held the same way and loses the title until it passes. The status and
+  the reason are in the state file and the validator log. Exact copies (same tensor hash) are refused at once, with or
+  without the base.
+* **Commit before publish.** Earlier commitments are handled first, and a copier can only copy after the original's
+  commitment. The owner reviews a new champion before it is paid.
+* **Re-registering and pruned first draws (rule 17 Oct).** A commitment that changes or whose hotkey leaves is
+  withdrawn. Recommitting identical tensors is allowed for the same coldkey or the same HF repo (its manifest must bind
+  the committing hotkey). If a hotkey was pruned while waiting for confirmation, recommitting the same tensors within
+  72 hours keeps the first draw and score and goes straight to confirmation, then a playoff if needed. The 72 hours
+  count to when the new commitment is first seen, not to its download. A hotkey that was pruned and registered again
+  counts as pruned. New hotkeys and uids are allowed; copy and twin checks still apply, the recommit keeps the
+  original's parent (a near-copy committed while the original was pruned does not become its parent), and an exact copy
+  committed while the original was pruned is refused as a copy. Each withdrawn entry can carry its first draw once. Earlier prunes
+  since tracks opened on 16 Oct 12:00 UTC have until 20 Oct 18:25 UTC. A changed commitment or expired
+  window needs a fresh first draw if the copy checks allow recommitting; a failed first draw has nothing to carry.
+* **Pruning never hands an entrant's work to someone else (reg-sniping review, 20 Oct).** A withdrawn entry (pruned or
+  replaced) stays in the copy registry with its exact tensor hashes and its delta sketch. A later entry of another coldkey
+  and another repo that is derived from it (the near-duplicate rule above) is linked to it as its parent and must beat
+  it like any derived entry; an exact copy is refused. If an earlier original of another coldkey is checked only after
+  an exact copy of it was crowned (e.g. queued behind the copy), the copy is refused and loses the title. The author's
+  own recommit (same coldkey or repo) is not a copy of their withdrawn entry.
+* **Close calls keep the provisional keep-alive until the verdict.** An entry in a close call that waits for its extra
+  first-stage draw is still undecided: it keeps (or gets) the provisional slot below until that draw decides it.
+  The new commitment counts toward submission limits, joins its new first-seen-block
+  cohort, and does not restart the model's keep-alive window. Registration fees are not refunded.
+
+## Payment needs the owner's approval
+
+A winning entry is paid only after the subnet owner has checked and approved it. Each paid rank (1, 2 and 3) needs an
+approval signed by the owner for exactly your hotkey and your model (`<repo>@<revision>`). Until then your share goes to
+the inference part, your rank is kept, and nobody below you moves up. A new revision needs a new approval. Details:
+COMPETITIONS.md, "Owner approval".
+
+## Keep-alive while you wait
+
+A competition hotkey has one commitment, so it cannot also serve inference: without help it would earn nothing while
+its entry waits for evaluation, waits for its confirmation draw or waits for the owner's approval, and it would be
+deregistered as the lowest-emission UID once its immunity period ends (which also drops the submission). From
+1.2.0rc6 the validator therefore gives every **qualifying entry** a keep-alive weight (from 1.2.0rc7.post1 about the median
+inference weight). It is a participation
+keep-alive, not an award: it does **not** need the owner's approval and it does not change the ranks.
+
+* **Who qualifies.** The hotkey's current commitment is a submission that passed the copy checks (exact hashes and the
+  near-duplicate check against its declared base), whose latest score on a shared draw is **above the track's entry
+  floor**, and which is waiting for a decision: an entry **pending confirmation** (for at most 24 hours after its first
+  pass) or a **new champion** waiting for the owner's approval of its award (for at most 24 hours after it was crowned).
+  The same draw's score on its **non-proc items** (same-family, new-domain and new-family; not the programmatic
+  families) must also be above `KEEPALIVE_NONPROC_FLOOR` (release constant: 32.6 on demand forecasting, 34.5 on risk
+  assessment, the s1-fast model's score on the non-proc items of release draws + 1.5 points), so a model that only
+  learned the public procedural families does not qualify. An entry last scored before 1.2.0rc6 has no non-proc score;
+  from 1.2.0rc7 it qualifies when its total score on that draw is above `KEEPALIVE_LEGACY_FLOOR` (release constant: 60.0
+  on demand forecasting, 50.0 on risk assessment). Under the rc5 mix (half the items procedural) a model that is perfect
+  on the procedural items and guesses uniformly elsewhere reaches at most 49.8 / 31.8, so these floors, with a margin,
+  need real skill on the other tiers. All other conditions are the same.
+  Once the award is approved, the champion is paid by its rank only and no longer holds a keep-alive slot.
+* **Generalist above 10 B parameters (from opening).** An entry with more than 10 billion parameters (counted when
+  it is fetched) qualifies only if `KEEPALIVE_BASE_FLOOR` (release constant: base tensor hash
+  to a floor per track) has its declared base and the score that qualified it is above that floor + 1.5 points. The
+  table is empty in this release: no entry above 10 B parameters gets a keep-alive or a provisional keep-alive yet.
+* **Who does not.** Queued or not yet evaluated entries, entries at or below the floor or the non-proc floor, decided entries (former
+  champions, entries that did not beat the incumbent, rejected or withdrawn entries), exact copies, near copies that
+  did not beat their parent and entries pending verification. Registering many hotkeys with weak or copied models
+  earns nothing, and the keep-alive is never a standing payment.
+* **How much.** From 1.2.0rc7.post1 each qualifying entry is paid the **median** of the positive serving (inference)
+  weights, as a share of the miner weights; the owner UID and the UIDs that are themselves paid by a competition (engine
+  champion, keep-alive entries, ranked entries) are not part of that median. The total of one track's keep-alive is at
+  most `KEEPALIVE_MAX_SHARE` (release constant, 0.25) of the track's share (15 % in the 50/50 profile): if `n x median`
+  is above `0.25 x 0.15`, every entry gets `0.15 x 0.25 / n` instead. The two tracks are bounded separately. The ranks
+  (75 / 17 / 8 %) are paid from the rest of the track's share (share minus the keep-alive paid). With no qualifying
+  entry nothing is reserved and the weights are exactly the 1.2.0rc5 weights.
+* **Limit.** At most 2 keep-alive slots per coldkey and track (the open-submission limit); the champion comes first,
+  then entries pending confirmation, each in commitment order.
+* **Top 8 only (mechanism v2).** At most `KEEPALIVE_MAX_ENTRIES` (release constant, 8) entries per track are paid, applied
+  after the 2-per-coldkey limit. A champion is listed on top of these 8: an approved champion is paid by its rank instead, so 8 pending entries
+  stay paid; a crowned champion awaiting approval keeps its slot first and the top 7 pending entries are paid with it. When more qualify, then the highest qualifying score (the non-proc score; the total
+  score for an entry last scored before 1.2.0rc6) are paid; a tie goes to the earlier on-chain commitment block (an unknown block counts as last), then the lower UID.
+  Each of them gets `min(median, cap / n_paid)`. The others get no keep-alive (the validator logs them); they are paid
+  again as soon as they are among the top 8. Champion and rank payouts are unchanged.
+* **Provisional keep-alive for the first evaluation (mechanism v2).** An entry that is still waiting for its **first**
+  evaluation has no score, so it cannot qualify above, and once its immunity (7200 blocks, about 24 h) is over it is the
+  lowest-emission UID and the chain prunes it before it was ever scored. While all of these hold, the entry therefore
+  gets a **provisional** slot (release constants in `competition_split.py`, `PROVISIONAL_KA = True`):
+  * it is queued, or waits for this validator's infrastructure (base download, disk), and has no score yet; its hotkey's
+    current commitment is this submission;
+  * an entry that is still **queued and not fetched yet** is eligible too, because waiting for the evaluation budget is
+    exactly when the chain prunes it: its hotkey's current on-chain commitment must parse as a valid commitment for an
+    active track and be this submission, it must never have been rejected or not-better (a rejected key is never
+    eligible), and the coldkey must be within the open-entry limit that is enforced when an entry is queued;
+  * an entry that **was fetched** keeps the stricter rule: it passed everything that runs before scoring and is
+    recorded in the evaluator's state (fetch, format / size / licence / architecture / template rules, the exact
+    tensor-hash copy check, the near-duplicate check; the repo was public before the publish deadline). A fetched entry
+    that fails one of these checks is rejected and stops being eligible at once; a wait that is the miner's (private
+    repo, base not on the hub) gets nothing;
+  * its hotkey's immunity ends within `PROVISIONAL_KA_LEAD_BLOCKS` = 600 blocks (about 2 h; a weight set takes 1-2 h
+    to count on chain) or has ended (registration block + 5000; an unknown registration block: no slot);
+  * at most `PROVISIONAL_KA_MAX_HOURS` = 12 hours **per hotkey**, counted from the earliest moment any entry of that
+    hotkey (in any track) first qualified (the evaluator writes it to the state, `provisional_since_ts`, once; a later
+    entry of the same hotkey, e.g. after a recommit, inherits that start and never restarts the window; a newly
+    registered hotkey is a new hotkey). After 12 hours the hotkey gets nothing until an entry of it is scored;
+  * an entry that was not fetched yet and whose last fetch attempt did not find the repo ("waiting for the repo":
+    missing or private) gets nothing; it becomes eligible when a later fetch succeeds and the fetched-entry rules hold
+    (an entry never attempted yet stays eligible);
+  * at most one provisional entry per coldkey and track.
+
+  Each gets `PROVISIONAL_KA_FRACTION` = 0.5 x the median positive serving weight (the same median as above); all
+  provisional entries of a track together are capped at `PROVISIONAL_KA_MAX_SHARE` = 0.05 of the track's share (then
+  split evenly). It comes out of the track's share like the keep-alive, before the ranks, never from the other track, and
+  does not use one of the 8 keep-alive slots. Unclaimed: it stays with the inference part. When the first draw is taken,
+  the normal rules decide: above the floors, the entry gets the normal keep-alive; at or below them it gets nothing more.
+  *Why it cannot be farmed:* a hotkey gets at most 12 h x 0.5 x median in total, however often it recommits (an unfetched junk entry: about 0.14 TAO at 17 Oct
+  prices), and only near or after the end of its own immunity, against a registration of at least 0.5 TAO (since
+  17 Oct the registration fee doubles with each registration in a burst). The queue fetches entries with expired
+  immunity first, so junk is rejected early, and a rejected entry gets nothing; a first draw below the keep-alive
+  floors ends the slot.
+* The keep-alive keeps a waiting entry above the lowest-emission UIDs; it does not reserve a UID or guarantee that a
+  hotkey is never deregistered.
+* **Timing advice.** Register the hotkey shortly before you commit. The immunity period (7200 blocks, about 24 hours) starts at
+  registration, and the first weight after your first pass takes up to about 1-2 hours to count on chain; a hotkey
+  registered long before its commitment can lose its immunity before the keep-alive reaches it.
+* **After demand_forecasting and risk_assessment end (1.2.0rc10).** From the generalist start (`GENERALIST_START_UTC`)
+  these two tracks hold no slot and pay no rank. For `LEGACY_KA_DAYS` = 7 days from that instant, each of them still
+  pays a legacy keep-alive to its champion (always, as for every keep-alive this is not an award) and to its former
+  champions that have the owner's approval, so they are not deregistered before the dual role lets one hotkey serve
+  inference and compete. The validator reads them from the frozen DF/RA part of the same spec state, with the same
+  checks as the ranks: a hotkey that is deregistered or now commits to anything else (another track, another repo or
+  revision) gets nothing from then on. A uid gets it once even if it led both tracks, and only as a pure entrant: a uid
+  with serving weight or any other competition pay (generalist rank or keep-alive, engine) gets none. Each gets
+  `LEGACY_KA_FRACTION` = 0.5 x the median positive serving weight; all of them together at most `LEGACY_KA_MAX_SHARE` =
+  3 % of the miner part (then split evenly), for at most `LEGACY_KA_MAX_ENTRIES` = 12 uids (DF first, then RA, in rank
+  order; every approved former champion counts, not only the three ranked ones). It comes out of the inference part,
+  never from the engine share or the generalist share.
+
+## Try it locally
+
+```
+huggingface-cli download decisionmodels/sn92-specialists --repo-type dataset --local-dir sn92-specialists
+pip install -e '.[spec]'
+reax-spec-eval ./my-model --dev ./sn92-specialists --category demand_forecasting --hotkey <your hotkey>
+```
+
+The public train and dev data (CC-BY-4.0, 20 categories, `<category>/train.jsonl` and `<category>/dev.jsonl`) is at
+[huggingface.co/datasets/decisionmodels/sn92-specialists](https://huggingface.co/datasets/decisionmodels/sn92-specialists);
+the sealed split stays private and is what validators score on.
+
+`--dev` takes the public dev split: a `.jsonl` file, a directory holding `dev.jsonl`, or the dataset root. The command
+runs the same rule checks, the same prompt, the same container and the same scorer as the validator, on the dev rows
+instead of a fresh sealed draw, so the number is a preview, not a ranking. It needs Docker with the NVIDIA runtime and
+a GPU with about 25 GB free. `--dry-run` only checks the rules and prints the tensor hash; `--limit N` scores a random
+subset; `--no-manifest-check` skips the manifest before you have written it.
+
+## Operator notes (validators)
+
+| Variable | Default | Meaning |
+|---|---|---|
+| `REAX_SPEC_SEALED_DIR` | required | host path of the sealed pool (`<category>/sealed/sealed.clean.jsonl`), mounted read-only; never inside a container the miner influences |
+| `REAX_SPEC_STATE_DIR` | `~/.reax` | holds `spec-state.json` (champions, pending confirmations, queue, hash registry, used item ids) and `spec-work/` |
+| `REAX_SPEC_TRACKS_FILE` | the release schedule (development networks only; ignored on finney) | JSON list of `{"track_id", "category", "start": "YYYY-MM-DDTHH:MM:SSZ", "days": 14}` |
+| `REAX_SPEC_BASE_DIR` | none (`${REAX_COMPETITION_DIR}/spec-bases` in the compose files) | base models for the near-duplicate check, as `<hf id with / replaced by __>@<revision>/` directories. **Required for awards:** a submission whose declared base is not here waits in *pending verification* (not evaluated, not paid). The evaluator downloads a missing base itself (see "Base models" below); `grep "pending verification"` in the log lists the bases it could not get. A second directory name with the same weights serves an alias |
+| `REAX_SPEC_BASE_FETCH` | `1` | `0` turns the automatic base download off (then the operator places every base) |
+| `REAX_SPEC_BASE_PRESEED` | none | `<hf id>@<revision>,...` downloaded in the background when the evaluator starts (not counted against the cycle budget) |
+| `REAX_SPEC_BASE_BUDGET_GB` | `40` | base downloads per cycle; a base that does not fit is deferred to the next cycle |
+| `REAX_SPEC_BASE_MIN_FREE_GB` | `50` | free space that must remain on the filesystem of `REAX_SPEC_BASE_DIR` after a base download; otherwise the base is skipped this cycle (log line `must stay free`). Before that, cached bases that no live (not rejected, not withdrawn) submission declares and that are not in `REAX_SPEC_BASE_PRESEED` are removed, oldest first, if that makes room |
+| `REAX_SPEC_BASE_RETRY_CYCLES` | `6` | a base that could not be fetched (gated, private, not found, refused) is tried again after this many cycles |
+| `REAX_SPEC_GPU_DEVICE` / `REAX_SPEC_GPU_TOTAL_GB` / `REAX_SPEC_GPU_BUDGET_GB` | `0` / card size from nvidia-smi / `25` | GPU for the candidate container and its memory budget. The weights need `weights x 1.15 + 2 GiB` of it (a 68 GiB entry: 80.2), so the open class needs **at least 81**. When the weights do not fit, an entry above 20 GiB waits for this host (no strike, no rejection); a log warning (`REAX_SPEC_GPU_BUDGET_GB=... is below`) appears once per cycle from 24 hours before the switch |
+| `REAX_VLLM_DISABLE_UVA` | unset | `1` on confidential-compute GPUs: the candidate container gets a read-only mount of `reax_subnet/spec/ccfix/sitecustomize.py` (via `PYTHONPATH`) that turns vLLM's UVA buffers off, otherwise inputs go stale |
+| `REAX_SPEC_UID` | `10003:10003` | uid:gid of the vLLM container: never root, and not the uid of the validator/worker or of the engine containers (10002). The model directory is made world-readable after the download; if the socket (mode 0666 from uvicorn) cannot be connected to, set this to the worker's own `uid:gid` |
+| `REAX_SPEC_DOCKER_RUNTIME` | none | `docker run --runtime`, e.g. `runsc` (gVisor), like `REAX_ENGINE_DOCKER_RUNTIME` |
+| `REAX_SPEC_CPUS` | `8` | `--cpus` of the vLLM container (nofile 4096, logs 2 x 10 MB) |
+| `REAX_SPEC_CONTAINER_MEM` | `48g` | `--memory` and `--memory-swap` of the vLLM container: `<int>g`, 8 to 512; anything else stops the worker at start-up. Raise it for the open class (a 36 B model) |
+| `REAX_SPEC_STARTUP_TIMEOUT_S` | `900` | seconds the candidate's vLLM may take to become healthy: whole seconds, 60 to 1800; anything else stops the worker at start-up. Larger models load more slowly. A start-up that never gets healthy is a host outcome (no strike) and costs the GPU every cycle, hence the cap |
+| `REAX_SPEC_SKETCH_SEED` | none (a random seed created once in `REAX_SPEC_WORK_DIR/sketch-seed`, mode 0600) | secret seed of the near-duplicate sample positions. Keep it for the life of the validator and never publish it; when it changes, the stored sketches of earlier submissions are recomputed (their weights are downloaded again) |
+| `REAX_SPEC_MIN_FREE_GB` | `60` | free space required on the filesystem of `REAX_SPEC_WORK_DIR` before a submission is downloaded; below it the cycle is skipped and nothing is recorded against any submission. In the open class a download is also held back (waiting for this host, no strike) when its listed size would leave less than this free; the evaluator then downloads nothing more that cycle |
+| `REAX_SPEC_SAMPLE_SIZE` | `600` | items per draw |
+| `REAX_SPEC_MAX_EVALS_PER_HOUR` | `8` | model evaluations per hour, all tracks together |
+| `REAX_SPEC_V3_DECISIONS` | `0` | (`1`/`true`/`yes`/`on` or `0`/`false`/`no`/`off`; empty means the default, off; any other value stops the worker at start-up) decision rule v3 (variance-aware, see "Decision rule v3"); `0` restores the old margin rule bit for bit, no state migration needed in either direction |
+| `REAX_SPEC_X_TIER_MODE` / `REAX_SPEC_X_TIER_SHARE` | `off` / `0.20` | cross-author tier: `off`, `shadow` (extra items, reported only), `scored` (currently falls back to `shadow`) or `binding` (items inside the 300, counted, with the capped gap penalty); only has an effect when the sealed pool contains `cross_author` items |
+| `REAX_SPEC_G_MED` | empty | binding mode: frozen median gap per track as JSON, e.g. `{"demand_forecasting": 12.3}`; a track without a value runs as `shadow` |
+| `REAX_SPEC_GAP_PENALTY_CAP` | `10` | binding mode: largest penalty in points; `none` / `inf` = no cap |
+| `REAX_SPEC_VLLM_IMAGE` | the pinned image of `runtimes/s1-pro` | vLLM image by digest |
+
+**Where it runs.** In `REAX_COMPETITIONS_MODE=local` the validator process runs the evaluator; in `remote` mode it is
+`reax-competition-worker --spec` (on the validator host without wallets or tokens, or on a separate keyless box), which
+writes `spec-state.json`, and the validator only reads it (docs/COMPETITIONS.md, "Where the competitions run"). The worker
+needs `REAX_SPEC_SEALED_DIR`, a writable `REAX_SPEC_WORK_DIR` on a host path that is mounted at the same path into the
+worker container (the vLLM sockets are created under `<work dir>/sock/`, the models under `<work dir>/models/`) and the
+docker socket. The pinned vLLM image must ship `jinja2 >= 3.1.6`; `scripts/check-vllm-image.sh` prints the versions.
+
+**Base models.** When the base a submission declares (`base_model` in `reax-specialist.json`) is not under
+`REAX_SPEC_BASE_DIR`, the evaluator downloads it there itself, the same way it downloads a submission: the pinned
+40-character revision only, public repos only (no token), only `*.safetensors`, json, tokenizer and licence files, the
+same size caps, an allowlisted architecture and no `auto_map`. The base is only read for the copy check and never served,
+so its licence is not restricted and it needs no manifest. The download goes to a `.tmp-...` directory and is renamed
+into place after the checks, so no cycle and no other process sees a half-written base; leftover `.tmp-...` directories
+of a dead process are removed at the next start. A base that cannot be fetched (gated like Gemma or Llama, private, not
+found, too large, refused by a rule) leaves the submission in *pending verification* with the reason, and the download is
+tried again after `REAX_SPEC_BASE_RETRY_CYCLES` cycles. For gated bases, download them yourself (with your own Hugging
+Face account) into `<base dir>/<hf id with / replaced by __>@<revision>/`; the evaluator picks them up in the next cycle.
+Downloaded bases are kept.
+
+The evaluator class is `reax_subnet.spec.evaluator.SpecEvaluator`; `await evaluate_cycle(snapshot)` returns
+`{track_id: [(uid, score), ...]}` in rank order (see "Ranks") for the active tracks. Turning the ranking into weights is done by a
+separate layer (`competitions.SpecialistAdapter` and `competition_split.combine_weights`, see COMPETITIONS.md).
